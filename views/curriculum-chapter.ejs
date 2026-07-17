@@ -1,0 +1,49 @@
+<%- include('partials/header', { title: ch.title }) %>
+
+<div class="chapter-top">
+  <a class="crumb" href="/curriculum">← Curriculum Library</a>
+  <% if (ch.moduleKey) { %><span class="module-key inline"><%= ch.moduleKey %></span><% } %>
+</div>
+
+<% if (ch.moduleKey && ch.sections.length) { %>
+<div class="section-nav">
+  <div class="section-nav-title">In this module — mark each section complete as you master it:</div>
+  <ol>
+    <% ch.sections.forEach(s => { %>
+      <li class="<%= doneSlugs.has(s.slug) ? 'done' : '' %>">
+        <a href="#s-<%= s.slug %>"><%= doneSlugs.has(s.slug) ? '✓ ' : '' %><%= s.title %></a>
+      </li>
+    <% }) %>
+  </ol>
+</div>
+<% } %>
+
+<article class="curric">
+  <%- ch.intro %>
+</article>
+
+<% ch.sections.forEach(s => { %>
+  <div class="curric-section" id="s-<%= s.slug %>">
+    <article class="curric">
+      <%- s.html %>
+    </article>
+    <% if (ch.moduleKey) { %>
+      <form method="post" action="/curriculum/<%= ch.slug %>/sections/<%= s.slug %>/toggle" class="complete-bar <%= doneSlugs.has(s.slug) ? 'is-done' : '' %>">
+        <% if (doneSlugs.has(s.slug)) { %>
+          <span class="complete-msg">✓ Section complete — +10 pts</span>
+          <button type="submit" class="btn ghost small">Undo</button>
+        <% } else { %>
+          <span class="complete-msg">Finished this section?</span>
+          <button type="submit" class="btn small">Mark complete (+10 pts)</button>
+        <% } %>
+      </form>
+    <% } %>
+  </div>
+<% }) %>
+
+<div class="chapter-pager">
+  <% if (prev) { %><a class="btn ghost" href="/curriculum/<%= prev.slug %>">← <%= prev.title %></a><% } else { %><span></span><% } %>
+  <% if (next) { %><a class="btn" href="/curriculum/<%= next.slug %>"><%= next.title %> →</a><% } %>
+</div>
+
+<%- include('partials/footer') %>

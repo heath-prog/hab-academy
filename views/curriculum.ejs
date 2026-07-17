@@ -1,0 +1,39 @@
+<%- include('partials/header', { title: 'Curriculum' }) %>
+
+<div class="eyebrow">THE TEXTBOOK, IN THE BUILDING</div>
+<h1>HAB Curriculum Library</h1>
+<p class="lead">The full HAB Sales Operating System — nine trainable modules plus the foundation and reference chapters. Work top to bottom; mark each section complete as you master it.</p>
+
+<div class="overall-strip">
+  <div class="pbar big"><div class="pbar-fill" style="width:<%= me.pctComplete %>%"></div></div>
+  <div class="overall-label"><strong><%= me.pctComplete %>%</strong> complete · <%= me.sectionsCompleted %>/<%= me.sectionsTotal %> sections · <span class="gold-text"><%= me.points %> pts</span></div>
+</div>
+
+<h2 class="lib-h2">Training Modules</h2>
+<div class="module-grid">
+  <% modules.forEach(m => { %>
+    <a class="module-card <%= m.pct === 100 ? 'is-done' : '' %>" href="/curriculum/<%= m.slug %>">
+      <div class="module-key"><%= m.moduleKey %></div>
+      <div class="module-title"><%= m.title %></div>
+      <% if (m.objective) { %><div class="module-obj"><%= m.objective %></div><% } %>
+      <% if (m.primaryKpi) { %><div class="module-kpi">KPI: <%= m.primaryKpi %></div><% } %>
+      <div class="pbar"><div class="pbar-fill" style="width:<%= m.pct %>%"></div></div>
+      <div class="module-progress"><%= m.done %>/<%= m.sectionCount %> sections<%= m.pct === 100 ? ' · ✓ complete' : '' %></div>
+    </a>
+  <% }) %>
+</div>
+
+<h2 class="lib-h2">Foundation &amp; Reference</h2>
+<div class="ref-list">
+  <% refs.forEach(r => { %>
+    <a class="ref-row" href="/curriculum/<%= r.slug %>">
+      <span class="ref-title"><%= r.title %></span>
+      <% if (r.coachOnly) { %><span class="coach-chip">COACH</span><% } %>
+      <span class="ref-count"><%= r.sectionCount %> sections →</span>
+    </a>
+  <% }) %>
+</div>
+
+<p class="stat-sub" style="margin-top:28px; opacity:.6;">Source: HAB Sales Operating System Master Curriculum v1.3 — ingested from the Jul 15, 2026 master .htm. Full book editions live in the <a href="/library">Library</a>.</p>
+
+<%- include('partials/footer') %>

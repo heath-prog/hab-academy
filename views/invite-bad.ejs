@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Invite Unavailable · HAB Academy</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body class="auth-wrap">
+<div class="auth-card">
+  <div class="brand-stack">
+    <div class="shield">HAB</div>
+    <div class="name">HAB Academy</div>
+    <div class="sub">INVITE UNAVAILABLE</div>
+  </div>
+  <% if (reason === 'unknown') { %>
+    <p>This invitation link doesn't match anything we have on file. Double-check with the person who invited you, or ask for a fresh link.</p>
+  <% } else if (reason === 'used') { %>
+    <p>This invitation has already been used. If you've already set up your account, just <a href="/login">sign in</a>.</p>
+  <% } else if (reason === 'expired') { %>
+    <p>This invitation has expired (links are valid for 7 days). Ask the person who invited you to send a fresh one.</p>
+  <% } %>
+  <p style="margin-top: 20px;"><a class="btn primary" href="/login">Sign In</a></p>
+</div>
+</body>
+</html>

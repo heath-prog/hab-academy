@@ -1,0 +1,28 @@
+{
+  "name": "hab-academy",
+  "version": "1.1.0",
+  "description": "HAB Academy (Healthy Auto Business Academy) — credentialed portal for the Healthy Auto Business Sales Operating System.",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "seed": "node db/seed.js",
+    "seed:demo": "node db/seed-demo.js",
+    "import:curriculum": "node scripts/import-curriculum.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "better-sqlite3": "^11.3.0",
+    "better-sqlite3-session-store": "^0.1.0",
+    "connect-sqlite3": "^0.9.16",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.21.0",
+    "express-session": "^1.18.0",
+    "nodemailer": "^6.9.15"
+  }
+}

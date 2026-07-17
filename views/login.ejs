@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign in · HAB Academy</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body class="auth-wrap">
+<div class="auth-card">
+  <div class="brand-stack">
+    <div class="shield">HAB</div>
+    <div class="name">Healthy Auto Business Academy</div>
+    <div class="sub">HAB ACADEMY · SIGN IN</div>
+  </div>
+
+  <% if (error) { %><div class="alert error"><%= error %></div><% } %>
+  <% if (message) { %><div class="alert success"><%= message %></div><% } %>
+
+  <form method="post" action="/login" class="stack">
+    <input type="hidden" name="next" value="<%= next %>">
+    <div>
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" required autocomplete="email" autofocus>
+    </div>
+    <div>
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" required autocomplete="current-password">
+    </div>
+    <button type="submit" class="primary">Sign In</button>
+  </form>
+
+  <button type="button" class="secondary" style="width: 100%; margin-top: 12px;" disabled title="Coming soon">
+    Continue with Google · coming soon
+  </button>
+
+  <div class="tagline">Do what's Right · Do what's Fair · Do Your Best.</div>
+</div>
+</body>
+</html>

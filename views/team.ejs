@@ -1,0 +1,72 @@
+<%- include('partials/header', { title: 'Team Progress' }) %>
+
+<% if (!summary && shops) { %>
+  <div class="eyebrow">ALL SHOPS</div>
+  <h1>Pick a shop</h1>
+  <div class="ref-list">
+    <% shops.forEach(s => { %>
+      <a class="ref-row" href="/team?shopId=<%= s.id %>">
+        <span class="ref-title"><%= s.name %></span>
+        <span class="ref-count"><%= s.summary ? s.summary.pctComplete + '% trained · ' + s.summary.memberCount + ' members' : '' %> →</span>
+      </a>
+    <% }) %>
+    <% if (!shops.length) { %><p class="lead">No shops yet — create one under <a href="/admin/shops">Shops</a>.</p><% } %>
+  </div>
+<% } else { %>
+  <div class="eyebrow"><%= summary.shopName.toUpperCase() %></div>
+  <h1>Team Training Progress</h1>
+  <p class="lead">Shop completion (advisors): <strong><%= summary.pctComplete %>%</strong> across <%= summary.advisorCount %> advisor<%= summary.advisorCount === 1 ? '' : 's' %>. Mastery levels are awarded manually — promote when the mastery check is passed live, not when the reading is done.</p>
+
+  <% if (message) { %><div class="alert success"><%= message %></div><% } %>
+  <% if (error) { %><div class="alert error"><%= error %></div><% } %>
+
+  <h2 class="lib-h2">Module completion — whole shop</h2>
+  <div class="module-rollup">
+    <% summary.modules.forEach(m => { %>
+      <div class="rollup-cell">
+        <div class="rollup-key"><%= m.key %></div>
+        <div class="pbar"><div class="pbar-fill" style="width:<%= m.pctComplete %>%"></div></div>
+        <div class="rollup-pct"><%= m.pctComplete %>%</div>
+      </div>
+    <% }) %>
+  </div>
+
+  <h2 class="lib-h2">Per-advisor matrix</h2>
+  <table class="board matrix-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <% summary.modules.forEach(m => { %><th class="num" title="<%= m.title %>"><%= m.key %></th><% }) %>
+        <th class="num">%</th><th class="num">Pts</th><th>Mastery</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% summary.members.forEach(m => { %>
+        <tr>
+          <td><strong><%= m.name || m.email %></strong> <span class="muted"><%= m.role %></span></td>
+          <% summary.modules.forEach(mod => {
+               const d = m.perModule[mod.key] || 0; %>
+            <td class="num cell-<%= d === mod.sections ? 'full' : d > 0 ? 'part' : 'zero' %>"><%= d %>/<%= mod.sections %></td>
+          <% }) %>
+          <td class="num"><strong><%= m.pctComplete %>%</strong></td>
+          <td class="num gold-text"><%= m.points %></td>
+          <td>
+            <form method="post" action="/team/mastery" class="mastery-form">
+              <% if (user.role === 'hab_admin') { %><input type="hidden" name="shopId" value="<%= summary.shopId %>"><% } %>
+              <input type="hidden" name="userId" value="<%= m.id %>">
+              <select name="level">
+                <% levels.forEach((name, i) => { %>
+                  <option value="<%= i + 1 %>" <%= m.masteryLevel === i + 1 ? 'selected' : '' %>><%= i + 1 %> · <%= name %></option>
+                <% }) %>
+              </select>
+              <button type="submit" class="btn small">Award</button>
+            </form>
+          </td>
+        </tr>
+      <% }) %>
+      <% if (!summary.members.length) { %><tr><td colspan="13">Nobody at this shop yet — invite advisors under Users.</td></tr><% } %>
+    </tbody>
+  </table>
+<% } %>
+
+<%- include('partials/footer') %>

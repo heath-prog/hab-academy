@@ -1,0 +1,43 @@
+<%- include('partials/header', { title: 'Leaderboard' }) %>
+
+<% if (!summary && shops) { %>
+  <div class="eyebrow">ALL SHOPS</div>
+  <h1>Pick a shop leaderboard</h1>
+  <div class="ref-list">
+    <% shops.forEach(s => { %>
+      <a class="ref-row" href="/leaderboard?shopId=<%= s.id %>">
+        <span class="ref-title"><%= s.name %></span>
+        <span class="ref-count"><%= s.summary ? s.summary.pctComplete + '% trained · ' + s.summary.memberCount + ' members' : '' %> →</span>
+      </a>
+    <% }) %>
+    <% if (!shops.length) { %><p class="lead">No shops yet — create one under <a href="/admin/shops">Shops</a>.</p><% } %>
+  </div>
+<% } else { %>
+  <div class="eyebrow"><%= summary.shopName.toUpperCase() %></div>
+  <h1>Shop Leaderboard</h1>
+  <p class="lead">Points from completed curriculum sections (+10) and daily Take-Five check-ins (+5 plus streak bonus). Shop training completion: <strong><%= summary.pctComplete %>%</strong>.</p>
+
+  <table class="board">
+    <thead>
+      <tr><th class="rank">#</th><th>Name</th><th>Mastery</th><th class="num">Points</th><th class="num">Streak</th><th style="width:30%">Curriculum</th></tr>
+    </thead>
+    <tbody>
+      <% summary.members.forEach((m, i) => { %>
+        <tr class="<%= m.id === user.userId ? 'is-me' : '' %>">
+          <td class="rank"><%= i === 0 ? '🏆' : i + 1 %></td>
+          <td><strong><%= m.name || m.email %></strong> <span class="muted"><%= m.role %></span></td>
+          <td><span class="mastery-badge lvl-<%= m.masteryLevel %>"><%= m.masteryName %></span></td>
+          <td class="num gold-text"><strong><%= m.points %></strong></td>
+          <td class="num"><%= m.streak %>🔥</td>
+          <td>
+            <div class="pbar"><div class="pbar-fill" style="width:<%= m.pctComplete %>%"></div></div>
+            <span class="muted"><%= m.pctComplete %>% · <%= m.sectionsCompleted %>/<%= m.sectionsTotal %></span>
+          </td>
+        </tr>
+      <% }) %>
+      <% if (!summary.members.length) { %><tr><td colspan="6">Nobody at this shop yet.</td></tr><% } %>
+    </tbody>
+  </table>
+<% } %>
+
+<%- include('partials/footer') %>

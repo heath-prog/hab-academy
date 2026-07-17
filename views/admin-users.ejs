@@ -1,0 +1,82 @@
+<%- include('partials/header', { title: 'Users' }) %>
+
+<div class="eyebrow">MANAGE USERS</div>
+<h1><%= shop.name %></h1>
+<p class="lead">Invite advisors and coaches at your shop. They'll get an email link to set a password and log in.</p>
+
+<% if (error) { %><div class="alert error"><%= error %></div><% } %>
+<% if (message) { %><div class="alert success"><%- message.replace(/\+/g, ' ') %></div><% } %>
+<% if (invitePreview) { %>
+  <div class="alert info">Invite URL (for testing): <span class="code-block"><%= invitePreview %></span></div>
+<% } %>
+
+<div class="card">
+  <h2 style="margin-top: 0;">Invite a User</h2>
+  <form method="post" action="/admin/users/invite" class="stack">
+    <% if (user.role === 'hab_admin') { %><input type="hidden" name="shopId" value="<%= shop.id %>"><% } %>
+    <div class="row">
+      <div>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" required placeholder="advisor@theirshop.com">
+      </div>
+      <div>
+        <label for="role">Role</label>
+        <select name="role" id="role" required>
+          <option value="advisor">Advisor (training + leaderboard)</option>
+          <option value="coach">Coach (team progress + coach content)</option>
+          <option value="owner">Owner (everything at this shop)</option>
+        </select>
+      </div>
+    </div>
+    <div><button type="submit" class="primary">Send Invite</button></div>
+  </form>
+</div>
+
+<h2>Current Users</h2>
+<% if (!users.length) { %>
+  <p class="muted">No active users yet.</p>
+<% } else { %>
+  <table class="tbl">
+    <thead><tr><th>Email</th><th>Name</th><th>Role</th><th>Last Login</th><th></th></tr></thead>
+    <tbody>
+      <% users.forEach(u => { %>
+        <tr>
+          <td><%= u.email %></td>
+          <td><%= u.name || '—' %></td>
+          <td><span class="role-pill <%= u.role %>"><%= u.role.replace('_', ' ') %></span></td>
+          <td><span class="muted"><%= u.last_login ? u.last_login.replace('T', ' ').slice(0, 16) : '—' %></span></td>
+          <td>
+            <% if (u.id !== user.userId && u.role !== 'hab_admin') { %>
+              <form method="post" action="/admin/users/<%= u.id %>/deactivate" style="display:inline;" onsubmit="return confirm('Deactivate <%= u.email %>?')">
+                <button type="submit" class="danger">Deactivate</button>
+              </form>
+            <% } %>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+<% } %>
+
+<% if (pending.length) { %>
+<h2>Pending Invites</h2>
+<table class="tbl">
+  <thead><tr><th>Email</th><th>Role</th><th>Expires</th><th></th></tr></thead>
+  <tbody>
+    <% pending.forEach(p => { %>
+      <tr>
+        <td><%= p.email %></td>
+        <td><span class="role-pill <%= p.role %>"><%= p.role %></span></td>
+        <td><span class="muted"><%= p.expires_at.replace('T', ' ').slice(0, 16) %></span></td>
+        <td>
+          <form method="post" action="/admin/invites/<%= p.id %>/revoke" style="display:inline;" onsubmit="return confirm('Revoke this invite?')">
+            <button type="submit" class="danger">Revoke</button>
+          </form>
+        </td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>
+<% } %>
+
+<%- include('partials/footer') %>

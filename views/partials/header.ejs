@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title><%= typeof title !== 'undefined' ? title + ' · ' : '' %>HAB Academy</title>
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/curriculum.css">
+</head>
+<body>
+<% if (typeof user !== 'undefined' && user) { %>
+<header class="topbar">
+  <div class="brand">
+    <div class="shield">HAB</div>
+    <div>
+      <div class="name">HAB ACADEMY</div>
+      <div class="sub">HEALTHY AUTO BUSINESS · SALES OS v1.3</div>
+    </div>
+  </div>
+  <nav>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/curriculum">Curriculum</a>
+    <a href="/library">Library</a>
+    <a href="/leaderboard">Leaderboard</a>
+    <% if (['coach','owner','hab_admin'].includes(user.role)) { %>
+      <a href="/team">Team</a>
+    <% } %>
+    <% if (user.role === 'hab_admin') { %>
+      <a href="/admin/shops">Shops</a>
+    <% } %>
+    <% if (['coach','owner','hab_admin'].includes(user.role)) { %>
+      <a href="/admin/users<%= user.role === 'hab_admin' && user.shopId ? '?shopId=' + user.shopId : '' %>">Users</a>
+    <% } %>
+    <span class="role-chip"><%= user.role.replace('_', ' ').toUpperCase() %></span>
+    <span style="font-size: 12px; opacity: 0.85;"><%= user.name || user.email %></span>
+    <form method="post" action="/logout"><button type="submit" class="linklike">Sign out</button></form>
+  </nav>
+</header>
+<% } %>
+<main class="page">

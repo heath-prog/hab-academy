@@ -1,0 +1,166 @@
+{
+ "generatedAt": "2026-07-17T01:14:37.038Z",
+ "source": "HAB-SA~1.HTM",
+ "chapters": [
+  {
+   "slug": "start-here",
+   "kind": "ref",
+   "moduleKey": null,
+   "coachOnly": false,
+   "title": "Master Map — Navigate the Whole System",
+   "objective": null,
+   "primaryKpi": null,
+   "sectionCount": 5
+  },
+  {
+   "slug": "foundation",
+   "kind": "ref",
+   "moduleKey": null,
+   "coachOnly": false,
+   "title": "Foundation — The Operating System Behind the Words",
+   "objective": null,
+   "primaryKpi": null,
+   "sectionCount": 8
+  },
+  {
+   "slug": "m1",
+   "kind": "module",
+   "moduleKey": "M1",
+   "coachOnly": false,
+   "title": "Establish Rapport",
+   "objective": "Make a friend",
+   "primaryKpi": "Greet-to-Tour % - target ≥ 80%",
+   "sectionCount": 11
+  },
+  {
+   "slug": "m2",
+   "kind": "module",
+   "moduleKey": "M2",
+   "coachOnly": false,
+   "title": "Establish Credibility",
+   "objective": "Build authority",
+   "primaryKpi": "Tour → DVI Consent % - target ≥ 95%",
+   "sectionCount": 5
+  },
+  {
+   "slug": "m3",
+   "kind": "module",
+   "moduleKey": "M3",
+   "coachOnly": false,
+   "title": "Collect Data — Get Custody",
+   "objective": "Get custody of vehicle",
+   "primaryKpi": "Inquiry-to-RO % - target ≥ 70%",
+   "sectionCount": 5
+  },
+  {
+   "slug": "m4",
+   "kind": "module",
+   "moduleKey": "M4",
+   "coachOnly": false,
+   "title": "Inspect & Analyze the Data",
+   "objective": "Identify true vehicle health",
+   "primaryKpi": "DVI w/ Media % - target ≥ 95%",
+   "sectionCount": 5
+  },
+  {
+   "slug": "m5",
+   "kind": "module",
+   "moduleKey": "M5",
+   "coachOnly": false,
+   "title": "Build & Strategize — Run the Bases",
+   "objective": "Sequence the conversation",
+   "primaryKpi": "Base Order Compliance % - target ≥ 90%",
+   "sectionCount": 4
+  },
+  {
+   "slug": "m6",
+   "kind": "module",
+   "moduleKey": "M6",
+   "coachOnly": false,
+   "title": "Present — Educate Into Certainty",
+   "objective": "Educate the customer",
+   "primaryKpi": "Present → Auth % - target ≥ 70%",
+   "sectionCount": 4
+  },
+  {
+   "slug": "m7",
+   "kind": "module",
+   "moduleKey": "M7",
+   "coachOnly": false,
+   "title": "Overcome Objections — The Boss Battles",
+   "objective": "Resolve hesitation",
+   "primaryKpi": "1st-Objection Close % - target ≥ 60%",
+   "sectionCount": 3
+  },
+  {
+   "slug": "m8",
+   "kind": "module",
+   "moduleKey": "M8",
+   "coachOnly": false,
+   "title": "Execute — The Close",
+   "objective": "Deliver commitment",
+   "primaryKpi": "Authorization Rate - target ≥ 75%",
+   "sectionCount": 5
+  },
+  {
+   "slug": "m9",
+   "kind": "module",
+   "moduleKey": "M9",
+   "coachOnly": false,
+   "title": "L.A.S.T. — Turn Complaints Into Loyalty",
+   "objective": "Recover and retain after a complaint",
+   "primaryKpi": "undefined",
+   "sectionCount": 12
+  },
+  {
+   "slug": "coach-os",
+   "kind": "ref",
+   "moduleKey": null,
+   "coachOnly": true,
+   "title": "The Coach’s OS",
+   "objective": null,
+   "primaryKpi": null,
+   "sectionCount": 6
+  },
+  {
+   "slug": "plan-90",
+   "kind": "ref",
+   "moduleKey": null,
+   "coachOnly": true,
+   "title": "The 90-Day Implementation Plan",
+   "objective": null,
+   "primaryKpi": null,
+   "sectionCount": 8
+  },
+  {
+   "slug": "how-to-coach",
+   "kind": "ref",
+   "moduleKey": null,
+   "coachOnly": true,
+   "title": "How to Coach — Not Just What to Coach",
+   "objective": null,
+   "primaryKpi": null,
+   "sectionCount": 9
+  },
+  {
+   "slug": "examples",
+   "kind": "ref",
+   "moduleKey": null,
+   "coachOnly": false,
+   "title": "The Worked-Example Library",
+   "objective": null,
+   "primaryKpi": null,
+   "sectionCount": 10
+  },
+  {
+   "slug": "glossary",
+   "kind": "ref",
+   "moduleKey": null,
+   "coachOnly": false,
+   "title": "The Glossary — Every Named Technique in One Place",
+   "objective": null,
+   "primaryKpi": null,
+   "sectionCount": 10
+  }
+ ]
+}

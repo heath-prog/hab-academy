@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HAB Sales OS — Pocket Card Deck v2 (Print at 5×7) — READABLE</title>
+<style>
+  :root {
+    --navy:#1B3358; --navy-deep:#112341; --navy-soft:#2C4A75;
+    --gold:#C8A75C; --gold-deep:#A78743;
+    --cream:#FAF4E4; --ink:#1A1A1A; --paper:#FFFFFF;
+    --red:#B7332A; --green:#2F7D3A; --purple:#5E3084;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #E0E0E0; }
+  body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    padding: 28px;
+    color: var(--ink);
+  }
+
+  /* 5" x 7" at 96 dpi = 480 x 672 px */
+  .card {
+    width: 480px;
+    height: 672px;
+    background: var(--paper);
+    margin: 18px auto;
+    padding: 22px 22px 20px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.22);
+    page-break-after: always;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .card-label {
+    text-align: center;
+    font-size: 11px;
+    color: #777;
+    letter-spacing: 4px;
+    margin: 14px 0 6px;
+    font-weight: 700;
+  }
+
+  /* ================= BRAND HEAD ================= */
+  .head {
+    background: var(--navy);
+    color: var(--paper);
+    padding: 16px 18px;
+    border-left: 6px solid var(--gold);
+    margin: -22px -22px 18px;
+  }
+  .head .brand {
+    font-size: 11px;
+    color: var(--gold);
+    letter-spacing: 4px;
+    font-weight: 700;
+  }
+  .head .title {
+    font-size: 26px;
+    font-weight: 800;
+    margin-top: 4px;
+    letter-spacing: -0.01em;
+    line-height: 1.05;
+  }
+  .head .subtitle {
+    font-size: 13px;
+    color: var(--cream);
+    font-style: italic;
+    margin-top: 5px;
+  }
+
+  /* ================= SECTION HEADINGS ================= */
+  h3 {
+    font-size: 13px;
+    letter-spacing: 2.5px;
+    color: var(--navy);
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 5px;
+    margin: 14px 0 10px;
+    text-transform: uppercase;
+    font-weight: 800;
+  }
+
+  /* ================= CARD 1: THE 8 STEPS — BIG ================= */
+  .steps-big {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    flex: 1;
+  }
+  .step-big {
+    background: var(--navy);
+    color: var(--paper);
+    padding: 12px 10px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .step-big .num {
+    color: var(--gold);
+    font-weight: 800;
+    font-size: 38px;
+    line-height: 1;
+    min-width: 36px;
+    text-align: center;
+  }
+  .step-big .text { line-height: 1.15; }
+  .step-big .label {
+    font-weight: 800;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    display: block;
+  }
+  .step-big .sub {
+    font-size: 11px;
+    opacity: 0.88;
+    display: block;
+    margin-top: 2px;
+  }
+
+  /* ================= CARD 2: TRUST TRIANGLE — BIG SVG ================= */
+  .trust-big-wrap {
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .trust-big-wrap svg { width: 100%; max-width: 420px; height: auto; display: block; margin: 0 auto; }
+  .trust-caption {
+    font-size: 14px;
+    color: var(--navy);
+    margin-top: 16px;
+    font-weight: 600;
+    line-height: 1.45;
+    padding: 0 8px;
+  }
+  .trust-caption em {
+    color: var(--gold-deep);
+    font-style: italic;
+  }
+
+  /* mastery row */
+  .levels-big {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    background: var(--cream);
+    border-left: 5px solid var(--gold);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 12px;
+  }
+  .levels-big div {
+    text-align: center;
+    padding: 10px 4px;
+    border-right: 1px solid #E5DBBE;
+  }
+  .levels-big div:last-child { border-right: none; }
+  .levels-big b {
+    display: block;
+    color: var(--navy);
+    font-size: 18px;
+    font-weight: 800;
+  }
+  .levels-big span {
+    font-size: 12px;
+    color: var(--ink);
+    margin-top: 2px;
+    display: block;
+  }
+
+  /* ================= CARD 3: 8 BOSS BATTLES ================= */
+  .bosses-big {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    flex: 1;
+  }
+  .boss-big {
+    border-left: 5px solid var(--red);
+    padding: 7px 12px;
+    background: #FBE7E5;
+    border-radius: 0 3px 3px 0;
+    line-height: 1.25;
+  }
+  .boss-big .tag {
+    color: var(--red);
+    font-weight: 800;
+    font-size: 14px;
+  }
+  .boss-big .quote {
+    color: var(--ink);
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .boss-big .move {
+    color: var(--navy);
+    display: block;
+    font-style: italic;
+    font-size: 12.5px;
+    margin-top: 1px;
+  }
+
+  /* ================= CARD 4: L.A.S.T. + RULES + OATH ================= */
+  .last-big {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+    margin-bottom: 6px;
+  }
+  .last-big .beat {
+    background: var(--purple);
+    color: var(--paper);
+    text-align: center;
+    padding: 14px 6px 12px;
+    border-radius: 4px;
+    line-height: 1.15;
+  }
+  .last-big .beat .L {
+    color: var(--gold);
+    font-weight: 800;
+    font-size: 38px;
+    display: block;
+    line-height: 1;
+  }
+  .last-big .beat .word {
+    font-size: 13px;
+    font-weight: 800;
+    margin-top: 6px;
+    letter-spacing: 0.6px;
+    display: block;
+  }
+  .last-big .beat .hint {
+    font-size: 11px;
+    opacity: 0.92;
+    display: block;
+    line-height: 1.25;
+    margin-top: 4px;
+  }
+
+  ol.rules-big {
+    font-size: 13.5px;
+    padding-left: 22px;
+    line-height: 1.55;
+  }
+  ol.rules-big li { margin-bottom: 4px; }
+  ol.rules-big b { color: var(--navy); }
+
+  /* OATH BOX */
+  .oath {
+    background: var(--cream);
+    border-left: 5px solid var(--gold-deep);
+    padding: 12px 14px;
+    font-style: italic;
+    font-size: 13px;
+    line-height: 1.5;
+    border-radius: 0 3px 3px 0;
+    margin-top: auto;
+  }
+  .oath b {
+    font-style: normal;
+    color: var(--gold-deep);
+    letter-spacing: 2px;
+    font-weight: 800;
+    display: block;
+    margin-bottom: 4px;
+    font-size: 12px;
+  }
+
+  .foot {
+    text-align: center;
+    font-size: 10px;
+    color: #999;
+    margin-top: 10px;
+    letter-spacing: 2px;
+    font-weight: 700;
+  }
+
+  /* ================= PRINT ================= */
+  @media print {
+    body { background: white; padding: 0; }
+    .card-label { display: none; }
+    .card {
+      box-shadow: none;
+      margin: 0;
+      page-break-after: always;
+    }
+    @page {
+      size: 5in 7in;
+      margin: 0;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     CARD 1 — THE 8 STEPS (one card, 2x4 grid, BIG numbers)
+     ============================================================ -->
+<div class="card-label">CARD 1 OF 4 — THE 8 STEPS (FRONT, SHEET 1)</div>
+<div class="card">
+  <div class="head">
+    <div class="brand">HAB &middot; SALES OPERATING SYSTEM</div>
+    <div class="title">The 8 Steps</div>
+    <div class="subtitle">Run in order. Never skip. Never reverse.</div>
+  </div>
+
+  <div class="steps-big">
+    <div class="step-big"><span class="num">1</span><span class="text"><span class="label">RAPPORT</span><span class="sub">Make a friend</span></span></div>
+    <div class="step-big"><span class="num">2</span><span class="text"><span class="label">CREDIBILITY</span><span class="sub">Build authority</span></span></div>
+    <div class="step-big"><span class="num">3</span><span class="text"><span class="label">CUSTODY</span><span class="sub">Get the car</span></span></div>
+    <div class="step-big"><span class="num">4</span><span class="text"><span class="label">INSPECT</span><span class="sub">Full DVI w/ media</span></span></div>
+    <div class="step-big"><span class="num">5</span><span class="text"><span class="label">STRATEGIZE</span><span class="sub">Run the bases</span></span></div>
+    <div class="step-big"><span class="num">6</span><span class="text"><span class="label">PRESENT</span><span class="sub">10-step ISO</span></span></div>
+    <div class="step-big"><span class="num">7</span><span class="text"><span class="label">OBJECTIONS</span><span class="sub">Beat the 8 bosses</span></span></div>
+    <div class="step-big"><span class="num">8</span><span class="text"><span class="label">CLOSE</span><span class="sub">Direction-facing</span></span></div>
+  </div>
+
+  <div class="oath">
+    <b>THE HAB OATH</b>
+    Do what's <strong style="font-style:normal;color:var(--gold-deep);">RIGHT</strong>. Do what's <strong style="font-style:normal;color:var(--gold-deep);">FAIR</strong>. Do your <strong style="font-style:normal;color:var(--gold-deep);">BEST</strong>.
+  </div>
+
+  <div class="foot">CARD 1 OF 4 &middot; HAB SALES OS v2.0</div>
+</div>
+
+
+<!-- ============================================================
+     CARD 2 — TRUST TRIANGLE (BIG SVG + Mastery Levels)
+     ============================================================ -->
+<div class="card-label">CARD 2 OF 4 — TRUST TRIANGLE (BACK, SHEET 1)</div>
+<div class="card">
+  <div class="head">
+    <div class="brand">HAB &middot; THE INVISIBLE SCORECARD</div>
+    <div class="title">Trust Triangle</div>
+    <div class="subtitle">Trust = permission to advise.</div>
+  </div>
+
+  <div class="trust-big-wrap">
+    <svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="tg2" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#FAF4E4"/>
+          <stop offset="1" stop-color="#F4EBD4"/>
+        </linearGradient>
+      </defs>
+
+      <!-- TOP label -->
+      <text x="210" y="20" text-anchor="middle" font-family="Helvetica" font-size="11" letter-spacing="2.5" fill="#A78743" font-weight="800">TRAIT 1</text>
+      <text x="210" y="42" text-anchor="middle" font-family="Helvetica" font-size="20" font-weight="800" fill="#1B3358">COMPETENCE</text>
+
+      <!-- Triangle -->
+      <polygon points="210,70 50,240 370,240" fill="url(#tg2)" stroke="#C8A75C" stroke-width="3"/>
+
+      <!-- Top vertex circle -->
+      <circle cx="210" cy="70" r="20" fill="#1B3358" stroke="#C8A75C" stroke-width="2"/>
+      <text x="210" y="78" text-anchor="middle" font-family="Helvetica" font-size="22" font-weight="800" fill="#C8A75C">1</text>
+
+      <!-- Center text -->
+      <text x="210" y="172" text-anchor="middle" font-family="Helvetica" font-size="28" font-weight="800" fill="#1B3358" letter-spacing="5">TRUST</text>
+      <text x="210" y="198" text-anchor="middle" font-family="Helvetica" font-size="13" fill="#4A4A4A" font-style="italic">= permission to advise</text>
+
+      <!-- Bottom-left vertex -->
+      <circle cx="50" cy="240" r="20" fill="#1B3358" stroke="#C8A75C" stroke-width="2"/>
+      <text x="50" y="248" text-anchor="middle" font-family="Helvetica" font-size="22" font-weight="800" fill="#C8A75C">2</text>
+      <text x="50" y="278" text-anchor="middle" font-family="Helvetica" font-size="11" letter-spacing="2.5" fill="#A78743" font-weight="800">TRAIT 2</text>
+      <text x="50" y="296" text-anchor="middle" font-family="Helvetica" font-size="17" font-weight="800" fill="#1B3358">TRANSPARENT</text>
+
+      <!-- Bottom-right vertex -->
+      <circle cx="370" cy="240" r="20" fill="#1B3358" stroke="#C8A75C" stroke-width="2"/>
+      <text x="370" y="248" text-anchor="middle" font-family="Helvetica" font-size="22" font-weight="800" fill="#C8A75C">3</text>
+      <text x="370" y="278" text-anchor="middle" font-family="Helvetica" font-size="11" letter-spacing="2.5" fill="#A78743" font-weight="800">TRAIT 3</text>
+      <text x="370" y="296" text-anchor="middle" font-family="Helvetica" font-size="17" font-weight="800" fill="#1B3358">TRUSTWORTHY</text>
+    </svg>
+
+    <div class="trust-caption">
+      Show all three or the customer won't authorize. <em>No trust, no sale.</em>
+    </div>
+  </div>
+
+  <h3>5 Mastery Levels</h3>
+  <div class="levels-big">
+    <div><b>L1</b><span>Rookie</span></div>
+    <div><b>L2</b><span>Advisor</span></div>
+    <div><b>L3</b><span>Closer</span></div>
+    <div><b>L4</b><span>Pro</span></div>
+    <div><b>L5</b><span>Champion</span></div>
+  </div>
+
+  <div class="foot">CARD 2 OF 4 &middot; HAB SALES OS v2.0</div>
+</div>
+
+
+<!-- ============================================================
+     CARD 3 — 8 BOSS BATTLES (one per row, full width, big)
+     ============================================================ -->
+<div class="card-label">CARD 3 OF 4 — 8 BOSS BATTLES (FRONT, SHEET 2)</div>
+<div class="card">
+  <div class="head">
+    <div class="brand">HAB &middot; BATTLE REFERENCE</div>
+    <div class="title">The 8 Boss Battles</div>
+    <div class="subtitle">Objections are uncertainty wearing a costume.</div>
+  </div>
+
+  <div class="bosses-big">
+    <div class="boss-big">
+      <span class="tag">B1</span> &nbsp; <span class="quote">&ldquo;I'll just sell the car.&rdquo;</span>
+      <span class="move">Reframe vs. used-car cost + unknown history.</span>
+    </div>
+    <div class="boss-big">
+      <span class="tag">B2</span> &nbsp; <span class="quote">&ldquo;Price too high.&rdquo;</span>
+      <span class="move">&ldquo;We're not cheapest, intentionally.&rdquo; Anchor protection.</span>
+    </div>
+    <div class="boss-big">
+      <span class="tag">B3</span> &nbsp; <span class="quote">&ldquo;No money.&rdquo;</span>
+      <span class="move">= &ldquo;no money TODAY.&rdquo; Pivot to financing. Stay on the line.</span>
+    </div>
+    <div class="boss-big">
+      <span class="tag">B4</span> &nbsp; <span class="quote">&ldquo;Need to talk to my spouse.&rdquo;</span>
+      <span class="move">Three-way bypass. Get them on the call now.</span>
+    </div>
+    <div class="boss-big">
+      <span class="tag">B5</span> &nbsp; <span class="quote">&ldquo;I'll wait.&rdquo;</span>
+      <span class="move">Safety: name the risk. Maint: value reframe.</span>
+    </div>
+    <div class="boss-big">
+      <span class="tag">B6</span> &nbsp; <span class="quote">&ldquo;You're always selling.&rdquo;</span>
+      <span class="move">Pro Obligation frame. Fiduciary, not salesperson.</span>
+    </div>
+    <div class="boss-big">
+      <span class="tag">B7</span> &nbsp; <span class="quote">&ldquo;Need the car today.&rdquo;</span>
+      <span class="move">Solve transport FIRST. Then return to the repair.</span>
+    </div>
+    <div class="boss-big">
+      <span class="tag">B8</span> &nbsp; <span class="quote">&ldquo;Parts &amp; labor across the street?&rdquo;</span>
+      <span class="move">Refuse apples-to-apples. Sell the protection program.</span>
+    </div>
+  </div>
+
+  <div class="foot">CARD 3 OF 4 &middot; HAB SALES OS v2.0</div>
+</div>
+
+
+<!-- ============================================================
+     CARD 4 — L.A.S.T. + 5 RULES + OATH
+     ============================================================ -->
+<div class="card-label">CARD 4 OF 4 — RECOVERY (BACK, SHEET 2)</div>
+<div class="card">
+  <div class="head">
+    <div class="brand">HAB &middot; RECOVERY</div>
+    <div class="title">L.A.S.T. + The 5 Rules</div>
+    <div class="subtitle">When it goes sideways, run this.</div>
+  </div>
+
+  <h3>L.A.S.T. &mdash; The Recovery Combo</h3>
+  <div class="last-big">
+    <div class="beat"><span class="L">L</span><span class="word">LISTEN</span><span class="hint">silence, no defense</span></div>
+    <div class="beat"><span class="L">A</span><span class="word">ACKNOWLEDGE</span><span class="hint">emotion, no &ldquo;but&rdquo;</span></div>
+    <div class="beat"><span class="L">S</span><span class="word">SOLVE</span><span class="hint">specific, time-bound</span></div>
+    <div class="beat"><span class="L">T</span><span class="word">THANK</span><span class="hint">complaint = gift</span></div>
+  </div>
+
+  <h3>5 Universal Objection Rules</h3>
+  <ol class="rules-big">
+    <li><b>Never argue.</b> Win the argument, lose the customer.</li>
+    <li><b>Acknowledge first, always.</b> &ldquo;I completely understand.&rdquo;</li>
+    <li><b>Find the real concern.</b> Clarifying question, then respond.</li>
+    <li><b>Pivot to value or risk</b> &mdash; never to discount.</li>
+    <li><b>Re-ask for the close.</b> Every exchange ends moving forward.</li>
+  </ol>
+
+  <div class="oath" style="border-left-color: var(--purple);">
+    <b style="color: var(--purple);">FORBIDDEN WORDS</b>
+    &ldquo;policy&rdquo; &nbsp;&middot;&nbsp; &ldquo;but&rdquo; &nbsp;&middot;&nbsp; &ldquo;however&rdquo; &nbsp;&middot;&nbsp; &ldquo;although&rdquo;
+    <br>
+    <em style="font-size:12.5px;">Never discount before solving the real problem.</em>
+  </div>
+
+  <div class="foot">CARD 4 OF 4 &middot; HAB SALES OS v2.0</div>
+</div>
+
+</body>
+</html>

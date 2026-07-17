@@ -1,0 +1,1341 @@
+<!DOCTYPE html>
+<!--
+  HAB Coach's Book — The Manager's Operating Manual
+  Version: 2.0 · Last updated: 2026-07-16
+  Comprehensive standalone edition. Fully matches the HAB Sales Operating System Master
+  Curriculum v1.3 coaching layer: six principles, SBI, Five-Beat conversation, coaching rhythm,
+  KPI red-flag diagnosis, ride-along scorecard, mastery promotion checks, stalled-advisor recovery,
+  escalation, Champion development, calibration, 90-day rollout, plus the 13-week Coach
+  Certification cycle and the 26-week two-cycle overview. Print-ready US Letter.
+  HAB Enterprises 3 LLC · Do what's Right · Do what's Fair · Do Your Best.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HAB Coach's Book v2.0 — The Manager's Operating Manual</title>
+<style>
+:root{
+  --navy:#1B3358; --navy-deep:#112341; --navy-soft:#2C4A75;
+  --gold:#C8A75C; --gold-deep:#A78743;
+  --cream:#FAF4E4; --cream-deep:#F0E2BE;
+  --ink:#1A1A1A; --paper:#FFFFFF;
+  --red:#B7332A; --green:#2F7D3A; --purple:#5E3084; --blue:#2A5FA5;
+}
+*{box-sizing:border-box;}
+@page{ size:letter; margin:0.55in 0.6in; }
+html,body{margin:0;padding:0;}
+body{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;color:var(--ink);background:var(--paper);font-size:10.5pt;line-height:1.5;}
+.chapter{page-break-before:always;padding-top:6px;}
+h1,h2,h3,h4{color:var(--navy);line-height:1.2;margin:0 0 8px 0;}
+h2{font-size:21pt;font-weight:800;}
+h3{font-size:13.5pt;font-weight:700;margin-top:22px;border-bottom:2px solid var(--gold);padding-bottom:4px;}
+h4{font-size:11pt;font-weight:700;margin-top:14px;}
+p{margin:7px 0;}
+.eyebrow{display:inline-block;font-size:8pt;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:var(--gold-deep);margin-bottom:6px;}
+.ch-head{border-bottom:3px solid var(--navy);padding-bottom:10px;margin-bottom:14px;}
+.ch-head .mission{font-style:italic;color:var(--navy-soft);margin-top:4px;font-size:11pt;}
+.statbar{display:flex;gap:8px;margin:12px 0;}
+.stat{flex:1;background:var(--cream);border-top:3px solid var(--gold);padding:7px 9px;text-align:center;}
+.stat .k{font-size:7pt;font-weight:600;letter-spacing:2.5px;color:var(--navy-soft);text-transform:uppercase;}
+.stat .v{font-size:10.5pt;font-weight:800;color:var(--navy);margin-top:2px;}
+.ch-foot{margin-top:26px;border-top:1.5px solid var(--gold);padding-top:6px;display:flex;justify-content:space-between;font-size:8pt;color:var(--navy-soft);letter-spacing:1px;}
+.ch-foot .tag{letter-spacing:2px;font-weight:600;}
+.co{background:var(--cream);border-left:5px solid var(--gold);padding:10px 14px;margin:12px 0;page-break-inside:avoid;border-radius:0 4px 4px 0;}
+.co .lbl{display:block;font-size:7.5pt;font-weight:700;letter-spacing:5px;text-transform:uppercase;margin-bottom:5px;}
+.co.script{border-left-color:var(--blue);} .co.script .lbl{color:var(--blue);}
+.co.decoder{border-left-color:var(--purple);} .co.decoder .lbl{color:var(--purple);}
+.co.drill{border-left-color:var(--green);} .co.drill .lbl{color:var(--green);}
+.co.mastery{border-left-color:var(--gold-deep);background:#FDF6E0;} .co.mastery .lbl{color:var(--gold-deep);}
+.co.stop{border-left-color:var(--red);background:#FBEFEE;} .co.stop .lbl{color:var(--red);}
+.co.protip{border-left-color:#B9B2A0;background:#FCFAF3;} .co.protip .lbl{color:#8A8270;}
+.co.coach{background:var(--navy);border-left-color:var(--gold);color:#F3EFE2;} .co.coach .lbl{color:var(--gold);} .co.coach b{color:var(--gold);}
+.co.worked{border-left-color:#D9B93C;background:#FFF9E0;} .co.worked .lbl{color:#A78743;}
+.co p{margin:5px 0;}
+.co .who{font-weight:700;color:var(--navy);}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:9.3pt;page-break-inside:avoid;}
+th{background:var(--navy);color:#fff;text-align:left;padding:6px 8px;font-size:8.3pt;letter-spacing:1px;text-transform:uppercase;}
+td{border:1px solid #D8D2C0;padding:6px 8px;vertical-align:top;}
+tr:nth-child(even) td{background:#FBF8EF;}
+.pull{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:12.5pt;color:var(--navy);border-left:4px solid var(--gold);padding:6px 18px;margin:14px 8px;}
+ul.check{list-style:none;padding-left:4px;margin:6px 0;}
+ul.check li{padding-left:22px;position:relative;margin:5px 0;}
+ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep);font-size:11pt;}
+.kpis{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0;}
+.kpi{flex:1 1 30%;background:var(--cream);border-top:3px solid var(--navy);padding:8px 10px;page-break-inside:avoid;}
+.kpi .name{font-weight:700;color:var(--navy);font-size:9.5pt;}
+.kpi .target{font-size:15pt;font-weight:800;color:var(--gold-deep);margin:2px 0;}
+.kpi .note{font-size:8.5pt;color:#555;}
+.cover{page-break-after:always;background:linear-gradient(160deg,var(--navy-deep) 0%,var(--navy) 55%,var(--navy-soft) 100%);color:#fff;min-height:9.6in;padding:70px 60px;display:flex;flex-direction:column;border-radius:2px;}
+.cover .chip{font-size:9pt;letter-spacing:8px;color:var(--gold);font-weight:600;text-transform:uppercase;}
+.cover h1{color:#fff;font-size:38pt;font-weight:800;margin:26px 0 10px 0;line-height:1.1;}
+.cover .sub{font-size:15pt;color:var(--cream);font-weight:400;}
+.cover .for{margin-top:44px;background:rgba(250,244,228,0.08);border-left:4px solid var(--gold);padding:14px 18px;font-size:10.5pt;line-height:1.6;max-width:5.6in;}
+.cover .coverstats{display:flex;gap:26px;margin-top:44px;}
+.cover .coverstats div{text-align:center;}
+.cover .coverstats .n{font-size:26pt;font-weight:800;color:var(--gold);}
+.cover .coverstats .l{font-size:7.5pt;letter-spacing:3px;text-transform:uppercase;color:var(--cream);}
+.cover .foot{margin-top:auto;padding-top:40px;font-size:9pt;letter-spacing:3px;color:var(--gold);text-transform:uppercase;}
+.oathpage{page-break-after:always;text-align:center;padding:80px 50px;}
+.oathpage .oathbox{background:linear-gradient(170deg,var(--navy-deep),var(--navy));color:var(--cream);padding:56px 48px;border-radius:6px;border:2px solid var(--gold);}
+.oathpage h2{color:var(--gold);letter-spacing:6px;font-size:16pt;margin-bottom:26px;}
+.oathpage .line{font-family:Georgia,serif;font-size:13pt;font-style:italic;margin:12px 0;line-height:1.6;}
+.oathpage .tagline{margin-top:30px;font-family:Helvetica,Arial,sans-serif;font-style:normal;font-weight:700;color:var(--gold);letter-spacing:3px;font-size:11.5pt;}
+.sigrow{display:flex;gap:40px;margin-top:44px;justify-content:center;}
+.sigrow div{border-top:1.5px solid var(--gold);width:2.4in;padding-top:5px;font-size:8pt;letter-spacing:2px;color:var(--cream);text-transform:uppercase;}
+.toc{margin-top:8px;}
+.toc .row{display:flex;border-bottom:1px dotted #C9C1AA;padding:7px 2px;page-break-inside:avoid;}
+.toc .num{width:0.65in;font-weight:800;color:var(--gold-deep);}
+.toc .t{flex:1;}
+.toc .t b{color:var(--navy);}
+.toc .t .d{font-size:8.7pt;color:#666;}
+.fig{text-align:center;margin:14px 0;page-break-inside:avoid;}
+.fig .cap{font-size:8.5pt;color:var(--navy-soft);font-style:italic;margin-top:4px;}
+.small{font-size:8.7pt;color:#555;}
+.grid2{display:flex;gap:12px;} .grid2>div{flex:1;}
+.wk{border:1.5px solid var(--gold);border-radius:5px;margin:12px 0;page-break-inside:avoid;overflow:hidden;}
+.wk .wk-h{background:var(--navy);color:#fff;padding:7px 12px;font-weight:700;}
+.wk .wk-h .n{color:var(--gold);letter-spacing:2px;font-size:8pt;display:block;text-transform:uppercase;}
+.wk .wk-b{padding:8px 12px;}
+.wk .wk-b .sess{margin-bottom:6px;}
+.wk .wk-b .cur{font-size:8pt;letter-spacing:1px;color:var(--gold-deep);font-weight:700;text-transform:uppercase;}
+.wk ul{margin:5px 0 3px 0;padding-left:20px;font-size:9.2pt;}
+@media print{ .co,.kpi,table,.fig,.wk{page-break-inside:avoid;} }
+</style>
+</head>
+<body>
+
+<!-- ======================= COVER ======================= -->
+<div class="cover">
+  <div class="chip">HAB · Healthy Auto Business · Sales Operating System</div>
+  <h1>The Coach's Book</h1>
+  <div class="sub">The Manager's Operating Manual for the HAB Sales OS</div>
+  <div class="for">
+    <b>For:</b> Service Managers, Coaches, Owners, and anyone responsible for installing the HAB Sales OS,
+    running the weekly cadence, scoring ride-alongs, certifying advisors, and protecting the system from
+    operational drift.<br><br>
+    This is your installation manual, scoring guide, and conversation handbook — complete in one book,
+    including the full 13-week Coach Certification cycle that turns your best person into the shop's own coach.
+  </div>
+  <div class="coverstats">
+    <div><div class="n">6</div><div class="l">Coaching Principles</div></div>
+    <div><div class="n">5</div><div class="l">Beats per 1:1</div></div>
+    <div><div class="n">9</div><div class="l">KPIs</div></div>
+    <div><div class="n">13</div><div class="l">Coach Cycle Weeks</div></div>
+    <div><div class="n">26</div><div class="l">Weeks, Two Cycles</div></div>
+  </div>
+  <div class="foot">Version 2.0 · Confidential &amp; Proprietary<br><br>Do what's Right · Do what's Fair · Do Your Best</div>
+</div>
+
+<!-- ======================= COACH'S OATH ======================= -->
+<div class="oathpage">
+  <div class="oathbox">
+    <h2>THE COACH'S OATH</h2>
+    <div class="line">I will coach behavior, not identity.</div>
+    <div class="line">I will praise in public and correct in private.</div>
+    <div class="line">I will give one ask per session, not three.</div>
+    <div class="line">I will never coach a downstream symptom when an upstream metric is also red.</div>
+    <div class="line">I will promote on evidence, never on tenure.</div>
+    <div class="line">I will defend the rhythm like payroll.</div>
+    <div class="line">And I will measure my success not by what I do — but by what they become.</div>
+    <div class="tagline">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</div>
+    <div class="sigrow">
+      <div>Coach Signature</div>
+      <div>Date</div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================= TOC ======================= -->
+<div>
+  <span class="eyebrow">HAB Coach's Book v2.0</span>
+  <h2>Table of Contents</h2>
+  <div class="toc">
+    <div class="row"><div class="num">—</div><div class="t"><b>Preface — How to Use This Book</b><div class="d">Your position in the system, reading plan, what to keep within arm's reach</div></div></div>
+    <div class="row"><div class="num">Ch 1</div><div class="t"><b>The Coach's Role — Mindset Before Mechanics</b><div class="d">What a coach actually does, the six coaching principles, where coaching fails</div></div></div>
+    <div class="row"><div class="num">Ch 2</div><div class="t"><b>The System You're Coaching — Compressed Reference</b><div class="d">Core principle, 8 steps, Trust Triangle, Diamond, Dashboard, 10-step ISO, 8 Bosses, mastery ladder, 27 techniques</div></div></div>
+    <div class="row"><div class="num">Ch 3</div><div class="t"><b>SBI Feedback — The Only Format We Use</b><div class="d">Situation · Behavior · Impact, with worked examples for praise and correction</div></div></div>
+    <div class="row"><div class="num">Ch 4</div><div class="t"><b>The Five-Beat Coaching Conversation</b><div class="d">The 1:1 and hard-talk structure — open with the win, name the gap, ask don't tell, co-design, confirm</div></div></div>
+    <div class="row"><div class="num">Ch 5</div><div class="t"><b>The Daily / Weekly Rhythm — Defend It Like Payroll</b><div class="d">Standup, Take-Five drill, call audits, ride-along day, Friday 1:1s, scoreboard update</div></div></div>
+    <div class="row"><div class="num">Ch 6</div><div class="t"><b>The KPI Dashboard &amp; Red-Flag Diagnosis</b><div class="d">The 9 numbers, the red-flag map, upstream-first rule, red-flag behaviors</div></div></div>
+    <div class="row"><div class="num">Ch 7</div><div class="t"><b>Ride-Alongs &amp; the Scorecard</b><div class="d">Scoring all 8 steps 0–3, what to note, how the scorecard feeds Friday's 1:1</div></div></div>
+    <div class="row"><div class="num">Ch 8</div><div class="t"><b>Call Audits &amp; Drill Design</b><div class="d">One audit per advisor per day, and how to design a five-minute drill that isolates one behavior</div></div></div>
+    <div class="row"><div class="num">Ch 9</div><div class="t"><b>Roleplay Mastery — Playing the Customer</b><div class="d">Personas, holding the objection, the Boss Rush protocol, scoring against the script</div></div></div>
+    <div class="row"><div class="num">Ch 10</div><div class="t"><b>Mastery Levels &amp; Promotion Checks</b><div class="d">Evidence-based promotion bars for every level, Rookie → Champion</div></div></div>
+    <div class="row"><div class="num">Ch 11</div><div class="t"><b>The Stalled Advisor — Diagnose Before You Prescribe</b><div class="d">Knowledge / courage / system gaps, the difficult conversation, when to stop coaching and escalate</div></div></div>
+    <div class="row"><div class="num">Ch 12</div><div class="t"><b>Coaching Recovery — Auditing L.A.S.T.</b><div class="d">The 48-hour audit, the follow-up call, the banned word, recovery red flags</div></div></div>
+    <div class="row"><div class="num">Ch 13</div><div class="t"><b>Champion Development, Calibration &amp; Train-the-Trainer</b><div class="d">Building successors, psychological safety, calibration protocol, the backup-coach ladder</div></div></div>
+    <div class="row"><div class="num">Ch 14</div><div class="t"><b>The 90-Day Advisor Rollout</b><div class="d">Stabilize (1–30) → Master (31–60) → Cement (61–90), week-by-week, failure modes, Day-90 gate</div></div></div>
+    <div class="row"><div class="num">Ch 15</div><div class="t"><b>The 13-Week Coach Certification Cycle</b><div class="d">Months 4–6: turning the shop's best person into its coach — sessions, Take-Five rhythm, gates, certification</div></div></div>
+    <div class="row"><div class="num">Ch 16</div><div class="t"><b>The 26-Week Two-Cycle Overview</b><div class="d">Advisor cycle (weeks 1–13) + Coach cycle (weeks 14–26) on one map, with calendar mechanics</div></div></div>
+    <div class="row"><div class="num">App A</div><div class="t"><b>The Coach's Worksheets</b><div class="d">Ride-along scorecard, coach self-review, escalation list, the coach's own KPIs</div></div></div>
+  </div>
+</div>
+
+<!-- ======================= PREFACE ======================= -->
+<div class="chapter">
+  <div class="ch-head">
+    <span class="eyebrow">Preface</span>
+    <h2>How to Use This Book</h2>
+    <div class="mission">A great curriculum coached badly produces nothing. A modest curriculum coached well produces champions.</div>
+  </div>
+
+  <h3>Your Position in the System</h3>
+  <p>You are the single most important person in the HAB Sales OS. The curriculum can be the greatest in
+  the world — if you don't run the cadence, score the ride-alongs, deliver SBI feedback, and protect the
+  system from drift, it dies in a drawer. Your role is to convert a binder into behavior change, week after
+  week, advisor after advisor. The Advisor Book tells your team WHAT to do. This book tells you HOW to
+  install it, measure it, and keep it alive — without losing the advisor.</p>
+  <div class="pull">Coaching is the systematic reduction of the advisor's uncertainty — the same principle the advisor applies to the customer, applied one level up.</div>
+
+  <h3>Your Reading Plan</h3>
+  <ul>
+    <li><b>Week 0:</b> Read Chapters 1–4 cover-to-cover. Sign the Coach's Oath.</li>
+    <li><b>Week 1:</b> Begin Phase 1 of the 90-Day Plan (Chapter 14). Start running the rhythm in Chapter 5 immediately.</li>
+    <li><b>Ongoing:</b> Reference Chapter 6 whenever a KPI goes red, Chapter 7 before every ride-along, Chapter 11 when someone stalls. Re-read Chapters 3–4 quarterly to keep your own coaching sharp.</li>
+    <li><b>Months 4–6:</b> Run the 13-Week Coach Certification Cycle (Chapter 15) to build the shop's own coach so the system survives you.</li>
+  </ul>
+
+  <h3>What You Should Have Within Arm's Reach</h3>
+  <ul>
+    <li>This book — for coaching depth.</li>
+    <li>The Advisor Book v2.0 — so you can reference exactly what the advisors are learning, script by script.</li>
+    <li>The Pocket Card — on your boom board.</li>
+    <li>The Shop KPI Scoreboard — wall-mounted, color-coded, updated every Friday.</li>
+  </ul>
+  <p><i>The advisor controls behavior. You control whether they keep getting better at it.</i></p>
+
+  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Coach's Book v2.0</span></div>
+</div>
+
+<!-- ======================= CH 1 COACH'S ROLE ======================= -->
+<div class="chapter">
+  <div class="ch-head">
+    <span class="eyebrow">Chapter 1</span>
+    <h2>The Coach's Role — Mindset Before Mechanics</h2>
+    <div class="mission">The six principles that govern every coaching interaction. Quote them back to yourself before any hard conversation.</div>
+    <div class="statbar">
+      <div class="stat"><div class="k">Audience</div><div class="v">COACH / SM / OWNER</div></div>
+      <div class="stat"><div class="k">Primary Skill</div><div class="v">SBI FEEDBACK</div></div>
+      <div class="stat"><div class="k">Primary KPI</div><div class="v">ADVISOR Δ / QTR</div></div>
+      <div class="stat"><div class="k">Failure Mode</div><div class="v">VAGUE FEEDBACK</div></div>
+    </div>
+  </div>
+
+  <h3>What a Coach Actually Does</h3>
+  <p>A coach in this system is not a manager who happens to give feedback. A coach is a <b>designer of
+  behavior change</b>. Three things, every week, without fail:</p>
+  <ol>
+    <li><b>Observes</b> — rides along, audits calls, scores against the scorecards.</li>
+    <li><b>Reflects</b> — delivers SBI feedback (Situation · Behavior · Impact), one written note per advisor per workday.</li>
+    <li><b>Compounds</b> — holds the weekly cadence so improvement stacks week-over-week instead of resetting.</li>
+  </ol>
+
+  <h3>The Six Coaching Principles</h3>
+  <table>
+    <tr><th style="width:26%">Principle</th><th>What It Means in Practice</th></tr>
+    <tr><td><b>1 · Specific Beats Sincere</b></td><td>"You did a great job" is worthless. "On the Subaru call, you handed the photo across the counter while saying the Risk line — that's exactly the Media Confirmation move" is gold. Always name the observable behavior.</td></tr>
+    <tr><td><b>2 · One Thing At a Time</b></td><td>End every session with ONE behavior change. Three is zero. An advisor can consciously work on one new behavior per week — pick the highest-leverage one and park the rest.</td></tr>
+    <tr><td><b>3 · Behavior, Not Identity</b></td><td>"You skipped Risk on three of five PRS items today," not "you're not a closer." Identity-level criticism creates defensiveness; behavior-level criticism creates change.</td></tr>
+    <tr><td><b>4 · Praise In Public, Correct In Private</b></td><td>Public correction is humiliation, even when the words are kind. Public praise multiplies; public correction shuts the team down for a week. This is math, not soft policy.</td></tr>
+    <tr><td><b>5 · Coach the Process, Score the Outcome</b></td><td>Reward running the bases in order even when the customer doesn't authorize. The advisor controls behavior, not whether a specific customer says yes. Coach the inputs; score the outputs. Never reverse this.</td></tr>
+    <tr><td><b>6 · Coach the Rare Skill, Not the Easy One</b></td><td>If an advisor is already a 90% Rapport closer, don't keep drilling Rapport. Find the skill stuck at 30% — the listening, the silence, the no-kitchen-sink discipline. The rare skill is where the next level lives.</td></tr>
+  </table>
+
+  <h3>Where Coaching Fails (and How to Avoid It)</h3>
+  <table>
+    <tr><th>Failure Pattern</th><th>What's Happening</th><th>Fix</th></tr>
+    <tr><td>"I'm too busy to coach this week."</td><td>Operations ate the cadence. Install slows immediately.</td><td>Owner blocks the coach's morning calendar. Non-negotiable. Operational fires get covered by SAs.</td></tr>
+    <tr><td>"Great call, keep it up."</td><td>Vague feedback rewires nothing.</td><td>Every note in SBI format. If you can't name the Situation and the Behavior, you weren't observing.</td></tr>
+    <tr><td>Correcting three things in one 1:1.</td><td>The advisor leaves with zero.</td><td>One gap per session — the most coachable one.</td></tr>
+    <tr><td>Coaching the number instead of the step.</td><td>"Get your authorization rate up" is a wish, not a coaching move.</td><td>Use the red-flag map (Chapter 6): trace the number to the upstream step and drill that.</td></tr>
+    <tr><td>Promoting on a feeling.</td><td>Promotions become political; trust in the ladder erodes.</td><td>Evidence bars in Chapter 10. Show it, don't claim it.</td></tr>
+  </table>
+
+  <div class="co coach"><span class="lbl">🔷 Coach's Corner · The mirror</span>
+  Everything you're about to require of advisors — scripts, drills, mastery checks, self-audits — this
+  book requires of you. Your drills are ride-alongs. Your script is SBI. Your mastery check is the Coach
+  Certification in Chapter 15. Your scoreboard is the advisor team's quarterly level change. Model it.</div>
+
+  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Coach's Book v2.0</span></div>
+</div>
+
+<!-- ======================= CH 2 THE SYSTEM ======================= -->
+<div class="chapter">
+  <div class="ch-head">
+    <span class="eyebrow">Chapter 2</span>
+    <h2>The System You're Coaching — Compressed Reference</h2>
+    <div class="mission">You cannot coach what you cannot see. This chapter is the whole Advisor system on a few pages — the full depth lives in the Advisor Book v2.0.</div>
+  </div>
+
+  <h3>The Core Principle</h3>
+  <div class="pull">Sales is not persuasion. Sales is the systematic reduction of uncertainty.
+  We do not sell repairs. We manufacture certainty — and certainty buys repairs by itself.</div>
+  <p>The customer enters uncertain, fearful, or defensive; they leave educated, confident, and loyal. Every
+  step removes one specific uncertainty. When a step fails, the advisor didn't "lose the sale" — they
+  left an uncertainty in place. Your diagnosis always starts with: <b>which uncertainty survived?</b></p>
+
+  <h3>The 8 Steps and What Each Removes</h3>
+  <table>
+    <tr><th>#</th><th>Step</th><th>Uncertainty Removed</th><th>Coach Listens For</th></tr>
+    <tr><td>1</td><td>Establish Rapport</td><td>"Am I going to be sold or helped here?"</td><td>Smile in the voice, the pause, the relief line, name ×3, no price quoted.</td></tr>
+    <tr><td>2</td><td>Establish Credibility</td><td>"Are these people competent?"</td><td>Full 90-second tour, warranty unprompted, transport offered, no bragging.</td></tr>
+    <tr><td>3</td><td>Collect Data / Custody</td><td>"Do they understand my situation?"</td><td>Symptom translated to concern, boom board complete, East-West used, customer separated from vehicle.</td></tr>
+    <tr><td>4</td><td>Inspect &amp; Analyze</td><td>"Are they making this up?"</td><td>Full DVI, media on every Yellow/Red, walk-the-bay within 15 min, Green/Yellow/Red by the spec question.</td></tr>
+    <tr><td>5</td><td>Build &amp; Strategize</td><td>"What should I do, in what order?"</td><td>Diamond order locked before the call, PRS built for every Red, Good-Good-Bad planned, no kitchen-sink.</td></tr>
+    <tr><td>6</td><td>Present</td><td>"Why this, why now, what's it cost?"</td><td>10-step ISO, media confirmation, re-engagement every 60–90s, NO pause between Investment and Coverage.</td></tr>
+    <tr><td>7</td><td>Overcome Objections</td><td>The customer's remaining doubts</td><td>Listen first, never argue, never "but," the right Boss script, re-ask for the close.</td></tr>
+    <tr><td>8</td><td>Execute the Close</td><td>The decision moment</td><td>Assumptive / choice / direction-facing close; Home Plate run warm and complete.</td></tr>
+  </table>
+  <p><b>Module 9 — L.A.S.T. Recovery:</b> Listen → Acknowledge → Solve → Thank, in order, every time.
+  Banned word: "policy." 24-hour status-update window. The Service Recovery Paradox: a well-recovered
+  complaint customer becomes more loyal than one who never had a problem.</p>
+
+  <h3>The Trust Triangle</h3>
+  <p>Every customer silently grades the advisor on <b>Competence</b> ("do they know what they're doing?"),
+  <b>Transparency</b> ("are they hiding anything?"), and <b>Trustworthiness</b> ("would they do this for
+  family?"). Score all three → price becomes irrelevant. Lose any one → price becomes the only
+  conversation. When you hear a price objection, diagnose which leg broke — it's usually not price.</p>
+
+  <h3>The Baseball Diamond</h3>
+  <table>
+    <tr><th>Base</th><th>Play</th><th>Content</th></tr>
+    <tr><td><b>1st — ISOLATE</b></td><td>Sell the customer's original concern first.</td><td>The thing they came in for (or safety if no concern). Without 1st base, no customer cares what else we found.</td></tr>
+    <tr><td><b>2nd — EXPAND</b></td><td>Additional findings, separate call.</td><td>Red items from the DVI, in PRS order, most safety-critical first.</td></tr>
+    <tr><td><b>Short Stop — SAVE</b></td><td>Missed-sale re-open, fresh voice.</td><td>The "let me think about it" turn. Missed-Sale Recovered % lives here.</td></tr>
+    <tr><td><b>3rd — PROTECT</b></td><td>Maintenance, soft sell.</td><td>Yellow items: fluids by interval, alignment, etc. Real opt-out offered.</td></tr>
+    <tr><td><b>Home — REINFORCE</b></td><td>Final review + next visit.</td><td>Confirm the work, benefits, direction-facing close. Retention is built here.</td></tr>
+  </table>
+  <p class="small">Hang up between bases — encouraged. Slower per call, materially higher close rate. Kitchen-sinking is the #1 trust killer.</p>
+
+  <h3>The Vehicle Health Dashboard</h3>
+  <p>One question per DVI finding: <b>"Does it operate within manufacturer specifications?"</b>
+  GREEN — yes, in spec: notify healthy (primes Good-Good-Bad). YELLOW — yes, but flag: watch or schedule
+  maintenance; an offer, not an ask. RED — no, out of spec: full PRS, strategize the base, must address.
+  The rule is binary on the spec question, not on perceived severity — coach advisors who soften a Red
+  into a Yellow because they don't want to push. A broken stereo button and a broken brake pad are the same
+  rule; where they get <i>sold</i> is strategy (Chapter 5 of the Advisor Book).</p>
+
+  <h3>The 10-Step ISO Presentation</h3>
+  <p>1 Greeting + frame · 2 Recap concern (co-review) · 3 Media confirmation · 4 Health overview ·
+  5 Walk the green · 6 Walk the yellow · 7 Walk the red (PRS each) · 8 Investment · 9 Coverage ·
+  10 Direction question. <b>The structural rule: 8 and 9 are one beat, not two.</b> The pause between
+  Investment and Coverage is where deals die — score it as a critical gap on every ride-along.</p>
+
+  <h3>The 8 Boss Battles (catalog + coaching lever)</h3>
+  <table>
+    <tr><th>Boss</th><th>Objection</th><th>The Lever You're Coaching Toward</th></tr>
+    <tr><td>1</td><td>"I'm selling the car"</td><td>Reframe against the real alternative — cost-of-replacement math, not repair vs. $0.</td></tr>
+    <tr><td>2</td><td>"Price is too high"</td><td>Anti-Lowest-Price Brag. Never apologize for price, never disparage the competitor — raise your own bar.</td></tr>
+    <tr><td>3</td><td>"No money right now"</td><td>Money Reframe — "no money" means "not today"; pivot to financing, stay on the line for the approval.</td></tr>
+    <tr><td>4</td><td>"Talk to my spouse"</td><td>Three-Way Bypass — offer to deliver the PRS to the spouse directly so it isn't retold second-hand.</td></tr>
+    <tr><td>5</td><td>"I'll wait" / "just the safety stuff"</td><td>Clarify safety vs. maintenance. Agree, defer, and schedule the deferred items before they leave.</td></tr>
+    <tr><td>6</td><td>"You're always selling"</td><td>Pro Obligation Frame — from salesperson to fiduciary; the customer keeps control.</td></tr>
+    <tr><td>7</td><td>"I need my car today"</td><td>Solve logistics first (loaner/Uber/pickup), then return to the repair.</td></tr>
+    <tr><td>8</td><td>"Parts &amp; labor breakdown?"</td><td>Refuse the apples-to-apples frame — protection program, not parts and minutes.</td></tr>
+  </table>
+  <p class="small">Universal rules: never argue · acknowledge first · find the real concern · pivot to value or risk, never discount · re-ask for the close. Full battle scripts: Advisor Book Chapter 7.</p>
+
+  <h3>The Mastery Ladder</h3>
+  <p><b>1 Rookie</b> (reads scripts) → <b>2 Advisor</b> (runs scripts naturally, concern vs. symptom) →
+  <b>3 Closer</b> (runs the bases, PRS by heart, East-West) → <b>4 Pro</b> (defeats all 8 Bosses, re-opens
+  missed sales) → <b>5 Champion</b> (requested by name, trains others, owns culture). Advisor → Closer is
+  the hardest jump; Pro → Champion is the longest. Promotion bars: Chapter 10.</p>
+
+  <h3>The 27 Named Techniques (cheat sheet)</h3>
+  <table>
+    <tr><th style="width:20%">Phase</th><th>Techniques</th></tr>
+    <tr><td>Booking</td><td>East-West Scheduling · Concern vs. Symptom · The Relief Line · 90-Second Friendship Window</td></tr>
+    <tr><td>Trust</td><td>Invisible Scorecard · Trust Triangle · Co-Review · Media Confirmation</td></tr>
+    <tr><td>Presentation</td><td>Good-Good-Bad · PRS · Base Selling (Diamond) · Vehicle Health Dashboard · Anti-Lowest-Price Brag</td></tr>
+    <tr><td>Closes</td><td>Assumptive Close · Direction-Facing Close · Three-Way Bypass · Pro Obligation Frame · Money Reframe · Short Stop Re-Open · Momentum Funnel</td></tr>
+    <tr><td>Recovery</td><td>L.A.S.T. · Service Recovery Paradox · 24-Hour Recovery Window</td></tr>
+    <tr><td>Coaching</td><td>SBI Feedback · Five-Beat Coaching Conversation · Boss Rush · HAB Oath · Coach's Oath</td></tr>
+  </table>
+
+  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Coach's Book v2.0</span></div>
+</div>
+<!-- ======================= CH 3 SBI ======================= -->
+<div class="chapter">
+  <div class="ch-head">
+    <span class="eyebrow">Chapter 3</span>
+    <h2>SBI Feedback — The Only Format We Use</h2>
+    <div class="mission">Every coaching note, every 1:1, every ride-along debrief uses the same three-part sentence. Praise and correction alike.</div>
+  </div>
+
+  <h3>The SBI Sentence</h3>
+  <div class="pull">"On [Situation], you [Behavior], which [Impact]."</div>
+  <p>The sentence has three slots, in order. Skip any slot and the feedback collapses:</p>
+  <table>
+    <tr><th style="width:18%">Part</th><th style="width:28%">What Goes In the Slot</th><th>Example</th></tr>
+    <tr><td><b>1 · Situation</b></td><td>When and where — specific, recent, observed.</td><td>"On the 11am call with Mrs. Garcia…"</td></tr>
+    <tr><td><b>2 · Behavior</b></td><td>What they did or didn't do — observable, not interpreted.</td><td>"…you stated the price and then paused…"</td></tr>
+    <tr><td><b>3 · Impact</b></td><td>Why it mattered — the consequence in the room.</td><td>"…and she opened the price negotiation."</td></tr>
+  </table>
+
+  <h3>Worked SBI Sentences</h3>
+  <div class="co worked"><span class="lbl">🟨 Worked Examples · Correction and praise</span>
+  <p><b>Correction:</b> "On the Civic ABS call this morning, you paused after stating the investment, which
+  gave Maria room to bring up the price at her brother's shop."</p>
+  <p><b>Correction:</b> "On the F-150 cooling system PRS, you led with the photo of the leak instead of
+  leading with the risk, which is why she said 'so it just looks bad?' instead of authorizing."</p>
+  <p><b>Praise:</b> "On the Tahoe walk-in at 8am, you offered the tour without being asked, which is why the
+  DVI conversation didn't feel like a hard sell when we got there."</p>
+  <p><b>Praise:</b> "On the 11am call, you said the investment number and went immediately into the warranty
+  without pausing. The customer didn't flinch and authorized in the next breath — that's the Level-3
+  close I've been looking for."</p></div>
+
+  <h3>Vague vs. SBI</h3>
+  <table>
+    <tr><th>Type</th><th>Vague (don't do this)</th><th>SBI (do this)</th></tr>
+    <tr><td>Praise</td><td>"Great call!"</td><td>"On the 11am call (S), you went from investment straight into warranty with no pause (B). The customer authorized in the next breath (I)."</td></tr>
+    <tr><td>Correction</td><td>"You need to do better on objections."</td><td>"On the 2pm call with the spouse objection (S), you went straight to discounting instead of offering the three-way call (B). That sets a precedent that complaining gets discounts, and it killed our chance to talk to the actual decision-maker (I). Let's drill Boss 4 together this afternoon."</td></tr>
+  </table>
+
+  <div class="co drill"><span class="lbl">🟢 Drill · The SBI Rewrite</span>
+  <b>Setup:</b> collect five pieces of feedback you gave (or heard) this week. Rewrite each as a full
+  three-slot SBI sentence, out loud.<br>
+  <b>Score:</b> all three slots present? Behavior observable? Impact concrete?<br>
+  <b>Goal:</b> one written SBI note per advisor per workday, without exception. An audit that doesn't
+  produce an SBI note didn't happen.</div>
+
+  <div class="co protip"><span class="lbl">⚪ Pro Tip · SBI works in both directions</span>
+  Most coaches use structure only for correction and go vague on praise. Specific praise rewires faster
+  than generic praise — and it's what earns you the right to be specific when you correct.</div>
+
+  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Coach's Book v2.0</span></div>
+</div>
+
+<!-- ======================= CH 4 FIVE-BEAT ======================= -->
+<div class="chapter">
+  <div class="ch-head">
+    <span class="eyebrow">Chapter 4</span>
+    <h2>The Five-Beat Coaching Conversation</h2>
+    <div class="mission">For 1:1s and any hard talk. Run it in order — the structure is what keeps the relationship intact.</div>
+  </div>
+
+  <h3>The Five Beats</h3>
+  <table>
+    <tr><th>Beat</th><th>What</th><th>Sample Words</th><th>Time</th></tr>
+    <tr><td><b>1 · Open with the win</b></td><td>Specific, recent, observed. Sets the conversation as collaborative, not punitive. (Two minutes of human first — no agenda.)</td><td>"How's your week going?" then "On Tuesday's call you…"</td><td>2–4 min</td></tr>
+    <tr><td><b>2 · Name the gap (SBI)</b></td><td>One gap. The most coachable one. Specific Situation → Behavior → Impact.</td><td>"On the F-150 PRS, you skipped the Risk, which is why she deferred."</td><td>2 min</td></tr>
+    <tr><td><b>3 · Ask, don't tell</b></td><td>The advisor's answer reveals whether this is a knowledge gap, a courage gap, or a system gap. Coach the actual cause.</td><td>"What was happening when you skipped the Risk?" · "Walk me through how that call landed for you."</td><td>4 min</td></tr>
+    <tr><td><b>4 · Co-design the practice</b></td><td>The advisor proposes, the coach refines. Self-selected drills get done; assigned drills get resented.</td><td>"What drill would help? When are you going to do it?"</td><td>2 min</td></tr>
+    <tr><td><b>5 · Confirm the commitment</b></td><td>One sentence the advisor writes down. That sentence becomes Friday's check-in. Close with belief.</td><td>"Tomorrow I will lead with Risk on every red PRS item before showing the photo." · "You're one cycle away from Pro."</td><td>2 min</td></tr>
+  </table>
+  <p class="small">Twelve minutes total. It scales from a 5-minute hot debrief to a 30-minute quarterly check-in. The
+  order matters — especially beats 1 and 5.</p>
+
+  <div class="co protip"><span class="lbl">⚪ Pro Tip · Get the advisor's read before you give yours</span>
+  In beat 3, ALWAYS ask what they thought of the call before offering your view. They usually already know
+  what went wrong (so you're reinforcing self-coaching, not lecturing), and they hear correction from
+  themselves far better than from you. Coaching is mostly Socratic.</div>
+
+  <div class="co stop"><span class="lbl">🔴 Stop · One ask per session</span>
+  End every session with ONE behavior change. Three is zero. If you're tempted to add a second ask, write
+  it down for next week instead.</div>
+
+  <div class="co coach"><span class="lbl">🔷 Coach's Corner · When the conversation needs to be hard</span>
+  Run the same five beats even when it feels mechanical — the structure protects both people. The dedicated
+  hard-talk escalation (repeated non-improvement) has its own protocol in Chapter 11. Never run either
+  conversation in the bullpen.</div>
+
+  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Coach's Book v2.0</span></div>
+</div>
+
+<!-- ======================= CH 5 RHYTHM ======================= -->
+<div class="chapter">
+  <div class="ch-head">
+    <span class="eyebrow">Chapter 5</span>
+    <h2>The Daily / Weekly Rhythm — Defend It Like Payroll</h2>
+    <div class="mission">This is the ritual. Miss it one week and the install slows; miss it two weeks and the install dies.</div>
+  </div>
+
+  <h3>The Rhythm Table</h3>
+  <table>
+    <tr><th>When</th><th>Who</th><th>Ritual</th><th>Time</th></tr>
+    <tr><td>Mon AM</td><td>All hands</td><td>Standup. Review last week's KPIs. Name the week's focus metric. One team commitment. Recite the HAB Oath once a week here.</td><td>20 min</td></tr>
+    <tr><td>Daily AM</td><td>All hands</td><td>15-minute drill (Take-Five), phase-appropriate per the rollout plan — Phase 1: tour drill; Phase 2: Boss Rush; Phase 3: recovery drill.</td><td>15 min</td></tr>
+    <tr><td>Daily</td><td>Coach</td><td>Audit ≥1 call per advisor with one SBI note in writing.</td><td>30–45 min</td></tr>
+    <tr><td>Wed</td><td>Coach</td><td>One full ride-along per advisor on rotation, scorecard filled (Chapter 7).</td><td>45 min</td></tr>
+    <tr><td>End of shift</td><td>Advisor</td><td>Self-audit worksheet — one win, one gap, one ask.</td><td>2 min</td></tr>
+    <tr><td>Fri PM</td><td>Coach + advisor</td><td>15-minute 1:1 each, Five-Beat structure (Chapter 4).</td><td>15 min × team</td></tr>
+    <tr><td>Fri PM</td><td>Owner</td><td>Update the KPI scoreboard. Color-code Green / Yellow / Red. Post visibly in the shop.</td><td>15 min</td></tr>
+  </table>
+
+  <div class="co protip"><span class="lbl">⚪ Pro Tip · Coaching remotely</span>
+  If you coach a shop remotely, the equivalent of "audit a call" is reviewing the advisor's notes and the
+  customer outcome in the SMS log. The rhythm holds; only the medium changes.</div>
+
+  <div class="co stop"><span class="lbl">🔴 Stop · The rhythm is the system</span>
+  A great curriculum without a coaching cadence is just a binder. When operations tries to eat the cadence
+  — and it will — the Owner's single most important behavior is showing up to the Monday standup every
+  week and blocking the coach's morning calendar. Period.</div>
+
+  <div class="co coach"><span class="lbl">🔷 Coach's Corner · Energy is content</span>
+  A flat huddle teaches nothing. The daily Take-Five is 15 minutes of standing, voices up, reps out loud —
+  not an announcement meeting. If the team dreads it, shorten it and sharpen it; never cancel it.</div>
+
+  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Coach's Book v2.0</span></div>
+</div>
+
+<!-- ======================= CH 6 KPI DIAGNOSIS ======================= -->
+<div class="chapter">
+  <div class="ch-head">
+    <span class="eyebrow">Chapter 6</span>
+    <h2>The KPI Dashboard &amp; Red-Flag Diagnosis</h2>
+    <div class="mission">These are the only nine numbers an owner needs to know the system is working. Wall-mount them. Update weekly. Diagnose to the step.</div>
+  </div>
+
+  <h3>The Shop KPI Dashboard</h3>
+  <table>
+    <tr><th>KPI</th><th>Target</th><th>Maps To</th></tr>
+    <tr><td>Inquiry → Appointment %</td><td>≥ 65%</td><td>M1 (Rapport) — leak indicator</td></tr>
+    <tr><td>Tour Delivery %</td><td>100%</td><td>M2 (Credibility) — discipline</td></tr>
+    <tr><td>DVI w/ Media %</td><td>≥ 95%</td><td>M4 (Inspect) — quality gate</td></tr>
+    <tr><td>PRS Completeness</td><td>100%</td><td>M5/M6 (Strategize/Present) — discipline</td></tr>
+    <tr><td>1st-Objection Close %</td><td>≥ 60%</td><td>M7 (Objections) — mastery</td></tr>
+    <tr><td>Authorization Rate</td><td>≥ 75%</td><td>M8 (Close) — outcome</td></tr>
+    <tr><td>Missed-Sale Recovered %</td><td>≥ 25%</td><td>Short Stop — effectiveness</td></tr>
+    <tr><td>ARO</td><td>Shop benchmark</td><td>Per-advisor variance flag</td></tr>
+    <tr><td>5-Star Review %</td><td>≥ 80%</td><td>Trust outcome scoreboard</td></tr>
+  </table>
+
+  <div class="co stop"><span class="lbl">🔴 Stop · The upstream rule</span>
+  Never coach a downstream symptom when an upstream metric is also red. Fix the cause first. When two
+  metrics go red in the same week, look for the common root cause one step earlier in the funnel. When a
+  metric goes red two weeks in a row, the coaching focus for next week is automatically the upstream step.</div>
+
+  <h3>The Red-Flag Diagnosis Map</h3>
+  <table>
+    <tr><th>Red Metric</th><th>Coach This Step First</th><th>Specific Drill / Intervention</th></tr>
+    <tr><td>Inquiry → Appointment</td><td>M1 Rapport</td><td>The Relief Line + East-West, role-played 5×/day for one week.</td></tr>
+    <tr><td>Tour Delivery</td><td>M2 Credibility</td><td>Every advisor on the same tour script for one week; owner audits tour completion daily.</td></tr>
+    <tr><td>DVI w/ Media</td><td>M4 Inspect</td><td>Tech-side: no green-flag DVI accepted without at least one photo. <b>Coach the techs, not the advisors.</b></td></tr>
+    <tr><td>PRS Completeness</td><td>M5 Strategize</td><td>Daily PRS audit: every red item must have all three (Photo + Risk + Solution) by EOD or it doesn't go to M6.</td></tr>
+    <tr><td>1st-Objection Close</td><td>M7 Objections</td><td>Boss Rush — one Boss Battle drilled per morning, cycle all 8, then start over.</td></tr>
+    <tr><td>Authorization Rate</td><td>Diagnose upstream first</td><td>If PRS and 1st-Objection are green, drill M6 (no-pause Investment-Coverage). If those are also green, the close itself needs work.</td></tr>
+    <tr><td>Missed-Sale Recovered</td><td>M5 Short Stop</td><td>Every missed sale gets a scripted, logged callback within 24 hours. KPI updates weekly.</td></tr>
+    <tr><td>ARO</td><td>M5/M6 base order</td><td>Audit Diamond order in the strategize step — most low-ARO shops are 3rd-basing items they should be 2nd-basing.</td></tr>
+    <tr><td>5-Star Reviews</td><td>M9 + retention</td><td>Cumulative. Look at the recovery log first — unrecovered complaints kill review averages fastest.</td></tr>
+  </table>
+
+  <h3>Red-Flag Behaviors — Stop the Drift Early</h3>
+  <table>
+    <tr><th>Red Flag</th><th>What It Predicts</th><th>Intervention</th></tr>
+    <tr><td>Quoting prices on the phone.</td><td>Crashed appointment rate within 30 days.</td><td>Re-run Module 1 drills. Audit greeting calls.</td></tr>
+    <tr><td>Skipping the shop tour for first-timers.</td><td>Price objections triple; trust craters.</td><td>Module 2 ride-along. Score every tour line for one week.</td></tr>
+    <tr><td>DVI without media on Yellow/Red items.</td><td>Authorization rate drops 15–25%.</td><td>Module 4 audit. Tech-advisor walk-the-bay reset.</td></tr>
+    <tr><td>Skipping Risk in PRS.</td><td>"Let me think about it" becomes the standard reply.</td><td>Module 5/6 PRS drill. Score Risk on every finding.</td></tr>
+    <tr><td>Pausing after Investment.</td><td>Sticker shock takes over the room.</td><td>Module 6 muscle-memory drill: Investment + Coverage in one breath.</td></tr>
+    <tr><td>Arguing with objections.</td><td>The customer leaves and never returns.</td><td>Module 7 Boss Rush. Acknowledgment drill. Listen for "but."</td></tr>
+    <tr><td>Same-call kitchen-sinking.</td><td>Authorization rate halves.</td><td>Module 5 anti-kitchen-sink intervention: recorded call replayed with the team, re-scripted as base calls.</td></tr>
+  </table>
+
+  <div class="co drill"><span class="lbl">🟢 Drill · Ten-Second Diagnosis</span>
+  <b>Setup:</b> a partner names any red KPI at random.<br>
+  <b>Rep:</b> you name the upstream module and the prescribed drill within ten seconds.<br>
+  <b>Goal:</b> the full map from memory. This is a Coach Certification requirement (Chapter 15, Week 5).</div>
+
+  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Coach's Book v2.0</span></div>
+</div>
+<!-- ======================= CH 7 RIDE-ALONGS ======================= -->
+<div class="chapter">
+  <div class="ch-head">
+    <span class="eyebrow">Chapter 7</span>
+    <h2>Ride-Alongs &amp; the Scorecard</h2>
+    <div class="mission">Sit through a full customer interaction, score behavior — not vibes — and feed Friday's 1:1.</div>
+  </div>
+
+  <h3>The Scoring Scale</h3>
+  <p>For each of the 8 steps, score 0–3:</p>
+  <table>
+    <tr><th style="width:12%">Score</th><th>Meaning</th></tr>
+    <tr><td><b>0</b></td><td>Skipped.</td></tr>
+    <tr><td><b>1</b></td><td>Attempted, missing key elements.</td></tr>
+    <tr><td><b>2</b></td><td>Ran the step, minor gaps.</td></tr>
+    <tr><td><b>3</b></td><td>Textbook execution.</td></tr>
+  </table>
+  <p>Total possible: <b>24</b>. Most advisors hover at 14–18 in the first 60 days; Closers run 20+;
+  Champions run 22+.</p>
+
+  <h3>Also Note, Every Time</h3>
+  <ul>
+    <li>One specific win — for the Friday open (beat 1).</li>
+    <li>One specific gap — for the Friday SBI (beat 2).</li>
+    <li>Which Boss Battle (if any) appeared, and how it was handled.</li>
+    <li>Whether DVI media was used during the presentation.</li>
+    <li>Whether the Investment-Coverage transition had a pause. <b>Yes = critical gap.</b></li>
+  </ul>
+
+  <h3>The Printable Scorecard</h3>
+  <div class="co worked"><span class="lbl">🟨 Ride-Along Scorecard — one per advisor per week</span>
+  <ul class="check">
+    <li>Advisor: __________ · Date / shift: __________ · Workflow observed (RO #): __________</li>
+    <li>Step 1 — Rapport (0–3): ___ &nbsp; Step 2 — Credibility / tour: ___ &nbsp; Step 3 — Custody / concern doc: ___ &nbsp; Step 4 — DVI quality: ___</li>
+    <li>Step 5 — Base order / no kitchen-sink: ___ &nbsp; Step 6 — PRS + investment/coverage flow: ___ &nbsp; Step 7 — Objection counters: ___ &nbsp; Step 8 — Close: ___</li>
+    <li>TOTAL ( /24): ___</li>
+    <li>Boss Battle observed + how handled: ______________________________</li>
+    <li>DVI media used in presentation (Y/N): ___ · Investment-Coverage pause (Y/N — Y is critical): ___</li>
+    <li>Specific win (one behavior): ______________________________</li>
+    <li>Specific gap (one behavior, SBI-ready): ______________________________</li>
+    <li>Re-audit date: __________</li>
+  </ul></div>
+
+  <div class="co protip"><span class="lbl">⚪ Pro Tip · Score behavior, not vibes</span>
+  If you can't quote the moment that earned the score, you weren't observing closely enough. Every score
+  on the sheet should map to a sentence you could put in an SBI note.</div>
+
+  <div class="co coach"><span class="lbl">🔷 Coach's Corner · The scorecard is a feeder, not a filing exercise</span>
+  The scorecard exists to produce Friday's beat 1 (the win) and beat 2 (the gap). If a completed scorecard
+  never shows up in a 1:1, the ride-along was tourism.</div>
+
+  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Coach's Book v2.0</span></div>
+</div>
+
+<!-- ======================= CH 8 AUDITS & DRILL DESIGN ======================= -->
+<div class="chapter">
+  <div class="ch-head">
+    <span class="eyebrow">Chapter 8</span>
+    <h2>Call Audits &amp; Drill Design</h2>
+    <div class="mission">One audited call per advisor per day, one written SBI note each — and drills built from what the audits reveal.</div>
+  </div>
+
+  <h3>The Daily Audit Protocol</h3>
+  <ol>
+    <li>Pull at least one call (or workflow) per advisor per day. Rotate call types: inbound, presentation, recovery.</li>
+    <li>Score against the current focus metric for the week — not against everything at once.</li>
+    <li>Write one SBI note per advisor. An audit that doesn't produce an SBI note didn't happen.</li>
+    <li>Deliver praise notes same-day and publicly; deliver correction notes privately, ideally inside a Five-Beat micro-conversation.</li>
+  </ol>
+  <div class="co protip"><span class="lbl">⚪ Pro Tip · Read the RO like a cold tech</span>
+  For custody audits, read the documented concern as if you were the tech walking into the bay cold. If you
+  can't reproduce the customer's symptom from the writing alone, the intake broke down — rehearse it
+  aloud with the advisor. Don't scold. Rehearse.</div>
+
+  <h3>Drill Design — The Rules</h3>
+  <p>A good drill isolates ONE behavior, takes five minutes, and repeats daily until reflexive.</p>
+  <table>
+    <tr><th>Rule</th><th>Why</th></tr>
+    <tr><td><b>One behavior per drill.</b></td><td>A drill that practices three things practices none. "The pause" is a drill. "Better phone calls" is a wish.</td></tr>
+    <tr><td><b>Five minutes, standing, out loud.</b></td><td>Reps build instinct; instinct survives pressure. Sitting discussion builds opinions.</td></tr>
+    <tr><td><b>Scored, 1–3 or 1–10.</b></td><td>What gets scored gets repeated. Post the leaderboard for team drills.</td></tr>
+    <tr><td><b>Repeats daily until reflexive.</b></td><td>Then retire it and rotate the next behavior in. Don't hold a drill past mastery — boredom kills the huddle.</td></tr>
+    <tr><td><b>Sourced from this week's audits.</b></td><td>Listen for the one behavior that keeps repeating across advisors — that's tomorrow's drill.</td></tr>
+  </table>
+
+  <div class="co drill"><span class="lbl">🟢 Drill · Design One Now</span>
+  <b>Setup:</b> take this week's audit notes. Find the behavior that appeared most across advisors.<br>
+  <b>Rep:</b> design a five-minute drill for that one behavior — setup, rep, score, goal — and run it at
+  tomorrow's Take-Five.<br>
+  <b>Goal:</b> a full week of Take-Fives running on drills you designed from your own audit notes. (This is
+  Coach Certification Week 7.)</div>
+
+  <div class="co coach"><span class="lbl">🔷 Coach's Corner · The drill library you already own</span>
+  The Advisor Book ships with named drills for every module — 1.A Smile-Through-Voice, 1.B The Pause,
+  1.C Name ×3, 1.D Cold-Open, 1.E East-West Speed Reps, 2.A The 90-Second Tour, 5.A Base-Order Re-Script,
+  7.A Boss Rush, 9.A Silence Tolerance, 9.B BUT Buster, 9.C Specificity, 9.D Full Combo. Rotate them by
+  rollout phase before inventing new ones.</div>
+
+  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Coach's Book v2.0</span></div>
+</div>
+
+<!-- ======================= CH 9 ROLEPLAY ======================= -->
+<div class="chapter">
+  <div class="ch-head">
+    <span class="eyebrow">Chapter 9</span>
+    <h2>Roleplay Mastery — Playing the Customer</h2>
+    <div class="mission">The coach must be the shop's toughest customer. The drill is only as good as the customer you play.</div>
+  </div>
+
+  <h3>How to Hold an Objection</h3>
+  <ol>
+    <li><b>Pick a persona</b> — vehicle, concern, worry, budget. The richer the persona, the better the rep. (Personas: friendly first-timer, comparison shopper with another quote, hostile repeat customer, analytical spouse on a three-way, hot counter complainant.)</li>
+    <li><b>Hold the objection realistically.</b> Don't fold on the first counter — a real customer doesn't. Give ground only when the advisor runs the actual script move.</li>
+    <li><b>Escalate if the advisor argues.</b> Arguing is the failure mode; make it cost something in the roleplay, exactly like it costs on the floor.</li>
+    <li><b>Score the response against the script,</b> not against your mood. The script book is the rubric — acknowledge first? real concern found? value pivot, no discount? re-ask for the close?</li>
+  </ol>
+
+  <h3>The Boss Rush Protocol</h3>
+  <div class="co drill"><span class="lbl">🟢 Drill · The Boss Rush (team, 15 minutes, daily in Phase 2)</span>
+  <b>Setup:</b> all hands, standing. Coach throws random Boss lines from the eight; advisors counter in
+  turn, no notes.<br>
+  <b>Score:</b> 1–3 per counter. Leaderboard posted. Track who has cleared all eight in live calls within 30 days.<br>
+  <b>Escalation:</b> once the team clears the basic lines, add persona pressure — interruptions,
+  emotion, the second objection stacked behind the first.<br>
+  <b>Goal:</b> the fastest path to Level 4 (Pro) on the team.</div>
+
+  <div class="co protip"><span class="lbl">⚪ Pro Tip · Pick tomorrow's boss from today's calls</span>
+  Listen for the objection your advisors handle worst this week — that's tomorrow's boss. Drill the
+  weakness, not the favorite.</div>
+
+  <div class="co coach"><span class="lbl">🔷 Coach's Corner · Scoring a roleplay rep</span>
+  For each counter, mark four checkpoints: (1) acknowledged first, no "but"; (2) found the real concern
+  with a clarifying question; (3) pivoted to value or risk, never discount; (4) re-asked for the close.
+  4/4 = 3 points. 3/4 = 2. Anything less = 1, and the advisor re-runs it immediately — the re-run is
+  where the learning happens.</div>
+
+  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Coach's Book v2.0</span></div>
+</div>
+
+<!-- ======================= CH 10 PROMOTION ======================= -->
+<div class="chapter">
+  <div class="ch-head">
+    <span class="eyebrow">Chapter 10</span>
+    <h2>Mastery Levels &amp; Promotion Checks</h2>
+    <div class="mission">Promotion is demonstrated in live customer calls, never in roleplay alone. Show it, don't claim it.</div>
+  </div>
+
+  <h3>The Promotion Bars</h3>
+  <table>
+    <tr><th style="width:24%">Promotion</th><th>Evidence Required (live calls)</th></tr>
+    <tr><td><b>Rookie → Advisor</b></td><td>5 consecutive calls where the advisor identifies concern vs. symptom correctly without coach prompting, and runs M1–M2 without visibly reading the script.</td></tr>
+    <tr><td><b>Advisor → Closer</b></td><td>10 consecutive calls where Diamond order is correct, PRS is complete, and the East-West close is used. At least 3 must include a Boss Battle handled to authorization.</td></tr>
+    <tr><td><b>Closer → Pro</b></td><td>All 8 Boss Battles defeated in live calls within a single 30-day window. At least 2 Short Stop re-opens that converted to authorization. Library-certified (3 random worked examples from memory, all 10 beats, Risk explicit).</td></tr>
+    <tr><td><b>Pro → Champion</b></td><td>Customer requests by name (verifiable from intake logs). Trains another advisor through at least one mastery check. Owns a shop-floor coaching ritual — leads the daily drill or a Friday 1:1 for peers.</td></tr>
+  </table>
+
+  <div class="co coach"><span class="lbl">🔷 Coach's Corner · Don't promote on a feeling — and don't sit on evidence</span>
+  Promotion changes how the rest of the team behaves. Wait for the evidence — but promote when it's
+  earned, even if it's faster than expected. Sitting on earned evidence teaches the team the ladder is
+  political. The Champion promotion in particular is the moment a shop's culture inflects: make it visible
+  — lapel pin, name on the wall, public recognition.</div>
+
+  <div class="co protip"><span class="lbl">⚪ Pro Tip · Keep an evidence file per advisor</span>
+  Calls, numbers, scorecards. When you propose a promotion, you should be able to hand the owner the file
+  and let the evidence make the case. (Building one is Coach Certification Week 9.)</div>
+
+  <div class="co stop"><span class="lbl">🔴 Stop · Tenure is not evidence</span>
+  "He's been here two years" is not a promotion bar. Neither is "she's due." Evidence-based, always —
+  it's in both Oaths for a reason.</div>
+
+  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Coach's Book v2.0</span></div>
+</div>
+
+<!-- ======================= CH 11 STALLED ======================= -->
+<div class="chapter">
+  <div class="ch-head">
+    <span class="eyebrow">Chapter 11</span>
+    <h2>The Stalled Advisor — Diagnose Before You Prescribe</h2>
+    <div class="mission">Stuck at the same KPI for 3+ weeks? The cause is one of three gaps. Prescribe drills for a system problem and you lose the advisor to frustration.</div>
+  </div>
+
+  <h3>The Three Gaps</h3>
+  <table>
+    <tr><th style="width:20%">Gap</th><th>What It Looks Like</th><th>The Solution</th></tr>
+    <tr><td><b>1 · Knowledge gap</b></td><td>They don't know the script or technique. Asked to run it, they can't.</td><td>Re-teach the specific module. Drill it daily for 5 days. Mastery check.</td></tr>
+    <tr><td><b>2 · Courage gap</b></td><td>They know the script but won't use it — afraid of the customer's reaction.</td><td>Do 3 ride-alongs in a row where the coach demonstrates the move live. <b>Courage is borrowed before it's earned.</b></td></tr>
+    <tr><td><b>3 · System gap</b></td><td>Something in the shop prevents the skill: no DVI tablet, no quiet space for calls, scheduling chaos.</td><td>Fix the system. Coaching cannot overcome a broken system.</td></tr>
+  </table>
+  <p class="small">The diagnostic question is Five-Beat beat 3: "What was happening when you skipped the Risk?"
+  The advisor's answer tells you which gap you're looking at. Coach the actual cause.</p>
+
+  <h3>The Difficult Conversation — The Advisor Who Won't Improve</h3>
+  <p>Every coach will face the advisor who attends drills, nods along, and changes nothing. This is not a
+  coaching problem — it's a clarity problem. Run this conversation, in this order, exactly once:</p>
+  <ol>
+    <li><b>Name the pattern, not the person.</b> "Over the last three weeks, I've scored PRS Completeness at 60%, 55%, 50%. That's a trend, and it's gone the wrong direction."</li>
+    <li><b>Ask what's in the way.</b> "What's making this hard?" Then actually listen for 30 seconds without interrupting. Sometimes it's a personal issue, a tool problem, or a misunderstanding of the standard.</li>
+    <li><b>Make the standard explicit and observable.</b> "The standard for this role is 100% PRS on every finding. Here's what that looks like in practice."</li>
+    <li><b>Set a clear 30-day improvement gate.</b> "In 30 days, the metric needs to be Green for two consecutive weeks. Here's the support I'll provide: [specific drills, ride-alongs, 1:1 cadence]. Here's what happens if it doesn't: [next step]."</li>
+    <li><b>Document, then follow through.</b> Either they improve — praise the climb out — or the conversation you've already had becomes the foundation for the next step. Coaching that has no consequence isn't coaching — it's wishing.</li>
+  </ol>
+  <div class="co stop"><span class="lbl">🔴 Stop · Never in the bullpen</span>
+  Office with the door closed, or off-site if necessary. A public version of this conversation is
+  humiliating for the advisor, terrifying for the team, and destroys psychological safety across the whole shop.</div>
+
+  <h3>When to Stop Coaching and Escalate</h3>
+  <p>Some situations don't belong in coaching — they belong with the owner. Surface each with specific
+  SBI documentation. Do not let coaching become a way to avoid a hard staffing decision.</p>
+  <ul class="check">
+    <li>Advisor is consistently late or absent — attendance is not a coaching problem.</li>
+    <li>Advisor refuses to use the script in roleplay — not a knowledge or courage gap; a willingness gap.</li>
+    <li>Advisor is acting against the HAB Oath knowingly (e.g., quoting on the phone after being corrected three times).</li>
+    <li>Advisor is creating friction in the shop culture.</li>
+    <li>Three full 90-day cycles without progression past Rookie.</li>
+  </ul>
+
+  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Coach's Book v2.0</span></div>
+</div>
+
+<!-- ======================= CH 12 RECOVERY COACHING ======================= -->
+<div class="chapter">
+  <div class="ch-head">
+    <span class="eyebrow">Chapter 12</span>
+    <h2>Coaching Recovery — Auditing L.A.S.T.</h2>
+    <div class="mission">A complaint is a coaching rep. Audit every recovery, protect the banned-word rule, and convert recovered customers into reviews.</div>
+  </div>
+
+  <h3>What You're Auditing</h3>
+  <p>Score every recovery against the four beats, in order:</p>
+  <table>
+    <tr><th>Beat</th><th>Pass Looks Like</th><th>Fail Looks Like</th></tr>
+    <tr><td><b>L — Listen</b></td><td>30+ seconds uninterrupted. "Okay." "I understand." "Go ahead."</td><td>Interrupting to defend or explain.</td></tr>
+    <tr><td><b>A — Acknowledge</b></td><td>Emotion mirrored before facts. "And," never "but."</td><td>"I understand, BUT…" — the "but" deletes everything before it.</td></tr>
+    <tr><td><b>S — Solve</b></td><td>Specific, time-bound, owned: "I will call you personally by 3pm."</td><td>"We'll get back to you." Vague ages into a Yelp review.</td></tr>
+    <tr><td><b>T — Thank</b></td><td>Complaint reframed as a gift; loyalty locked in.</td><td>Skipped because "they're still upset."</td></tr>
+  </table>
+
+  <h3>The Coach's Recovery Protocol</h3>
+  <ol>
+    <li><b>48-hour audit.</b> Any time an advisor handles a complaint, walk through the interaction with them within 48 hours. Not punitive — coaching, using the Advisor Book's Recovery Mastery Check as the scorecard.</li>
+    <li><b>24-hour window enforcement.</b> Any unresolved complaint must have a status update to the customer within 24 hours, even if the resolution isn't ready. Silence past 24 hours doubles the loyalty damage.</li>
+    <li><b>The follow-up call.</b> You (or the manager) personally call the recovered customer 5–7 days after resolution. Two purposes: confirm satisfaction, and ask for a review. Well-recovered customers leave the best reviews the shop will ever get.</li>
+    <li><b>Praise the Listen, not the Solve.</b> Most coaches default to praising the fix. The Listen is the skill 95% of advisors get wrong — praising the rare skill rewires the team faster.</li>
+  </ol>
+
+  <div class="co stop"><span class="lbl">🔴 Stop · Listen for the word "policy" anywhere in the shop</span>
+  "Policy" is banned in recovery — it tells the customer the rule matters more than they do. When you hear
+  it, replace it on the spot with what we'll actually do: "the way we handle this is…" Also banned as
+  first moves: defending, explaining, and discounting before the problem is solved.</div>
+
+  <div class="co coach"><span class="lbl">🔷 Coach's Corner · The repeat-complaint red flag</span>
+  If the same advisor produces three or more complaints in 30 days tracing to the same root — communication,
+  follow-through, attention to detail — it's a behavior pattern, not bad luck. Address the underlying
+  skill directly, not just the L.A.S.T. execution. And check the recovery log first whenever the 5-Star
+  Review KPI drops: unrecovered complaints kill review averages fastest.</div>
+
+  <div class="co drill"><span class="lbl">🟢 Drill · Score a Real Recovery</span>
+  <b>Setup:</b> pull one real complaint from this week.<br>
+  <b>Rep:</b> score it against all four L.A.S.T. beats (1–5 each) with the advisor present, using the
+  after-action worksheet from the Advisor Book.<br>
+  <b>Goal:</b> every complaint in the shop scored within 48 hours, every recovered customer called within 7 days.</div>
+
+  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Coach's Book v2.0</span></div>
+</div>
+<!-- ======================= CH 13 CHAMPION DEV ======================= -->
+<div class="chapter">
+  <div class="ch-head">
+    <span class="eyebrow">Chapter 13</span>
+    <h2>Champion Development, Calibration &amp; Train-the-Trainer</h2>
+    <div class="mission">A coach who does everything forever is a bottleneck. Build successors, keep scoring honest, and make the system survive you.</div>
+  </div>
+
+  <h3>Champion Development — Teach It to Own It</h3>
+  <p>Champions run drills, lead huddles, and take mastery checks. Handing rituals to Champions is not
+  delegation for convenience — it's how culture becomes self-sustaining and how the Champion earns their
+  level. The rules:</p>
+  <ul>
+    <li><b>Assign one ritual at a time,</b> permanently. "You own Tuesday's Take-Five from now on" beats "help me with drills."</li>
+    <li><b>Coach the Champion, not the room.</b> When a Champion runs the drill, your job is to coach the Champion's coaching — praise in public, correct in private, SBI format.</li>
+    <li><b>Shout out Champion moments publicly.</b> Which Champion moment deserved a public shout-out this week? If you can't answer, you're under-watching your best people.</li>
+  </ul>
+
+  <h3>Psychological Safety — The Coaching Substrate</h3>
+  <p>Advisors will not surface mistakes, ask for help, or try new behaviors if they fear being shamed.
+  Your most invisible job is maintaining the conditions under which people are willing to be imperfect.</p>
+  <table>
+    <tr><th>Builds Safety</th><th>Destroys Safety</th></tr>
+    <tr><td>Coach admits their own past mistakes openly.</td><td>Coach talks about other advisors' mistakes by name.</td></tr>
+    <tr><td>Correction always in private, paired with belief.</td><td>Correction in the bullpen for the team to overhear.</td></tr>
+    <tr><td>"What were you trying to do?" before "here's what I saw."</td><td>"Why did you…" — puts the advisor on defense.</td></tr>
+    <tr><td>Praise the experiment, even when it failed.</td><td>Punish every miss equally regardless of intent.</td></tr>
+    <tr><td>One coachable thing per 1:1. Compounding.</td><td>Dump every backlog item into one conversation.</td></tr>
+  </table>
+
+  <h3>Calibration — Making "Mastery" Mean the Same Thing Across Coaches</h3>
+  <p>Two coaches grading the same call 4/5 vs. 2/5 means there is no shared standard — which means
+  promotions feel arbitrary, which means trust in the system erodes. Run calibration monthly.</p>
+  <div class="co drill"><span class="lbl">🟢 Drill · The Monthly Calibration Session</span>
+  <b>Setup:</b> pick three recorded calls representing a range — one great, one middle, one weak. All
+  coaches score independently using the Ride-Along Scorecard.<br>
+  <b>Reveal:</b> scores read aloud. Where the spread is more than 1 point, discuss the specific moment that
+  drove the variance. Agree on a shared rubric.<br>
+  <b>Goal:</b> within three months, inter-coach variance below 0.5 points. That's when promotions become trustworthy.</div>
+
+  <h3>Train-the-Trainer — The Backup-Coach Ladder</h3>
+  <p>The single biggest risk to the system at any shop is losing the coach — promotion, operations,
+  departure. Begin developing a second coach inside rollout Phase 3. Inside the first year, every shop
+  should have a backup coach who can run the full cadence solo for two weeks.</p>
+  <table>
+    <tr><th>Stage</th><th>Backup Coach Does</th><th>Lead Coach Does</th></tr>
+    <tr><td>Month 1</td><td>Shadows every drill, ride-along, and 1:1.</td><td>Runs everything. Explains the "why" after each session.</td></tr>
+    <tr><td>Month 2</td><td>Co-runs the daily drill. Co-scores ride-alongs. Weekly calibration.</td><td>Hands off drill leadership. Audits the scoring.</td></tr>
+    <tr><td>Month 3</td><td>Owns 50% of 1:1s. Owns the daily drill solo.</td><td>Owns the other 50%. Reviews the backup's coaching notes.</td></tr>
+    <tr><td>Month 4+</td><td>Runs solo for one full week (lead is "away").</td><td>Reviews KPIs at week's end. Course-corrects if needed.</td></tr>
+  </table>
+  <p class="small">The formal version of this ladder — for turning a shop's best person into its certified coach —
+  is the 13-Week Coach Certification Cycle in Chapter 15.</p>
+
+  <h3>The Coach's Own KPIs</h3>
+  <div class="kpis">
+    <div class="kpi"><div class="name">Avg Advisor Level Change / Quarter</div><div class="target">≥ 0.5</div><div class="note">Across the whole team, average mastery level rises at least half a level per quarter.</div></div>
+    <div class="kpi"><div class="name">Coaching Notes Delivered / Week</div><div class="target">5 × advisors</div><div class="note">One SBI note per advisor per workday. If this drops, everything downstream drops.</div></div>
+    <div class="kpi"><div class="name">Calibration Variance</div><div class="target">&lt; 0.5 pts</div><div class="note">If multi-coach: agreement on scored calls within half a point on the scale.</div></div>
+  </div>
+
+  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Coach's Book v2.0</span></div>
+</div>
+
+<!-- ======================= CH 14 90-DAY ROLLOUT ======================= -->
+<div class="chapter">
+  <div class="ch-head">
+    <span class="eyebrow">Chapter 14 · The Owner's Runbook</span>
+    <h2>The 90-Day Advisor Rollout</h2>
+    <div class="mission">Mission: Turn a shop with no system into a shop running the full HAB Sales OS in 90 days — measurably, repeatably, without burning the team out.</div>
+    <div class="statbar">
+      <div class="stat"><div class="k">Duration</div><div class="v">90 DAYS</div></div>
+      <div class="stat"><div class="k">Phases</div><div class="v">3 × 30 DAYS</div></div>
+      <div class="stat"><div class="k">Exit Gate</div><div class="v">EVERY ADVISOR L4+ TRACK</div></div>
+      <div class="stat"><div class="k">Failure Mode</div><div class="v">SKIPPING WEEK 1</div></div>
+    </div>
+  </div>
+
+  <h3>The Three Phases — Why This Order Wins</h3>
+  <p>Most shops that try to install a sales system fail at the same place: everything at once, the team
+  overwhelmed inside two weeks, the binder in a drawer. This plan is sequenced to avoid that — each phase
+  has a single dominant goal, and the next phase doesn't begin until the current one is measurably won.</p>
+  <table>
+    <tr><th>Phase 1 · Days 1–30 · STABILIZE</th><th>Phase 2 · Days 31–60 · MASTER</th><th>Phase 3 · Days 61–90 · CEMENT</th></tr>
+    <tr><td>Foundation + M1 + M2. Stop the bleeding. Rapport &amp; Credibility live.</td><td>M3–M8. Run every base. DVI, PRS, Bosses, Close.</td><td>M9 + culture + compounding. Recovery, certifications, scoreboard, first Champion.</td></tr>
+  </table>
+
+  <h3>Roles — Who Owns What</h3>
+  <p>If everyone owns the rollout, no one owns the rollout. Assign these three roles by name on Day 1 and
+  post them on the wall. The Owner can wear two hats if necessary, but the Coach role cannot be skipped —
+  this is where most installs die.</p>
+  <table>
+    <tr><th>Role</th><th>Owns</th><th>Daily Time</th><th>Single Most Important Behavior</th></tr>
+    <tr><td><b>Owner / GM</b></td><td>The scoreboard. Removes blockers. Defends the cadence from operational chaos.</td><td>15–30 min</td><td>Show up to the Monday standup every week. Period.</td></tr>
+    <tr><td><b>Coach / SM</b></td><td>The drills. The ride-alongs. The 1:1s. Calibration of mastery checks.</td><td>1–2 hours</td><td>Audit at least one call per advisor per day. No skips.</td></tr>
+    <tr><td><b>Advisor</b></td><td>The reps. The self-audit worksheet. The mastery gate behaviors.</td><td>20 min + reps in calls</td><td>Fill out the self-audit worksheet every shift. Every shift.</td></tr>
+  </table>
+
+  <h3>Phase 1 · Days 1–30 — STABILIZE</h3>
+  <p><b>Dominant goal:</b> stop the most expensive leaks before installing anything else. In 95% of shops
+  the two biggest leaks are Rapport (poorly answered phones, weak greetings) and Credibility (no shop tour,
+  no warranty discipline). Fix these two and revenue moves before you've taught a single PRS.</p>
+  <table>
+    <tr><th>Week</th><th>Curriculum Focus</th><th>This Week's Drills</th><th>KPI Gate to Advance</th></tr>
+    <tr><td>1</td><td>Foundation chapter, read aloud as a team. Sign the HAB Oath.</td><td>Module Key walkthrough. Trust Triangle whiteboard exercise. Greet-to-tour baseline measurement.</td><td>Baseline KPIs documented. All advisors signed the Oath. Roles posted on the wall.</td></tr>
+    <tr><td>2</td><td>Module 1 (Rapport) — deep.</td><td>Smile-Through-Voice (1.A), The Pause (1.B), Name ×3 (1.C). Daily.</td><td>2-Ring Compliance ≥ 95%. Greet-to-Tour % improving.</td></tr>
+    <tr><td>3</td><td>Module 2 (Credibility) — deep.</td><td>The 90-Second Tour drill. Coach walks the tour with every advisor at least once.</td><td>Tour Delivery = 100%. Tour → DVI Consent ≥ 90%.</td></tr>
+    <tr><td>4</td><td>Mastery certification for M1 + M2.</td><td>Boss Battle preview (Bosses 1 &amp; 2 only). Mastery scorecard signed by Coach.</td><td>All advisors certified Level 2. Phase-1 KPIs all Green.</td></tr>
+  </table>
+  <div class="co stop"><span class="lbl">🔴 Stop · Do NOT advance to Phase 2 until every Phase-1 KPI is Green for two consecutive weeks</span>
+  The single most common failure of this rollout is sprinting through Phase 1 to "get to the good stuff."
+  There is no good stuff if Rapport and Credibility aren't locked. They are the gate. If a gate fails, the
+  answer is always "go back and master the earlier step." Never advance on hope.</div>
+
+  <h3>Phase 2 · Days 31–60 — MASTER</h3>
+  <p><b>Dominant goal:</b> install the technical sales mechanics — custody, inspection, strategy,
+  presentation, objections, close. By the end of Phase 2, every advisor can run a full workflow
+  unsupervised and hit the structural mastery checks.</p>
+  <table>
+    <tr><th>Week</th><th>Curriculum Focus</th><th>This Week's Drills</th><th>KPI Gate to Advance</th></tr>
+    <tr><td>5</td><td>Module 3 (Custody) + Module 4 (Inspect &amp; Analyze).</td><td>Concern vs. Symptom translation drills. DVI media audit (coach reviews 2/advisor/day).</td><td>Inquiry-to-RO ≥ 70%. DVI Completion = 100%. DVI w/ Media ≥ 95%.</td></tr>
+    <tr><td>6</td><td>Module 5 (Build &amp; Strategize) — the Diamond.</td><td>Base-order drill on every call. Anti-kitchen-sink intervention.</td><td>Base-Order Compliance ≥ 90%. Same-Call Mixing ≤ 5%.</td></tr>
+    <tr><td>7</td><td>Module 6 (Present) + the water-pump worked example.</td><td>PRS-on-every-finding drill. Investment-then-Coverage no-pause drill.</td><td>Present → Auth ≥ 65%. PRS Completeness = 100%.</td></tr>
+    <tr><td>8</td><td>Module 7 (Objections) + Module 8 (Close).</td><td>Daily Boss Rush. Direction-Facing close drilled into muscle memory.</td><td>1st-Objection Close ≥ 55%. Authorization Rate ≥ 70%. All 8 Bosses defeated in live calls.</td></tr>
+  </table>
+  <div class="co protip"><span class="lbl">⚪ Pro Tip · Run the Boss Rush every single morning of Phase 2</span>
+  15 minutes, all hands, standing. Coach throws random Boss lines, advisors counter in order, scored 1–3,
+  leaderboard tracked. By Week 8 the team will have heard every Boss 40+ times in drill and will counter in
+  their sleep. The single highest-leverage Phase-2 ritual.</div>
+
+  <h3>Phase 3 · Days 61–90 — CEMENT</h3>
+  <p><b>Dominant goal:</b> turn the new behaviors into culture. Install L.A.S.T. recovery. Promote your
+  first Champion. Make the system self-sustaining so it survives a coach being out for a week or an owner
+  pulled into operations.</p>
+  <table>
+    <tr><th>Week</th><th>Curriculum Focus</th><th>This Week's Drills</th><th>KPI Gate to Advance</th></tr>
+    <tr><td>9</td><td>Module 9 (L.A.S.T. Recovery) — deep.</td><td>Silence Tolerance (9.A), BUT Buster (9.B). Coach pulls every recent complaint and runs it through the Mastery Check together.</td><td>Time-to-Acknowledge ≤ 1 hr on the next 5 complaints. No use of the word "policy."</td></tr>
+    <tr><td>10</td><td>Full-workflow integration. Live ride-alongs against the complete 8-step scorecard.</td><td>Each advisor gets one full ride-along. Coaching note delivered same day.</td><td>Every advisor scoring 2+/3 on all 8 steps. Authorization Rate ≥ 75%.</td></tr>
+    <tr><td>11</td><td>Mastery certification — Level 4 (Pro) for everyone who's ready.</td><td>Boss Rush final exam. Recovery scenario final exam. Owner signs Level-4 certificates.</td><td>≥ 50% of advisors at Level 4. Top advisor a Level-5 candidate.</td></tr>
+    <tr><td>12–13</td><td>Culture cementing. Promote the first Champion. All-team retrospective.</td><td>Champion gets visible recognition (lapel pin, name on the wall). Retrospective: what to keep, what to change.</td><td>Day-90 KPI snapshot beats the Day-1 baseline on every metric. The rhythm has run unbroken for 12 weeks.</td></tr>
+  </table>
+
+  <h3>Phase-Specific Failure Modes &amp; Course-Corrections</h3>
+  <table>
+    <tr><th>Phase</th><th>What Goes Wrong</th><th>Early Signal</th><th>Course-Correction</th></tr>
+    <tr><td>1</td><td>"We're too busy for drills."</td><td>Drills skipped 2+ days in week 2.</td><td>Owner attends the drill in person. Public expectation reset. Drill becomes non-negotiable.</td></tr>
+    <tr><td>1</td><td>Advisors quoting prices on the phone again.</td><td>Inquiry-to-Appointment dropping.</td><td>Pull recordings. Replay together. Re-run Drill 1.D.</td></tr>
+    <tr><td>2</td><td>DVIs missing media.</td><td>DVI w/ Media below 90%.</td><td>Coach blocks the call until media is added. One week of friction = behavior change.</td></tr>
+    <tr><td>2</td><td>Kitchen-sinking on calls.</td><td>Same-call mixing &gt; 10%.</td><td>Anti-kitchen-sink intervention. Recorded call replayed with the team.</td></tr>
+    <tr><td>2</td><td>Arguing with objections.</td><td>1st-Objection Close stalled below 40%.</td><td>Daily Boss Rush. Acknowledgment drill. Listen for "but."</td></tr>
+    <tr><td>3</td><td>Defending instead of Listening on recoveries.</td><td>Time-to-Acknowledge slipping past 2 hours.</td><td>Drill 9.A. Coach personally takes the next complaint as a live demo.</td></tr>
+    <tr><td>All</td><td>Coach pulled into operations, skips audits.</td><td>Coaching notes below 1/advisor/day.</td><td>Owner blocks the coach's morning calendar. Non-negotiable. Operational fires covered by SAs.</td></tr>
+  </table>
+
+  <h3>Day-90 Graduation Criteria</h3>
+  <div class="co mastery"><span class="lbl">🟡 Mastery Check · Day-90 Graduation Checklist</span>
+  <ul class="check">
+    <li>Every advisor at Level 2 minimum; at least half at Level 4 (Pro).</li>
+    <li>At least one advisor on track for Level 5 (Champion) within 30 days.</li>
+    <li>All 9 KPIs beat their Day-1 baseline; at least 6 of 9 are Green.</li>
+    <li>Daily drill, weekly standup, weekly 1:1s, and weekly ride-alongs have run unbroken for 12 weeks.</li>
+    <li>Every advisor can deliver the shop tour, the PRS framework, and the L.A.S.T. recovery from memory.</li>
+    <li>The Coach can name, for each advisor, exactly which step (1–8) is their next growth area.</li>
+    <li>The HAB Oath is recited weekly, posted visibly, signed by every advisor.</li>
+    <li>One complaint has been recovered well enough to produce a 5-star review.</li>
+  </ul>
+  <b>All 8 true → the shop is operating on the HAB Sales OS. If any are not true, add one more 30-day cycle
+  on the specific gap and re-check on Day 120.</b></div>
+
+  <div class="co coach"><span class="lbl">🔷 Coach's Corner · After Day 90 — the compounding cycle</span>
+  Day 90 is not the finish line; it's the moment the system becomes self-sustaining. Shift from
+  rollout-mode to compounding-mode: every new hire runs a 30-day compressed version of this same curriculum
+  (Foundation + M1–M2 in week 1, M3–M8 in week 2, mastery checks in week 3, full live workflows in week 4).
+  Every existing advisor re-certifies one full module per quarter to prevent drift. And the shop's best
+  person enters the Coach Certification cycle — Chapter 15.</div>
+
+  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Coach's Book v2.0</span></div>
+</div>
+<!-- ======================= CH 15 COACH CYCLE ======================= -->
+<div class="chapter">
+  <div class="ch-head">
+    <span class="eyebrow">Chapter 15 · Months 4–6</span>
+    <h2>The 13-Week Coach Certification Cycle</h2>
+    <div class="mission">After a shop completes the 13-week Advisor cycle (Modules 1–9), this cycle turns their best person — owner or Champion — into the shop's own coach, so HAB can step back.</div>
+    <div class="statbar">
+      <div class="stat"><div class="k">Duration</div><div class="v">13 WEEKS</div></div>
+      <div class="stat"><div class="k">Gates</div><div class="v">WK 5 · WK 9 · WK 13</div></div>
+      <div class="stat"><div class="k">Trainee</div><div class="v">OWNER OR CHAMPION</div></div>
+      <div class="stat"><div class="k">Exit</div><div class="v">CERTIFIED COACH</div></div>
+    </div>
+  </div>
+
+  <h3>Calendar Mechanics (mirrors the Advisor cycle)</h3>
+  <ul>
+    <li><b>Take-Five (Coach's Edition):</b> Mon–Fri, 8:00–8:15 AM shop-local time. Set up as a recurring
+    calendar event titled <i>[SHOP NAME] Take-Five (Coach) —
+    &lt;week theme&gt;</i>, with the shop team invited. Weekly rhythm: <b>Mon = Scoreboard · Tue = Listen ·
+    Wed = Drill · Thu = Bring · Fri = Win &amp; Miss.</b></li>
+    <li><b>Weekly 1:1 Session:</b> the shop's booked Tue or Thu one-hour slot. Titled <i>[SHOP NAME]
+    Session &lt;1|2&gt; — Coach Week &lt;n&gt;: &lt;theme&gt;</i>, with a video-call link attached
+    and the shop team invited. Footer line:
+    <i>Curriculum: Coach's Book - &lt;section&gt;</i>.</li>
+    <li>The coach-in-training progressively takes over the shop's own Take-Five huddles; your HAB coach's sessions
+    shift from teaching advisors to teaching the coach.</li>
+    <li><b>Gates:</b> Phase 1 gate (Week 5), Phase 2 gate (Week 9), Certification (Week 13). Promotion is
+    evidence-based, never tenure-based. The cycle instantiates per shop from the Monday after Advisor Week 13.</li>
+  </ul>
+
+  <div class="wk"><div class="wk-h"><span class="n">Week 1</span>The Coach's Role: coach the process, score the outcome</div>
+    <div class="wk-b">
+      <div class="sess"><b>Session:</b> Re-anchor: sales is the systematic reduction of uncertainty, and coaching is the
+      systematic reduction of the advisor's uncertainty. Walk the six coaching principles. Read the Coach's Oath
+      together. The trainee's job from today: observe every step through a coach's eyes.</div>
+      <div class="cur">Curriculum: Coach's Book — The Six Coaching Principles (Ch 1)</div>
+      <ul>
+        <li><b>(Mon) Scoreboard:</b> baseline the 9 KPIs — these are now YOUR numbers. Focus = coach the process, score the outcome.</li>
+        <li><b>(Tue) Listen</b> to one advisor call purely as an observer. No correcting, just noting.</li>
+        <li><b>(Wed) Drill:</b> recite the six coaching principles from memory.</li>
+        <li><b>(Thu) Bring</b> one moment you wanted to correct an advisor mid-call, and why you didn't.</li>
+        <li><b>(Fri)</b> Observer win and miss. Read the Coach's Oath.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wk"><div class="wk-h"><span class="n">Week 2</span>SBI Feedback: the only format we use</div>
+    <div class="wk-b">
+      <div class="sess"><b>Session:</b> The SBI sentence: "On [Situation], you [Behavior], which [Impact]." Three slots,
+      in order — skip one and the feedback collapses. Behavior, not identity. Works for praise and correction.
+      Write five SBI sentences from this week's real calls.</div>
+      <div class="cur">Curriculum: Coach's Book — SBI Feedback (Ch 3)</div>
+      <ul>
+        <li><b>(Mon) Scoreboard.</b> Focus = one written SBI note per advisor per day.</li>
+        <li><b>(Tue) Listen</b> for identity-level feedback in the shop ("you're not a closer") — rewrite it as behavior.</li>
+        <li><b>(Wed) Drill:</b> turn yesterday's observation into a full three-slot SBI sentence out loud.</li>
+        <li><b>(Thu) Bring</b> your best SBI sentence of the week — one praise, one correction.</li>
+        <li><b>(Fri)</b> SBI win and miss. Did every advisor get at least one written note?</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wk"><div class="wk-h"><span class="n">Week 3</span>The Five-Beat Coaching Conversation</div>
+    <div class="wk-b">
+      <div class="sess"><b>Session:</b> The 1:1 structure: open with the win, name the gap (one SBI), ask don't tell,
+      co-design the practice, confirm the commitment. One ask per session — three is zero. Roleplay a full
+      Five-Beat 1:1 with your HAB coach playing a defensive advisor.</div>
+      <div class="cur">Curriculum: Coach's Book — Five-Beat Coaching Conversation (Ch 4)</div>
+      <ul>
+        <li><b>(Mon) Scoreboard.</b> Focus = one ask per conversation, not three.</li>
+        <li><b>(Tue) Listen</b> for "ask, don't tell" moments — is the advisor's answer a knowledge, courage, or system gap?</li>
+        <li><b>(Wed) Drill:</b> run beats 1 and 2 (win + gap) on a teammate in two minutes.</li>
+        <li><b>(Thu) Bring</b> one commitment sentence an advisor wrote down after your conversation.</li>
+        <li><b>(Fri)</b> Five-Beat win and miss.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wk"><div class="wk-h"><span class="n">Week 4</span>The Rhythm: defend it like payroll</div>
+    <div class="wk-b">
+      <div class="sess"><b>Session:</b> The daily/weekly coaching rhythm: Monday standup, daily Take-Five, daily call
+      audits with written SBI, Wednesday ride-along, Friday 1:1s, Friday scoreboard update. Miss it one week and
+      install slows; miss two and it dies. Starting Monday, the trainee runs the shop's Take-Five with the HAB coach observing.</div>
+      <div class="cur">Curriculum: Coach's Book — The Daily/Weekly Rhythm (Ch 5)</div>
+      <ul>
+        <li><b>(Mon) Scoreboard:</b> trainee leads today's huddle. Focus = own the rhythm.</li>
+        <li><b>(Tue)</b> Trainee leads. Listen for energy — a flat huddle teaches nothing.</li>
+        <li><b>(Wed)</b> Trainee leads the drill and audits one call with a written SBI note.</li>
+        <li><b>(Thu)</b> Trainee leads. Bring the week's audit notes.</li>
+        <li><b>(Fri)</b> Rhythm win and miss. Did the huddle happen all five days?</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wk"><div class="wk-h"><span class="n">Week 5</span>Reading the Scoreboard + PHASE 1 GATE</div>
+    <div class="wk-b">
+      <div class="sess"><b>Session:</b> KPI red-flag diagnosis: when a number goes red two weeks running, coach the
+      upstream step, never the symptom. Walk the red-flag map (low authorization is almost never a closing
+      problem). <b>GATE CHECK:</b> trainee has run a full week of huddles and one Five-Beat 1:1.</div>
+      <div class="cur">Curriculum: Coach's Book — KPI Red-Flag Diagnosis (Ch 6)</div>
+      <ul>
+        <li><b>(Mon) Scoreboard:</b> trainee picks this week's focus from the lowest number. Focus = upstream, not symptom.</li>
+        <li><b>(Tue) Listen:</b> which red number traces to which upstream module?</li>
+        <li><b>(Wed) Drill:</b> given any red KPI, name the module and the drill in ten seconds.</li>
+        <li><b>(Thu) Bring</b> one diagnosis: red number → upstream cause → prescribed drill.</li>
+        <li><b>(Fri)</b> Phase 1 review — did we pass the gate?</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wk"><div class="wk-h"><span class="n">Week 6</span>Ride-Alongs and the Scorecard</div>
+    <div class="wk-b">
+      <div class="sess"><b>Session:</b> The ride-along: sit through a full customer interaction, score all 8 steps 0–3,
+      note one win, one gap, which Boss Battle appeared, whether media was used, and whether the
+      Investment–Coverage pause happened. The scorecard feeds Friday's 1:1. Trainee shadows the HAB coach on one, then runs one.</div>
+      <div class="cur">Curriculum: Coach's Book — Ride-Along Scorecard (Ch 7)</div>
+      <ul>
+        <li><b>(Mon) Scoreboard.</b> Focus = score behavior, not vibes.</li>
+        <li><b>(Tue) Listen</b> during one full call and mentally score steps 1–4.</li>
+        <li><b>(Wed) Drill:</b> full ride-along, scorecard in hand.</li>
+        <li><b>(Thu) Bring</b> a completed scorecard with a win and a gap identified.</li>
+        <li><b>(Fri)</b> Ride-along win and miss.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wk"><div class="wk-h"><span class="n">Week 7</span>Call Audits and Drill Design</div>
+    <div class="wk-b">
+      <div class="sess"><b>Session:</b> Daily audits: one call per advisor per day with a written SBI note. Then drill
+      design — a good drill isolates ONE behavior, takes five minutes, and repeats daily until reflexive.
+      Trainee designs next week's five Take-Five drills from this week's audit notes.</div>
+      <div class="cur">Curriculum: Coach's Book — Call Audits &amp; Drill Design (Ch 8)</div>
+      <ul>
+        <li><b>(Mon) Scoreboard.</b> Focus = an audit that doesn't produce an SBI note didn't happen.</li>
+        <li><b>(Tue) Listen</b> for the one behavior that keeps repeating across advisors.</li>
+        <li><b>(Wed) Drill:</b> design a five-minute drill for that behavior.</li>
+        <li><b>(Thu) Bring</b> your drill — the team runs it live.</li>
+        <li><b>(Fri)</b> Audit win and miss. Next week runs on the trainee's drills.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wk"><div class="wk-h"><span class="n">Week 8</span>Roleplay Mastery: playing the customer</div>
+    <div class="wk-b">
+      <div class="sess"><b>Session:</b> The coach must be the shop's toughest customer. Learn to run the 8 Boss Battles
+      from the customer side: pick a persona, hold the objection realistically, escalate if the advisor argues,
+      and score the response against the script. Trainee runs a Boss Rush as the customer.</div>
+      <div class="cur">Curriculum: Coach's Book — Roleplay / Boss Rush (Ch 9)</div>
+      <ul>
+        <li><b>(Mon) Scoreboard.</b> Focus = the drill is only as good as the customer you play.</li>
+        <li><b>(Tue) Listen</b> for the objection your advisors handle worst — that's tomorrow's boss.</li>
+        <li><b>(Wed) Drill:</b> trainee plays the customer on that boss, twice per advisor.</li>
+        <li><b>(Thu) Bring</b> the hardest persona you can build — vehicle, concern, worry, budget.</li>
+        <li><b>(Fri)</b> Roleplay win and miss.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wk"><div class="wk-h"><span class="n">Week 9</span>Mastery Checks + PHASE 2 GATE</div>
+    <div class="wk-b">
+      <div class="sess"><b>Session:</b> Evidence-based promotion: Rookie → Advisor → Closer → Pro → Champion, each
+      earned in live calls, never by tenure. Walk every promotion bar. Don't promote on a feeling, and don't
+      sit on evidence. <b>GATE CHECK:</b> trainee has run a solo ride-along and a solo Friday 1:1.</div>
+      <div class="cur">Curriculum: Coach's Book — Mastery Levels &amp; Promotion Checks (Ch 10)</div>
+      <ul>
+        <li><b>(Mon) Scoreboard.</b> Focus = show it, don't claim it.</li>
+        <li><b>(Tue) Listen:</b> which advisor is closest to their next level, and what's the one blocker?</li>
+        <li><b>(Wed) Drill:</b> run a live mastery check on one advisor.</li>
+        <li><b>(Thu) Bring</b> the evidence file — calls, numbers, scorecards — for one proposed promotion.</li>
+        <li><b>(Fri)</b> Phase 2 review — did we pass the gate?</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wk"><div class="wk-h"><span class="n">Week 10</span>The Hard Talk: stalled advisors</div>
+    <div class="wk-b">
+      <div class="sess"><b>Session:</b> When an advisor is stuck 3+ weeks, diagnose before prescribing: knowledge gap
+      (re-teach + drill), courage gap (coach demonstrates — courage is borrowed before it's earned), or system
+      gap (fix the shop, not the advisor). Roleplay a hard Five-Beat with a stalled advisor.</div>
+      <div class="cur">Curriculum: Coach's Book — Stalled Advisor Recovery (Ch 11)</div>
+      <ul>
+        <li><b>(Mon) Scoreboard.</b> Focus = diagnose the gap before prescribing the drill.</li>
+        <li><b>(Tue) Listen:</b> is that repeated miss knowledge, courage, or system?</li>
+        <li><b>(Wed) Drill:</b> coach demonstrates the feared move live (borrowed courage).</li>
+        <li><b>(Thu) Bring</b> one stalled-skill diagnosis with your prescription.</li>
+        <li><b>(Fri)</b> Hard-talk win and miss.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wk"><div class="wk-h"><span class="n">Week 11</span>Coaching Recovery + knowing when to escalate</div>
+    <div class="wk-b">
+      <div class="sess"><b>Session:</b> Coaching M9: audit L.A.S.T. recoveries — specific, time-bound solves, banned
+      word "policy," update within 24 hours. Then the escalation list: attendance, refusal, knowingly breaking
+      the Oath, culture friction — those go to the owner with SBI documentation, not into more coaching.</div>
+      <div class="cur">Curriculum: Coach's Book — Recovery Coaching &amp; Escalation (Ch 12 + Ch 11)</div>
+      <ul>
+        <li><b>(Mon) Scoreboard:</b> recovered-sale and 5-star rates. Focus = a complaint is a coaching rep.</li>
+        <li><b>(Tue) Listen</b> for the word "policy" anywhere in the shop.</li>
+        <li><b>(Wed) Drill:</b> score one real recovery against all four L.A.S.T. steps.</li>
+        <li><b>(Thu) Bring</b> one situation that should be escalated, not coached — and why.</li>
+        <li><b>(Fri)</b> Recovery-coaching win and miss.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wk"><div class="wk-h"><span class="n">Week 12</span>Champion Development: build your successors</div>
+    <div class="wk-b">
+      <div class="sess"><b>Session:</b> A coach who does everything forever is a bottleneck. Champions run drills, lead
+      huddles, and take mastery checks — praise in public, correct in private. Trainee assigns one ritual to a
+      Champion and coaches them through it.</div>
+      <div class="cur">Curriculum: Coach's Book — Champion Development (Ch 13)</div>
+      <ul>
+        <li><b>(Mon) Scoreboard.</b> Focus = teach it to own it.</li>
+        <li><b>(Tue) Listen:</b> which Champion moment deserves a public shout-out?</li>
+        <li><b>(Wed) Drill:</b> a Champion runs the drill, trainee coaches the Champion.</li>
+        <li><b>(Thu) Bring</b> one ritual you've permanently handed off.</li>
+        <li><b>(Fri)</b> Development win and miss.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wk"><div class="wk-h"><span class="n">Week 13</span>COACH CERTIFICATION + handoff</div>
+    <div class="wk-b">
+      <div class="sess"><b>Session:</b> Certification: the trainee runs the whole week solo — huddles, audits, a
+      ride-along, Friday 1:1s, scoreboard. The HAB coach scores the trainee against the Coach's Oath, reviews the full KPI
+      arc versus day one, and sets next-cycle goals. From here, HAB moves to monthly check-ins. Read both Oaths together.</div>
+      <div class="cur">Curriculum: Coach's Book (full) + the Pocket Summary</div>
+      <ul>
+        <li><b>(Mon) Scoreboard:</b> the full board versus Coach Week 1. Focus = finish strong.</li>
+        <li><b>(Tue)</b> Solo day — the HAB coach observes only.</li>
+        <li><b>(Wed)</b> Solo day — trainee runs a full ride-along and drill.</li>
+        <li><b>(Thu) Bring</b> the certification evidence file: scorecards, SBI notes, one promotion made.</li>
+        <li><b>(Fri)</b> Certification review. Recommit: do what's right, do what's fair, do your best.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="co mastery"><span class="lbl">🟡 Mastery Check · Coach Certification Requirements (Week 13)</span>
+  <ul class="check">
+    <li>Ran the full weekly rhythm solo — five huddles, daily audits with written SBI, one ride-along, Friday 1:1s, scoreboard update.</li>
+    <li>Can recite the six coaching principles and the red-flag map (red KPI → upstream module → drill, in ten seconds).</li>
+    <li>Has run at least one live mastery check and assembled one promotion evidence file.</li>
+    <li>Has diagnosed one stalled-skill case as knowledge / courage / system, with prescription.</li>
+    <li>Has permanently handed off at least one ritual to a Champion.</li>
+    <li>KPI arc reviewed vs. day one; next-cycle goals set. Both Oaths signed.</li>
+  </ul>
+  <b>All true → shop's coach is certified. HAB moves to monthly check-ins.</b></div>
+
+  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Coach's Book v2.0</span></div>
+</div>
+
+<!-- ======================= CH 16 26-WEEK OVERVIEW ======================= -->
+<div class="chapter">
+  <div class="ch-head">
+    <span class="eyebrow">Chapter 16</span>
+    <h2>The 26-Week Two-Cycle Overview</h2>
+    <div class="mission">Six months, one shop: 13 weeks to install the Advisor system, 13 weeks to install its coach. Then HAB steps back to monthly check-ins.</div>
+  </div>
+
+  <h3>Cycle 1 · Weeks 1–13 — The Advisor Cycle (Modules 1–9)</h3>
+  <p>The Advisor cycle delivers the 90-day rollout of Chapter 14 on a weekly session calendar: daily
+  Take-Five huddles (Mon–Fri, 8:00–8:15 AM shop-local) plus the weekly one-hour session with your HAB coach.
+  Sessions carry the footer <i>Curriculum: Advisor Book - &lt;module&gt;</i>.</p>
+  <table>
+    <tr><th>Weeks</th><th>Phase</th><th>Focus</th><th>Gate</th></tr>
+    <tr><td>1</td><td rowspan="2" style="background:#EAF0E7;"><b>STABILIZE</b></td><td>Foundation — core principle, six objectives, 8-step map. Sign the HAB Oath. Baseline the 9 KPIs.</td><td rowspan="2">Week-4/5 gate: Tour Delivery = 100%, Tour → DVI ≥ 90%, 2-Ring ≥ 95%. Do not advance until Green two straight weeks.</td></tr>
+    <tr><td>2–4</td><td>M1 Rapport (deep) · M2 Credibility (deep) · M1/M2 mastery certification.</td></tr>
+    <tr><td>5–9</td><td style="background:#FDF6E0;"><b>MASTER</b></td><td>M3 Custody · M4 Inspect · M5 Strategize (Diamond) · M6 Present (10-step ISO) · M7 Objections + M8 Close. Daily Boss Rush throughout.</td><td>Week-9 gate: Authorization ≥ 70%, all 8 Bosses defeated in live calls, PRS = 100%.</td></tr>
+    <tr><td>10–13</td><td style="background:#FBEFEE;"><b>CEMENT</b></td><td>M9 L.A.S.T. (deep) · full-workflow ride-alongs · Level-4 certifications · first Champion promotion · retrospective.</td><td>Week-13 gate: Day-90 KPIs all beat the Day-1 baseline; rhythm unbroken for 12 weeks.</td></tr>
+  </table>
+
+  <h3>Cycle 2 · Weeks 14–26 — The Coach Cycle (Chapter 15)</h3>
+  <p>Starts the Monday after Advisor Week 13. The HAB coach's sessions shift from teaching advisors to teaching the
+  coach; the trainee progressively takes over the shop's own huddles.</p>
+  <table>
+    <tr><th>Weeks</th><th>Coach Weeks</th><th>Focus</th><th>Gate</th></tr>
+    <tr><td>14–18</td><td>1–5</td><td>The coach's role &amp; six principles · SBI · Five-Beat conversation · owning the rhythm · reading the scoreboard.</td><td><b>Phase 1 gate (Coach Wk 5):</b> trainee has run a full week of huddles and one Five-Beat 1:1.</td></tr>
+    <tr><td>19–22</td><td>6–9</td><td>Ride-alongs &amp; scorecard · call audits &amp; drill design · roleplay mastery / Boss Rush as the customer · mastery promotion checks.</td><td><b>Phase 2 gate (Coach Wk 9):</b> trainee has run a solo ride-along and a solo Friday 1:1.</td></tr>
+    <tr><td>23–26</td><td>10–13</td><td>Stalled advisors &amp; the hard talk · recovery coaching &amp; escalation · Champion development · solo certification week.</td><td><b>Certification (Coach Wk 13):</b> full solo week, evidence file, both Oaths. HAB → monthly check-ins.</td></tr>
+  </table>
+
+  <h3>The Six-Month Arc in One Line</h3>
+  <div class="pull">Weeks 1–13: install the system in the advisors. Weeks 14–26: install the system's guardian.
+  After Week 26 the shop runs itself — HAB checks in monthly, and the scoreboard tells the truth.</div>
+
+  <div class="co protip"><span class="lbl">⚪ Pro Tip · What "HAB steps back" actually means</span>
+  Monthly check-ins review three things: the 9-KPI arc, the promotion evidence files created since last
+  visit, and whether the rhythm ran unbroken. If two of the three slipped, schedule a two-week booster on
+  the specific gap — don't restart the cycle.</div>
+
+  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Coach's Book v2.0</span></div>
+</div>
+
+<!-- ======================= APP A WORKSHEETS ======================= -->
+<div class="chapter">
+  <div class="ch-head">
+    <span class="eyebrow">Appendix A</span>
+    <h2>The Coach's Worksheets</h2>
+    <div class="mission">Print, fill, file. These four sheets are the paper trail of a working install.</div>
+  </div>
+
+  <h3>1 · Ride-Along Scorecard (weekly, per advisor)</h3>
+  <div class="co worked"><span class="lbl">🟨 Ride-Along Scorecard</span>
+  <ul class="check">
+    <li>Advisor: __________ · Date / shift: __________ · RO #: __________</li>
+    <li>Step 1 Rapport: ___ /3 · Step 2 Credibility/tour: ___ /3 · Step 3 Custody/concern: ___ /3 · Step 4 DVI quality: ___ /3</li>
+    <li>Step 5 Base order: ___ /3 · Step 6 PRS + investment/coverage: ___ /3 · Step 7 Objections: ___ /3 · Step 8 Close: ___ /3 · TOTAL: ___ /24</li>
+    <li>Boss Battle observed / handling: ______________________________</li>
+    <li>DVI media used (Y/N): ___ · Investment-Coverage pause (Y/N): ___</li>
+    <li>Specific win: ______________________________ · Specific gap (SBI): ______________________________</li>
+    <li>Re-audit date: __________</li>
+  </ul></div>
+
+  <h3>2 · Coach Self-Review (every Friday)</h3>
+  <div class="co worked"><span class="lbl">🟨 Coach Self-Review</span>
+  <ul class="check">
+    <li>Coach: __________ · Week ending: __________</li>
+    <li>Drills run (count): ___ · Ride-alongs completed: ___ · 1:1s completed: ___ · Coaching notes delivered: ___</li>
+    <li>Advisor I most helped this week (name + behavior): ______________________________</li>
+    <li>Advisor I under-served this week (name + why): ______________________________</li>
+    <li>One coaching mistake I made this week: ______________________________</li>
+    <li>One coaching skill I'll work on next week: ______________________________</li>
+    <li>Cadence broken? (Y/N, which ritual): ______________________________</li>
+    <li>One thing the Owner needs to know: ______________________________</li>
+  </ul></div>
+
+  <h3>3 · The Escalation List (post inside the office, not the bullpen)</h3>
+  <div class="co stop"><span class="lbl">🔴 Stop · These go to the owner with SBI documentation — not into more coaching</span>
+  <ul class="check">
+    <li>Consistently late or absent — attendance is not a coaching problem.</li>
+    <li>Refuses to use the script in roleplay — a willingness gap.</li>
+    <li>Knowingly acting against the HAB Oath (e.g., quoting on the phone after three corrections).</li>
+    <li>Creating friction in the shop culture.</li>
+    <li>Three full 90-day cycles without progression past Rookie.</li>
+  </ul></div>
+
+  <h3>4 · The Coach's Wall (what hangs next to the shop dashboard)</h3>
+  <ul>
+    <li>The 9-KPI scoreboard, color-coded, updated every Friday.</li>
+    <li>The coach's own three KPIs: Advisor Δ/quarter ≥ 0.5 · SBI notes 5×advisors/week · calibration variance &lt; 0.5.</li>
+    <li>The Boss Rush leaderboard.</li>
+    <li>Both Oaths, signed.</li>
+  </ul>
+
+  <div class="pull" style="text-align:center;">I will measure my success not by what I do — but by what they become.</div>
+
+  <div class="oathpage" style="page-break-after:auto;padding:30px 30px 0 30px;">
+    <div class="oathbox" style="padding:36px 40px;">
+      <h2>RECOMMIT</h2>
+      <div class="line">I will hold the cadence even when the shop is on fire.</div>
+      <div class="tagline">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</div>
+      <div style="margin-top:22px;font-size:8.5pt;letter-spacing:2px;color:var(--cream);">HAB COACH'S BOOK · VERSION 2.0 · CONFIDENTIAL &amp; PROPRIETARY · HEALTHY AUTO BUSINESS</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

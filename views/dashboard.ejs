@@ -1,0 +1,89 @@
+<%- include('partials/header', { title: 'Dashboard' }) %>
+
+<div class="eyebrow">DASHBOARD</div>
+<h1>Welcome, <%= user.name || user.email.split('@')[0] %>.</h1>
+<p class="lead">
+  <% if (user.role === 'hab_admin') { %>
+    HAB admin view — you see every shop.
+  <% } else if (user.role === 'owner' || user.role === 'coach') { %>
+    <%= user.role === 'owner' ? 'Owner' : 'Coach' %> access — full curriculum + coaching infrastructure for <strong><%= user.shopName || 'your shop' %></strong>.
+  <% } else { %>
+    Advisor access — your training home base at <strong><%= user.shopName || 'your shop' %></strong>.
+  <% } %>
+</p>
+
+<div class="stat-row">
+  <div class="stat-card">
+    <div class="stat-label">Training progress</div>
+    <div class="stat-big"><%= me.pctComplete %>%</div>
+    <div class="pbar"><div class="pbar-fill" style="width:<%= me.pctComplete %>%"></div></div>
+    <div class="stat-sub"><%= me.sectionsCompleted %> of <%= me.sectionsTotal %> sections</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">Points</div>
+    <div class="stat-big gold"><%= me.points %></div>
+    <div class="stat-sub">10 / section · 5+ / check-in</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">Take-Five streak</div>
+    <div class="stat-big"><%= me.streak %><span class="stat-unit"> day<%= me.streak === 1 ? '' : 's' %></span></div>
+    <% if (me.checkedInToday) { %>
+      <div class="stat-sub checked">✓ Checked in today</div>
+    <% } else { %>
+      <form method="post" action="/checkin" class="checkin-form">
+        <input type="text" name="note" maxlength="280" placeholder="Today's five-minute focus…">
+        <button type="submit" class="btn small">Take-Five check-in</button>
+      </form>
+    <% } %>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">Mastery level</div>
+    <div class="stat-big"><span class="mastery-badge lvl-<%= me.masteryLevel %>"><%= me.masteryName %></span></div>
+    <div class="stat-sub">Level <%= me.masteryLevel %> of 5 — awarded by your coach</div>
+  </div>
+</div>
+
+<div class="cta-row">
+  <a class="btn" href="/curriculum">Open the Curriculum</a>
+  <a class="btn ghost" href="/library">Book Library</a>
+  <a class="btn ghost" href="/leaderboard">Shop Leaderboard</a>
+  <% if (['coach','owner','hab_admin'].includes(user.role)) { %>
+    <a class="btn ghost" href="/team">Team Progress</a>
+  <% } %>
+</div>
+
+<% if (advisorFiles.length) { %>
+<div class="tier-section">
+  <h2>Reference Downloads</h2>
+  <div class="file-grid">
+    <% advisorFiles.forEach(f => { %>
+      <a class="file-card" href="<%= f.url %>" target="_blank" rel="noopener">
+        <div class="icon"><%= f.icon %></div>
+        <div class="meta">
+          <div class="name"><%= f.prettyName %></div>
+          <div class="sub"><%= f.ext.replace('.', '').toUpperCase() %> · <%= Math.round(f.size / 1024) %> KB</div>
+        </div>
+      </a>
+    <% }) %>
+  </div>
+</div>
+<% } %>
+
+<% if (managerFiles.length) { %>
+<div class="tier-section">
+  <h2>Coaching &amp; Manager Resources</h2>
+  <div class="file-grid">
+    <% managerFiles.forEach(f => { %>
+      <a class="file-card" href="<%= f.url %>" target="_blank" rel="noopener">
+        <div class="icon"><%= f.icon %></div>
+        <div class="meta">
+          <div class="name"><%= f.prettyName %></div>
+          <div class="sub"><%= f.ext.replace('.', '').toUpperCase() %> · <%= Math.round(f.size / 1024) %> KB</div>
+        </div>
+      </a>
+    <% }) %>
+  </div>
+</div>
+<% } %>
+
+<%- include('partials/footer') %>

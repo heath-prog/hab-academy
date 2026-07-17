@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HAB Sales OS — Pocket Mastery Card (Print at 5×7)</title>
+<style>
+  :root {
+    --navy:#1B3358; --navy-deep:#112341; --navy-soft:#2C4A75;
+    --gold:#C8A75C; --gold-deep:#A78743;
+    --cream:#FAF4E4; --ink:#1A1A1A; --paper:#FFFFFF;
+    --red:#B7332A; --green:#2F7D3A; --purple:#5E3084;
+    --rule:#CFC4A8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #E0E0E0; }
+  body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    padding: 24px;
+    color: var(--ink);
+  }
+
+  /* 5" x 7" at 96 dpi = 480 x 672 px */
+  .card {
+    width: 480px;
+    height: 672px;
+    background: var(--paper);
+    margin: 16px auto;
+    padding: 18px 18px 16px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.22);
+    page-break-after: always;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .card-label {
+    text-align: center;
+    font-size: 10px;
+    color: #888;
+    letter-spacing: 4px;
+    margin: 6px 0 16px;
+  }
+
+  /* ========== BRAND HEAD ========== */
+  .head {
+    background: var(--navy);
+    color: var(--paper);
+    padding: 12px 14px;
+    border-left: 5px solid var(--gold);
+    margin: 0 -18px 12px;
+  }
+  .head .brand {
+    font-size: 10px;
+    color: var(--gold);
+    letter-spacing: 4px;
+    font-weight: 600;
+  }
+  .head .title {
+    font-size: 20px;
+    font-weight: 800;
+    margin-top: 3px;
+    letter-spacing: -0.01em;
+  }
+  .head .subtitle {
+    font-size: 11px;
+    color: var(--cream);
+    font-style: italic;
+    margin-top: 2px;
+  }
+
+  /* ========== SECTION HEADINGS ========== */
+  h3 {
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    color: var(--navy);
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 3px;
+    margin: 10px 0 6px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  /* ========== 8 STEPS ========== */
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+  }
+  .step {
+    background: var(--navy);
+    color: var(--paper);
+    padding: 8px 4px 7px;
+    border-radius: 3px;
+    text-align: center;
+    line-height: 1.2;
+  }
+  .step .num {
+    color: var(--gold);
+    font-weight: 800;
+    font-size: 16px;
+    display: block;
+    line-height: 1;
+  }
+  .step .label {
+    font-weight: 700;
+    font-size: 10px;
+    margin-top: 3px;
+    letter-spacing: 0.5px;
+  }
+  .step .sub {
+    font-size: 9px;
+    opacity: 0.85;
+    display: block;
+    margin-top: 2px;
+  }
+
+  /* ========== TRUST TRIANGLE ========== */
+  .trust-wrap { text-align: center; margin: 6px 0 4px; }
+  .trust-wrap svg { width: 280px; height: 200px; }
+
+  /* ========== MASTERY LEVELS ========== */
+  .levels {
+    display: flex;
+    justify-content: space-between;
+    background: var(--cream);
+    padding: 8px 10px;
+    border-left: 4px solid var(--gold);
+    border-radius: 3px;
+  }
+  .levels span {
+    text-align: center;
+    flex: 1;
+    font-size: 11px;
+  }
+  .levels span b {
+    display: block;
+    color: var(--navy);
+    font-size: 13px;
+    font-weight: 800;
+    margin-bottom: 2px;
+  }
+
+  /* ========== OBJECTIVES CALLOUT ========== */
+  .scorecard {
+    background: var(--cream);
+    border: 1.5px solid var(--gold);
+    padding: 8px 10px;
+    font-size: 11px;
+    line-height: 1.55;
+  }
+  .scorecard b { color: var(--navy); font-weight: 800; }
+
+  /* ========== KPI GRID ========== */
+  .kpis {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+  }
+  .kpi {
+    background: var(--paper);
+    border: 1.5px solid var(--gold);
+    padding: 6px 4px;
+    text-align: center;
+    line-height: 1.2;
+  }
+  .kpi .k-name {
+    color: var(--navy);
+    font-weight: 700;
+    font-size: 9.5px;
+    letter-spacing: 0.3px;
+  }
+  .kpi .k-target {
+    color: var(--gold-deep);
+    font-weight: 800;
+    font-size: 14px;
+    display: block;
+    margin-top: 3px;
+  }
+
+  /* ========== BOSS LIST ========== */
+  .bosses {
+    font-size: 11px;
+    line-height: 1.4;
+  }
+  .boss {
+    border-left: 4px solid var(--red);
+    padding: 4px 8px;
+    margin: 3px 0;
+    background: #FBE7E5;
+    border-radius: 0 2px 2px 0;
+  }
+  .boss b { color: var(--red); font-weight: 800; }
+  .boss .move {
+    color: var(--navy);
+    display: block;
+    font-style: italic;
+    font-size: 10.5px;
+    margin-top: 1px;
+  }
+
+  /* ========== L.A.S.T. ========== */
+  .last {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    margin: 4px 0;
+  }
+  .last .beat {
+    background: var(--purple);
+    color: var(--paper);
+    text-align: center;
+    padding: 8px 4px 7px;
+    border-radius: 3px;
+    line-height: 1.15;
+  }
+  .last .beat .L {
+    color: var(--gold);
+    font-weight: 800;
+    font-size: 22px;
+    display: block;
+    line-height: 1;
+  }
+  .last .beat .word {
+    font-size: 10px;
+    font-weight: 800;
+    margin-top: 3px;
+    letter-spacing: 0.5px;
+    display: block;
+  }
+  .last .beat .hint {
+    font-size: 9px;
+    opacity: 0.92;
+    display: block;
+    line-height: 1.2;
+    margin-top: 2px;
+  }
+
+  /* ========== RULES ========== */
+  ol.rules {
+    font-size: 11px;
+    padding-left: 18px;
+    line-height: 1.5;
+  }
+  ol.rules li { margin-bottom: 2px; }
+  ol.rules b { color: var(--navy); }
+
+  /* ========== OATH BOX ========== */
+  .oath {
+    background: var(--cream);
+    border-left: 4px solid var(--gold-deep);
+    padding: 8px 12px;
+    font-style: italic;
+    font-size: 11px;
+    margin-top: auto;
+    line-height: 1.45;
+    border-radius: 0 2px 2px 0;
+  }
+  .oath b {
+    font-style: normal;
+    color: var(--gold-deep);
+    letter-spacing: 1.8px;
+    font-weight: 800;
+    display: block;
+    margin-bottom: 3px;
+    font-size: 10px;
+  }
+
+  .foot {
+    text-align: center;
+    font-size: 8.5px;
+    color: #999;
+    margin-top: 6px;
+    letter-spacing: 2px;
+    font-weight: 600;
+  }
+
+  /* ========== PRINT ========== */
+  @media print {
+    body { background: white; padding: 0; }
+    .card-label { display: none; }
+    .card {
+      box-shadow: none;
+      margin: 0;
+      page-break-after: always;
+    }
+    @page {
+      size: 5in 7in;
+      margin: 0;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     CARD 1 — FRONT
+     ============================================================ -->
+<div class="card-label">CARD 1 — FRONT (5" × 7")</div>
+<div class="card">
+
+  <div class="head">
+    <div class="brand">HAB &middot; SALES OPERATING SYSTEM</div>
+    <div class="title">The 8-Step Process</div>
+    <div class="subtitle">Sales is the systematic reduction of uncertainty.</div>
+  </div>
+
+  <h3>The 8 Steps &mdash; run in order, never skip</h3>
+  <div class="steps">
+    <div class="step"><span class="num">1</span><span class="label">RAPPORT</span><span class="sub">make a friend</span></div>
+    <div class="step"><span class="num">2</span><span class="label">CREDIBILITY</span><span class="sub">build authority</span></div>
+    <div class="step"><span class="num">3</span><span class="label">CUSTODY</span><span class="sub">get the car</span></div>
+    <div class="step"><span class="num">4</span><span class="label">INSPECT</span><span class="sub">full DVI</span></div>
+    <div class="step"><span class="num">5</span><span class="label">STRATEGIZE</span><span class="sub">run the bases</span></div>
+    <div class="step"><span class="num">6</span><span class="label">PRESENT</span><span class="sub">10-step ISO</span></div>
+    <div class="step"><span class="num">7</span><span class="label">OBJECTIONS</span><span class="sub">8 bosses</span></div>
+    <div class="step"><span class="num">8</span><span class="label">CLOSE</span><span class="sub">direction-facing</span></div>
+  </div>
+
+  <h3>The Invisible Scorecard</h3>
+  <div class="trust-wrap">
+    <svg viewBox="0 0 380 270" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="tg" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#FAF4E4"/>
+          <stop offset="1" stop-color="#F4EBD4"/>
+        </linearGradient>
+      </defs>
+      <!-- Triangle (centered, leaving room for labels above/below) -->
+      <polygon points="190,55 60,210 320,210" fill="url(#tg)" stroke="#C8A75C" stroke-width="2.5"/>
+
+      <!-- Center label -->
+      <text x="190" y="155" text-anchor="middle" font-family="Helvetica" font-size="18" font-weight="800" fill="#1B3358" letter-spacing="3">TRUST</text>
+      <text x="190" y="172" text-anchor="middle" font-family="Helvetica" font-size="9" fill="#4A4A4A" font-style="italic">= permission to advise</text>
+
+      <!-- TOP — label ABOVE circle, on cream/white -->
+      <text x="190" y="13" text-anchor="middle" font-family="Helvetica" font-size="7.5" letter-spacing="2" fill="#A78743" font-weight="700">TRAIT 1</text>
+      <text x="190" y="32" text-anchor="middle" font-family="Helvetica" font-size="12" font-weight="800" fill="#1B3358">COMPETENCE</text>
+      <circle cx="190" cy="55" r="14" fill="#1B3358" stroke="#C8A75C" stroke-width="1.5"/>
+      <text x="190" y="60" text-anchor="middle" font-family="Helvetica" font-size="14" font-weight="800" fill="#C8A75C">1</text>
+
+      <!-- BOTTOM-LEFT — label BELOW circle (moved inward and shrunk to prevent clipping) -->
+      <circle cx="60" cy="210" r="14" fill="#1B3358" stroke="#C8A75C" stroke-width="1.5"/>
+      <text x="60" y="215" text-anchor="middle" font-family="Helvetica" font-size="14" font-weight="800" fill="#C8A75C">2</text>
+      <text x="60" y="240" text-anchor="middle" font-family="Helvetica" font-size="7.5" letter-spacing="2" fill="#A78743" font-weight="700">TRAIT 2</text>
+      <text x="60" y="258" text-anchor="middle" font-family="Helvetica" font-size="11" font-weight="800" fill="#1B3358">TRANSPARENT</text>
+
+      <!-- BOTTOM-RIGHT — label BELOW circle (moved inward and shrunk) -->
+      <circle cx="320" cy="210" r="14" fill="#1B3358" stroke="#C8A75C" stroke-width="1.5"/>
+      <text x="320" y="215" text-anchor="middle" font-family="Helvetica" font-size="14" font-weight="800" fill="#C8A75C">3</text>
+      <text x="320" y="240" text-anchor="middle" font-family="Helvetica" font-size="7.5" letter-spacing="2" fill="#A78743" font-weight="700">TRAIT 3</text>
+      <text x="320" y="258" text-anchor="middle" font-family="Helvetica" font-size="11" font-weight="800" fill="#1B3358">TRUSTWORTHY</text>
+    </svg>
+  </div>
+
+  <h3>5 Mastery Levels</h3>
+  <div class="levels">
+    <span><b>L1</b>Rookie</span>
+    <span><b>L2</b>Advisor</span>
+    <span><b>L3</b>Closer</span>
+    <span><b>L4</b>Pro</span>
+    <span><b>L5</b>Champion</span>
+  </div>
+
+  <h3>6 Sales Objectives (every move serves one)</h3>
+  <div class="scorecard">
+    <b>1.</b> Build relationship &nbsp;&middot;&nbsp; <b>2.</b> Get custody &nbsp;&middot;&nbsp; <b>3.</b> Separate customer from vehicle<br>
+    <b>4.</b> Identify vehicle health &nbsp;&middot;&nbsp; <b>5.</b> Educate &nbsp;&middot;&nbsp; <b>6.</b> Deliver safe &amp; reliable
+  </div>
+
+  <div class="oath">
+    <b>THE HAB OATH</b>
+    "I will assure customers they called the right place. I will earn the appointment instead of quoting blindly. I will run the bases in order. I will defeat the bosses with words, not arguments. <strong style="font-style:normal; color: var(--gold-deep);">Do what's Right, Do what's Fair, and do Your Best.</strong>"
+  </div>
+
+  <div class="foot">CARD 1 OF 2 &middot; FRONT &middot; HAB SALES OS v1.3</div>
+</div>
+
+
+<!-- ============================================================
+     CARD 2 — BACK
+     ============================================================ -->
+<div class="card-label">CARD 2 — BACK (5" × 7")</div>
+<div class="card">
+
+  <div class="head">
+    <div class="brand">HAB &middot; BATTLE REFERENCE</div>
+    <div class="title">Bosses, Recovery &amp; KPIs</div>
+    <div class="subtitle">Objections are uncertainty wearing a costume.</div>
+  </div>
+
+  <h3>The 8 Boss Battles &mdash; tell &rarr; move</h3>
+  <div class="bosses">
+    <div class="boss"><b>B1 &ldquo;I'll sell the car&rdquo;</b><span class="move">Reframe vs. used-car cost + unknown history.</span></div>
+    <div class="boss"><b>B2 &ldquo;Price too high&rdquo;</b><span class="move">"We're not cheapest, intentionally." Anchor protection.</span></div>
+    <div class="boss"><b>B3 &ldquo;No money&rdquo;</b><span class="move">= "no money TODAY." Pivot to financing, stay on line.</span></div>
+    <div class="boss"><b>B4 &ldquo;Talk to spouse&rdquo;</b><span class="move">Three-way bypass. Get them on the call now.</span></div>
+    <div class="boss"><b>B5 &ldquo;I'll wait&rdquo;</b><span class="move">Safety: name risk concretely. Maint: value reframe.</span></div>
+    <div class="boss"><b>B6 &ldquo;Always selling&rdquo;</b><span class="move">Pro Obligation frame. Fiduciary, not salesperson.</span></div>
+    <div class="boss"><b>B7 &ldquo;Need car today&rdquo;</b><span class="move">Solve transport FIRST. Then return to repair.</span></div>
+    <div class="boss"><b>B8 &ldquo;Parts &amp; labor?&rdquo;</b><span class="move">Refuse apples-to-apples. Sell protection program.</span></div>
+  </div>
+
+  <h3>L.A.S.T. &mdash; The Recovery Combo</h3>
+  <div class="last">
+    <div class="beat"><span class="L">L</span><span class="word">LISTEN</span><span class="hint">silence, no defense</span></div>
+    <div class="beat"><span class="L">A</span><span class="word">ACKNOWLEDGE</span><span class="hint">emotion, no &ldquo;but&rdquo;</span></div>
+    <div class="beat"><span class="L">S</span><span class="word">SOLVE</span><span class="hint">specific, time-bound</span></div>
+    <div class="beat"><span class="L">T</span><span class="word">THANK</span><span class="hint">complaint = gift</span></div>
+  </div>
+
+  <h3>5 Universal Objection Rules</h3>
+  <ol class="rules">
+    <li><b>Never argue.</b> Win the argument, lose the customer.</li>
+    <li><b>Acknowledge first, always.</b> "I completely understand."</li>
+    <li><b>Find the real concern.</b> Clarifying question, then respond.</li>
+    <li><b>Pivot to value or risk, never to discount.</b></li>
+    <li><b>Re-ask for the close.</b> Every exchange ends moving forward.</li>
+  </ol>
+
+  <h3>The 9 KPIs That Run the Shop</h3>
+  <div class="kpis">
+    <div class="kpi"><div class="k-name">Inq &rarr; Appt</div><span class="k-target">&ge;65%</span></div>
+    <div class="kpi"><div class="k-name">Tour Delivery</div><span class="k-target">100%</span></div>
+    <div class="kpi"><div class="k-name">DVI w/ Media</div><span class="k-target">&ge;95%</span></div>
+    <div class="kpi"><div class="k-name">PRS Complete</div><span class="k-target">100%</span></div>
+    <div class="kpi"><div class="k-name">1st-Obj Close</div><span class="k-target">&ge;60%</span></div>
+    <div class="kpi"><div class="k-name">Auth Rate</div><span class="k-target">&ge;75%</span></div>
+    <div class="kpi"><div class="k-name">Recovered</div><span class="k-target">&ge;25%</span></div>
+    <div class="kpi"><div class="k-name">ARO</div><span class="k-target">shop</span></div>
+    <div class="kpi"><div class="k-name">5-Star %</div><span class="k-target">&ge;80%</span></div>
+  </div>
+
+  <div class="oath" style="border-left-color: var(--purple);">
+    <b style="color: var(--purple);">RECOVERY: FORBIDDEN WORDS</b>
+    "policy" &nbsp;&middot;&nbsp; "but" &nbsp;&middot;&nbsp; "however" &nbsp;&middot;&nbsp; "although"<br>
+    <em style="font-size: 10.5px;">Never discount before solving the actual problem.</em>
+  </div>
+
+  <div class="foot">CARD 2 OF 2 &middot; BACK &middot; HAB SALES OS v1.3</div>
+</div>
+
+</body>
+</html>

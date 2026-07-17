@@ -1,0 +1,50 @@
+<%- include('partials/header', { title: 'Shops' }) %>
+
+<div class="eyebrow">SUPER ADMIN</div>
+<h1>Shops</h1>
+<p class="lead">Create a shop and invite the owner. They'll get an email, set a password, and become the owner of their shop.</p>
+
+<% if (error) { %><div class="alert error"><%= error %></div><% } %>
+<% if (message) { %><div class="alert success"><%- message.replace(/\+/g, ' ') %></div><% } %>
+<% if (invitePreview) { %>
+  <div class="alert info">Invite URL (for testing): <span class="code-block"><%= invitePreview %></span></div>
+<% } %>
+
+<div class="card">
+  <h2 style="margin-top: 0;">Create a Shop</h2>
+  <form method="post" action="/admin/shops" class="stack">
+    <div class="row">
+      <div>
+        <label for="shopName">Shop Name</label>
+        <input type="text" name="shopName" id="shopName" required placeholder="e.g., True Blue Auto Care">
+      </div>
+      <div>
+        <label for="ownerEmail">Owner Email</label>
+        <input type="email" name="ownerEmail" id="ownerEmail" required placeholder="owner@theirshop.com">
+      </div>
+    </div>
+    <div><button type="submit" class="primary">Create Shop &amp; Invite Owner</button></div>
+  </form>
+</div>
+
+<h2>Existing Shops</h2>
+<% if (!shops.length) { %>
+  <p class="muted">No shops yet. Create the first one above.</p>
+<% } else { %>
+  <table class="tbl">
+    <thead><tr><th>Name</th><th>Code</th><th>Users</th><th>Created</th><th></th></tr></thead>
+    <tbody>
+      <% shops.forEach(s => { %>
+        <tr>
+          <td><strong><%= s.name %></strong></td>
+          <td><code><%= s.code %></code></td>
+          <td><%= s.userCount %></td>
+          <td><span class="muted"><%= s.created_at.replace('T', ' ').slice(0,16) %></span></td>
+          <td><a class="btn secondary" href="/admin/users?shopId=<%= s.id %>">Manage Users</a></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+<% } %>
+
+<%- include('partials/footer') %>

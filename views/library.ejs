@@ -1,0 +1,31 @@
+<%- include('partials/header', { title: 'Library' }) %>
+
+<div class="eyebrow">THE BOOKS, IN THE BUILDING</div>
+<h1>HAB Library</h1>
+<p class="lead">The full standalone editions of the Healthy Auto Business books. They open as complete, print-ready pages — read in the browser or print to PDF.</p>
+
+<div class="ref-list">
+  <% books.forEach(b => { %>
+    <% if (b.available) { %>
+    <a class="ref-row" href="/library/<%= b.slug %>" target="_blank" rel="noopener">
+      <span class="ref-title">📕 <%= b.title %> — <%= b.subtitle %></span>
+      <% if (b.coachOnly) { %><span class="coach-chip">COACH</span><% } %>
+      <span class="ref-count"><%= b.version %> · <%= b.updated %> →</span>
+    </a>
+    <% } %>
+  <% }) %>
+</div>
+
+<% books.forEach(b => { if (b.available) { %>
+<div class="tier-section">
+  <h2><%= b.title %> <span style="font-weight:400; opacity:.7;">— <%= b.subtitle %></span></h2>
+  <p><%= b.blurb %></p>
+  <p><a class="btn <%= b.coachOnly ? 'ghost' : '' %>" href="/library/<%= b.slug %>" target="_blank" rel="noopener">Open the <%= b.title.replace('HAB ', '') %></a></p>
+</div>
+<% } }) %>
+
+<% if (!coach) { %>
+<p class="stat-sub" style="margin-top:24px; opacity:.7;">Coaches, owners and HAB admins also see the Coach's Book here.</p>
+<% } %>
+
+<%- include('partials/footer') %>

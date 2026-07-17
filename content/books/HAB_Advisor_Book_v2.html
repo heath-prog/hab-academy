@@ -1,0 +1,2200 @@
+<!DOCTYPE html>
+<!--
+  HAB Advisor Book — The Sales OS for Service Advisors
+  Version: 2.0 · Last updated: 2026-07-16
+  Comprehensive standalone edition. Fully matches the HAB Sales Operating System Master
+  Curriculum v1.3: Foundation, Modules 1-9 with full scripts, all 8 Boss Battles, L.A.S.T.,
+  Worked-Example Library, Glossary, KPIs, Mastery Tracker. Print-ready US Letter.
+  HAB Enterprises 3 LLC · Do what's Right · Do what's Fair · Do Your Best.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HAB Advisor Book v2.0 — The Sales OS for Service Advisors</title>
+<style>
+:root{
+  --navy:#1B3358; --navy-deep:#112341; --navy-soft:#2C4A75;
+  --gold:#C8A75C; --gold-deep:#A78743;
+  --cream:#FAF4E4; --cream-deep:#F0E2BE;
+  --ink:#1A1A1A; --paper:#FFFFFF;
+  --red:#B7332A; --green:#2F7D3A; --purple:#5E3084; --blue:#2A5FA5;
+}
+*{box-sizing:border-box;}
+@page{ size:letter; margin:0.55in 0.6in; }
+html,body{margin:0;padding:0;}
+body{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;color:var(--ink);background:var(--paper);font-size:10.5pt;line-height:1.5;}
+.chapter{page-break-before:always;padding-top:6px;}
+h1,h2,h3,h4{color:var(--navy);line-height:1.2;margin:0 0 8px 0;}
+h2{font-size:21pt;font-weight:800;}
+h3{font-size:13.5pt;font-weight:700;margin-top:22px;border-bottom:2px solid var(--gold);padding-bottom:4px;}
+h4{font-size:11pt;font-weight:700;margin-top:14px;}
+p{margin:7px 0;}
+.eyebrow{display:inline-block;font-size:8pt;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:var(--gold-deep);margin-bottom:6px;}
+.ch-head{border-bottom:3px solid var(--navy);padding-bottom:10px;margin-bottom:14px;}
+.ch-head .mission{font-style:italic;color:var(--navy-soft);margin-top:4px;font-size:11pt;}
+.removes{background:var(--navy);color:#fff;padding:8px 14px;border-radius:4px;font-size:9.5pt;margin:10px 0;}
+.removes b{color:var(--gold);}
+.statbar{display:flex;gap:8px;margin:12px 0;}
+.stat{flex:1;background:var(--cream);border-top:3px solid var(--gold);padding:7px 9px;text-align:center;}
+.stat .k{font-size:7pt;font-weight:600;letter-spacing:2.5px;color:var(--navy-soft);text-transform:uppercase;}
+.stat .v{font-size:10.5pt;font-weight:800;color:var(--navy);margin-top:2px;}
+.ch-foot{margin-top:26px;border-top:1.5px solid var(--gold);padding-top:6px;display:flex;justify-content:space-between;font-size:8pt;color:var(--navy-soft);letter-spacing:1px;}
+.ch-foot .tag{letter-spacing:2px;font-weight:600;}
+/* Callouts — cream boxes, colored left rule, eyebrow label */
+.co{background:var(--cream);border-left:5px solid var(--gold);padding:10px 14px;margin:12px 0;page-break-inside:avoid;border-radius:0 4px 4px 0;}
+.co .lbl{display:block;font-size:7.5pt;font-weight:700;letter-spacing:5px;text-transform:uppercase;margin-bottom:5px;}
+.co.script{border-left-color:var(--blue);} .co.script .lbl{color:var(--blue);}
+.co.decoder{border-left-color:var(--purple);} .co.decoder .lbl{color:var(--purple);}
+.co.drill{border-left-color:var(--green);} .co.drill .lbl{color:var(--green);}
+.co.mastery{border-left-color:var(--gold-deep);background:#FDF6E0;} .co.mastery .lbl{color:var(--gold-deep);}
+.co.stop{border-left-color:var(--red);background:#FBEFEE;} .co.stop .lbl{color:var(--red);}
+.co.protip{border-left-color:#B9B2A0;background:#FCFAF3;} .co.protip .lbl{color:#8A8270;}
+.co.coach{background:var(--navy);border-left-color:var(--gold);color:#F3EFE2;} .co.coach .lbl{color:var(--gold);} .co.coach b{color:var(--gold);}
+.co.worked{border-left-color:#D9B93C;background:#FFF9E0;} .co.worked .lbl{color:#A78743;}
+.co p{margin:5px 0;}
+.co .say{font-weight:400;}
+.co .who{font-weight:700;color:var(--navy);}
+.co.coach .who{color:var(--gold);}
+/* Tables */
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:9.3pt;page-break-inside:avoid;}
+th{background:var(--navy);color:#fff;text-align:left;padding:6px 8px;font-size:8.3pt;letter-spacing:1px;text-transform:uppercase;}
+td{border:1px solid #D8D2C0;padding:6px 8px;vertical-align:top;}
+tr:nth-child(even) td{background:#FBF8EF;}
+/* Pull quotes and oath */
+.pull{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:12.5pt;color:var(--navy);border-left:4px solid var(--gold);padding:6px 18px;margin:14px 8px;}
+/* Checklists */
+ul.check{list-style:none;padding-left:4px;margin:6px 0;}
+ul.check li{padding-left:22px;position:relative;margin:5px 0;}
+ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep);font-size:11pt;}
+/* KPI cards */
+.kpis{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0;}
+.kpi{flex:1 1 30%;background:var(--cream);border-top:3px solid var(--navy);padding:8px 10px;page-break-inside:avoid;}
+.kpi .name{font-weight:700;color:var(--navy);font-size:9.5pt;}
+.kpi .target{font-size:15pt;font-weight:800;color:var(--gold-deep);margin:2px 0;}
+.kpi .note{font-size:8.5pt;color:#555;}
+/* Cover */
+.cover{page-break-after:always;background:linear-gradient(160deg,var(--navy-deep) 0%,var(--navy) 55%,var(--navy-soft) 100%);color:#fff;min-height:9.6in;padding:70px 60px;display:flex;flex-direction:column;border-radius:2px;}
+.cover .chip{font-size:9pt;letter-spacing:8px;color:var(--gold);font-weight:600;text-transform:uppercase;}
+.cover h1{color:#fff;font-size:38pt;font-weight:800;margin:26px 0 10px 0;line-height:1.1;}
+.cover .sub{font-size:15pt;color:var(--cream);font-weight:400;}
+.cover .for{margin-top:44px;background:rgba(250,244,228,0.08);border-left:4px solid var(--gold);padding:14px 18px;font-size:10.5pt;line-height:1.6;max-width:5.6in;}
+.cover .coverstats{display:flex;gap:26px;margin-top:44px;}
+.cover .coverstats div{text-align:center;}
+.cover .coverstats .n{font-size:26pt;font-weight:800;color:var(--gold);}
+.cover .coverstats .l{font-size:7.5pt;letter-spacing:3px;text-transform:uppercase;color:var(--cream);}
+.cover .foot{margin-top:auto;padding-top:40px;font-size:9pt;letter-spacing:3px;color:var(--gold);text-transform:uppercase;}
+/* Oath page */
+.oathpage{page-break-after:always;text-align:center;padding:80px 50px;}
+.oathpage .oathbox{background:linear-gradient(170deg,var(--navy-deep),var(--navy));color:var(--cream);padding:56px 48px;border-radius:6px;border:2px solid var(--gold);}
+.oathpage h2{color:var(--gold);letter-spacing:6px;font-size:16pt;margin-bottom:26px;}
+.oathpage .line{font-family:Georgia,serif;font-size:13pt;font-style:italic;margin:12px 0;line-height:1.6;}
+.oathpage .tagline{margin-top:30px;font-family:Helvetica,Arial,sans-serif;font-style:normal;font-weight:700;color:var(--gold);letter-spacing:3px;font-size:11.5pt;}
+.sigrow{display:flex;gap:40px;margin-top:44px;justify-content:center;}
+.sigrow div{border-top:1.5px solid var(--gold);width:2.4in;padding-top:5px;font-size:8pt;letter-spacing:2px;color:var(--cream);text-transform:uppercase;}
+/* TOC */
+.toc{margin-top:8px;}
+.toc .row{display:flex;border-bottom:1px dotted #C9C1AA;padding:7px 2px;page-break-inside:avoid;}
+.toc .num{width:0.65in;font-weight:800;color:var(--gold-deep);}
+.toc .t{flex:1;}
+.toc .t b{color:var(--navy);}
+.toc .t .d{font-size:8.7pt;color:#666;}
+/* Diagrams */
+.fig{text-align:center;margin:14px 0;page-break-inside:avoid;}
+.fig .cap{font-size:8.5pt;color:var(--navy-soft);font-style:italic;margin-top:4px;}
+/* Dashboard columns */
+.vhd{display:flex;gap:10px;margin:12px 0;page-break-inside:avoid;}
+.vhd .col{flex:1;border:1.5px solid #D8D2C0;border-radius:5px;overflow:hidden;background:#fff;}
+.vhd .hd{color:#fff;font-weight:800;text-align:center;padding:7px;letter-spacing:2px;font-size:10.5pt;}
+.vhd .badge{text-align:center;font-size:8pt;font-weight:700;padding:4px;letter-spacing:1px;background:var(--cream);}
+.vhd ul{margin:6px 0;padding-left:20px;font-size:9pt;}
+.vhd .todo{border-top:1px solid #D8D2C0;padding:7px 10px;font-size:8.8pt;font-style:italic;background:#FBF8EF;}
+.vhd .todo b{font-style:normal;font-size:7.5pt;letter-spacing:2px;color:var(--navy-soft);display:block;}
+.vhd-banner{background:var(--navy);color:#fff;text-align:center;padding:8px;border-radius:5px;font-weight:700;letter-spacing:1px;margin-bottom:2px;}
+.vhd-banner span{color:var(--gold);}
+/* level ladder */
+.ladder .lv{display:flex;gap:12px;align-items:flex-start;margin:8px 0;page-break-inside:avoid;}
+.ladder .n{min-width:34px;height:34px;border-radius:50%;background:var(--navy);color:var(--gold);font-weight:800;display:flex;align-items:center;justify-content:center;font-size:13pt;}
+.ladder .t b{color:var(--navy);}
+.small{font-size:8.7pt;color:#555;}
+.grid2{display:flex;gap:12px;} .grid2>div{flex:1;}
+@media print{ .co,.kpi,table,.fig{page-break-inside:avoid;} }
+</style>
+</head>
+<body>
+
+<!-- ======================= COVER ======================= -->
+<div class="cover">
+  <div class="chip">HAB · Healthy Auto Business · Sales Operating System</div>
+  <h1>The Advisor Book</h1>
+  <div class="sub">The Sales Operating System for Service Advisors</div>
+  <div class="for">
+    <b>For:</b> Service Advisors, Service Writers, and anyone who answers the phone, greets the
+    customer, presents the DVI, handles the objection, or closes the sale.<br><br>
+    This is your playbook from Rookie to Champion — every script, every drill, every mastery gate,
+    complete in one book. From uncertainty to certainty. From script to instinct. From advisor to closer.
+  </div>
+  <div class="coverstats">
+    <div><div class="n">8</div><div class="l">Steps</div></div>
+    <div><div class="n">6</div><div class="l">Objectives</div></div>
+    <div><div class="n">5</div><div class="l">Mastery Levels</div></div>
+    <div><div class="n">8</div><div class="l">Boss Battles</div></div>
+    <div><div class="n">27</div><div class="l">Named Techniques</div></div>
+  </div>
+  <div class="foot">Version 2.0 · Confidential &amp; Proprietary<br><br>Do what's Right · Do what's Fair · Do Your Best</div>
+</div>
+
+<!-- ======================= OATH ======================= -->
+<div class="oathpage">
+  <div class="oathbox">
+    <h2>THE HAB OATH</h2>
+    <div class="line">I will assure every customer they called the right place.</div>
+    <div class="line">I will earn the appointment instead of quoting blindly.</div>
+    <div class="line">I will run the bases in order.</div>
+    <div class="line">I will defeat the bosses with words, not arguments.</div>
+    <div class="line">I will L → A → S → T when things go wrong.</div>
+    <div class="line">I will treat every car as if it carries my own family.</div>
+    <div class="tagline">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</div>
+    <div class="sigrow">
+      <div>Advisor Signature</div>
+      <div>Date</div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================= TABLE OF CONTENTS ======================= -->
+<div>
+  <span class="eyebrow">HAB Advisor Book v2.0</span>
+  <h2>Table of Contents</h2>
+  <div class="toc">
+    <div class="row"><div class="num">—</div><div class="t"><b>Preface — How to Use This Book</b><div class="d">Reading plan, the callout color code, the five levels</div></div></div>
+    <div class="row"><div class="num">Ch 0</div><div class="t"><b>Foundation — The Operating System</b><div class="d">Core principle, the six objectives, the 8-step map, the customer's inner journey, the Trust Triangle, the Mastery Ladder</div></div></div>
+    <div class="row"><div class="num">Ch 1</div><div class="t"><b>Establish Rapport — Make a Friend in 90 Seconds</b><div class="d">The psychology, three channels, the 90-second window, full inbound-call scripts, the four inbound Mini-Bosses, East-West, five mistakes, four drills, mastery</div></div></div>
+    <div class="row"><div class="num">Ch 2</div><div class="t"><b>Establish Credibility — Build Authority</b><div class="d">Trust Triangle in action, shop-tour anatomy, three hidden sales, full tour script, mastery</div></div></div>
+    <div class="row"><div class="num">Ch 3</div><div class="t"><b>Collect Data — Get Custody</b><div class="d">Custody psychology, concern vs. symptom, the diagnosis funnel, question sequences, the boom board</div></div></div>
+    <div class="row"><div class="num">Ch 4</div><div class="t"><b>Inspect &amp; Analyze — The DVI Is the X-Ray</b><div class="d">Vehicle Health Dashboard (Green/Yellow/Red), reciprocity of effort, tech-advisor walk-the-bay</div></div></div>
+    <div class="row"><div class="num">Ch 5</div><div class="t"><b>Build &amp; Strategize — Run the Bases</b><div class="d">The Baseball Diamond, Good-Good-Bad, PRS, anti-kitchen-sink, full base-selling scripts: 1st, 2nd, Short Stop, 3rd, Home Plate</div></div></div>
+    <div class="row"><div class="num">Ch 6</div><div class="t"><b>Present — Educate Into Certainty</b><div class="d">The confidence curve, re-engagement loops, the 10-step ISO presentation, the water-pump worked example with full anatomy</div></div></div>
+    <div class="row"><div class="num">Ch 7</div><div class="t"><b>Overcome Objections — The 8 Boss Battles</b><div class="d">The translation matrix, five universal rules, all eight Boss Battles with full battle scripts and decoders, the Boss Rush</div></div></div>
+    <div class="row"><div class="num">Ch 8</div><div class="t"><b>Execute — The Close</b><div class="d">Closing starts at hello, the momentum funnel, three close families, Direction-Facing, Home Plate script</div></div></div>
+    <div class="row"><div class="num">Ch 9</div><div class="t"><b>L.A.S.T. — Turn Complaints Into Loyalty</b><div class="d">Service Recovery Paradox, the four beats, the 24-hour window, four hot-counter scripts, five recovery-killers, four drills</div></div></div>
+    <div class="row"><div class="num">App A</div><div class="t"><b>The Worked-Example Library</b><div class="d">Eight anatomized 10-step ISO scripts: brakes, suspension, cooling, transmission, electrical, tires, alignment, A/C</div></div></div>
+    <div class="row"><div class="num">App B</div><div class="t"><b>The Glossary — 27 Named Techniques</b><div class="d">Every named technique, principle, and anti-pattern with a one-line definition</div></div></div>
+    <div class="row"><div class="num">App C</div><div class="t"><b>The 9 KPIs and Targets</b><div class="d">The shop scoreboard, step mapping, and what a red number actually means</div></div></div>
+    <div class="row"><div class="num">App D</div><div class="t"><b>Your Mastery Tracker</b><div class="d">Promotion bars, certification tracker, signature gates, self-audit worksheets</div></div></div>
+  </div>
+</div>
+
+<!-- ======================= PREFACE ======================= -->
+<div class="chapter">
+  <div class="ch-head">
+    <span class="eyebrow">Preface</span>
+    <h2>How to Use This Book</h2>
+    <div class="mission">It's not a binder for the drawer. It's a training weapon for the bench.</div>
+  </div>
+
+  <p>This book is your operating manual from your first day as a Rookie to the day customers ask for
+  you by name and you train other advisors. Every script inside has been battle-tested across thousands
+  of real calls. The words are exact. The order matters. The psychology is deliberate. Your job is not to
+  read it — your job is to absorb it until the words disappear and the instinct remains.</p>
+
+  <h3>Your Reading Plan</h3>
+  <ul>
+    <li><b>Week 0:</b> Read the Foundation chapter cover-to-cover. Sign the Oath. Commit.</li>
+    <li><b>Weeks 1–9:</b> One module per week. Read it Monday. Drill it Tuesday through Friday. Take the Mastery Check in live calls, not in the classroom.</li>
+    <li><b>After Week 9:</b> Re-read the Worked-Example Library quarterly. Re-take the Mastery Check for any module where your KPIs slip.</li>
+  </ul>
+
+  <h3>The Callout Color Code</h3>
+  <p>The color tells your brain what kind of thinking to do. Same taxonomy as every HAB artifact.</p>
+  <div class="co script"><span class="lbl">🔵 Script</span>The exact words to say. Memorize tone, not just text. Never paraphrase the close.</div>
+  <div class="co decoder"><span class="lbl">🟣 Psychology Decoder</span>Why the script works on the human brain. Master this and you stop sounding scripted. This is the unlock.</div>
+  <div class="co drill"><span class="lbl">🟢 Drill</span>A practice rep with scoring. Run with a partner or the AI. Reps build instinct; instinct survives pressure.</div>
+  <div class="co mastery"><span class="lbl">🟡 Mastery Check</span>The gate to the next level. Observable behaviors in live calls. Pass = promotion.</div>
+  <div class="co stop"><span class="lbl">🔴 Stop</span>A hard gate. Do not advance until the action is complete. These exist because skipping them has cost real sales.</div>
+  <div class="co protip"><span class="lbl">⚪ Pro Tip</span>A veteran shortcut — earned the hard way so you don't have to.</div>
+  <div class="co coach"><span class="lbl">🔷 Coach's Corner</span>How your coach will coach this step — what they listen for, what they score, what they praise, what they correct. Read it so you know what "good" looks like from the other side of the clipboard.</div>
+
+  <h3>The Five Levels</h3>
+  <div class="ladder">
+    <div class="lv"><div class="n">1</div><div class="t"><b>Rookie</b> — Reads scripts. Survives calls. No improvisation. Goal: don't lose a customer.</div></div>
+    <div class="lv"><div class="n">2</div><div class="t"><b>Advisor</b> — Runs scripts naturally. Identifies concern vs. symptom. Books appointments without quoting.</div></div>
+    <div class="lv"><div class="n">3</div><div class="t"><b>Closer</b> — Owns East-West. Runs the bases in order. PRS by heart. Customers feel informed, not sold.</div></div>
+    <div class="lv"><div class="n">4</div><div class="t"><b>Pro</b> — Defeats all 8 Boss Battles. Re-opens missed sales. Coaches Rookies in their downtime.</div></div>
+    <div class="lv"><div class="n">5</div><div class="t"><b>Champion</b> — Customers request you by name. You build the book. You train other advisors. You own culture.</div></div>
+  </div>
+  <p class="small">Promotion is evidence-based — mastery checks passed in live customer calls. Never tenure. Never vibes.</p>
+
+  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Advisor Book v2.0</span></div>
+</div>
+<!-- ======================= CH 0 FOUNDATION ======================= -->
+<div class="chapter">
+  <div class="ch-head">
+    <span class="eyebrow">Chapter 0 · Start Here</span>
+    <h2>Foundation — The Operating System</h2>
+    <div class="mission">The principle behind every word, drill, and KPI in this book.</div>
+  </div>
+
+  <h3>The Core Principle</h3>
+  <div class="pull">Sales is not persuasion. Sales is the systematic reduction of uncertainty.<br>
+  We do not sell repairs. We manufacture certainty — and certainty buys repairs by itself.</div>
+  <p>Every customer who calls a shop is operating in a fog. Uncertain whether the noise is dangerous.
+  Uncertain whether they're about to be taken advantage of. Uncertain whether the price will be fair,
+  whether the shop can be trusted, about their car, about themselves. That fog is the real problem we
+  solve. Repairs are simply the byproduct.</p>
+  <p>Your job is to be the lighthouse. Each of the eight steps in this system removes one specific kind
+  of uncertainty. When all eight are removed, the customer doesn't feel sold — they feel
+  <b>guided</b>. And guided customers come back, refer their friends, and never haggle.</p>
+
+  <table>
+    <tr><th style="width:48%">Customer Enters</th><th>Customer Leaves</th></tr>
+    <tr><td>Uncertain · Fearful · Defensive · Confused</td><td>Educated · Confident · Safe · Loyal</td></tr>
+  </table>
+
+  <h3>The Six Sales Objectives</h3>
+  <p>Underneath the 8 process steps live 6 unchanging objectives. Every move you make — every word,
+  pause, walk, and inspection — must serve at least one. If a behavior serves none of them, it's waste
+  motion. Cut it.</p>
+  <table>
+    <tr><th style="width:4%">#</th><th style="width:30%">Objective</th><th>What It Means</th></tr>
+    <tr><td>1</td><td><b>Build Relationship</b></td><td>Make a friend. Become the human the customer trusts before they trust the shop.</td></tr>
+    <tr><td>2</td><td><b>Get Custody</b></td><td>The car in our bay is the only car we can save. Custody gates every other objective.</td></tr>
+    <tr><td>3</td><td><b>Separate Customer From Vehicle</b></td><td>Emotional distance from the car allows logical decisions. Loaners, shuttles, and lobby comfort do real selling work.</td></tr>
+    <tr><td>4</td><td><b>Identify True Vehicle Health</b></td><td>A complete, honest, documented picture. The DVI is our X-ray.</td></tr>
+    <tr><td>5</td><td><b>Educate the Customer</b></td><td>An informed customer is a confident customer. A confident customer authorizes work.</td></tr>
+    <tr><td>6</td><td><b>Deliver a Safe &amp; Reliable Vehicle</b></td><td>The repair is the receipt. The relationship is the asset.</td></tr>
+  </table>
+
+  <h3>The 8-Step Sales Process</h3>
+  <p>The steps run in order. They are not menu items. Skipping a step doesn't save time — it forces
+  a re-do later in the call, or kills the sale. If a later step is failing, the cause is almost always an
+  earlier step that was rushed or skipped.</p>
+
+  <div class="fig">
+    <svg viewBox="0 0 700 540" xmlns="http://www.w3.org/2000/svg" style="max-width:5.6in;">
+      <circle cx="350" cy="270" r="196" fill="none" stroke="#C8A75C" stroke-width="2.5"/>
+      <circle cx="350" cy="270" r="118" fill="#FAF4E4" stroke="#C8A75C" stroke-width="1.5"/>
+      <text x="350" y="258" text-anchor="middle" font-family="Helvetica,Arial" font-size="16" font-weight="800" fill="#1B3358">THE 8-STEP</text>
+      <text x="350" y="280" text-anchor="middle" font-family="Helvetica,Arial" font-size="16" font-weight="800" fill="#1B3358">PROCESS</text>
+      <text x="350" y="300" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="11" fill="#2C4A75">run in order · never skip</text>
+      <!-- nodes clockwise from 12 o'clock -->
+      <g font-family="Helvetica,Arial">
+        <circle cx="350" cy="74" r="26" fill="#1B3358"/><text x="350" y="82" text-anchor="middle" font-size="20" font-weight="800" fill="#C8A75C">1</text>
+        <text x="350" y="34" text-anchor="middle" font-size="12" font-weight="700" fill="#1B3358">RAPPORT</text>
+        <circle cx="488" cy="132" r="26" fill="#1B3358"/><text x="488" y="140" text-anchor="middle" font-size="20" font-weight="800" fill="#C8A75C">2</text>
+        <text x="545" y="102" text-anchor="middle" font-size="12" font-weight="700" fill="#1B3358">CREDIBILITY</text>
+        <circle cx="546" cy="270" r="26" fill="#1B3358"/><text x="546" y="278" text-anchor="middle" font-size="20" font-weight="800" fill="#C8A75C">3</text>
+        <text x="620" y="274" text-anchor="middle" font-size="12" font-weight="700" fill="#1B3358">CUSTODY</text>
+        <circle cx="488" cy="408" r="26" fill="#1B3358"/><text x="488" y="416" text-anchor="middle" font-size="20" font-weight="800" fill="#C8A75C">4</text>
+        <text x="546" y="446" text-anchor="middle" font-size="12" font-weight="700" fill="#1B3358">INSPECT</text>
+        <circle cx="350" cy="466" r="26" fill="#1B3358"/><text x="350" y="474" text-anchor="middle" font-size="20" font-weight="800" fill="#C8A75C">5</text>
+        <text x="350" y="518" text-anchor="middle" font-size="12" font-weight="700" fill="#1B3358">STRATEGIZE</text>
+        <circle cx="212" cy="408" r="26" fill="#1B3358"/><text x="212" y="416" text-anchor="middle" font-size="20" font-weight="800" fill="#C8A75C">6</text>
+        <text x="152" y="446" text-anchor="middle" font-size="12" font-weight="700" fill="#1B3358">PRESENT</text>
+        <circle cx="154" cy="270" r="26" fill="#1B3358"/><text x="154" y="278" text-anchor="middle" font-size="20" font-weight="800" fill="#C8A75C">7</text>
+        <text x="76" y="274" text-anchor="middle" font-size="12" font-weight="700" fill="#1B3358">OBJECTIONS</text>
+        <circle cx="212" cy="132" r="26" fill="#1B3358"/><text x="212" y="140" text-anchor="middle" font-size="20" font-weight="800" fill="#C8A75C">8</text>
+        <text x="158" y="102" text-anchor="middle" font-size="12" font-weight="700" fill="#1B3358">CLOSE</text>
+      </g>
+    </svg>
+    <div class="cap">Figure 0.1 · The 8-step wheel — Step 1 at 12 o'clock, clockwise, one direction only</div>
+  </div>
+
+  <table>
+    <tr><th>#</th><th>Step</th><th>Primary Objective</th><th>Uncertainty Removed</th><th>Leading KPI</th></tr>
+    <tr><td>1</td><td>Establish Rapport</td><td>Make a friend</td><td>"Are these people safe?"</td><td>Greet-to-tour conversion</td></tr>
+    <tr><td>2</td><td>Establish Credibility</td><td>Build authority</td><td>"Do they know what they're doing?"</td><td>Tour-to-DVI consent</td></tr>
+    <tr><td>3</td><td>Collect Data</td><td>Get custody</td><td>"What's actually wrong?"</td><td>Inquiry-to-RO conversion</td></tr>
+    <tr><td>4</td><td>Inspect &amp; Analyze</td><td>Identify true vehicle health</td><td>"How bad is it really?"</td><td>DVI w/ media %</td></tr>
+    <tr><td>5</td><td>Build &amp; Strategize</td><td>Sequence the conversation</td><td>"Where do we start?"</td><td>Base-order compliance</td></tr>
+    <tr><td>6</td><td>Present</td><td>Educate the customer</td><td>"Why does this matter?"</td><td>DVI view-rate &amp; PRS adherence</td></tr>
+    <tr><td>7</td><td>Overcome Objections</td><td>Resolve hesitation</td><td>"Should I really do this?"</td><td>1st-objection close rate</td></tr>
+    <tr><td>8</td><td>Execute / Close</td><td>Deliver commitment</td><td>"What happens next?"</td><td>Authorized ÷ presented</td></tr>
+  </table>
+
+  <h3>The Customer's Internal Journey</h3>
+  <p>Sales is two parallel tracks: what you do and what the customer feels. You control the first.
+  The second is the actual scoreboard. Track both.</p>
+  <table>
+    <tr><th>Step</th><th>Your Action</th><th>Inner Voice — Before</th><th>Inner Voice — After</th></tr>
+    <tr><td>1 Rapport</td><td>Smile, pause, "right place."</td><td>"Am I about to get hustled?"</td><td>"Okay, this person seems normal."</td></tr>
+    <tr><td>2 Credibility</td><td>Shop tour, ASE, warranty, transport.</td><td>"Do they even know what they're doing?"</td><td>"These guys are legit."</td></tr>
+    <tr><td>3 Custody</td><td>Keys + boom board + concern documented.</td><td>"What if it's something huge?"</td><td>"At least it's in good hands."</td></tr>
+    <tr><td>4 Inspect</td><td>Full DVI, photos, video, tech sync.</td><td>"Are they going to invent stuff?"</td><td>"Wow, they actually looked at everything."</td></tr>
+    <tr><td>5 Strategize</td><td>Good-Good-Bad sequenced, bases set.</td><td>(unseen)</td><td>(unseen)</td></tr>
+    <tr><td>6 Present</td><td>PRS, video, micro-commitments.</td><td>"Is this real or upsell?"</td><td>"I see exactly what they see."</td></tr>
+    <tr><td>7 Objections</td><td>Listen, reframe, payment options.</td><td>"I'm not sure I want to do this."</td><td>"That actually makes sense."</td></tr>
+    <tr><td>8 Close</td><td>Assumptive close, direction-facing.</td><td>"Did I just agree to spend that?"</td><td>"Glad it's handled."</td></tr>
+  </table>
+
+  <h3>The Invisible Scorecard — The Trust Triangle</h3>
+  <p>Every customer silently grades you on three traits, in this order. Score all three and price becomes
+  irrelevant. Lose any one leg and price becomes the only conversation you will ever have.</p>
+
+  <div class="fig">
+    <svg viewBox="0 0 700 430" xmlns="http://www.w3.org/2000/svg" style="max-width:5.2in;">
+      <polygon points="350,85 145,340 555,340" fill="#FAF4E4" stroke="#C8A75C" stroke-width="2.5"/>
+      <text x="350" y="248" text-anchor="middle" font-family="Helvetica,Arial" font-size="20" font-weight="800" fill="#1B3358">TRUST</text>
+      <text x="350" y="270" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="12" fill="#2C4A75">= permission to advise</text>
+      <g font-family="Helvetica,Arial">
+        <circle cx="350" cy="85" r="28" fill="#1B3358"/><text x="350" y="94" text-anchor="middle" font-size="22" font-weight="800" fill="#C8A75C">1</text>
+        <text x="350" y="40" text-anchor="middle" font-size="13" font-weight="800" fill="#1B3358">COMPETENCE</text>
+        <text x="350" y="24" text-anchor="middle" font-size="9.5" font-style="italic" fill="#2C4A75">"Do they know what they're doing?"</text>
+        <circle cx="145" cy="340" r="28" fill="#1B3358"/><text x="145" y="349" text-anchor="middle" font-size="22" font-weight="800" fill="#C8A75C">2</text>
+        <text x="145" y="392" text-anchor="middle" font-size="13" font-weight="800" fill="#1B3358">TRANSPARENT</text>
+        <text x="145" y="408" text-anchor="middle" font-size="9.5" font-style="italic" fill="#2C4A75">"Are they hiding anything?"</text>
+        <circle cx="555" cy="340" r="28" fill="#1B3358"/><text x="555" y="349" text-anchor="middle" font-size="22" font-weight="800" fill="#C8A75C">3</text>
+        <text x="555" y="392" text-anchor="middle" font-size="13" font-weight="800" fill="#1B3358">TRUSTWORTHY</text>
+        <text x="555" y="408" text-anchor="middle" font-size="9.5" font-style="italic" fill="#2C4A75">"Would they do this for family?"</text>
+      </g>
+    </svg>
+    <div class="cap">Figure 0.2 · The Trust Triangle — three legs, no shortcuts. Score all three → price is irrelevant.</div>
+  </div>
+
+  <table>
+    <tr><th>Leg</th><th>The Customer's Question</th><th>Where You Build It</th></tr>
+    <tr><td><b>Competence</b></td><td>"Do they know what they're doing?"</td><td>M2 and M4 — the tour, the credentials, the DVI craft.</td></tr>
+    <tr><td><b>Transparent</b></td><td>"Are they hiding anything?"</td><td>M4 and M6 — co-review, photos, plain language, warranty disclosed.</td></tr>
+    <tr><td><b>Trustworthy</b></td><td>"Would they do this for family?"</td><td>M5 and M7 — Good-Good-Bad, safety over revenue, recommending what's right even when it costs a sale today.</td></tr>
+  </table>
+
+  <h3>The Mastery Ladder</h3>
+  <p>Promotion is not a calendar event. It is an evidence-based gate. You move through five levels on
+  observable behavior in live calls — not tenure, not opinion, not vibes. The Advisor-to-Closer jump
+  is the hardest. The Pro-to-Champion jump is the longest. The full promotion bars live in Appendix D.</p>
+
+  <div class="co protip"><span class="lbl">⚪ Pro Tip</span>The whole book in one sentence: remove the customer's uncertainty one step at a time, in order,
+  with evidence — and the close takes care of itself.</div>
+
+  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Advisor Book v2.0</span></div>
+</div>
+
+<!-- ======================= CH 1 RAPPORT ======================= -->
+<div class="chapter">
+  <div class="ch-head">
+    <span class="eyebrow">Step 1 of 8 · Module 1</span>
+    <h2>Establish Rapport</h2>
+    <div class="mission">Mission: Make a friend in the first 90 seconds. Become the human the customer trusts before they trust the shop.</div>
+    <div class="removes">This step removes the uncertainty: <b>"Am I going to be sold or helped here?"</b></div>
+    <div class="statbar">
+      <div class="stat"><div class="k">Objective</div><div class="v">MAKE A FRIEND</div></div>
+      <div class="stat"><div class="k">Time Window</div><div class="v">90 SECONDS</div></div>
+      <div class="stat"><div class="k">Primary KPI</div><div class="v">GREET → TOUR %</div></div>
+      <div class="stat"><div class="k">Failure Mode</div><div class="v">SOUNDS SCRIPTED</div></div>
+    </div>
+  </div>
+
+  <h3>Mission Brief</h3>
+  <p>Rapport is not small talk. Rapport is the moment a stranger's nervous system relaxes enough to
+  receive information. Every other step in this system — credibility, custody, inspection,
+  presentation, close — is gated by this one. If the customer is still in fight-or-flight when you
+  start talking about a water pump, they will not hear the water pump. They will hear a salesperson.</p>
+  <p>So the first 90 seconds are not a warm-up. They are the highest-leverage 90 seconds of the entire
+  sale. Spend them deliberately.</p>
+  <div class="pull">A customer in rapport authorizes work. A customer out of rapport authorizes nothing — not even a free inspection.</div>
+
+  <h3>The Psychology — Why Rapport Works</h3>
+  <p>When a stranger calls or walks in, their brain runs a sub-second threat assessment. Two questions
+  get answered before any conscious thought: <i>Is this person safe?</i> and <i>Are they like me?</i>
+  If the answer to either is "no," the reasoning brain goes offline and every word out of your mouth
+  gets filtered through suspicion. Rapport flips both answers to "yes" in under 90 seconds — not by
+  tricking the customer, but by deliberately producing the signals their nervous system is scanning for.
+  Three mechanisms do the heavy lifting:</p>
+  <table>
+    <tr><th style="width:22%">Mechanism</th><th>How It Works</th></tr>
+    <tr><td><b>Mirror Neurons</b></td><td>Humans unconsciously copy the emotional state of the person in front of them. Smile, and they smile. Tense up at the price, and they tense up. You set the emotional thermostat for the room.</td></tr>
+    <tr><td><b>Limbic Resonance</b></td><td>Pace and rhythm sync between two people in conversation. A calm, confident advisor pulls a panicked customer down into calm. A rushed advisor speeds the customer up into hesitation. Pace controls trust.</td></tr>
+    <tr><td><b>Reciprocity</b></td><td>Give first — a warm greeting, a glass of water, eye contact — and the brain creates a tiny obligation. That obligation is what later gets cashed in as "sure, let's do the inspection."</td></tr>
+  </table>
+
+  <div class="co decoder"><span class="lbl">🟣 Psychology Decoder · Why "You called the right place" lands harder than "Hi, how can I help?"</span>
+  The brain is scanning for relief. "You called the right place" is a one-sentence relief delivery: it tells
+  the nervous system "you can stop searching, you can stop comparing, the threat is resolved." The body
+  literally exhales. From that exhale forward, everything you say is heard by the reasoning brain instead of
+  being filtered by suspicion. This is why we never replace this line with "Sure, we can do that."
+  "Sure" is information. "Right place" is relief.</div>
+
+  <h3>The Three Channels of Rapport</h3>
+  <p>Rapport is transmitted on three channels simultaneously. Break any one and the customer's nervous
+  system gets a mixed signal and defaults back to suspicion.</p>
+  <table>
+    <tr><th>Channel</th><th>What "On" Looks Like</th><th>What "Off" Looks Like</th><th>How to Train</th></tr>
+    <tr><td><b>Tone</b></td><td>Voice slightly higher at the greeting (the smile is audible), slows down at "right place," warm on the customer's name.</td><td>Monotone. Reads the script. Sounds like the third call in a row.</td><td>Record the greeting. Listen back. If you can't hear the smile, you didn't smile.</td></tr>
+    <tr><td><b>Words</b></td><td>"You called the right place." "Oh wow." "Absolutely." First-person ownership: "I'll personally…"</td><td>"Sure." "Yeah." "Uh, we can do that." Third-person dodges: "the tech will…"</td><td>Script-shadowing — trainer says the line, you immediately repeat with the same inflection.</td></tr>
+    <tr><td><b>Body</b></td><td>Stands up at the desk. Eye contact within 2 seconds. Smile precedes words. Open posture.</td><td>Stays seated. Looks at the screen. Greeting from behind a monitor. Crossed arms.</td><td>The stand-and-smile drill: every time the front bell rings, stand before you speak.</td></tr>
+  </table>
+
+  <h3>The 90-Second Friendship Window</h3>
+  <p>The clock starts the instant the phone rings or the front door opens. After 90 seconds, the first
+  impression locks in — nearly impossible to overturn later. Use the window deliberately, in four moves:</p>
+  <table>
+    <tr><th>0s</th><th>15s</th><th>45s</th><th>75–90s</th></tr>
+    <tr>
+      <td><b>GREETING</b><br>smile + name + pause</td>
+      <td><b>RELIEF LINE</b><br>"right place" + first-time question</td>
+      <td><b>CONCERN PIVOT</b><br>"Oh wow… WHEN you're experiencing…"</td>
+      <td><b>TIME CLOSE</b><br>East-West → friend made, window closes</td>
+    </tr>
+  </table>
+
+  <h3>Scripts — The Full Inbound Call</h3>
+
+  <div class="co stop"><span class="lbl">🔴 Stop · The Golden Rule</span>
+  Your immediate goal is NOT a sale. It is to convert the inquiry into a vehicle committed for service.
+  Quote a price over the phone and you lose both the sale and the relationship.</div>
+
+  <div class="co script"><span class="lbl">🔵 Script · The Greeting — pick up before ring three</span>
+  <p><i>Ring-Ring. The phone should NEVER ring more than twice.</i></p>
+  <p><span class="who">You:</span> [SMILE] "Thank you for calling [Shop]. My name is [Your Name]." <b>[PAUSE]</b></p>
+  <p><span class="who">You:</span> [Let the customer speak.] If they hesitate: "How can I help you today?"</p></div>
+
+  <div class="co decoder"><span class="lbl">🟣 Psychology Decoder · Why the pause wins</span>
+  The intentional pause grabs the caller's attention and shifts them into listening mode. The brief silence
+  is a confident, human conversational handoff — it signals it's the customer's turn to speak, prevents
+  them from feeling rushed, and tells their subconscious you are present and in control.</div>
+
+  <div class="co script"><span class="lbl">🔵 Script · The Relief Line</span>
+  <p><span class="who">Customer:</span> "Do you work on brakes?" / "Can I get a quote on tires?" / "What's your price for an oil change?" / "I need an alignment."</p>
+  <p><span class="who">You:</span> "You called the right place! Is this your first time with our shop?"</p></div>
+
+  <div class="co script"><span class="lbl">🔵 Script · Branch A — First-Time Caller</span>
+  <p><span class="who">Customer:</span> "Yes, it's my first time."</p>
+  <p><span class="who">You:</span> "Thank you so much for calling us! We are [Shop], your certified dealer alternative, located
+  at [address], open six days a week from [store hours]. We have ASE and dealer-certified technicians ready to
+  handle all of your vehicle needs, from tires and service to major repairs. We stand behind our work with
+  warranties up to 3 years or 36,000 miles. We also offer complimentary shuttles, vehicle pick-up and drop-off,
+  ride services, rental car reimbursement, and loaner vehicles when available! What kind of concern are you
+  having with your [vehicle/brakes/tires/oil system/alignment]?" <i>(Send the shop introduction link.)</i></p></div>
+
+  <div class="co script"><span class="lbl">🔵 Script · Branch B — Returning Caller</span>
+  <p><span class="who">Customer:</span> "I've been in before, I was just hoping for a quote."</p>
+  <p><span class="who">You:</span> "I completely understand. What kind of concern are you having with your [vehicle/brakes/tires/oil system/alignment]?"</p></div>
+
+  <div class="co decoder"><span class="lbl">🟣 Psychology Decoder · Concern vs. Symptom</span>
+  Ask clarifying questions to identify the customer's root <b>concern</b> rather than just the symptom they
+  present. "I need new brakes" is a symptom statement — the concern might be a wheel bearing, a stuck
+  caliper, or a low-friction tire. Understand the underlying issue before giving any advice. Full treatment in Chapter 3.</div>
+
+  <div class="co script"><span class="lbl">🔵 Script · The Concern Pivot — from question to appointment</span>
+  <p><span class="who">Customer:</span> States the concern — "My brakes are squeaking." / "My tires are getting low." / "The oil light came on." / "My car is pulling to the left."</p>
+  <p><span class="who">You:</span> "Oh wow! WHEN you're experiencing [insert the customer's exact concern], it's always best to bring
+  your vehicle in and have it inspected by one of our certified technicians! Is now a good time?"</p></div>
+
+  <div class="co decoder"><span class="lbl">🟣 Psychology Decoder · The power of "Oh wow!" + "WHEN"</span>
+  The exclamation conveys urgency — it signals the concern matters and deserves immediate resolution.
+  Saying "WHEN you're experiencing this," not "if," presupposes the concern is real. The brain skips past
+  <i>whether</i> and lands on <i>what now</i>. Be ready with a future appointment or vehicle-retrieval logistics
+  if the customer can't come in immediately.</div>
+
+  <div class="co script"><span class="lbl">🔵 Script · Customer Commits + East-West Scheduling</span>
+  <p><span class="who">Customer:</span> "Yes, I'm bringing the car in."</p>
+  <p><span class="who">You:</span> "Great — stay with me on the line really quick while I…"<br>
+  <i>Returning customer:</i> "…get you confirmed in our system."<br>
+  <i>New customer:</i> "…gather your information to build a customer profile."</p>
+  <p><span class="who">You:</span> "I have an opening at <b>9:15</b> or <b>10:45</b> — which works best for you?"</p></div>
+
+  <div class="co decoder"><span class="lbl">🟣 Psychology Decoder · Why East-West beats "What time works?"</span>
+  Open-ended scheduling forces the customer to pick from infinity — and the brain's default response to
+  that work is hesitation. Two specific options collapse infinity into a binary, and most humans answer a
+  binary on the first try. The rules: always two options; one at :15 after the hour, one at :45 before;
+  state them firmly, no "uh" or "maybe"; close with a choice question. If they hesitate: "What's on your
+  mind?" If they ask for a different time, re-anchor: "The closest options I have are 2:15 or 2:45."
+  Bonus: East-West builds a balanced appointment book and quietly signals your calendar is real and full —
+  an authority cue.</div>
+
+  <div class="co stop"><span class="lbl">🔴 Stop · End the call only when…</span>
+  The information required to create an RO or appointment — with the customer concern documented — has
+  been gathered, OR you have sent the appointment confirmation / RO estimate with the concern documented.</div>
+
+  <div class="co script"><span class="lbl">🔵 Script · The Arrival (in person)</span>
+  <p><span class="who">You:</span> [Greet at the front door or parking lot, boom board in hand]
+  "Welcome to [Shop]. I'm [Your Name] and I'll be taking care of you today — may I have your keys, please?"</p></div>
+
+  <div class="co decoder"><span class="lbl">🟣 Psychology Decoder · Why we ask for the keys first</span>
+  Asking for the keys is the lightest possible custody request. It signals competence, gives the customer
+  something physical to do with their hands, and produces a tiny act of compliance — the first "yes" in
+  the relationship. From that yes forward, every subsequent yes is easier. This is <b>commitment momentum</b>:
+  people stay consistent with their last small action.</div>
+
+  <div class="co protip"><span class="lbl">⚪ Pro Tip · Use the customer's name three times in the first two minutes</span>
+  Once on the greeting, once during the concern pivot, once at the hand-off to the tour. After three uses,
+  the relationship feels personal to the customer's subconscious. Don't overdo it — four-plus in two
+  minutes flips to creepy.</div>
+
+  <h3>The Four Inbound Mini-Bosses</h3>
+  <p>Four objections live on every inbound call. Each has a tell — the line the customer says — and a
+  counter you deliver without hesitation. Drill them until you counter on reflex.</p>
+
+  <div class="co script"><span class="lbl">🔵 Script · Mini-Boss #1 — "Just tell me how much it will cost."</span>
+  <p><span class="who">They say:</span> "Yeah, I just want to know how much it will cost before I come in."</p>
+  <p><span class="who">You say:</span> (confident tone) "AT NO COST TO YOU — I will personally inspect your vehicle alongside one of
+  our certified technicians and provide you with a complete written estimate. When should we expect to see the vehicle?"</p>
+  <p class="small"><b>Why it works:</b> reframes the price ask into a free personal benefit. The closing question assumes the appointment, not the price quote.</p></div>
+
+  <div class="co script"><span class="lbl">🔵 Script · Mini-Boss #2 — "I already have a quote from another shop."</span>
+  <p><span class="who">They say:</span> "I have a quote already from another shop — that's why I'm just looking for a price."</p>
+  <p><span class="who">You say:</span> "Oh, excellent! If you can bring that with you, that would be tremendously helpful! We have a
+  Meet-or-Beat policy that allows us to price-match like-for-like quotes if we don't naturally beat the price with our
+  estimate. To give you the most accurate pricing, though, it's best if our certified technician takes a look first to
+  identify exactly what's needed to fix the [customer concern]. When should we expect to see the vehicle?"</p>
+  <p class="small"><b>Why it works:</b> "Excellent!" disarms the comparison shopper. Meet-or-Beat lowers risk. Then a hard pivot to the appointment.</p></div>
+
+  <div class="co script"><span class="lbl">🔵 Script · Mini-Boss #3 — "Do you have a ballpark?"</span>
+  <p><span class="who">They say:</span> "Yeah, but do you have a ballpark for me? I just want to know roughly how much."</p>
+  <p><span class="who">You say:</span> "I completely understand! I will personally inspect your vehicle alongside one of our certified
+  technicians and provide a complete written estimate so you can make informed decisions. If budget is your primary
+  concern, I will work with you to select cost-effective solutions that still carry good warranty coverage on parts and
+  labor. As far as a ballpark — I can pull up a tool we use called RepairPal and give you an idea of what something
+  like this normally costs to repair."</p>
+  <p class="small"><b>Why it works:</b> validates the request, then offers a third-party data point instead of an unbacked price you can't honor.</p></div>
+
+  <div class="co script"><span class="lbl">🔵 Script · Mini-Boss #4 — "Let me think about it."</span>
+  <p><span class="who">They say:</span> "I'm not sure yet. Let me think about it."</p>
+  <p><span class="who">You say:</span> "I completely understand. Before you decide, may I ask what's most important to you —
+  price, turnaround time, or overall service?" <i>(Listen carefully.)</i></p>
+  <p class="small"><b>Why it works:</b> loops the conversation back open with a value-priorities question — almost no one says "price" when forced to rank.</p></div>
+
+  <div class="co decoder"><span class="lbl">🟣 Psychology Decoder · The Ballpark Trap</span>
+  When a customer asks for a "ballpark," emphasize that an accurate, meaningful estimate requires an
+  inspection — frame it as risk mitigation, not price avoidance. If pressed, offer a general third-party
+  range, then pivot immediately back to scheduling the vehicle so you can deliver a firm written estimate
+  before any work begins. The focus never leaves getting the vehicle into the shop.</div>
+
+  <h3>The 5 Common Mistakes That Kill Rapport</h3>
+  <table>
+    <tr><th>#</th><th>Mistake</th><th>Channel It Breaks</th><th>Quick Fix</th></tr>
+    <tr><td>1</td><td>Letting the phone ring 4+ times.</td><td>Tone — signals "you're an interruption."</td><td>2-ring rule. No exceptions.</td></tr>
+    <tr><td>2</td><td>Greeting from behind a monitor, no eye contact.</td><td>Body</td><td>Stand-and-smile on every door open.</td></tr>
+    <tr><td>3</td><td>Answering the price question in the first 30 seconds.</td><td>Words — sells before relief lands.</td><td>Reflex line: "at no cost to you, I'll personally…"</td></tr>
+    <tr><td>4</td><td>Filler words: "um," "uh," "like," "ya know."</td><td>Tone — signals uncertainty.</td><td>The Pause drill. Silence beats filler.</td></tr>
+    <tr><td>5</td><td>Skipping the customer's name entirely.</td><td>All three</td><td>Name on the boom board, eyes on the name every callback.</td></tr>
+  </table>
+
+  <h3>Drills — Build the Instinct</h3>
+  <div class="co drill"><span class="lbl">🟢 Drill 1.A · Smile-Through-Voice (60-second reps)</span>
+  <b>Setup:</b> two advisors, one mirror. One places a real call to the shop and delivers the greeting twice —
+  once with the mouth flat, once smiling visibly in the mirror.<br>
+  <b>Score (1–10):</b> can the listener hear the smile? Did pace soften on "right place"?<br>
+  <b>Goal:</b> 8+/10 on three consecutive reps, then graduate to live calls.</div>
+  <div class="co drill"><span class="lbl">🟢 Drill 1.B · The Pause</span>
+  <b>Setup:</b> trainer plays customer. You deliver the greeting and must hold full silence for two seconds
+  before any further word, even if the customer hesitates.<br>
+  <b>Score:</b> pause held? No filler? Did the customer speak first?<br>
+  <b>Goal:</b> 5 consecutive reps with no filler. This unlocks Level 2.</div>
+  <div class="co drill"><span class="lbl">🟢 Drill 1.C · Name × 3</span>
+  <b>Setup:</b> full simulated call. Work the customer's first name in exactly three times within two
+  minutes — greeting, concern pivot, hand-off.<br>
+  <b>Score:</b> three uses? Natural inflection, not pasted on? Did the customer's tone soften?<br>
+  <b>Goal:</b> land 3/3 on five live calls in a single shift.</div>
+  <div class="co drill"><span class="lbl">🟢 Drill 1.D · The Cold-Open Roleplay (boss prep)</span>
+  <b>Setup:</b> partner or AI in hostile-cold-caller mode — the customer opens with "Just tell me how much
+  an oil change costs." You have 90 seconds to convert to an East-West appointment without quoting.<br>
+  <b>Score:</b> tone warmth + no-quote discipline + East-West executed + appointment booked.</div>
+  <div class="co drill"><span class="lbl">🟢 Drill 1.E · East-West Speed Reps</span>
+  <b>Setup:</b> partner throws 10 random scheduling objections — "I can't come in until next week," "What's
+  your earliest opening?", "Do you have anything later in the day?", "I want to come Saturday," "What time works?"
+  You respond with East-West every time.<br>
+  <b>Goal:</b> first-offer close on 7 of 10 reps.</div>
+
+  <div class="co mastery"><span class="lbl">🟡 Mastery Check · Level 1 — Rapport Mastery</span>
+  <ul class="check">
+    <li>Picked up before the third ring with a smile audible in the voice.</li>
+    <li>Used the relief line ("right place") within the first 10 seconds.</li>
+    <li>Paused after the opening line and let the customer speak first.</li>
+    <li>Said the customer's first name at least 3 times in the first 2 minutes.</li>
+    <li>Did not quote a price during the rapport window. Used "WHEN you're experiencing…" instead of "if."</li>
+    <li>Closed the window with an East-West appointment or a warm hand-off.</li>
+  </ul>
+  <b>Pass all 6 across three consecutive live calls → promoted to Advisor (Level 2).</b></div>
+
+  <div class="co coach"><span class="lbl">🔷 Coach's Corner · How Rapport gets coached on the floor</span>
+  Your coach listens for, in this order: (1) the smile in the voice on hello, (2) the pause, (3) the relief
+  line, (4) the name use, (5) no price. They praise behavior, not outcomes — "you held the pause for a full
+  two seconds, that's a Level-2 move" lands harder than "great call." They correct one channel at a time;
+  if tone and body are both broken, tone gets fixed first. <b>Red flag pattern:</b> if your greet-to-tour rate
+  drops below 60%, the leak is almost always in Rapport, not in pricing.</div>
+
+  <h3>KPIs — What to Measure</h3>
+  <div class="kpis">
+    <div class="kpi"><div class="name">Greet-to-Tour %</div><div class="target">≥ 80%</div><div class="note">Of all first-time visitors, what % accept a shop tour? This is the rapport scoreboard.</div></div>
+    <div class="kpi"><div class="name">2-Ring Compliance</div><div class="target">100%</div><div class="note">% of inbound calls answered by the second ring. The single most controllable metric in the shop.</div></div>
+    <div class="kpi"><div class="name">Inquiry-to-Appointment %</div><div class="target">≥ 65%</div><div class="note">% of phone inquiries that book. Rapport is the leading indicator — pricing is downstream.</div></div>
+  </div>
+
+  <h3>Leave-Behind · Rapport Self-Audit Worksheet</h3>
+  <div class="co worked"><span class="lbl">🟨 Fill out after each shift</span>
+  <ul class="check">
+    <li>Calls today (total): ______</li>
+    <li>Smile audible on hello (Y/N count): ______</li>
+    <li>Pause held on opening (Y/N count): ______</li>
+    <li>Relief line delivered (Y/N count): ______</li>
+    <li>Customer name used 3× (Y/N count): ______</li>
+    <li>Greet-to-tour conversion %: ______</li>
+    <li>One thing I'll improve tomorrow: ______________________________</li>
+    <li>One win I'll repeat tomorrow: ______________________________</li>
+  </ul></div>
+
+  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Advisor Book v2.0</span></div>
+</div>
+<!-- ======================= CH 2 CREDIBILITY ======================= -->
+<div class="chapter">
+  <div class="ch-head">
+    <span class="eyebrow">Step 2 of 8 · Module 2</span>
+    <h2>Establish Credibility</h2>
+    <div class="mission">Mission: Create authority before money enters the conversation. The customer must conclude, on their own, "these people know what they're doing."</div>
+    <div class="removes">This step removes the uncertainty: <b>"Are these people competent?"</b></div>
+    <div class="statbar">
+      <div class="stat"><div class="k">Objective</div><div class="v">BUILD AUTHORITY</div></div>
+      <div class="stat"><div class="k">Time Window</div><div class="v">90-SEC TOUR</div></div>
+      <div class="stat"><div class="k">Primary KPI</div><div class="v">TOUR → DVI CONSENT</div></div>
+      <div class="stat"><div class="k">Failure Mode</div><div class="v">BRAGGING</div></div>
+    </div>
+  </div>
+
+  <h3>The Psychology — Why Credibility Works</h3>
+  <p>Credibility is not what we say about ourselves. Credibility is what the customer concludes after
+  seeing the evidence. A confident claim ("we're the best") triggers skepticism. A demonstrated detail
+  ("here's our certified tech, here's the loaner fleet, here's the warranty") triggers conclusion.
+  <b>Show, don't tell.</b> The shop tour exists precisely because seeing the operation is 100× more
+  persuasive than describing it. The shop itself — the lifts, the techs, the cleanliness — is silent
+  credibility.</p>
+  <p>Credibility lives in the three legs of the Trust Triangle. We do not pick one. We score all three, every time.</p>
+  <table>
+    <tr><th>Leg</th><th>What It Answers</th><th>The Evidence</th></tr>
+    <tr><td><b>Competence</b></td><td>"Do they know what they're doing?"</td><td>ASE-certified techs, dealer-alternative positioning, equipment, training credentials, years in business.</td></tr>
+    <tr><td><b>Transparency</b></td><td>"Are they hiding anything?"</td><td>Shop tour, digital vehicle inspections with photos and video, written estimates before any work, Meet-or-Beat policy.</td></tr>
+    <tr><td><b>Trustworthiness</b></td><td>"Would they do this for their own family?"</td><td>3-year / 36,000-mile nationwide warranty stated unprompted, loaners / shuttle / Uber, reviews, willingness to defer non-safety work, "whether with us or elsewhere."</td></tr>
+  </table>
+
+  <h3>The Shop Tour as Authority Play</h3>
+  <p>The tour is a 90-second condensed proof package. Each line in the tour script is engineered to score
+  one or more legs of the Trust Triangle. If a line scores nothing, cut it.</p>
+  <table>
+    <tr><th>Tour Line</th><th>What It's Really Doing</th><th>Trust Leg Scored</th></tr>
+    <tr><td>"your certified dealer alternative"</td><td>Authority-by-association — dealer category at independent prices.</td><td>Competence</td></tr>
+    <tr><td>"ASE and dealer-certified technicians"</td><td>External validation. The customer doesn't have to take your word.</td><td>Competence</td></tr>
+    <tr><td>"3-year / 36,000-mile nationwide warranty"</td><td>Risk reversal. Signals long-term confidence.</td><td>Trustworthy</td></tr>
+    <tr><td>"shuttle, Uber, loaner, rental reimbursement"</td><td>Removes the "I can't leave my car" objection. Reciprocity trigger.</td><td>Trustworthy</td></tr>
+    <tr><td>"digital inspections, electronic approvals"</td><td>Transparency made visible. Nothing happens in secret.</td><td>Transparency</td></tr>
+    <tr><td>"Can I get you coffee or water?"</td><td>Reciprocity. A tiny gift creates a tiny obligation.</td><td>Trustworthy</td></tr>
+  </table>
+
+  <h3>The Three Hidden Sales Inside the Tour</h3>
+  <table>
+    <tr><th style="width:26%">Hidden Sale</th><th>What Happens</th></tr>
+    <tr><td><b>1 · The Inspection Authorization</b></td><td>By the end of the tour, the customer has already mentally agreed to a DVI — we didn't ask, we just described what we do. Asking after the tour is a formality.</td></tr>
+    <tr><td><b>2 · The Price Defense</b></td><td>A customer who sees the shop, the techs, the equipment, and the warranty does not later compare us to Cheap Bob's on Main. They've already mentally bought a different product.</td></tr>
+    <tr><td><b>3 · The Repeat Visit</b></td><td>The tour is marketing for the next five years of visits. Customers refer the shop they were "walked through," not the shop they "dropped the car off at."</td></tr>
+  </table>
+
+  <h3>Scripts</h3>
+  <div class="co script"><span class="lbl">🔵 Script · The Approach</span>
+  <p><span class="who">You:</span> "Welcome to [Shop] — I'm [Your Name] and I'll be assisting you today. May I have your keys, please?"</p>
+  <p class="small">Greet the customer in the parking lot or by the front door, boom board in hand. If the customer already
+  called the shop, you should need nothing but the keys and confirmation of contact information. For walk-ins,
+  fill out the boom sheet and proceed. Full tour for every first-time customer; returning customers get told
+  what's new since their last visit.</p></div>
+
+  <div class="co script"><span class="lbl">🔵 Script · The Shop Tour — walking pace, eye contact, warmth</span>
+  <p>"Welcome to [Shop], your certified dealer alternative. We're proud to have certified technicians
+  ready to take care of all your vehicle needs — tires, routine maintenance, major repairs. We also partner
+  with trusted local specialists for accessory work like dent repair, body work, and windshield replacement,
+  so you're covered in one place.</p>
+  <p>To make your visit convenient, we offer complimentary shuttle rides, Uber or Lyft, rental car
+  reimbursement, and loaner vehicles when available. If you stay, the waiting area has complimentary water,
+  coffee, and tea — but there's no need to wait if transportation works better.</p>
+  <p>Once you drop off, we keep you informed every step of the way: calls, texts, digital vehicle
+  inspections, and electronic approvals for estimates, invoices, and payment. Clear, simple, transparent.</p>
+  <p>We're excited to serve you today, and thank you for trusting [Shop]. Can I get you something to
+  drink — coffee, water, or tea?"</p></div>
+
+  <div class="co protip"><span class="lbl">⚪ Pro Tip · How the tour ends</span>
+  The tour ends with an escort to the waiting lobby, the customer seated or comfortable to be left alone.
+  Never dump a first-timer at the counter and disappear.</div>
+
+  <div class="co decoder"><span class="lbl">🟣 Psychology Decoder · Why we end the tour with the drink offer</span>
+  The drink offer is the final reciprocity trigger. It also creates a tiny social contract: the customer is
+  now a <b>guest</b> in our space, not a transaction. Guests don't haggle. Guests don't walk out.
+  Guests authorize inspections.</div>
+
+  <div class="co drill"><span class="lbl">🟢 Drill 2.A · The 90-Second Tour</span>
+  <b>Setup:</b> pair up. One plays a nervous first-timer. The other delivers the tour from memory in under
+  90 seconds while walking.<br>
+  <b>Score each other 1–10 on:</b> smile and eye contact / warranty and transportation mentioned / drink
+  offer at the end / customer comfort level after.<br>
+  <b>Goal:</b> 8+ on three consecutive runs.</div>
+
+  <div class="co mastery"><span class="lbl">🟡 Mastery Check · Level 2 — Credibility Mastery</span>
+  <ul class="check">
+    <li>Delivered the full shop tour in under 90 seconds, walking pace, with eye contact.</li>
+    <li>Mentioned all three credibility anchors: certified techs, warranty, transportation options.</li>
+    <li>Offered a drink at the end of the tour.</li>
+    <li>Did not brag — demonstrated the operation rather than making claims about it.</li>
+    <li>Customer's body language visibly relaxed by the end (shoulders down, posture open).</li>
+  </ul>
+  <b>Pass all 5 across three live tours → Credibility certified.</b></div>
+
+  <div class="co coach"><span class="lbl">🔷 Coach's Corner · The tour gets scored with the Trust Triangle in hand</span>
+  Your coach walks along on one tour per week and silently tags every sentence C / T / Tw in a notebook,
+  then shows you the tally. Most under-performing advisors over-index on Competence (bragging) and skip
+  Transparency entirely. Once you see the imbalance, it self-corrects within two weeks.</div>
+
+  <h3>KPIs</h3>
+  <div class="kpis">
+    <div class="kpi"><div class="name">Tour Delivery %</div><div class="target">100%</div><div class="note">Every first-time customer gets the full tour — no exceptions. The highest-leverage habit in the book.</div></div>
+    <div class="kpi"><div class="name">Tour → DVI Consent</div><div class="target">≥ 95%</div><div class="note">% of toured customers who authorize the digital vehicle inspection.</div></div>
+    <div class="kpi"><div class="name">Tour Duration</div><div class="target">75–90 sec</div><div class="note">Faster = rushed. Slower = lost.</div></div>
+  </div>
+
+  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Advisor Book v2.0</span></div>
+</div>
+
+<!-- ======================= CH 3 CUSTODY ======================= -->
+<div class="chapter">
+  <div class="ch-head">
+    <span class="eyebrow">Step 3 of 8 · Module 3</span>
+    <h2>Collect Data — Get Custody</h2>
+    <div class="mission">Mission: Get the vehicle into our bay. Separate the customer from the car. Document the true concern.</div>
+    <div class="removes">This step removes the uncertainty: <b>"Do they understand my specific situation?"</b></div>
+    <div class="statbar">
+      <div class="stat"><div class="k">Objective</div><div class="v">GET CUSTODY</div></div>
+      <div class="stat"><div class="k">Tool</div><div class="v">BOOM BOARD + RO</div></div>
+      <div class="stat"><div class="k">Primary KPI</div><div class="v">INQUIRY → RO %</div></div>
+      <div class="stat"><div class="k">Failure Mode</div><div class="v">SELF-DIAGNOSIS</div></div>
+    </div>
+  </div>
+
+  <h3>The Psychology of Custody</h3>
+  <p>The single most under-valued asset in the shop is <b>the car in our bay</b>. We cannot inspect a car
+  we don't have. We cannot sell repairs on a car we don't have. We cannot build a relationship through a
+  phone — only across a counter and a coffee. Custody is the gateway to every other objective in this
+  system. Every move in Step 3 is designed to move the vehicle from "maybe" to "in the bay."</p>
+  <p>The corollary: the second the vehicle is in the bay, we have also done a quieter but equally important
+  thing — we have <b>separated the customer from the vehicle</b>. The customer is in the waiting room or in
+  an Uber. They are no longer staring at the dashboard. Their emotional attachment to the symptom decays.
+  Logical decisions become possible. Separation is what enables education. And once we have custody, the
+  price conversation is fundamentally different — the customer has invested time and trust.</p>
+
+  <h3>Concern vs. Symptom — The Most Important Distinction in Service</h3>
+  <p>Customers describe symptoms. Professionals diagnose concerns. The single biggest source of wasted
+  shop time is taking a customer's self-diagnosis at face value. "I need new brakes" is a symptom
+  statement — the concern might be a wheel bearing, a stuck caliper, or a low-friction tire. Our job is
+  to convert symptom language into concern language, gently, without making the customer feel stupid.</p>
+  <table>
+    <tr><th>Customer Words</th><th>Symptom</th><th>Inspection</th><th>Concern</th><th>Solution</th></tr>
+    <tr><td>"squeaking"</td><td>noise from front wheels</td><td>visual + measure</td><td>root cause identified</td><td>priced &amp; PRS'd</td></tr>
+  </table>
+  <p class="small">Figure 3.1 · The diagnosis funnel — customer language converts to professional language at each gate.</p>
+
+  <h3>Question Sequences That Get Custody</h3>
+  <p>The right question sequence walks the customer up a small hill of yeses until "bring it in" feels
+  like the next obvious step rather than a separate decision.</p>
+  <table>
+    <tr><th>Sequence</th><th>Purpose</th><th>Example</th></tr>
+    <tr><td>1. Acknowledge concern</td><td>Validates the customer's reality.</td><td>"Oh wow, when you're experiencing [concern]…"</td></tr>
+    <tr><td>2. Imply expertise required</td><td>Positions inspection as the only honest answer.</td><td>"…it's always best to have a certified tech inspect."</td></tr>
+    <tr><td>3. Assume the appointment</td><td>Skips the should/shouldn't fork.</td><td>"Is now a good time?"</td></tr>
+    <tr><td>4. East-West close</td><td>Collapses scheduling infinity to binary.</td><td>"9:15 or 10:45?"</td></tr>
+    <tr><td>5. Custody hand-off</td><td>Locks the appointment with action.</td><td>"Stay with me while I get you in our system."</td></tr>
+  </table>
+
+  <h3>The Boom Board — Custody's Best Friend</h3>
+  <p>The boom board (intake clipboard, tablet, or shop-management capture form) is the physical artifact
+  of custody. It signals professionalism, captures the concern in writing, and gives the customer something
+  to participate in. Walk-ins fill it out. Phone-ins get it built by the advisor as they talk. No vehicle
+  enters the bay without one.</p>
+
+  <div class="co stop"><span class="lbl">🔴 Stop · No boom board, no bay</span>
+  If a tech is performing work on a vehicle that does not have a documented concern in the system, the whole
+  sales process has skipped Step 3. Stop the work. Document. Then proceed. This single discipline protects
+  the shop from miscommunication and the customer from surprise.</div>
+
+  <div class="co protip"><span class="lbl">⚪ Pro Tip · Never accept the self-diagnosis</span>
+  "Sure, we'll do the brakes" is the most expensive sentence in service writing. Validate the customer,
+  then translate: "When you're hearing that squeak, the smartest move is to let our certified tech confirm
+  exactly what's causing it — that way you only pay to fix the real problem."</div>
+
+  <div class="co mastery"><span class="lbl">🟡 Mastery Check · Level 3 — Custody Mastery</span>
+  <ul class="check">
+    <li>Converted the customer's symptom language to a documented concern.</li>
+    <li>Did not accept self-diagnosis at face value (no "sure, we'll do the brakes").</li>
+    <li>Used East-West to book the appointment on the first offer.</li>
+    <li>Boom board / RO fully populated — with verified contact info — before the vehicle enters the bay.</li>
+    <li>Customer separated from vehicle within 10 minutes of arrival (shuttle / loaner / lobby).</li>
+  </ul></div>
+
+  <div class="co coach"><span class="lbl">🔷 Coach's Corner · One RO audit per advisor per day</span>
+  The coach picks one finished RO and reads the documented concern as if they were the tech walking into the
+  bay cold. If the customer's symptom can't be reproduced from the writing alone, custody discipline broke
+  down somewhere in the call — and you'll re-do that intake aloud together. Not scolding. Rehearsing.</div>
+
+  <h3>KPIs</h3>
+  <div class="kpis">
+    <div class="kpi"><div class="name">Inquiry-to-RO %</div><div class="target">≥ 70%</div><div class="note">% of phone inquiries that become an RO. This is the custody scoreboard.</div></div>
+    <div class="kpi"><div class="name">Boom-Board Complete</div><div class="target">100%</div><div class="note">% of ROs with the concern fully documented before work begins.</div></div>
+    <div class="kpi"><div class="name">Separation Time</div><div class="target">≤ 10 min</div><div class="note">Time from arrival to customer in lobby / shuttle / loaner.</div></div>
+  </div>
+
+  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Advisor Book v2.0</span></div>
+</div>
+
+<!-- ======================= CH 4 INSPECT ======================= -->
+<div class="chapter">
+  <div class="ch-head">
+    <span class="eyebrow">Step 4 of 8 · Module 4</span>
+    <h2>Inspect &amp; Analyze — The DVI Is the X-Ray</h2>
+    <div class="mission">Mission: Produce a complete, honest, documented picture of the vehicle's true health.</div>
+    <div class="removes">This step removes the uncertainty: <b>"Are they making this up?"</b></div>
+    <div class="statbar">
+      <div class="stat"><div class="k">Objective</div><div class="v">VEHICLE HEALTH</div></div>
+      <div class="stat"><div class="k">Tool</div><div class="v">DVI &amp; PHOTOS</div></div>
+      <div class="stat"><div class="k">Primary KPI</div><div class="v">DVI W/ MEDIA %</div></div>
+      <div class="stat"><div class="k">Failure Mode</div><div class="v">PARTIAL DVI</div></div>
+    </div>
+  </div>
+
+  <h3>Why Inspection Exists — It's Not About the Repair</h3>
+  <p>The inspection is not for the technician. The technician already knows what is wrong with the car.
+  The inspection — specifically the digital inspection with photos, video, and notes — is
+  <b>for the customer</b>. It is a piece of evidence we hand them in Step 6 so they can see what we see.
+  Without that evidence, every repair we recommend lands as opinion. With it, every recommendation lands
+  as fact. Visual evidence is what turns "trust me" into "I see it."</p>
+  <div class="pull">The DVI is not a checklist. It is the X-ray we hand the customer so they stop being afraid of the diagnosis.</div>
+
+  <div class="co stop"><span class="lbl">🔴 Stop · No DVI media = no presentation</span>
+  Every Yellow and Red finding gets at least one photo or short video clip before any callback. DVI w/ Media
+  must run ≥ 95%. Module 6 will fail without Module 4 — do not present a finding you cannot show.</div>
+
+  <h3>The Vehicle Health Dashboard — Green / Yellow / Red</h3>
+  <p>Within the DVI, every finding gets classified against one question. The answer drives the color, and
+  the color drives the conversation.</p>
+
+  <div class="vhd-banner">THE DECISION QUESTION · <span>"Does it operate within manufacturer specifications?"</span></div>
+  <div class="vhd">
+    <div class="col">
+      <div class="hd" style="background:var(--green);">GREEN · HEALTHY</div>
+      <div class="badge" style="color:var(--green);">YES — IN SPEC</div>
+      <ul><li>Functioning normally</li><li>All readings in range</li><li>No concerns</li></ul>
+      <div class="todo"><b>WHAT TO DO</b>Notify the customer it's healthy. This primes Good-Good-Bad — the customer hears what's RIGHT before what's wrong.</div>
+    </div>
+    <div class="col">
+      <div class="hd" style="background:var(--gold-deep);">YELLOW · WATCH</div>
+      <div class="badge" style="color:var(--gold-deep);">YES — BUT FLAG</div>
+      <ul><li>Looks off, but still in spec</li><li>Approaching service interval</li><li>Preventative opportunity</li></ul>
+      <div class="todo"><b>WHAT TO DO</b>Watch at next visit, or schedule maintenance proactively. Soft conversation — not an ask, an offer.</div>
+    </div>
+    <div class="col">
+      <div class="hd" style="background:var(--red);">RED · REPAIR</div>
+      <div class="badge" style="color:var(--red);">NO — OUT OF SPEC</div>
+      <ul><li>Out of manufacturer spec</li><li>Regardless of component (stereo button or brake pad — same rule)</li></ul>
+      <div class="todo"><b>WHAT TO DO</b>PRS it, then strategize: sell on 1st, 2nd, or 3rd base. Must address.</div>
+    </div>
+  </div>
+  <p class="small">Figure 4.1 · One question, three answers, three different conversations. The rule is binary on the
+  <b>spec question</b>, not on perceived severity — never soften a Red into a Yellow because you don't want to push.</p>
+
+  <div class="co protip"><span class="lbl">⚪ Pro Tip · Yellow is not a sale — it's a flag</span>
+  Yellow items are not presented as a sales opportunity today. They're documented for re-inspection at the
+  next visit, or rolled into a scheduled-maintenance conversation on 3rd base if they're approaching an
+  interval. Treating Yellow as a sale erodes the "we'll tell you what we see" trust we earned in Module 2.
+  Treat Yellow as a watch — the customer will trust you more for it.</div>
+
+  <div class="co protip"><span class="lbl">⚪ Pro Tip · Red is a finding, not a base assignment</span>
+  Red means exactly one thing: the item is out of manufacturer specification. It does not automatically
+  mean "sell it on 1st base." 1st base belongs to the customer's original concern — or an immediate
+  safety threat if they came in with no concern. Every other Red finding gets carried into Build &amp;
+  Strategize (Chapter 5) and plugged into the base plan: a discovery beyond the original concern is a
+  2nd-base expansion; a Red item that fits the maintenance picture can ride on 3rd base.
+  <b>Sort the finding by spec. Sell it by strategy.</b></div>
+
+  <h3>How Inspection Creates Trust — The Reciprocity of Effort</h3>
+  <p>When a customer sees that we spent an hour inspecting, photographing, video-recording, and documenting
+  their vehicle — before we ever asked them for a dollar — the brain registers a debt. The customer's
+  subconscious thought: "these people did all that for me before I authorized anything — the least I can
+  do is hear them out." That is reciprocity at industrial scale.</p>
+
+  <div class="co decoder"><span class="lbl">🟣 Psychology Decoder · Why a thorough DVI shortens objections</span>
+  An objection like "the price seems high" is almost always shorthand for "I'm not sure this is real."
+  A DVI with photos, video, and tech notes destroys the "not real" doubt before the objection forms. Shops
+  with DVI-completion rates above 95% report dramatically lower price-objection rates — not because their
+  prices are lower, but because their evidence is higher.</div>
+
+  <h3>Tech-Advisor Communication — The Walk-the-Bay Hand-Off</h3>
+  <p>The tech sees the car. The advisor sells the car. If they don't sync, the customer hears guesses.
+  The hand-off protocol, in order:</p>
+  <ol>
+    <li><b>Walk the bay.</b> Advisor physically meets the tech at the vehicle within 15 minutes of DVI completion.</li>
+    <li><b>Listen first.</b> Tech explains the finding. Advisor takes notes. No interruptions.</li>
+    <li><b>Translate.</b> Advisor reflects the tech's language back in customer-friendly terms. Tech corrects anything that's off.</li>
+    <li><b>Confirm PRS.</b> Together: Problem, Risk, Solution, Investment, Warranty.</li>
+    <li><b>Sign off.</b> Both initial the RO so accountability is shared.</li>
+  </ol>
+
+  <div class="co mastery"><span class="lbl">🟡 Mastery Check · Level 4 — Inspection Mastery</span>
+  <ul class="check">
+    <li>DVI completed bumper-to-bumper, every section.</li>
+    <li>Every Yellow and Red finding has at least one photo or video.</li>
+    <li>Tech walk-the-bay completed within 15 minutes of DVI completion.</li>
+    <li>Customer sent the DVI via text/email and viewed it (confirmed) before the presentation call.</li>
+    <li>PRS drafted for every Red and Yellow finding before any callback.</li>
+  </ul></div>
+
+  <div class="co coach"><span class="lbl">🔷 Coach's Corner · Two DVIs per advisor per week get audited</span>
+  The coach opens the DVI as if they were the customer. Could they understand the finding from the photos
+  and notes alone? Is any finding missing media? Most failures here are caught and corrected inside one cycle.
+  Note for coaches: if DVI w/ Media is red, coach the techs, not just the advisors.</div>
+
+  <h3>KPIs</h3>
+  <div class="kpis">
+    <div class="kpi"><div class="name">DVI Completion %</div><div class="target">100%</div><div class="note">% of vehicles in the bay that get a full DVI before any callback.</div></div>
+    <div class="kpi"><div class="name">DVI w/ Media %</div><div class="target">≥ 95%</div><div class="note">% of Yellow/Red findings with photo or video evidence.</div></div>
+    <div class="kpi"><div class="name">DVI View-Rate</div><div class="target">≥ 75%</div><div class="note">% of customers who open the DVI before the presentation call. Strong leading indicator of authorization.</div></div>
+  </div>
+
+  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Advisor Book v2.0</span></div>
+</div>
+<!-- ======================= CH 5 STRATEGIZE ======================= -->
+<div class="chapter">
+  <div class="ch-head">
+    <span class="eyebrow">Step 5 of 8 · Module 5</span>
+    <h2>Build &amp; Strategize — Run the Bases</h2>
+    <div class="mission">Mission: Sequence the conversation so the customer experiences clarity, not overwhelm. Isolate → expand → save → protect → reinforce.</div>
+    <div class="removes">This step removes the uncertainty: <b>"What should I actually do, and in what order?"</b></div>
+    <div class="statbar">
+      <div class="stat"><div class="k">Objective</div><div class="v">SEQUENCE THE CALL</div></div>
+      <div class="stat"><div class="k">Framework</div><div class="v">BASEBALL DIAMOND</div></div>
+      <div class="stat"><div class="k">Primary KPI</div><div class="v">BASE ORDER %</div></div>
+      <div class="stat"><div class="k">Failure Mode</div><div class="v">KITCHEN-SINKING</div></div>
+    </div>
+  </div>
+
+  <h3>The Baseball Diamond — Why Order Wins</h3>
+  <p>The single most common reason a customer says "let me think about it" is not price — it's
+  <b>overwhelm</b>. When an advisor presents the safety concern, the maintenance items, the upsells, and
+  the recovery item in one breath, the customer's brain freezes. The Baseball Diamond is the discipline
+  that prevents this: one base at a time, in order, with authorization at each base before advancing.
+  This step is invisible to the customer, but it's where the deal is built.</p>
+
+  <div class="fig">
+    <svg viewBox="0 0 700 500" xmlns="http://www.w3.org/2000/svg" style="max-width:5.4in;">
+      <!-- basepaths -->
+      <polygon points="350,70 560,255 350,440 140,255" fill="#FAF4E4" stroke="#C8A75C" stroke-width="2.5"/>
+      <g font-family="Helvetica,Arial">
+        <!-- 2nd base (top) -->
+        <rect x="330" y="50" width="40" height="40" transform="rotate(45 350 70)" fill="#1B3358"/>
+        <text x="350" y="28" text-anchor="middle" font-size="13" font-weight="800" fill="#1B3358">2ND BASE · EXPAND</text>
+        <text x="350" y="44" text-anchor="middle" font-size="9.5" font-style="italic" fill="#2C4A75">additional findings</text>
+        <!-- 1st base (right) -->
+        <rect x="540" y="235" width="40" height="40" transform="rotate(45 560 255)" fill="#1B3358"/>
+        <text x="614" y="250" text-anchor="middle" font-size="13" font-weight="800" fill="#1B3358">1ST BASE</text>
+        <text x="614" y="265" text-anchor="middle" font-size="13" font-weight="800" fill="#1B3358">ISOLATE</text>
+        <text x="614" y="281" text-anchor="middle" font-size="9.5" font-style="italic" fill="#2C4A75">customer concern</text>
+        <text x="614" y="300" text-anchor="middle" font-size="10" font-weight="700" fill="#B7332A">START HERE</text>
+        <!-- 3rd base (left) -->
+        <rect x="120" y="235" width="40" height="40" transform="rotate(45 140 255)" fill="#1B3358"/>
+        <text x="84" y="250" text-anchor="middle" font-size="13" font-weight="800" fill="#1B3358">3RD BASE</text>
+        <text x="84" y="265" text-anchor="middle" font-size="13" font-weight="800" fill="#1B3358">PROTECT</text>
+        <text x="84" y="281" text-anchor="middle" font-size="9.5" font-style="italic" fill="#2C4A75">maintenance</text>
+        <!-- short stop between 2nd and 3rd -->
+        <circle cx="238" cy="160" r="26" fill="#5E3084"/>
+        <text x="238" y="166" text-anchor="middle" font-size="11" font-weight="800" fill="#FAF4E4">SS</text>
+        <text x="150" y="128" text-anchor="middle" font-size="12" font-weight="800" fill="#5E3084">SHORT STOP · SAVE</text>
+        <text x="150" y="143" text-anchor="middle" font-size="9.5" font-style="italic" fill="#5E3084">missed-sale re-open</text>
+        <!-- home plate pentagon, point UP toward pitcher -->
+        <polygon points="350,415 378,437 368,465 332,465 322,437" fill="#C8A75C" stroke="#1B3358" stroke-width="2"/>
+        <text x="350" y="490" text-anchor="middle" font-size="13" font-weight="800" fill="#1B3358">HOME PLATE · REINFORCE + NEXT VISIT</text>
+      </g>
+    </svg>
+    <div class="cap">Figure 5.1 · The Base-Selling Diamond — start at 1st (right), touch every base in order, never skip.
+    Home plate points up toward the pitcher.</div>
+  </div>
+
+  <table>
+    <tr><th>Base</th><th>Topic</th><th>Goal</th><th>Tone</th><th>Authorization Before Advancing?</th></tr>
+    <tr><td><b>1st Base — ISOLATE</b></td><td>The customer's original concern (or safety if no concern)</td><td>Solve what they came for</td><td>Confident, focused</td><td><b>YES</b></td></tr>
+    <tr><td><b>2nd Base — EXPAND</b></td><td>Additional inspection findings (Red items, most safety-critical first)</td><td>Bundle with 1st-base authorization</td><td>Assumptive, calm</td><td><b>YES</b></td></tr>
+    <tr><td><b>Short Stop — SAVE</b></td><td>Re-open a missed safety sale (fresh voice)</td><td>Save the unsafe car</td><td>Concerned, not pushy</td><td>YES (or schedule)</td></tr>
+    <tr><td><b>3rd Base — PROTECT</b></td><td>Scheduled maintenance due now or within 10k (Yellow items)</td><td>Long-term ownership protection</td><td>Soft, no urgency stacking</td><td>YES (or schedule)</td></tr>
+    <tr><td><b>Home Plate — REINFORCE</b></td><td>Final invoice review</td><td>Reinforce value, set up next visit</td><td>Warm, complete</td><td>N/A (closing summary)</td></tr>
+  </table>
+
+  <h3>The Two Frameworks Inside Every Base</h3>
+  <div class="grid2">
+    <div>
+      <h4>Framework A · Good · Good · Bad</h4>
+      <p>Two positives prime the brain into a receptive state. The third statement (the cost or concern)
+      then lands inside an open mind instead of a defensive one. Lead with bad news and you trigger
+      fight-or-flight before the customer hears a single solution.</p>
+      <p class="small"><i>Example: "Good news: I have great DVI documentation. Good news: we identified the
+      cause. The finding: the water pump is leaking."</i></p>
+    </div>
+    <div>
+      <h4>Framework B · P · R · S</h4>
+      <p><b>Problem · Risk · Solution.</b> Every finding gets stated in this exact order, no skipping. The
+      Risk step is the one most advisors omit — and it's the one that converts information into urgency.
+      Without Risk, the customer doesn't know why to act now.</p>
+      <p class="small">Follow PRS with the Total Investment, then the Coverage (warranty), then a tee-up sentence.</p>
+    </div>
+  </div>
+
+  <div class="co stop"><span class="lbl">🔴 Stop · Do NOT mix bases on the same call</span>
+  Kitchen-sinking is the practice of dumping every finding — safety + maintenance + recovery + upsell —
+  into one call. It feels efficient. It destroys trust. The customer hears a list of expenses and concludes
+  "they're trying to get me." Each base is its own micro-conversation, with its own authorization,
+  <b>hung up between bases</b>. Re-call for the next base. Slower per call — and a meaningfully higher
+  close rate.</div>
+
+  <h3>Scripts — First Base: Isolate the Customer Concern</h3>
+  <div class="co script"><span class="lbl">🔵 Script · 1st Base · Step 1 — Permission to Speak</span>
+  <p><span class="who">You:</span> "Hi [Customer Name], this is [Your Name] with [Shop]. Is now a good time to review our findings?"</p></div>
+
+  <div class="co script"><span class="lbl">🔵 Script · 1st Base · Step 2 — Good-Good-Bad</span>
+  <p>"You brought your vehicle in for [customer concern] and I reviewed the findings personally with the
+  technician to ensure accuracy."</p>
+  <p>"Good news is I was able to capture a good video of what is going on. Did you receive the DVI findings
+  I sent via text/email?" <i>(Do not continue without confirmation.)</i></p>
+  <p>"More good news — we have identified the cause of your concern!"</p></div>
+
+  <div class="co script"><span class="lbl">🔵 Script · 1st Base · Step 3 — Problem · Risk · Solution</span>
+  <p>Speak confidently, in this order:</p>
+  <ul>
+    <li>State the <b>Problem</b> in full.</li>
+    <li>State the <b>Risk</b> associated with the problem.</li>
+    <li>State the proper <b>Solution</b> to the problem.</li>
+    <li>State the <b>Total Investment</b> for the problem to be solved.</li>
+    <li>State the <b>Coverage</b> we provide on the solution (warranty info) — in the same breath.</li>
+  </ul>
+  <p>"While the vehicle is here we will also finish up the complete bumper-to-bumper inspection and will
+  reach out with any additional concerns. Is this still the best number to reach you?"</p></div>
+
+  <div class="co script"><span class="lbl">🔵 Script · 1st Base · Steps 4 and 5</span>
+  <p><b>Step 4:</b> Answer questions. Overcome objections (Chapter 7).<br>
+  <b>Step 5:</b> Obtain authorization to address the customer concern.</p></div>
+
+  <div class="co stop"><span class="lbl">🔴 Stop · First Base safety variant</span>
+  Has the customer concern already been addressed? If yes, 1st base shifts to isolating <b>safety
+  concerns</b> — items that must be handled to keep the vehicle safe and reliable. Run the same five
+  steps with the safety framing: "We have completed our initial inspection and we did identify a safety
+  concern that requires your immediate attention." Include the price of the customer concern in the total.
+  Authorize before advancing. <b>No exceptions.</b></div>
+
+  <div class="co protip"><span class="lbl">⚪ Pro Tip · First-base strategy: isolate</span>
+  First base is always isolation. The priority is the customer's original concern — the specific reason
+  they brought the vehicle in. At this stage, nothing else gets discussed. We do not mix in items that
+  could, might, or should be done alongside critical concerns.</div>
+
+  <h3>Scripts — Second Base: Additional Concern Presentation</h3>
+  <div class="co script"><span class="lbl">🔵 Script · 2nd Base · Steps 1–3</span>
+  <p><b>Step 1 — Permission to speak:</b> "Hi [Customer Name], this is [Your Name] with [Shop]. We have
+  completed the service inspection and have concerns that require your attention — is now a good time to
+  review the inspection findings?"</p>
+  <p><b>Step 2 — Media verification:</b> "Did you have a chance to review the pictures and videos I sent
+  over on the report?" If yes: continue. If no: ask permission to summarize, or wait for media confirmation.</p>
+  <p><b>Step 3 — Good-Good-Bad:</b> "Good news is your vehicle's overall health is in EXCELLENT
+  condition!" "The suspension system is operating properly. However — [state Problem, Risk, Solution]
+  — the axle boot is leaking grease. It's not an immediate failure, but left unaddressed it can damage
+  the joint. The proper repair is to replace the CV axle to ensure proper lubrication and protection."
+  <i>Repeat until all Problems, Risks, and Solutions have been presented.</i></p></div>
+
+  <div class="co script"><span class="lbl">🔵 Script · 2nd Base · Steps 4–8</span>
+  <p><b>Step 4 — Updated total investment:</b> "To address all the concerns, the updated total investment
+  is $____. And obviously everything is covered by our 3-year / 36,000-mile nationwide warranty on both
+  parts and labor." <i>(The total includes everything already sold.)</i></p>
+  <p><b>Step 5 — Assume the sale:</b> "With the [safety or customer concern] in progress, I can go ahead
+  and order these parts and have the technician take care of everything at once. I'll call you with an
+  updated ETA when the parts arrive."</p>
+  <p><b>Step 6:</b> Answer questions, overcome objections. <b>Step 7:</b> Obtain authorization.
+  <b>Step 8 — Tee up 3rd base:</b> "Great, we'll get the parts ordered right now. The last thing I'm going
+  to do is check for any upcoming scheduled maintenance and call you back with the maintenance plan to
+  protect this investment — so work doesn't build up like this again, and you know what to anticipate for
+  your next visit!"</p></div>
+
+  <div class="co stop"><span class="lbl">🔴 Stop</span>
+  Don't roll into 3rd base on the same call. Hang up. Reset. Re-call. Earn the next conversation.</div>
+
+  <h3>Scripts — Short Stop: The Missed-Sale Re-Open</h3>
+  <div class="co script"><span class="lbl">🔵 Script · Short Stop — tone: concerned, fresh voice</span>
+  <p>"Hi [Customer Name], this is [Your Name] from [Shop]. I understand you've been working with
+  [advisor who struck out]. Do you… have a second for me?"</p>
+  <p>"Great — I'm just calling about [whatever must be sold to keep this car safe and reliable]. I know
+  [advisor] called to review the concern with you, and he's informed me that you didn't want to proceed
+  with the repair. Is that accurate?"</p>
+  <p><i>The customer will either confirm or state the true objection. If objection: overcome it (Chapter 7).
+  If confirmation:</i></p>
+  <p>"I see — that brings me to the reason I'm calling. I wanted to ensure we effectively communicated
+  the severity of the concern: [simple Problem, simple Risk, minimum viable Solution]."</p>
+  <p><i>Overcome objections. CLOSE.</i></p></div>
+
+  <div class="co decoder"><span class="lbl">🟣 Psychology Decoder · Why a fresh voice wins the save</span>
+  The customer has already said "no" once and emotionally committed to that no. A new voice resets the
+  social contract — they don't feel like they're flip-flopping, they feel like they're hearing it fresh
+  from someone who genuinely cares about their safety.</div>
+
+  <h3>Scripts — Third Base: Scheduled Maintenance</h3>
+  <div class="co script"><span class="lbl">🔵 Script · The 3rd-Base Pitch</span>
+  <p><span class="who">You:</span> "The remaining items fall into preventative maintenance. Your transmission and differential
+  fluids are overdue or coming due within the next 10k based on mileage, so ideally we should address those
+  two services today while we have the car. Addressing them now keeps the systems up to date and maintains
+  the lifetime protection plan, leaving the only services due next visit [services due within 10k], and the
+  service after that will be the [plan].</p>
+  <p>Addressing the items due will move your total investment for today's work from $XXX to $XXXX. These
+  services are covered by the lifetime protection plan that keeps major system components like the
+  [expensive part] covered for unlimited miles, so long as the services don't go overdue.</p>
+  <p>Can I have the tech get everything fully up to date while it's in the shop?"</p></div>
+
+  <div class="co protip"><span class="lbl">⚪ Pro Tip · Third-base strategy</span>
+  This is a soft sell and should not feel high-pressure. If you get an objection, let the customer know we
+  can always schedule the services for the next visit. Calm tone. No urgency stacking. Long-term ownership
+  framing.</div>
+
+  <div class="co protip"><span class="lbl">⚪ Pro Tip · Base-selling power-ups</span>
+  Re-engage the conversation every 60–90 seconds. Never rush the price. DO NOT pause after Investment —
+  keep flowing to Coverage. Close confidently: you did not cause the problem, you have the SOLUTION.</div>
+
+  <h3>Scripts — The Manager Re-Open (Missed Safety Sale)</h3>
+  <div class="co script"><span class="lbl">🔵 Script · Manager Re-Open</span>
+  <p>"Hi [Mr./Mrs. Customer], this is [Manager Name] with [Shop]. I just wanted to personally thank you
+  for your visit and check in on your vehicle. Did I catch you at a good time?" <i>[Pause]</i></p>
+  <p>"One reason I'm calling — there was a safety concern discussed during your visit. I reviewed it
+  myself, and I just want to make sure you have a plan to address it, whether that's with us or elsewhere."</p>
+  <p>"My goal is simply to make sure you and your family are protected."</p>
+  <p>"If there's anything we can do — scheduling, transportation, payment options — we have
+  availability. Would you like us to take care of that for you?"</p></div>
+
+  <div class="co decoder"><span class="lbl">🟣 Psychology Decoder · Why "whether with us or elsewhere" closes</span>
+  By giving the customer permission to leave, you remove the salesperson energy entirely. They lower their
+  guard. Now they are deciding based on safety, not on whether you're trying to extract money. Almost every
+  time, the answer becomes "yeah, just do it."</div>
+
+  <div class="co drill"><span class="lbl">🟢 Drill 5.A · The Base-Order Re-Script</span>
+  <b>Setup:</b> coach pulls one recorded "everything" call (more than one base presented in a single call).
+  Replay it together. You re-script it aloud as separate base calls, with the hang-up points marked.<br>
+  <b>Goal:</b> zero same-call mixing for two consecutive weeks. This single intervention has driven more
+  close-rate improvement than any other coaching move in the playbook.</div>
+
+  <div class="co mastery"><span class="lbl">🟡 Mastery Check · Level 5 — Base-Selling Mastery</span>
+  <ul class="check">
+    <li>Ran the bases in correct order on every workflow (1st → 2nd → Short Stop if needed → 3rd → Home).</li>
+    <li>Used Good-Good-Bad framing on every base.</li>
+    <li>Stated full PRS on every finding — never skipped Risk.</li>
+    <li>Did not kitchen-sink. Hung up between bases. Re-called for the next base.</li>
+    <li>Tied total investment to coverage (warranty) without a pause.</li>
+  </ul></div>
+
+  <div class="co coach"><span class="lbl">🔷 Coach's Corner · Listening for the "everything" call</span>
+  The coach pulls one recorded call per advisor per week. If more than one base was presented in a single
+  call, it gets flagged and replayed together, then re-scripted as separate base calls. Most low-ARO shops
+  are 3rd-basing maintenance items they should be 2nd-basing — the coach audits Diamond order in the
+  strategize step, before the call ever happens.</div>
+
+  <h3>KPIs</h3>
+  <div class="kpis">
+    <div class="kpi"><div class="name">Base-Order Compliance</div><div class="target">≥ 90%</div><div class="note">% of workflows that ran the bases in proper order.</div></div>
+    <div class="kpi"><div class="name">PRS Completeness</div><div class="target">100%</div><div class="note">% of findings that included all three: Problem, Risk, Solution.</div></div>
+    <div class="kpi"><div class="name">Same-Call Mixing</div><div class="target">≤ 5%</div><div class="note">% of calls where more than one base was presented.</div></div>
+  </div>
+
+  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Advisor Book v2.0</span></div>
+</div>
+
+<!-- ======================= CH 6 PRESENT ======================= -->
+<div class="chapter">
+  <div class="ch-head">
+    <span class="eyebrow">Step 6 of 8 · Module 6</span>
+    <h2>Present — Educate Into Certainty</h2>
+    <div class="mission">Mission: Convert findings into customer understanding. An educated customer authorizes; a confused one defers.</div>
+    <div class="removes">This step removes the uncertainty: <b>"Why this, why now, what's it cost?"</b></div>
+    <div class="statbar">
+      <div class="stat"><div class="k">Objective</div><div class="v">EDUCATE</div></div>
+      <div class="stat"><div class="k">Pace</div><div class="v">RE-ENGAGE 60–90s</div></div>
+      <div class="stat"><div class="k">Primary KPI</div><div class="v">PRESENT → AUTH %</div></div>
+      <div class="stat"><div class="k">Failure Mode</div><div class="v">MONOLOGUE</div></div>
+    </div>
+  </div>
+
+  <h3>The Communication Map — Customer Confidence Across the Call</h3>
+  <p>A structured presentation moves the customer up the confidence curve, one micro-commitment at a time:
+  permission → good-good-bad → PRS + photo → investment + warranty → authorization. A monologue —
+  even a technically correct one — flatlines them in anxiety. Structure is the difference.</p>
+
+  <h3>Re-Engagement Loops — The 60-to-90-Second Rule</h3>
+  <p>Human attention on a phone call is measured in tens of seconds. Long monologues lose the customer even
+  when the content is correct. The discipline: every 60–90 seconds, insert a micro-question that re-engages
+  the customer's mind and confirms they're still tracking.</p>
+
+  <div class="co script"><span class="lbl">🔵 Script · Re-Engagement Micro-Questions</span>
+  <p>"Does that make sense so far?"</p>
+  <p>"Were you able to see that in the photo I sent?"</p>
+  <p>"Any questions on what we've covered so far?" / "Any other concerns you'd like to share?"</p>
+  <p>"Is this still the best number to reach you?"</p></div>
+
+  <div class="co decoder"><span class="lbl">🟣 Psychology Decoder · Why micro-questions multiply close rate</span>
+  Every "yes" the customer gives during the presentation is a small commitment that compounds toward the
+  authorization "yes" at the end. By the time you ask for the work, the customer has already said yes a
+  half-dozen times. The final yes is just one more small step instead of a big leap.</div>
+
+  <h3>The 10-Step ISO Presentation Structure</h3>
+  <p>Investment-Solution-Outcome, run in this exact sequence on any 1st-base safety call. The structure
+  never changes; only the technical content does.</p>
+  <table>
+    <tr><th>#</th><th>Beat</th><th>What It Does</th></tr>
+    <tr><td>1</td><td><b>Greeting + frame</b> (warm opening &amp; time check)</td><td>Re-establishes rapport; "is now a good time?" gives agency and reduces resistance.</td></tr>
+    <tr><td>2</td><td><b>Recap the concern</b> (advisor co-review)</td><td>"I personally reviewed" scores Competence + Trustworthy in one sentence.</td></tr>
+    <tr><td>3</td><td><b>Media confirmation</b></td><td>Locks in the DVI evidence before delivering the finding.</td></tr>
+    <tr><td>4</td><td><b>Vehicle health overview</b></td><td>Permission frame; honors the original reason for the visit. Good-Good-Bad order begins.</td></tr>
+    <tr><td>5</td><td><b>Walk the green</b> (good news)</td><td>First positive — what's healthy. Primes receptivity.</td></tr>
+    <tr><td>6</td><td><b>Walk the yellow / more good news</b></td><td>Second positive. Reframes a discovery as a save: "caught it early" = competence + caring.</td></tr>
+    <tr><td>7</td><td><b>Walk the red — PRS each finding</b></td><td>Full Problem · Risk · Solution. Risk named explicitly — the urgency engine.</td></tr>
+    <tr><td>8</td><td><b>Investment</b></td><td>Single number, parts and labor. No itemization (that's Boss Battle 8 territory).</td></tr>
+    <tr><td>9</td><td><b>Coverage</b></td><td>Warranty, what's included, financing, value reframe — <b>NO PAUSE between 8 and 9.</b></td></tr>
+    <tr><td>10</td><td><b>Direction question / tee-up &amp; callback</b></td><td>Assumptive close; sets up the next base; confirms contact (commitment).</td></tr>
+  </table>
+
+  <div class="co stop"><span class="lbl">🔴 Stop · Never pause between Investment and Coverage</span>
+  The pause after stating the price is read by the customer as "wait for my reaction" — it's empty air
+  they fill with doubt, and it's where the deal dies. Coverage must follow Investment in the same breath,
+  every time: "…the investment for that today is $X, and here's everything that covers it…" Rehearse
+  until this is one thought, not two.</div>
+
+  <h3>Worked Example — The Gold-Standard 1st-Base ISO Safety Presentation</h3>
+  <p>The water-pump-leak example is the canonical reference template for any 1st-base safety call. Every
+  sentence maps to a deliberate move.</p>
+
+  <div class="co worked"><span class="lbl">🟨 Worked Example · Base-1 ISO Safety Presentation — Water Pump Leak</span>
+  <p><b>1 · Warm Opening &amp; Time Check.</b> "Hi [Customer], this is [Advisor] from [Shop]. Thanks for
+  your patience — is now a good time to go over your vehicle?"</p>
+  <p><b>2 · Advisor Co-Review (Credibility).</b> "I personally reviewed your vehicle with our certified
+  technician so I could give you a clear picture of what's going on."</p>
+  <p><b>3 · Media Confirmation.</b> "Were you able to view the photos, videos, or the digital inspection
+  report we sent over?"</p>
+  <p><b>4 · Concern &amp; Inspection.</b> "You brought your vehicle in for an oil change. We've completed
+  the initial inspection and I wanted to review what we found."</p>
+  <p><b>5 · Good News (positives).</b> "The good news is your digital inspection report clearly documents
+  everything with photos and notes so you can see exactly what we're seeing — and we caught this early,
+  before it turned into a bigger issue."</p>
+  <p><b>6 · More Good News (discovery).</b> "More good news — during our inspection we found that your
+  water pump is leaking, which is separate from your original visit and something we can take care of now
+  before it leads to further damage."</p>
+  <p><b>7 · Risk → Solution.</b> "If left as-is, a leaking water pump can lead to engine overheating,
+  coolant loss, and eventually major engine damage. The proper repair is to remove and replace the water
+  pump and complete a full cooling system service so everything is clean, sealed, and operating at the
+  correct temperature."</p>
+  <p><b>8 · Total Investment.</b> "The total investment for today's work — including the cooling system
+  service — is $1,695.46, parts and labor included."</p>
+  <p><b>9 · Coverage.</b> "This work is covered by our 3-year / 36,000-mile nationwide warranty — parts
+  and labor."</p>
+  <p><b>10 · Tee-Up &amp; Callback.</b> "While your vehicle is here, we'll finish the full bumper-to-bumper
+  digital inspection and I'll reach out if anything else needs attention. Is this still the best number to
+  reach you?"</p></div>
+
+  <div class="co decoder"><span class="lbl">🟣 Psychology Decoder · The anatomy in one line per beat</span>
+  Beats 1–3 re-run Steps 1, 2, and 4 of the sales process in miniature — rapport, credibility, evidence.
+  Beats 5–6 are Good-Good-Bad. Beat 7 is the full PRS with the Risk explicit. Beats 8–9 are one breath.
+  Beat 10 sets up 2nd base before this call is even over. Once the pattern is automatic, you only have to
+  think about the repair — the structure carries itself.</div>
+
+  <div class="co mastery"><span class="lbl">🟡 Mastery Check · Level 6 — Presentation Mastery</span>
+  <ul class="check">
+    <li>Asked permission to speak before delivering findings.</li>
+    <li>Confirmed the DVI was viewed (or summarized with permission).</li>
+    <li>Used Good-Good-Bad and full PRS on every finding.</li>
+    <li>Investment immediately followed by Coverage — no pause.</li>
+    <li>Re-engaged at least every 90 seconds with a micro-question.</li>
+    <li>Ended with a tee-up sentence for the next base.</li>
+  </ul></div>
+
+  <div class="co coach"><span class="lbl">🔷 Coach's Corner · One presentation call per week, scored against the 10 beats</span>
+  The coach uses the anatomy table as a scorecard — each numbered beat marked Present / Partial / Missing —
+  and coaches the missing items one at a time. The two most common gaps: skipping Risk (beat 7), and pausing
+  between Investment and Coverage (beats 8/9).</div>
+
+  <h3>KPIs</h3>
+  <div class="kpis">
+    <div class="kpi"><div class="name">Present → Auth %</div><div class="target">≥ 70%</div><div class="note">% of presentations that end in authorization.</div></div>
+    <div class="kpi"><div class="name">PRS Completeness</div><div class="target">100%</div><div class="note">% of findings with Problem, Risk, Solution stated in order.</div></div>
+    <div class="kpi"><div class="name">DVI View Before Call</div><div class="target">≥ 75%</div><div class="note">Strong leading indicator of authorization.</div></div>
+  </div>
+
+  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Advisor Book v2.0</span></div>
+</div>
+<!-- ======================= CH 7 BOSS BATTLES ======================= -->
+<div class="chapter">
+  <div class="ch-head">
+    <span class="eyebrow">Step 7 of 8 · Module 7</span>
+    <h2>Overcome Objections — The 8 Boss Battles</h2>
+    <div class="mission">Mission: Convert hesitation into clarity. Objections are not rejection — they are uncertainty wearing a costume.</div>
+    <div class="removes">This step removes: <b>the customer's remaining specific doubts.</b></div>
+    <div class="statbar">
+      <div class="stat"><div class="k">Objective</div><div class="v">RESOLVE HESITATION</div></div>
+      <div class="stat"><div class="k">Framework</div><div class="v">8 BOSS BATTLES</div></div>
+      <div class="stat"><div class="k">Primary KPI</div><div class="v">1ST-OBJ CLOSE %</div></div>
+      <div class="stat"><div class="k">Failure Mode</div><div class="v">ARGUING</div></div>
+    </div>
+  </div>
+
+  <h3>The Objection Translation Matrix</h3>
+  <p>Objections are never literal. They are always a stand-in for a deeper uncertainty the customer either
+  can't name or doesn't want to admit. Your job is to translate the surface objection into the real one —
+  then respond to that.</p>
+  <table>
+    <tr><th>What the Customer Says</th><th>What They Actually Mean</th><th>Your Objective</th><th>The Move</th></tr>
+    <tr><td>"I'm going to sell the car"</td><td>"This feels like throwing money at a sinking ship"</td><td>Reframe the alternative</td><td>Boss 1 — cost-of-replacement math</td></tr>
+    <tr><td>"Price is too high"</td><td>"I'm not sure this is real value"</td><td>Anchor to what they're actually buying</td><td>Boss 2 — Anti-Lowest-Price Brag</td></tr>
+    <tr><td>"Don't have the money"</td><td>"Not today — but I might if there's a way"</td><td>Reframe from cost to timing</td><td>Boss 3 — Money Reframe / financing pivot</td></tr>
+    <tr><td>"Talk to my spouse"</td><td>"I need backup / a delay"</td><td>Get the spouse on the same call</td><td>Boss 4 — Three-Way Bypass</td></tr>
+    <tr><td>"I'll wait"</td><td>"I'm unsure of urgency"</td><td>Clarify safety vs. maintenance</td><td>Boss 5 — risk reframe</td></tr>
+    <tr><td>"You're always selling"</td><td>"I don't fully trust you"</td><td>Shift from salesperson to fiduciary</td><td>Boss 6 — Pro Obligation Frame</td></tr>
+    <tr><td>"I need my car today"</td><td>"Logistics fear"</td><td>Solve logistics first, then return to the repair</td><td>Boss 7 — transport offer</td></tr>
+    <tr><td>"Parts and labor breakdown?"</td><td>"I want to comparison-shop"</td><td>Refuse the apples-to-apples frame</td><td>Boss 8 — protection-program reframe</td></tr>
+  </table>
+
+  <h3>The Five Universal Rules of Objection Handling</h3>
+  <ol>
+    <li><b>Never argue.</b> Arguing tells the customer they were wrong to feel the way they feel. Even if you win the argument, you've lost the relationship.</li>
+    <li><b>Acknowledge first, always.</b> "I completely understand" / "I hear you" / "Fair enough." This is not concession — it's permission to be heard.</li>
+    <li><b>Find the real concern.</b> Clarifying questions: "Is it more than you expected, or are you comparing it to another estimate?" Information beats persuasion.</li>
+    <li><b>Pivot to value or risk, never to discount.</b> The instant you discount in response to an objection, you have trained the customer to objection-shop you forever.</li>
+    <li><b>Re-ask for the close.</b> Every objection-handled exchange must end with another move toward authorization. Otherwise you've just had a conversation.</li>
+  </ol>
+  <p class="small">Mirror the emotion, name the underlying concern, then bridge to the script. Never use "but."</p>
+
+  <h3>Boss 1 — "I'm Selling the Car"</h3>
+  <div class="co script"><span class="lbl">🔵 Script · Boss 1 · The Exchange</span>
+  <p><span class="who">Customer:</span> "I appreciate everything, but I'm probably just going to sell it. I don't want to put more money into it."</p>
+  <p><span class="who">You:</span> "I completely understand. Big repairs can make you step back and rethink things. Out of curiosity — are you planning to replace it with something newer or used?"</p>
+  <p><span class="who">Customer:</span> "Probably used. I don't want another big payment."</p>
+  <p><span class="who">You:</span> "That makes sense. Let me give you something to consider. Most used vehicles today are still a
+  major investment, and you're inheriting someone else's maintenance history. With your vehicle, we know
+  exactly what condition it's in because we just inspected it bumper to bumper. Based on what we saw, this
+  vehicle still has strong life left in it. Let me ask you this — if you could purchase this exact vehicle,
+  knowing the major systems have just been inspected and repaired, for a fraction of the cost of another
+  vehicle… would that make sense?"</p>
+  <p><span class="who">Customer:</span> "I didn't think about it that way."</p>
+  <p><span class="who">You:</span> "Right now you're not throwing money at an old car — you're making a smart investment in a
+  vehicle you already own and understand. The average used car today runs up to $25,000, and the insurance
+  rates are outrageous. To get this vehicle back to safe and reliable, we're talking about [state total
+  investment]. I completely understand if you're simply in the market for a new car — but if you're
+  looking to make a smart financial decision, my professional advice would be to repair the car instead of
+  buying a used car that may need the same in repairs, or more."</p></div>
+  <div class="co decoder"><span class="lbl">🟣 Psychology Decoder · Reframing buy vs. repair</span>
+  The customer is comparing repair cost to $0. You reframe it against the real alternative — the cost,
+  risk, and unknown history of another vehicle. Once that frame lands, your repair becomes the cheap option.</div>
+
+  <h3>Boss 2 — "The Price Is Too High"</h3>
+  <div class="co script"><span class="lbl">🔵 Script · Boss 2 · The Exchange</span>
+  <p><span class="who">Customer:</span> "That just seems like a lot."</p>
+  <p><span class="who">You:</span> "I hear you. Let me ask — is it more than you expected, or are you comparing it to another estimate?"</p>
+  <p><span class="who">Customer:</span> "It just feels high."</p>
+  <p><span class="who">You:</span> "Fair enough. We're not positioned as the lowest-priced option in town, and that's intentional.
+  We invest in experienced, certified technicians. We back our work with a 3-year / 36,000-mile nationwide
+  warranty. And we stand behind it with real support if something ever comes up. You're not just paying for
+  parts — you're investing in doing it correctly the first time. Have you ever gone with the cheaper
+  option before and ended up paying for it twice?"</p>
+  <p><span class="who">Customer:</span> "Yeah… I suppose."</p>
+  <p><span class="who">You:</span> "That's exactly what we're helping you avoid. Let's go ahead and get this handled properly so
+  you don't have to revisit it again. I'll get it moving and keep you updated. Is this still the best number?"</p></div>
+  <div class="co decoder"><span class="lbl">🟣 Psychology Decoder · The Anti-Lowest-Price Brag</span>
+  Saying out loud "we are not the cheapest, and that's intentional" is a confidence move. Most shops
+  apologize for price. Owning it makes the customer respect the price tag instead of fighting it. Never
+  apologize for price — and never disparage the competitor; raise your own bar instead.</div>
+
+  <h3>Boss 3 — "I Don't Have the Money Right Now"</h3>
+  <div class="co script"><span class="lbl">🔵 Script · Boss 3 · The Exchange</span>
+  <p><span class="who">Customer:</span> "I just don't have the money today."</p>
+  <p><span class="who">You:</span> "I completely understand. Auto repairs rarely show up at a convenient time — always after a
+  big expense, or when you least expect it. Something a lot of our customers LOVE to take advantage of is
+  our flexible payment options. If I can take care of the repair now and let you pay me back with no
+  interest, can I get the parts ordered and move forward?"</p>
+  <p><span class="who">Customer:</span> "YES!?" <i>(They laugh, you laugh… send them the link.)</i></p>
+  <p><span class="who">You:</span> "I just sent you a link to fill out a form with one of our payment partners. Once it's complete
+  I'll see it come through on my side and we can go from there! Did you receive the link?"</p></div>
+  <div class="co protip"><span class="lbl">⚪ Pro Tip · Boss 3</span>
+  Stay on the phone with them as they fill out the form, so you can close the moment the approved
+  application comes through.</div>
+  <div class="co decoder"><span class="lbl">🟣 Psychology Decoder · The Money Reframe</span>
+  Customers say "I don't have the money" when they mean "I don't have the money TODAY." You are no longer
+  selling the repair — you are selling the option of solving the problem now and paying later. Almost no
+  one declines that.</div>
+
+  <h3>Boss 4 — "I Need to Talk to My Spouse"</h3>
+  <div class="co script"><span class="lbl">🔵 Script · Boss 4 · The Exchange</span>
+  <p><span class="who">Customer:</span> "I need to run this by my spouse first."</p>
+  <p><span class="who">You:</span> "I completely understand — decisions like this are definitely best made together. To make sure
+  both you and your spouse have all the correct information at the same time, the most efficient way to
+  proceed is a brief three-way call. I can review everything I just covered, you'll both be fully informed,
+  and you can make the best decision for your situation. Is your spouse available to join us now, or should
+  I reach out to them to review this information and call you back?"</p>
+  <p><span class="who">Customer:</span> "Let me try to get them on the phone."</p></div>
+  <div class="co decoder"><span class="lbl">🟣 Psychology Decoder · The Three-Way Bypass</span>
+  Most "talk to my spouse" objections die in the parking lot. The decision never gets a fair hearing
+  because the customer repeats it second-hand. By offering to be on the call yourself, you ensure the
+  spouse hears the same PRS and warranty story that built trust in the first place.</div>
+
+  <h3>Boss 5 — "I'm Going to Wait"</h3>
+  <div class="co protip"><span class="lbl">⚪ Pro Tip · Boss 5 strategy</span>
+  This usually means one of two things: they're unsure about urgency, or they're avoiding committing.
+  Your job: clarify risk if it's a safety concern; reframe value if it's maintenance. If it's the "just do
+  the safety stuff, skip the rest" version — agree, defer, and <b>schedule the deferred items</b> so they
+  leave with an appointment for the rest.</div>
+  <div class="co script"><span class="lbl">🔵 Script · Boss 5 · Example 1 — Safety Concern</span>
+  <p><span class="who">Customer:</span> "I think I'll wait on that."</p>
+  <p><span class="who">You:</span> "I understand. I do want to be transparent — this one falls into a safety category. Right now
+  the brakes are past normal wear and into potential damage. That can affect stopping distance and control.
+  Are you planning to drive it?"</p>
+  <p><span class="who">Customer:</span> "Yes, just around town."</p>
+  <p><span class="who">You:</span> "Even short trips carry risk in this condition. My job is to protect you, not pressure you. If
+  budget is the concern, we can look at payment options — but I don't recommend postponing something that
+  affects safety."</p></div>
+  <div class="co script"><span class="lbl">🔵 Script · Boss 5 · Example 2 — Preventative Maintenance</span>
+  <p><span class="who">Customer:</span> "I'll just wait on the fluid services."</p>
+  <p><span class="who">You:</span> "No worries — they're not urgent today. What we're seeing in those systems is buildup that
+  doesn't show symptoms until damage starts. Doing them now protects the components while everything is
+  accessible. If we skip them today, are you planning to schedule it soon, or wait until something starts
+  acting up?"</p>
+  <p><span class="who">Customer:</span> "Probably the next oil change."</p>
+  <p><span class="who">You:</span> "Understood. Just keep in mind preventative service is always less expensive than corrective
+  repair. If it makes sense to bundle it while it's already here, we can space out the cost as well."</p></div>
+
+  <h3>Boss 6 — "You're Always Trying to Sell Me"</h3>
+  <div class="co script"><span class="lbl">🔵 Script · Boss 6 · The Exchange</span>
+  <p><span class="who">Customer:</span> "Every time I come in, you try to sell me something."</p>
+  <p><span class="who">You:</span> "I appreciate you saying that. My goal isn't to sell you — it's to inspect your vehicle
+  thoroughly and give you accurate information. Every car that comes through our shop receives a full
+  digital inspection. That means checking safety components, wear items, and potential issues before they
+  become problems. You're never obligated to approve anything. But it's my Professional Obligation to make
+  sure you know what we see. Would you like me to walk you through today's inspection results so you can
+  decide what makes sense?"</p></div>
+  <div class="co decoder"><span class="lbl">🟣 Psychology Decoder · The Pro Obligation Frame</span>
+  Calling out your "Professional Obligation" shifts you from salesperson to fiduciary. The customer's
+  defenses drop because you just told them they are in control.</div>
+
+  <h3>Boss 7 — "I Need My Car Today"</h3>
+  <div class="co protip"><span class="lbl">⚪ Pro Tip · Boss 7 strategy</span>
+  Two possibilities: a real logistical need, or avoiding the decision. First solve transportation. Then
+  return to the repair.</div>
+  <div class="co script"><span class="lbl">🔵 Script · Boss 7 · The Exchange</span>
+  <p><span class="who">Customer:</span> "I really need my car today."</p>
+  <p><span class="who">You:</span> "I understand. Let's solve the transportation side first. We have loaner vehicles, Uber rides,
+  and pickup/drop-off options. Would one of those help make this easier for you?"</p>
+  <p><span class="who">Customer:</span> "An Uber ride would help."</p>
+  <p><span class="who">You:</span> "Perfect. I'll get that arranged so we can repair your vehicle properly without rushing
+  anything. Once it's complete, I'll give you a call. Still the best number?"</p></div>
+
+  <h3>Boss 8 — "Can I Get a Parts and Labor Breakdown?"</h3>
+  <div class="co script"><span class="lbl">🔵 Script · Boss 8 · The Exchange</span>
+  <p><span class="who">Customer:</span> "Can you break down parts and labor?"</p>
+  <p><span class="who">You:</span> "I can absolutely review the estimate with you. Just to clarify — we're not structured as a
+  parts-and-labor shop. We're structured around protection and execution. You're paying for certified
+  technicians, proper procedures, warranty coverage, and post-repair support — not just the components
+  themselves. We also include: a 3-year / 36,000-mile nationwide warranty, roadside assistance, a
+  quality-control inspection, and digital documentation. That's why it doesn't break down into a simple
+  commodity model. Does that help clarify where the value is?"</p></div>
+  <div class="co decoder"><span class="lbl">🟣 Psychology Decoder · Don't trade apples for apples</span>
+  Once you let the customer compare your line items to a competitor's line items, you have lost. You sell
+  a complete protection program, not parts and minutes. Keep the conversation in that frame. If the
+  customer asks for a repair "without the part" — same family of objection — use the Pro Obligation
+  frame: "I can't ethically do it that way and still warrant the work, but here's what we can do…"</div>
+
+  <div class="co drill"><span class="lbl">🟢 Drill 7.A · The Boss Rush</span>
+  <b>Setup:</b> 15-minute team standup, all hands, standing. Coach throws random Boss lines; advisors
+  counter in turn, no notes. In the app, the AI plays each persona and scores your counter in real time.<br>
+  <b>Score:</b> 1–3 per counter. Leaderboard posted.<br>
+  <b>Goal:</b> clear all eight in live calls within 30 days. Run it every single morning of rollout Phase 2 —
+  by week 8 you'll have heard every Boss 40+ times in drill and you will counter them in your sleep.</div>
+
+  <div class="co mastery"><span class="lbl">🟡 Mastery Check · Level 4 — Boss Rush Mastery</span>
+  <ul class="check">
+    <li>Boss 1 — Selling the Car</li>
+    <li>Boss 2 — Price Too High</li>
+    <li>Boss 3 — No Money Right Now</li>
+    <li>Boss 4 — Talk to My Spouse</li>
+    <li>Boss 5 — I'm Going to Wait</li>
+    <li>Boss 6 — You're Always Selling</li>
+    <li>Boss 7 — I Need My Car Today</li>
+    <li>Boss 8 — Parts &amp; Labor Breakdown</li>
+  </ul>
+  <b>Defeat all 8 in live calls within 30 days → Level 4 cleared. You are now a PRO.</b></div>
+
+  <div class="co coach"><span class="lbl">🔷 Coach's Corner · The weekly Boss Rush</span>
+  The coach tracks who has cleared all eight in live calls within 30 days and posts the leaderboard. This
+  is the fastest path to Level 4 (Pro). When 1st-Objection Close stalls below 40%, the pattern is almost
+  always arguing instead of listening — the coach will be listening for the word "but."</div>
+
+  <h3>KPIs</h3>
+  <div class="kpis">
+    <div class="kpi"><div class="name">1st-Objection Close %</div><div class="target">≥ 60%</div><div class="note">% of presentations where authorization happens after the first objection counter. The single most coachable KPI.</div></div>
+    <div class="kpi"><div class="name">Missed-Sale Recovered %</div><div class="target">≥ 25%</div><div class="note">% of declined safety items reopened and authorized within 7 days.</div></div>
+    <div class="kpi"><div class="name">Boss Coverage</div><div class="target">8/8</div><div class="note">Each advisor has defeated all 8 bosses in live calls.</div></div>
+  </div>
+
+  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Advisor Book v2.0</span></div>
+</div>
+
+<!-- ======================= CH 8 CLOSE ======================= -->
+<div class="chapter">
+  <div class="ch-head">
+    <span class="eyebrow">Step 8 of 8 · Module 8</span>
+    <h2>Execute — The Close</h2>
+    <div class="mission">Mission: Deliver commitment. Make the "yes" the path of least resistance.</div>
+    <div class="removes">This step removes: <b>the decision moment itself.</b></div>
+    <div class="statbar">
+      <div class="stat"><div class="k">Objective</div><div class="v">AUTHORIZED WORK</div></div>
+      <div class="stat"><div class="k">Core Move</div><div class="v">ASSUMPTIVE CLOSE</div></div>
+      <div class="stat"><div class="k">Primary KPI</div><div class="v">AUTHORIZATION RATE</div></div>
+      <div class="stat"><div class="k">Failure Mode</div><div class="v">ASKING PERMISSION</div></div>
+    </div>
+  </div>
+
+  <h3>The Closing Principle — Closing Starts at Hello</h3>
+  <p>The biggest myth in service writing is that "the close" happens at the end. It doesn't. The close
+  is the cumulative result of seven correctly executed prior steps. By the time you reach Step 8, the close
+  is already either won or lost. Step 8 is about <b>not breaking it</b>. When authorization rate is low,
+  the failure is almost always upstream — not in the close itself.</p>
+  <div class="pull">Customers don't follow conviction. Customers follow certainty.<br>
+  Your job is to be the most certain person in the conversation.</div>
+
+  <h3>The Momentum Funnel</h3>
+  <p>Trust flows downward through the funnel. By the funnel mouth, the close is gravity.</p>
+  <div class="fig">
+    <div style="max-width:4.8in;margin:0 auto;">
+      <div style="background:var(--navy);color:#fff;padding:8px;text-align:center;font-weight:700;">RAPPORT + CREDIBILITY <span style="font-weight:400;font-size:8.5pt;">— customer relaxes, opens posture</span></div>
+      <div style="background:var(--navy-soft);color:#fff;padding:8px;text-align:center;font-weight:700;margin:0 6%;">CUSTODY + DVI EVIDENCE <span style="font-weight:400;font-size:8.5pt;">— customer sees the truth</span></div>
+      <div style="background:var(--gold-deep);color:#fff;padding:8px;text-align:center;font-weight:700;margin:0 13%;">PRS + MICRO-COMMITMENTS <span style="font-weight:400;font-size:8.5pt;">— customer agrees in pieces</span></div>
+      <div style="background:var(--gold);color:var(--navy);padding:8px;text-align:center;font-weight:800;margin:0 21%;">ASSUMPTIVE CLOSE <span style="font-weight:400;font-size:8.5pt;">— "I'll get the parts ordered…"</span></div>
+    </div>
+    <div class="cap">Figure 8.1 · Trust flows down. By the funnel mouth, the close is gravity.</div>
+  </div>
+
+  <h3>The Three Families of Close</h3>
+  <table>
+    <tr><th style="width:20%">Family</th><th>How It Works</th><th>The Words</th></tr>
+    <tr><td><b>1 · Assumptive</b></td><td>Skip the decision. Move to logistics. The customer would have to stop motion to say no — far harder than just saying yes.</td><td>"I'll go ahead and get the parts ordered." · "While your car is here, we'll…" · "The parts will take a few hours to get here so long as I can hang up and place the order now!"</td></tr>
+    <tr><td><b>2 · Choice (Binary)</b></td><td>Collapse infinity to two options. The binary close is East-West applied to any decision.</td><td>"Would you prefer option A or option B?" · "Should we pick it up at 9:15 or 10:45?" · "Pickup tonight, or first thing tomorrow?"</td></tr>
+    <tr><td><b>3 · Logistical</b></td><td>The brain has to engage with parking, not price. By the time it's engaged, the price is silently accepted.</td><td>"Which direction would you like your vehicle facing when we bring it up?"</td></tr>
+  </table>
+
+  <div class="co script"><span class="lbl">🔵 Script · Assumptive close lines — land these without hesitation</span>
+  <p>"I'll go ahead and move forward with that!"</p>
+  <p>"The parts will take a few hours to get here so long as I can hang up and place the order now!"</p>
+  <p>"Would you prefer option A or option B?"</p>
+  <p>"Anything else you'd like to add before we move forward?"</p>
+  <p>"We really need to fix this problem — do you need any more information from me?"</p></div>
+
+  <div class="co decoder"><span class="lbl">🟣 Psychology Decoder · Why "which direction facing?" is the most quietly powerful close in the book</span>
+  The brain processes "which direction?" as a logistics problem. Logistics problems are answered on
+  autopilot — the way the brain answers "cream and sugar?" By engaging with logistics, the customer's
+  subconscious has just confirmed the transaction is complete. There is no longer anything to negotiate.
+  The price has been silently accepted.</div>
+
+  <h3>Home Plate — The Final Invoice Review</h3>
+  <p>Home Plate is not the end of the sale — it's the start of the next one. Done well, it's where the
+  customer becomes a repeat customer for life. Confirm the work, reinforce the value, set the next
+  appointment, close the loop. This is where retention is built.</p>
+
+  <div class="co script"><span class="lbl">🔵 Script · Home Plate · Final Invoice Review</span>
+  <p>"[Mr./Mrs. Customer], thank you again for trusting us with your vehicle today. Here's what we
+  completed: [services — e.g., replaced brake pads and rotors, repaired the axle, updated your maintenance
+  services]. Everything is digitally documented in your invoice. Your total investment today is $____.
+  <b>Which direction would you like your vehicle facing when we bring it up?</b></p>
+  <p>Before you head out, a few benefits included with today's service: 3-year / 36,000-mile nationwide
+  warranty · 365-day roadside assistance · post-repair inspection · maintenance reminders · lifetime
+  protection enrollment if applicable. We just want vehicle ownership to feel easy and predictable. We
+  appreciate your business and we'll be here whenever you need us."</p></div>
+
+  <div class="co protip"><span class="lbl">⚪ Pro Tip · The Three-Way Bypass belongs here too</span>
+  When the close stalls on "I need to talk to my spouse," don't wait for the parking-lot retelling — offer
+  to call the spouse with the customer on the line, so the conversation happens in a context where
+  uncertainty can still be reduced. (Full script: Boss 4, Chapter 7.)</div>
+
+  <div class="co mastery"><span class="lbl">🟡 Mastery Check · Level 8 — Close Mastery</span>
+  <ul class="check">
+    <li>Used at least one assumptive close line in every workflow.</li>
+    <li>Investment stated as a single number; warranty followed immediately, no pause.</li>
+    <li>Closed Home Plate with "which direction facing?"</li>
+    <li>Re-enrolled the customer in lifetime protection or a maintenance plan where applicable.</li>
+    <li>Asked for the next visit / review before the customer left the lobby.</li>
+  </ul></div>
+
+  <div class="co coach"><span class="lbl">🔷 Coach's Corner · When Authorization Rate is red, look upstream first</span>
+  If PRS Completeness and 1st-Objection Close are green, the coach drills M6 (no-pause Investment-Coverage).
+  If those are also green, then — and only then — the close itself gets work. The close is rarely the
+  problem; the coach's rule is "never coach a downstream symptom when an upstream metric is also red."</div>
+
+  <h3>KPIs</h3>
+  <div class="kpis">
+    <div class="kpi"><div class="name">Authorization Rate</div><div class="target">≥ 75%</div><div class="note">Authorized $ ÷ presented $ across all bases.</div></div>
+    <div class="kpi"><div class="name">ARO (Avg Repair Order)</div><div class="target">Shop benchmark</div><div class="note">Track per-advisor. Variance flags a coaching opportunity. Tied to PRS completeness and base order.</div></div>
+    <div class="kpi"><div class="name">5-Star Review %</div><div class="target">≥ 80%</div><div class="note">Customers asked at Home Plate for a review — conversion to 5-star. Cumulative across all modules.</div></div>
+  </div>
+
+  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Advisor Book v2.0</span></div>
+</div>
+<!-- ======================= CH 9 LAST ======================= -->
+<div class="chapter">
+  <div class="ch-head">
+    <span class="eyebrow">Module 9 · The Recovery Combo</span>
+    <h2>L.A.S.T. — Turn Complaints Into Loyalty</h2>
+    <div class="mission">Mission: An upset customer is a gift. Recover well and they become more loyal than a customer who never had a problem at all.</div>
+    <div class="removes">This module handles: <b>any complaint, comeback, or recovered-customer interaction.</b></div>
+    <div class="statbar">
+      <div class="stat"><div class="k">Objective</div><div class="v">RECOVER &amp; RETAIN</div></div>
+      <div class="stat"><div class="k">Framework</div><div class="v">L.A.S.T.</div></div>
+      <div class="stat"><div class="k">Primary KPI</div><div class="v">RETAINED %</div></div>
+      <div class="stat"><div class="k">Failure Mode</div><div class="v">DEFENDING FIRST</div></div>
+    </div>
+  </div>
+
+  <h3>Mission Brief</h3>
+  <p>Every shop will have failures. A part won't arrive on time. A noise will come back. A bill will land
+  higher than the estimate. A tech will leave a smudge on the seat. <b>Failure is a constant. What is
+  variable is the recovery.</b> The L.A.S.T. method — Listen, Acknowledge, Solve, Thank — is the
+  four-beat combo that turns a hot counter into a retained customer, at the exact moment the customer is
+  most ready to either leave or deepen the relationship.</p>
+  <div class="pull">A customer who complains and is heard becomes more loyal than one who never had a problem at all.
+  The complaint is the opening. The recovery is the bond.</div>
+
+  <h3>The Psychology — Why Recovery Outperforms Smooth Service</h3>
+  <p>The human brain has a negativity bias: bad experiences imprint roughly 2–4× stronger than good ones.
+  That sounds like terrible news for a shop with a complaint — but it's the unlock. Because the imprint is
+  so strong, when you reverse the experience with a great recovery, <b>the recovery itself imprints with the
+  same intensity</b>. The customer no longer remembers the failure as a standalone event — they remember
+  the recovery as the defining moment. This is the documented <b>Service Recovery Paradox</b>: customers
+  whose problems are well-handled report higher loyalty and referral rates than customers who never had a
+  problem at all.</p>
+  <table>
+    <tr><th style="width:22%">Mechanism</th><th>How It Works</th></tr>
+    <tr><td><b>Validation Need</b></td><td>An upset customer's primary need is not the fix — it's the feeling of being heard. Jump to the fix and you skip the only step that actually resolves the emotion.</td></tr>
+    <tr><td><b>Effort Asymmetry</b></td><td>The customer expects the bare minimum. When you do meaningfully more — or even visibly try — the gap registers as care, and care is what loyalty is made of.</td></tr>
+    <tr><td><b>Story Conversion</b></td><td>Every customer will tell a story about this interaction. L.A.S.T. gives them a hero arc ("there was a problem, but they fixed it like champs") instead of a tragedy ("don't go there"). The story is your future business.</td></tr>
+  </table>
+  <div class="co decoder"><span class="lbl">🟣 Psychology Decoder · Why this isn't an excuse to cause problems</span>
+  The Recovery Paradox is not permission to fail on purpose. The lift is real, but it only applies to
+  well-handled recoveries — and only sometimes outperforms baseline. The takeaway is not "create
+  complaints." It's "treat every complaint as the highest-leverage moment of the relationship" —
+  because that is exactly what it is.</div>
+
+  <h3>The Four Beats — In Order, Every Time</h3>
+  <p>L.A.S.T. is a sequence, not a menu. Reorder it and it stops working. Skip a beat and the customer
+  feels unheard. The most common failure is racing to S (Solve) without doing L and A — that's the move
+  that makes customers escalate to Yelp.</p>
+  <table>
+    <tr><th>Beat</th><th>What You're Actually Doing</th><th>What It Sounds Like</th><th>Most Common Mistake</th></tr>
+    <tr><td><b>L — Listen</b><br><span class="small">silence is medicine</span></td><td>Letting cortisol drain. The customer can't hear a solution while their alarm brain is firing. They talk until they stop — most complaints lose 60% of their charge when the customer finishes uninterrupted.</td><td>"Okay." "I understand." "Go ahead, I'm listening."</td><td>Interrupting to defend or explain. This single move makes everything worse.</td></tr>
+    <tr><td><b>A — Acknowledge</b><br><span class="small">emotion first, no "but"</span></td><td>Mirroring the emotion before the facts. You don't have to agree the shop was wrong — you have to validate that the feeling makes sense.</td><td>"I can understand why that would be frustrating." "Thank you for bringing this to me." Use "and," never "but": "I hear that you're frustrated, AND here's what I'm going to do."</td><td>Conditional acknowledgment: "I understand, BUT…" The word "but" deletes everything before it.</td></tr>
+    <tr><td><b>S — Solve</b><br><span class="small">specific &amp; time-bound</span></td><td>Owning a specific next step. Time-bound. Concrete. Yours — "I will," even if a tech does the work.</td><td>"Here's what I can do for you…" "I will call you personally by 3pm with the answer."</td><td>Vague promises: "we'll look into it." A non-answer that ages into a Yelp review.</td></tr>
+    <tr><td><b>T — Thank</b><br><span class="small">complaint = gift</span></td><td>Reframing the complaint as a gift. This is the move that imprints the recovery as the defining memory and creates the Recovery Paradox.</td><td>"Thank you for giving us the chance to make this right." "We'd much rather hear this from you than read about it later."</td><td>Skipping it because the conversation feels done. The Thank is what locks loyalty in.</td></tr>
+  </table>
+
+  <h3>The 24-Hour Recovery Window</h3>
+  <p>The Recovery Paradox has a hard expiration date. The longer a complaint sits, the more the customer
+  rehearses it — to their spouse, their friends, themselves. Every rehearsal cements "they did me wrong."</p>
+  <table>
+    <tr><th style="background:var(--green);">RECOVERY ZONE · &lt; 1 hour</th><th style="background:var(--gold-deep);">FADING ZONE · 1–24 hours</th><th style="background:var(--red);">REVIEW ZONE · &gt; 24 hours</th></tr>
+    <tr><td>Paradox engaged — the customer often becomes MORE loyal.</td><td>Damage spreading — the customer is rehearsing the story.</td><td>Public post likely — recovery now only stops the bleeding.</td></tr>
+  </table>
+  <p class="small">Any unresolved complaint must have a status update to the customer within 24 hours, even if
+  the resolution isn't ready. Silence past 24 hours doubles the loyalty damage. The first hour is worth ten of the next day.</p>
+
+  <h3>The 5 Recovery-Killers</h3>
+  <table>
+    <tr><th>#</th><th>Killer</th><th>Beat It Breaks</th><th>What To Do Instead</th></tr>
+    <tr><td>1</td><td>Defending the shop / explaining what happened.</td><td>L — Listen</td><td>Silence. Let them finish. Acknowledge before you explain — or don't explain at all.</td></tr>
+    <tr><td>2</td><td>"I understand, BUT…"</td><td>A — Acknowledge</td><td>"I understand." Full stop. Pause. Then "Here's what I can do."</td></tr>
+    <tr><td>3</td><td>Vague fix: "we'll look into it."</td><td>S — Solve</td><td>Specific, time-bound, owned: "I'll personally call you back by 3pm with the resolution."</td></tr>
+    <tr><td>4</td><td>Discounting on instinct to make it go away.</td><td>S — Solve (collapsed)</td><td>Solve the actual problem first. A discount that doesn't resolve the complaint costs you twice.</td></tr>
+    <tr><td>5</td><td>Skipping the Thank because "they're still upset."</td><td>T — Thank</td><td>The Thank is exactly what shifts them from upset to invested. Always close the loop.</td></tr>
+  </table>
+
+  <h3>Scripts — The Four Most Common Hot Counters</h3>
+  <div class="co script"><span class="lbl">🔵 Script · Hot Counter 1 · "My car's been here for two days and no one called me."</span>
+  <p><b>L:</b> "Okay, walk me through it — when did you drop it off and what were you expecting to hear?" <i>[Listen. No interrupting.]</i></p>
+  <p><b>A:</b> "I completely understand — not hearing back when you're waiting on your car is one of the most frustrating things, and that's on us to do better."</p>
+  <p><b>S:</b> "Here's what I'm going to do. I'm pulling your RO right now. I'll get you the current status, a real ETA, and I'll call you back personally within 30 minutes whether the news is good or not."</p>
+  <p><b>T:</b> "Thank you for letting me know. We'd much rather hear this from you than read about it later."</p></div>
+
+  <div class="co script"><span class="lbl">🔵 Script · Hot Counter 2 · "The bill is way more than what you quoted."</span>
+  <p><b>L:</b> "Tell me what number you were expecting and what number you're seeing."</p>
+  <p><b>A:</b> "That's a fair concern — if you were planning on one number and the bill comes in higher, that breaks trust, and I get why you're frustrated."</p>
+  <p><b>S:</b> "Let me pull the estimate and the final invoice side by side. I'll walk you line by line through what changed, and if any of that wasn't properly authorized, I'll make it right today."</p>
+  <p><b>T:</b> "I appreciate you raising this instead of just walking away unhappy. Let's figure it out."</p></div>
+
+  <div class="co script"><span class="lbl">🔵 Script · Hot Counter 3 · "I just paid for this last month and the same noise is back!"</span>
+  <p><b>L:</b> "Tell me about the noise — when does it happen, is it exactly the same, did it ever fully go away?"</p>
+  <p><b>A:</b> "That's exactly the kind of thing that should not be happening, and I understand why it feels like we let you down."</p>
+  <p><b>S:</b> "Here's what we're going to do. We carry a 3-year / 36,000-mile warranty on parts and labor — this is covered. I'm getting you on the schedule today or tomorrow, no charge, and we'll diagnose it personally. Can you bring it in this afternoon, or in the morning?"</p>
+  <p><b>T:</b> "Thank you for bringing it back to us instead of going somewhere else. We're going to make this right."</p></div>
+
+  <div class="co script"><span class="lbl">🔵 Script · Hot Counter 4 · "Your tech left grease on my seat."</span>
+  <p><b>L:</b> "Can you show me?" <i>[Walk to the car. Look. Do not minimize.]</i></p>
+  <p><b>A:</b> "You're right — that's not what should happen. That's on us."</p>
+  <p><b>S:</b> "Here's what we're going to do. We use seat covers on every job and that wasn't followed today. I'm going to get this professionally detailed at our cost and have your car back to you cleaner than when it came in. I'll arrange a loaner or an Uber so you're not without a ride. When works best?"</p>
+  <p><b>T:</b> "Thank you for telling me directly. This is how we get better — one customer at a time."</p></div>
+
+  <div class="co stop"><span class="lbl">🔴 Stop · The banned word is "policy"</span>
+  Never use the word "policy" during a recovery. It tells the customer "you don't matter, the rule does."
+  If the policy must come up, name what it's for instead: "the way we handle this is…" or "our standard for
+  situations like this is…" The shift is small. The trust difference is enormous.</div>
+
+  <div class="co stop"><span class="lbl">🔴 Stop · Never offer a discount as the first move</span>
+  Discounting before listening teaches the customer that complaining is how they get cheaper service, and
+  signals you're trying to make the problem go away rather than fix it. Solve the actual issue first. If
+  goodwill comp is appropriate, it comes after the solve — as a gesture, not a payoff.</div>
+
+  <h3>Drills — Build the Reflex</h3>
+  <div class="co drill"><span class="lbl">🟢 Drill 9.A · Silence Tolerance (60-second reps)</span>
+  <b>Setup:</b> partner plays an upset customer venting for 60 full seconds. Your only allowed words:
+  "okay," "I understand," "go ahead." No interrupting.<br>
+  <b>Score:</b> did you make the full 60 seconds without defending, explaining, or jumping to solve?<br>
+  <b>Goal:</b> 5 consecutive clean reps. The single hardest recovery skill to acquire.</div>
+  <div class="co drill"><span class="lbl">🟢 Drill 9.B · The BUT Buster</span>
+  <b>Setup:</b> trainer reads a complaint. You acknowledge in 1–2 sentences without using "but," "however," or "although."<br>
+  <b>Score:</b> clean acknowledgment? Emotion validated before any explanation?<br>
+  <b>Goal:</b> 8/10 reps clean, then promote to the live floor.</div>
+  <div class="co drill"><span class="lbl">🟢 Drill 9.C · Specificity Drill</span>
+  <b>Setup:</b> trainer states a complaint. You respond with a solve that has three components: who owns it,
+  what exact next step, by when.<br>
+  <b>Score:</b> all three present? Time-bound? Owned by you, not "someone will"?<br>
+  <b>Goal:</b> 10 consecutive reps with all three.</div>
+  <div class="co drill"><span class="lbl">🟢 Drill 9.D · The Full Combo (hot-counter roleplay)</span>
+  <b>Setup:</b> full live scenario, partner or AI in hot-customer mode — escalating, emotional, difficult.
+  Run the complete L → A → S → T sequence.<br>
+  <b>Score (1–5 each beat):</b> Listen quality + Acknowledge clarity + Solve specificity + Thank delivery. 16+/20 = mastery.<br>
+  <b>Goal:</b> 3 consecutive scenarios scoring 16+. This is what coaches a Level-4 advisor into Level 5.</div>
+
+  <div class="co mastery"><span class="lbl">🟡 Mastery Check · Level 9 — Recovery Mastery (Gate to Champion)</span>
+  <ul class="check">
+    <li>Listened for at least 30 seconds without interrupting, defending, or explaining.</li>
+    <li>Acknowledged the customer's emotion before stating any facts.</li>
+    <li>Did not use the words "but," "however," or "policy."</li>
+    <li>Offered a specific, time-bound, owned next step.</li>
+    <li>Did not discount or comp before solving the actual problem.</li>
+    <li>Ended with a sincere Thank that reframed the complaint as a gift.</li>
+    <li>Customer left committed to a next step (return visit, callback, or resolution).</li>
+  </ul>
+  <b>Pass all 7 across three live recoveries with documented retention → Level 5 (Champion) certified.</b></div>
+
+  <div class="co coach"><span class="lbl">🔷 Coach's Corner · Every recovery gets audited within 48 hours</span>
+  Any time you handle a complaint, the coach has 48 hours to walk through the interaction with you — not
+  punitive, coaching, using the Mastery Check as the scorecard. The coach (or manager) personally calls the
+  recovered customer 5–7 days later to confirm satisfaction and ask for a review — well-recovered
+  customers leave the best reviews you'll ever get. And the coach praises the Listen, not the Solve: the
+  Listen is the skill 95% of advisors get wrong. <b>Red flag:</b> three or more complaints in 30 days
+  tracing to the same root is a behavior pattern, not bad luck.</div>
+
+  <h3>KPIs — The Recovery Scoreboard</h3>
+  <div class="kpis">
+    <div class="kpi"><div class="name">Recovery Rate</div><div class="target">≥ 90%</div><div class="note">% of complaints where the customer returns for a future visit. The most important loyalty KPI.</div></div>
+    <div class="kpi"><div class="name">Time-to-Acknowledge</div><div class="target">≤ 1 hr</div><div class="note">From complaint received to first human response — inside the Recovery Zone.</div></div>
+    <div class="kpi"><div class="name">Post-Recovery 5-Star</div><div class="target">≥ 60%</div><div class="note">% of recovered customers who leave a 5-star review after the follow-up ask. Counter-intuitively high.</div></div>
+  </div>
+
+  <h3>Leave-Behind · Recovery After-Action Worksheet</h3>
+  <div class="co worked"><span class="lbl">🟨 Recovery After-Action Report — file with the RO</span>
+  <ul class="check">
+    <li>Advisor: ______ · Customer / RO #: ______ · Date/time of complaint: ______</li>
+    <li>Channel (counter / phone / text / review): ______</li>
+    <li>Complaint in the customer's words: ______________________________</li>
+    <li>Root cause (not blame — cause): ______________________________</li>
+    <li>L score (1–5): ___ · A score: ___ · S score: ___ · T score: ___</li>
+    <li>Specific solve delivered: ______________________________</li>
+    <li>Goodwill comp (if any) and reason: ______________________________</li>
+    <li>Customer state at end (recovered / cool / lost): ______</li>
+    <li>Follow-up call scheduled for: ______</li>
+    <li>Process change to prevent recurrence: ______________________________</li>
+  </ul></div>
+
+  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Advisor Book v2.0</span></div>
+</div>
+
+<!-- ======================= APP A WORKED EXAMPLES ======================= -->
+<div class="chapter">
+  <div class="ch-head">
+    <span class="eyebrow">Appendix A · PRS Presentation Library</span>
+    <h2>The Worked-Example Library</h2>
+    <div class="mission">Mission: A memorized PRS template for the eight most common repair categories. Drill these and the structure becomes instinct.</div>
+  </div>
+
+  <h3>How to Use This Library</h3>
+  <p>Each example is built on the same 10-step ISO template anatomized in Chapter 6 (the water-pump
+  example). The structure never changes — what changes is the technical content: the Problem, the Risk,
+  the Solution, the Investment, and the warranty language, tuned to each category. Use it three ways:
+  <b>(1) Drill material</b> — one example per morning standup in rollout Phase 2. <b>(2) Calibration
+  reference</b> — when your coach scores a PRS, they compare against the matching example here.
+  <b>(3) New-hire training</b> — deliver each one from memory before being released to live presentations.</p>
+  <div class="co protip"><span class="lbl">⚪ Pro Tip · The pattern stays constant</span>
+  Every example follows the same 10 beats: Warm Open · Co-Review · Media Confirm · Concern · Good News ·
+  More Good News · Risk → Solution · Investment · Coverage · Tee-Up. Once the pattern is automatic, you
+  only think about the repair — the structure carries itself.</div>
+
+  <h3>1 · Brakes — Front Pads &amp; Rotors (Safety)</h3>
+  <p class="small"><b>Scenario:</b> customer came in for a brake squeal. DVI confirms front pads at 2mm with rotor scoring.</p>
+  <div class="co worked"><span class="lbl">🟨 Base-1 ISO · Front Brakes</span>
+  <p><b>1.</b> "Hi [Customer], this is [Advisor] from [Shop]. Thanks for your patience — is now a good time to go over your vehicle?"</p>
+  <p><b>2.</b> "I personally walked the vehicle with our certified tech so I could give you a clear picture of what's going on with the braking system."</p>
+  <p><b>3.</b> "Were you able to view the photos and the brake-measurement video on the digital inspection report I sent?"</p>
+  <p><b>4.</b> "You brought the vehicle in because of the squealing when braking. We've fully inspected the system."</p>
+  <p><b>5.</b> "The good news is the rear brakes still have plenty of life left, and the brake fluid tested clean."</p>
+  <p><b>6.</b> "More good news — we caught the front brakes right at the safety threshold and not past it, which means we can replace the components without damage to the caliper or hydraulic system."</p>
+  <p><b>7.</b> "If left as-is, the front pads are at 2 millimeters — that means metal-on-metal is the next stop, which destroys the rotors and can compromise stopping distance. The proper repair is to replace the front pads and rotors, perform a full brake system service including hardware and fluid bleed, and road-test under load to confirm."</p>
+  <p><b>8.</b> "The total investment for today's work, parts and labor included, is $[XXX]."</p>
+  <p><b>9.</b> "This work is fully covered by our 3-year / 36,000-mile nationwide warranty on both parts and labor."</p>
+  <p><b>10.</b> "While your vehicle is here, we'll finish the full bumper-to-bumper inspection and I'll reach out if anything else needs attention. Is this still the best number to reach you?"</p></div>
+  <div class="co decoder"><span class="lbl">🟣 Psychology Decoder · Why "metal-on-metal" lands harder than "worn out"</span>
+  "Worn out" is abstract. "Metal-on-metal" is a vivid mental image the customer can hear in their head.
+  Concrete sensory language activates the same brain regions as the actual event — which is why specific
+  physical descriptions move customers to authorize faster than generic ones.</div>
+
+  <h3>2 · Suspension — CV Axle Boot Leak (2nd-Base Discovery)</h3>
+  <p class="small"><b>Scenario:</b> customer came in for an oil change. DVI finds the CV axle boot torn with grease slung on inner suspension.</p>
+  <div class="co worked"><span class="lbl">🟨 Base-2 Additional Concern · CV Axle</span>
+  <p><b>1.</b> "Hi [Customer], this is [Advisor] from [Shop]. I have an update on the inspection — is now a good time?"</p>
+  <p><b>2.</b> "I just finished walking the vehicle with our tech so I could explain exactly what we found."</p>
+  <p><b>3.</b> "Did you have a chance to see the photos of the axle area on the report?"</p>
+  <p><b>4.</b> "You came in for the oil change — that's done. During the inspection we identified an additional finding I want to walk you through."</p>
+  <p><b>5.</b> "Good news is your suspension and steering components are otherwise in solid shape — ball joints, tie rods, and bushings all check out."</p>
+  <p><b>6.</b> "More good news — we caught the axle boot leak before the joint itself failed. That's a meaningful difference in cost and complexity."</p>
+  <p><b>7.</b> "If left as-is, the torn boot lets the lubricating grease escape and lets dirt and water in. Inside of a few thousand miles that will destroy the CV joint, which can fail under acceleration and leave you stranded. The proper repair is to replace the CV axle assembly, inspect the inner CV joint and surrounding components, and verify alignment."</p>
+  <p><b>8.</b> "The total updated investment, including the oil change you already authorized, is $[XXX]."</p>
+  <p><b>9.</b> "Everything is covered by our 3-year / 36,000-mile nationwide warranty — parts and labor."</p>
+  <p><b>10.</b> "With the axle work in progress I'll have the tech finish the remaining inspection items and loop back if anything else surfaces. Still the best number?"</p></div>
+  <div class="co protip"><span class="lbl">⚪ Pro Tip · For 2nd-base findings, name what's already healthy first</span>
+  Beat 5 on a 2nd-base call should always name healthy adjacent components. This prevents the customer from
+  assuming "if this is bad, everything is bad." You're drawing a clean perimeter around the actual finding.</div>
+
+  <h3>3 · Cooling — Thermostat Stuck Open</h3>
+  <p class="small"><b>Scenario:</b> customer reports the heater not getting hot. DVI confirms a stuck-open thermostat.
+  (The water pump in Chapter 6 is the canonical cooling reference; this is a second pattern for the same system.)</p>
+  <div class="co worked"><span class="lbl">🟨 Base-1 ISO · Thermostat</span>
+  <p><b>1.</b> "Hi [Customer], this is [Advisor] from [Shop]. Is now a good time to walk through what we found?"</p>
+  <p><b>2.</b> "I personally reviewed the cooling system with our tech so I could give you a complete picture."</p>
+  <p><b>3.</b> "Did the report with the thermal-reading photos come through okay?"</p>
+  <p><b>4.</b> "You brought it in because the heater isn't getting hot — that's the symptom. We've identified the cause."</p>
+  <p><b>5.</b> "Good news is the water pump, radiator, and hoses all checked out clean — no leaks, no contamination."</p>
+  <p><b>6.</b> "More good news — the cause is a single component, not a system-wide problem. That keeps the repair targeted."</p>
+  <p><b>7.</b> "The thermostat is stuck in the open position, which means the engine never reaches proper operating temperature. Beyond no heat in the cabin, this causes excess fuel consumption, increased emissions, and accelerated engine wear over time. The proper repair is to replace the thermostat and gasket and complete a partial coolant service to refresh the system."</p>
+  <p><b>8.</b> "The total investment for today is $[XXX]."</p>
+  <p><b>9.</b> "Covered by our 3-year / 36,000-mile nationwide warranty on parts and labor."</p>
+  <p><b>10.</b> "While we have the vehicle we'll wrap up the bumper-to-bumper inspection and I'll reach out with anything else. Still the best number?"</p></div>
+
+  <h3>4 · Transmission — Fluid Service (3rd-Base Preventative)</h3>
+  <p class="small"><b>Scenario:</b> 75k miles, fluid never serviced. Maintenance recommendation on 3rd base after primary work is authorized.</p>
+  <div class="co worked"><span class="lbl">🟨 3rd-Base Soft Sell · Transmission Service</span>
+  <p><b>1.</b> "Hi [Customer], one quick maintenance item I want to mention before we wrap — is now a good time?"</p>
+  <p><b>2.</b> "I reviewed your service history with the tech — this isn't a problem today, this is a protect-your-investment item."</p>
+  <p><b>3.</b> "You should see this in the maintenance section of the DVI — the transmission service status is highlighted yellow."</p>
+  <p><b>4.</b> "Your vehicle has 75,000 miles and the transmission fluid hasn't been serviced since new. The manufacturer interval is 60k."</p>
+  <p><b>5.</b> "Good news is the transmission is operating smoothly with no codes and no slippage — everything works."</p>
+  <p><b>6.</b> "More good news — servicing the fluid now keeps your lifetime protection plan intact and prevents the most expensive repair on the vehicle."</p>
+  <p><b>7.</b> "Old fluid loses its protective additives and starts depositing varnish on internal components. Left long enough, that leads to shifting issues and eventually transmission replacement — a multi-thousand-dollar repair. The service is a full fluid exchange with manufacturer-spec fluid and a filter replacement where serviceable."</p>
+  <p><b>8.</b> "Adding this to today's work moves your total from $[XXX] to $[XXX]."</p>
+  <p><b>9.</b> "The service is covered by warranty and keeps your lifetime protection plan active on the transmission."</p>
+  <p><b>10.</b> "If today doesn't work for you, we can absolutely schedule it for next visit — I just want to make sure you know it's on the horizon. What would you like to do?"</p></div>
+  <div class="co decoder"><span class="lbl">🟣 Psychology Decoder · Why 3rd base ends with a real opt-out</span>
+  Beat 10 on a 3rd-base call explicitly offers to defer. This isn't weakness — it's positioning.
+  Maintenance items are not safety items, and pressuring a maintenance sale erodes the trust built on 1st
+  base. Giving the customer the deferral option <b>increases</b> the same-day authorization rate because it
+  removes the salesperson energy.</div>
+
+  <h3>5 · Electrical — Battery + Alternator (Bundled Finding)</h3>
+  <p class="small"><b>Scenario:</b> customer reports slow crank. DVI: battery at 60% capacity, alternator output borderline at idle.</p>
+  <div class="co worked"><span class="lbl">🟨 Base-1 ISO · Charging System</span>
+  <p><b>1.</b> "Hi [Customer], this is [Advisor] from [Shop]. Is now a good time to go over the diagnostic results?"</p>
+  <p><b>2.</b> "I just reviewed the charging-system test results with our tech to make sure I can walk you through them accurately."</p>
+  <p><b>3.</b> "Did you receive the digital report with the battery load-test and alternator-output numbers?"</p>
+  <p><b>4.</b> "You came in because of the slow cranking. We've tested the full charging system and identified the cause."</p>
+  <p><b>5.</b> "Good news is the starter motor itself is testing strong — that's a major component in good shape."</p>
+  <p><b>6.</b> "More good news — we caught this before the vehicle stranded you. A no-start in a parking lot is a much worse day than this conversation."</p>
+  <p><b>7.</b> "The battery is testing at 60% of its rated capacity — past serviceable life. And the alternator is producing output below the manufacturer threshold at idle, which is why the battery isn't being properly recharged on short drives. Left as-is, this is a no-start event waiting for the right cold morning. The proper repair is to replace the battery with a manufacturer-spec unit and replace the alternator, then re-test the full charging system under load."</p>
+  <p><b>8.</b> "The total investment for today's work is $[XXX], parts and labor."</p>
+  <p><b>9.</b> "The battery comes with a manufacturer pro-rated warranty, and the alternator and labor are covered under our 3-year / 36,000-mile nationwide warranty."</p>
+  <p><b>10.</b> "We'll wrap the rest of the bumper-to-bumper while we're in there and loop back with anything else. Still the best number?"</p></div>
+
+  <h3>6 · Tires — Replacement Set (Weather-Sensitive Framing)</h3>
+  <p class="small"><b>Scenario:</b> all four tires at 3/32. Customer in a wet-winter region.</p>
+  <div class="co worked"><span class="lbl">🟨 Base-1 ISO · Tires</span>
+  <p><b>1.</b> "Hi [Customer], this is [Advisor] from [Shop]. Is now a good time to go over what we found?"</p>
+  <p><b>2.</b> "I personally measured the tires with our tech and pulled the load-rating and date-code data so I could give you a complete picture."</p>
+  <p><b>3.</b> "Were you able to see the tire-tread photos on the inspection report?"</p>
+  <p><b>4.</b> "You came in for a check on the tires — we've fully inspected them."</p>
+  <p><b>5.</b> "Good news is the wear pattern is even, which means your alignment is in good shape and we don't have a separate suspension issue contributing."</p>
+  <p><b>6.</b> "More good news — we have manufacturer-quality tire options that fit your vehicle in a price range that protects both safety and budget."</p>
+  <p><b>7.</b> "All four tires are at 3/32-inch tread depth. The legal minimum is 2/32, but real-world stopping distance on wet pavement degrades significantly below 4/32. With the rainy season ahead, the risk is meaningfully longer stopping distance in exactly the conditions that need it most. The proper recommendation is a matched set of four new tires with a road-force balance, mount, and a 4-wheel alignment."</p>
+  <p><b>8.</b> "The total investment for the recommended tire package, installation, and alignment is $[XXX]."</p>
+  <p><b>9.</b> "Tires carry the manufacturer's road-hazard and tread warranty, plus our 3-year / 36,000-mile labor coverage."</p>
+  <p><b>10.</b> "Once you give the green light we'll have the tires here within a few hours so we can finish today. Still the best number?"</p></div>
+  <div class="co decoder"><span class="lbl">🟣 Psychology Decoder · Why we tie tires to weather instead of legality</span>
+  "Legal minimum" is permission language — it tells the customer they can wait. "Wet-pavement stopping
+  distance" is risk language. Always frame tires against the customer's actual driving conditions, not the
+  legal floor.</div>
+
+  <h3>7 · Alignment — Pull / Premature Wear (Inspection-Triggered)</h3>
+  <p class="small"><b>Scenario:</b> vehicle pulls right. DVI confirms left-front toe out of spec, inside-edge tire wear visible.</p>
+  <div class="co worked"><span class="lbl">🟨 Base-1 ISO · Alignment</span>
+  <p><b>1.</b> "Hi [Customer], this is [Advisor] from [Shop]. Is now a good time to walk through the inspection?"</p>
+  <p><b>2.</b> "I reviewed the alignment readings and the tire-wear evidence with our tech so I could give you the full story."</p>
+  <p><b>3.</b> "Were you able to see the alignment-spec sheet and the tire-wear photos on the report?"</p>
+  <p><b>4.</b> "You brought the vehicle in for the pulling-right concern. We've identified the cause."</p>
+  <p><b>5.</b> "Good news is the steering and suspension components themselves are mechanically sound — this isn't a worn-part problem."</p>
+  <p><b>6.</b> "More good news — we caught this early enough that the tires still have usable life. Another few thousand miles and you'd be buying tires too."</p>
+  <p><b>7.</b> "The left-front toe is out of specification — that's what's causing the pull, and it's what's scrubbing the inside edge of the tire. Left as-is, you'll need a full set of tires inside of 5,000 miles, plus the steering input it takes to keep the car straight increases driver fatigue and impacts emergency handling. The proper repair is a four-wheel alignment to manufacturer spec with a printed before-and-after report."</p>
+  <p><b>8.</b> "The total investment for today's alignment service is $[XXX]."</p>
+  <p><b>9.</b> "Alignment work is covered by our service warranty and includes a free re-check inside 30 days if anything feels off."</p>
+  <p><b>10.</b> "While the vehicle's on the rack we'll finish the remaining inspection items and let you know if anything else surfaces. Still the best number?"</p></div>
+
+  <h3>8 · A/C — Low Refrigerant + Leak Test (Heat-Sensitive Framing)</h3>
+  <p class="small"><b>Scenario:</b> A/C blows warm. Diagnostic: low charge with UV-dye-confirmed leak at the condenser.</p>
+  <div class="co worked"><span class="lbl">🟨 Base-1 ISO · A/C System</span>
+  <p><b>1.</b> "Hi [Customer], this is [Advisor] from [Shop]. Is now a good time to go through the A/C diagnosis?"</p>
+  <p><b>2.</b> "I reviewed the leak-test results with our tech — we ran UV dye through the system and pulled a vacuum to confirm."</p>
+  <p><b>3.</b> "Did you receive the photos showing the leak source on the digital report?"</p>
+  <p><b>4.</b> "You brought it in because the A/C is blowing warm — we've identified exactly why."</p>
+  <p><b>5.</b> "Good news is the compressor and the evaporator both test as functional — those are the most expensive components, and they're fine."</p>
+  <p><b>6.</b> "More good news — we pinpointed the leak source on the first test, which means we know exactly what to repair instead of replacing components on guesswork."</p>
+  <p><b>7.</b> "The refrigerant charge is critically low because the condenser has a confirmed leak. If we just recharge it without fixing the leak, you'll be back inside a few weeks with the same problem — and refrigerant venting to atmosphere is both an environmental and a legal concern. The proper repair is to replace the condenser, replace the receiver-drier, evacuate the system, and recharge to manufacturer specification with a verified leak test."</p>
+  <p><b>8.</b> "The total investment is $[XXX], parts and labor included."</p>
+  <p><b>9.</b> "Fully covered by our 3-year / 36,000-mile nationwide warranty on parts and labor."</p>
+  <p><b>10.</b> "Once you authorize we'll order the parts and finish the full inspection while we wait. Still the best number?"</p></div>
+  <div class="co protip"><span class="lbl">⚪ Pro Tip · Refuse the "just recharge it" ask</span>
+  Customers often ask for "just a refill" when the diagnosis is a leak. Politely refuse — a recharge
+  without leak repair is a 3-week fix, and the customer comes back angry. Reframe: "I'd be doing you a
+  disservice by recharging a system that we've already confirmed has a leak. Let me fix it once, right."</div>
+
+  <h3>The Cross-Library Anatomy — Why Every Example Hits the Same Beats</h3>
+  <table>
+    <tr><th>Beat</th><th>Constant Across All Examples</th><th>What Changes Per Repair</th></tr>
+    <tr><td>1 Warm Open</td><td>Permission framing, name use.</td><td>Time of day / context.</td></tr>
+    <tr><td>2 Co-Review</td><td>"I personally reviewed with the tech."</td><td>Which system / component reviewed.</td></tr>
+    <tr><td>3 Media Confirm</td><td>Locks in DVI evidence.</td><td>Which photos / readings to point to.</td></tr>
+    <tr><td>4 Concern</td><td>Honors the original reason for the visit.</td><td>The specific symptom language.</td></tr>
+    <tr><td>5 Good News</td><td>Names healthy adjacent components.</td><td>Which adjacent components to name.</td></tr>
+    <tr><td>6 More Good News</td><td>Reframes the finding as a save / early catch.</td><td>The specific "could have been worse" angle.</td></tr>
+    <tr><td>7 Risk → Solution</td><td>Risk explicit, solution proper, no shortcuts.</td><td>The technical content of the repair.</td></tr>
+    <tr><td>8 Investment</td><td>Single number, parts &amp; labor.</td><td>The actual dollar amount.</td></tr>
+    <tr><td>9 Coverage</td><td>Warranty named without pause.</td><td>Any category-specific warranty (tires, battery).</td></tr>
+    <tr><td>10 Tee-Up</td><td>Confirms contact, sets up the next base.</td><td>The specific tee-up language.</td></tr>
+  </table>
+
+  <div class="co coach"><span class="lbl">🔷 Coach's Corner · One example per morning standup</span>
+  Rotate through all 8 (plus the water pump = 9) over a two-week cycle. You deliver the chosen example from
+  memory; the coach scores against the 10-beat anatomy. By the end of rollout Phase 2, every advisor can
+  deliver every category cold. By Phase 3, the structure is so internalized that brand-new repair categories
+  slot in automatically.</div>
+
+  <div class="co mastery"><span class="lbl">🟡 Mastery Check · Library Mastery — the Pro Gate</span>
+  You are Library-certified when you can deliver any 3 randomly selected examples from this library, back to
+  back, from memory, with all 10 beats present and the Risk step explicit on every one. Coach signs off.
+  This is one of the gates between Closer (Level 3) and Pro (Level 4).</div>
+
+  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Advisor Book v2.0</span></div>
+</div>
+<!-- ======================= APP B GLOSSARY ======================= -->
+<div class="chapter">
+  <div class="ch-head">
+    <span class="eyebrow">Appendix B · Concept Index</span>
+    <h2>The Glossary — Every Named Technique in One Place</h2>
+    <div class="mission">27+ named techniques, principles, and anti-patterns — one-line definitions with pointers to where each is covered.</div>
+  </div>
+
+  <h3>Group A · Booking &amp; First Contact</h3>
+  <table>
+    <tr><th style="width:26%">Term</th><th>One-Line Definition</th><th style="width:14%">Where</th></tr>
+    <tr><td>East-West Scheduling</td><td>Two specific time options (one :15 after, one :45 before the hour). Collapses scheduling infinity to a binary choice.</td><td>Ch 1 + Ch 3</td></tr>
+    <tr><td>The Relief Line</td><td>"You called the right place" — delivers nervous-system relief in the first 10 seconds.</td><td>Ch 1</td></tr>
+    <tr><td>90-Second Friendship Window</td><td>The window in which the first impression locks. Highest-leverage 90 seconds of the sale.</td><td>Ch 1</td></tr>
+    <tr><td>Concern vs. Symptom</td><td>Customers describe symptoms; professionals diagnose concerns. The most important translation in service.</td><td>Ch 3</td></tr>
+    <tr><td>Custody</td><td>The vehicle in our bay. Every other objective is gated by this.</td><td>Ch 3</td></tr>
+  </table>
+
+  <h3>Group B · Trust &amp; Credibility</h3>
+  <table>
+    <tr><th style="width:26%">Term</th><th>One-Line Definition</th><th style="width:14%">Where</th></tr>
+    <tr><td>Invisible Scorecard</td><td>Three traits every customer silently grades on: Competence, Transparency, Trustworthiness.</td><td>Ch 0</td></tr>
+    <tr><td>Trust Triangle</td><td>Visual model of the Invisible Scorecard. All three legs required.</td><td>Ch 0 + Ch 2</td></tr>
+    <tr><td>Three Channels of Rapport</td><td>Tone, Words, Body. Break one and the signal mixes.</td><td>Ch 1</td></tr>
+    <tr><td>Three Hidden Sales in the Tour</td><td>Inspection authorization, price defense, repeat visit — all completed by the end of the shop tour.</td><td>Ch 2</td></tr>
+    <tr><td>Anti-Lowest-Price Brag</td><td>"We're not the cheapest, and that's intentional." Owning the position.</td><td>Ch 2 + Boss 2</td></tr>
+    <tr><td>Co-Review</td><td>"I personally reviewed your vehicle with the tech" — scores Competence and Trustworthy simultaneously.</td><td>Ch 6 + App A</td></tr>
+  </table>
+
+  <h3>Group C · Inspection &amp; Strategy</h3>
+  <table>
+    <tr><th style="width:26%">Term</th><th>One-Line Definition</th><th style="width:14%">Where</th></tr>
+    <tr><td>DVI (Digital Vehicle Inspection)</td><td>The customer's X-ray. Photos + video + tech notes = evidence that destroys "not real" doubt.</td><td>Ch 4</td></tr>
+    <tr><td>Vehicle Health Dashboard</td><td>Green/Yellow/Red sort of every DVI finding against one spec question. Foundation of base selling.</td><td>Ch 4</td></tr>
+    <tr><td>Tech-Advisor Walk-the-Bay</td><td>Physical hand-off protocol within 15 minutes of DVI completion. Prevents guessing.</td><td>Ch 4</td></tr>
+    <tr><td>Diagnosis Funnel</td><td>Customer Words → Symptom → Inspection → Concern → Solution.</td><td>Ch 3</td></tr>
+    <tr><td>Media Confirmation</td><td>Locking in that the customer has viewed the DVI before delivering the finding.</td><td>Ch 6 + App A</td></tr>
+    <tr><td>Boom Board</td><td>The intake artifact of custody — concern in writing before the vehicle enters the bay.</td><td>Ch 3</td></tr>
+  </table>
+
+  <h3>Group D · Presentation Frameworks</h3>
+  <table>
+    <tr><th style="width:26%">Term</th><th>One-Line Definition</th><th style="width:14%">Where</th></tr>
+    <tr><td>Good-Good-Bad</td><td>Two positives before the finding/cost. The brain receives the third statement in an open frame.</td><td>Ch 5 + Ch 6</td></tr>
+    <tr><td>PRS (Problem · Risk · Solution)</td><td>Mandatory 3-part structure for every finding. Risk is the urgency engine.</td><td>Ch 5 + Ch 6</td></tr>
+    <tr><td>Base Selling / The Diamond</td><td>1st (Isolate) → 2nd (Expand) → Short Stop (Save) → 3rd (Protect) → Home Plate (Reinforce).</td><td>Ch 5</td></tr>
+    <tr><td>10-Step ISO Presentation</td><td>Canonical 10-beat structure for any 1st-base safety call. Water pump = anchor example.</td><td>Ch 6 + App A</td></tr>
+    <tr><td>Re-Engagement Loop (60–90s)</td><td>A micro-question every 60–90 seconds keeps the customer's mind in the call.</td><td>Ch 6</td></tr>
+    <tr><td>Investment-then-Coverage Rule</td><td>Warranty must follow price in the same breath. NO pause between.</td><td>Ch 6</td></tr>
+  </table>
+
+  <h3>Group E · Objection Handling</h3>
+  <table>
+    <tr><th style="width:26%">Term</th><th>One-Line Definition</th><th style="width:14%">Where</th></tr>
+    <tr><td>Boss Battles (8)</td><td>The eight objections that kill most sales, each with a documented tell and counter.</td><td>Ch 7</td></tr>
+    <tr><td>Objection Translation Matrix</td><td>Surface objection → what the customer actually means → advisor objective → move.</td><td>Ch 7</td></tr>
+    <tr><td>Money Reframe</td><td>"No money" means "no money TODAY" → pivot to financing.</td><td>Boss 3</td></tr>
+    <tr><td>Three-Way Bypass</td><td>Counter to the spouse objection — get the spouse on the call so PRS is delivered first-hand.</td><td>Boss 4</td></tr>
+    <tr><td>Pro Obligation Frame</td><td>Counter to "always selling" — shift identity from salesperson to fiduciary.</td><td>Boss 6</td></tr>
+    <tr><td>Short Stop Re-Open</td><td>Fresh voice tagged in to save a missed safety sale. A new voice resets the social contract.</td><td>Ch 5 + Ch 7</td></tr>
+    <tr><td>Five Universal Rules</td><td>Never argue / acknowledge first / find the real concern / pivot to value not discount / re-ask for the close.</td><td>Ch 7</td></tr>
+  </table>
+
+  <h3>Group F · Closing</h3>
+  <table>
+    <tr><th style="width:26%">Term</th><th>One-Line Definition</th><th style="width:14%">Where</th></tr>
+    <tr><td>Assumptive Close</td><td>Skip the decision, move to logistics. The customer must STOP motion to say no.</td><td>Ch 8</td></tr>
+    <tr><td>Choice (Binary) Close</td><td>"Option A or option B?" East-West applied to any decision.</td><td>Ch 8</td></tr>
+    <tr><td>Direction-Facing Close</td><td>"Which direction would you like the vehicle facing?" The brain switches to logistics → price silently accepted.</td><td>Ch 8</td></tr>
+    <tr><td>Momentum Funnel</td><td>Trust accumulates downward through Steps 1–7; by Step 8 the close is gravity.</td><td>Ch 8</td></tr>
+    <tr><td>Home Plate</td><td>Final invoice review. Reinforces value and sets up the next visit.</td><td>Ch 5 + Ch 8</td></tr>
+  </table>
+
+  <h3>Group G · Recovery</h3>
+  <table>
+    <tr><th style="width:26%">Term</th><th>One-Line Definition</th><th style="width:14%">Where</th></tr>
+    <tr><td>L.A.S.T.</td><td>Listen · Acknowledge · Solve · Thank. The four-beat recovery combo. The sequence is the system.</td><td>Ch 9</td></tr>
+    <tr><td>Service Recovery Paradox</td><td>A well-recovered customer ends up MORE loyal than one who never had a problem.</td><td>Ch 9</td></tr>
+    <tr><td>24-Hour Recovery Window</td><td>Recovery (&lt;1hr) → Fading (1–24hr) → Review (&gt;24hr). Time is the enemy.</td><td>Ch 9</td></tr>
+    <tr><td>Silence Tolerance</td><td>The hardest recovery skill: 60 seconds of customer venting without interrupting.</td><td>Drill 9.A</td></tr>
+    <tr><td>BUT Buster</td><td>Acknowledgment without "but," "however," or "although."</td><td>Drill 9.B</td></tr>
+  </table>
+
+  <h3>Group H · Coaching &amp; Culture</h3>
+  <table>
+    <tr><th style="width:26%">Term</th><th>One-Line Definition</th><th style="width:14%">Where</th></tr>
+    <tr><td>SBI Feedback</td><td>Situation · Behavior · Impact. The coaching sentence that always works.</td><td>Coach's Book</td></tr>
+    <tr><td>Five-Beat Coaching Conversation</td><td>Open with the win → name the gap (SBI) → ask don't tell → co-design practice → confirm commitment.</td><td>Coach's Book</td></tr>
+    <tr><td>Boss Rush</td><td>Daily 15-min team drill, random Boss objections, scored counters.</td><td>Ch 7</td></tr>
+    <tr><td>Ride-Along Scorecard</td><td>Weekly per-advisor 8-step scoring sheet. The coaching foundation.</td><td>Coach's Book</td></tr>
+    <tr><td>HAB Oath</td><td>Weekly-recited cultural anchor, signed at certification. Do what's Right · Do what's Fair · Do Your Best.</td><td>Front of book</td></tr>
+    <tr><td>Mastery Ladder</td><td>Rookie → Advisor → Closer → Pro → Champion. Evidence-based promotion.</td><td>Ch 0 + App D</td></tr>
+  </table>
+
+  <h3>Group I · Anti-Patterns (get these coached OUT)</h3>
+  <table>
+    <tr><th style="width:30%">Anti-Pattern</th><th>Why It's Bad</th></tr>
+    <tr><td>Quoting prices on the phone</td><td>Loses both the sale and the relationship. Crashes appointment rate. Earn the appointment first.</td></tr>
+    <tr><td>Generic "how can I help you" energy</td><td>The customer needs relief, not a menu. Use The Relief Line.</td></tr>
+    <tr><td>Skipping the shop tour</td><td>Price objections triple. Trust craters.</td></tr>
+    <tr><td>Kitchen-Sinking</td><td>Dumping all findings into one call. Halves authorization rate. Run the bases.</td></tr>
+    <tr><td>Skipping Risk in the PRS</td><td>Photo + Solution alone is just a quote; "let me think about it" becomes the standard reply.</td></tr>
+    <tr><td>Pausing after Investment</td><td>Triggers sticker shock. Must flow into Coverage immediately.</td></tr>
+    <tr><td>Arguing with objections</td><td>Wins the argument, loses the customer.</td></tr>
+    <tr><td>Softening Red to Yellow</td><td>The spec question is binary. Have the courage to call it what it is.</td></tr>
+    <tr><td>Defending before Listening</td><td>Recovery's #1 killer. The emotion can't drain through your explanation.</td></tr>
+    <tr><td>"I understand, BUT…"</td><td>The word "but" deletes everything before it.</td></tr>
+    <tr><td>Using the word "policy"</td><td>Tells the customer the rule matters more than they do. Banned in recovery.</td></tr>
+    <tr><td>Discounting as the first move</td><td>Trains customers that complaining = discounts.</td></tr>
+    <tr><td>Vague recoveries</td><td>"We'll get back to you" instead of "I'll call you by 3pm."</td></tr>
+  </table>
+
+  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Advisor Book v2.0</span></div>
+</div>
+
+<!-- ======================= APP C KPIS ======================= -->
+<div class="chapter">
+  <div class="ch-head">
+    <span class="eyebrow">Appendix C · The Scoreboard</span>
+    <h2>The 9 KPIs and Targets</h2>
+    <div class="mission">Wall-mount these. Update weekly. Color-code Green / Yellow / Red. Diagnose to the step.</div>
+  </div>
+
+  <table>
+    <tr><th>KPI</th><th>Target</th><th>Maps To</th><th>If Red, the Actual Problem Is Usually…</th></tr>
+    <tr><td><b>Inquiry → Appointment %</b></td><td>≥ 65%</td><td>M1 (Rapport)</td><td>Quoting on the phone instead of earning the appointment.</td></tr>
+    <tr><td><b>Tour Delivery %</b></td><td>100%</td><td>M2 (Credibility)</td><td>Forgetting the tour when busy — it's the highest-leverage habit.</td></tr>
+    <tr><td><b>DVI w/ Media %</b></td><td>≥ 95%</td><td>M4 (Inspect)</td><td>Tech laziness or no enforcement; M6 will fail without M4.</td></tr>
+    <tr><td><b>PRS Completeness</b></td><td>100%</td><td>M5/M6 (Strategize/Present)</td><td>Skipping Risk is the most common omission.</td></tr>
+    <tr><td><b>1st-Objection Close %</b></td><td>≥ 60%</td><td>M7 (Objections)</td><td>Arguing instead of listening; reaching for "but."</td></tr>
+    <tr><td><b>Authorization Rate</b></td><td>≥ 75%</td><td>M8 (Close)</td><td>Almost always an upstream failure, not the close itself.</td></tr>
+    <tr><td><b>Missed-Sale Recovered %</b></td><td>≥ 25%</td><td>M5 Short Stop / M7</td><td>Not following up at all is the #1 cause.</td></tr>
+    <tr><td><b>ARO</b></td><td>Shop benchmark</td><td>M8 (Close)</td><td>Tied to PRS Completeness and base order.</td></tr>
+    <tr><td><b>5-Star Review %</b></td><td>≥ 80%</td><td>All modules</td><td>Cumulative — every step contributes. Check the recovery log first.</td></tr>
+  </table>
+
+  <div class="co protip"><span class="lbl">⚪ Pro Tip · Reading two red numbers</span>
+  When two metrics go red in the same week, look for the common root cause one step earlier in the funnel.
+  If any metric goes red two weeks in a row, that becomes the coach's focus metric for the following week —
+  automatically.</div>
+
+  <h3>Module-Level KPIs (quick reference)</h3>
+  <table>
+    <tr><th>Module</th><th>KPIs &amp; Targets</th></tr>
+    <tr><td>M1 Rapport</td><td>Greet-to-Tour ≥ 80% · 2-Ring Compliance 100% · Inquiry-to-Appointment ≥ 65%</td></tr>
+    <tr><td>M2 Credibility</td><td>Tour Delivery 100% · Tour → DVI Consent ≥ 95% · Tour Duration 75–90 sec</td></tr>
+    <tr><td>M3 Custody</td><td>Inquiry-to-RO ≥ 70% · Boom-Board Complete 100% · Separation Time ≤ 10 min</td></tr>
+    <tr><td>M4 Inspect</td><td>DVI Completion 100% · DVI w/ Media ≥ 95% · DVI View-Rate ≥ 75%</td></tr>
+    <tr><td>M5 Strategize</td><td>Base-Order Compliance ≥ 90% · PRS Completeness 100% · Same-Call Mixing ≤ 5%</td></tr>
+    <tr><td>M6 Present</td><td>Present → Auth ≥ 70% · PRS Completeness 100% · DVI View Before Call ≥ 75%</td></tr>
+    <tr><td>M7 Objections</td><td>1st-Objection Close ≥ 60% · Missed-Sale Recovered ≥ 25% · Boss Coverage 8/8</td></tr>
+    <tr><td>M8 Close</td><td>Authorization Rate ≥ 75% · ARO benchmark · 5-Star Review ≥ 80%</td></tr>
+    <tr><td>M9 Recovery</td><td>Recovery Rate ≥ 90% · Time-to-Acknowledge ≤ 1 hr · Post-Recovery 5-Star ≥ 60%</td></tr>
+  </table>
+
+  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Advisor Book v2.0</span></div>
+</div>
+
+<!-- ======================= APP D MASTERY TRACKER ======================= -->
+<div class="chapter">
+  <div class="ch-head">
+    <span class="eyebrow">Appendix D · Your Career Path</span>
+    <h2>Your Mastery Tracker</h2>
+    <div class="mission">The road from Rookie to Champion. Evidence-based promotion only — mastery checks in live customer calls. Sign as you go.</div>
+  </div>
+
+  <h3>The Promotion Bars</h3>
+  <table>
+    <tr><th style="width:24%">Promotion</th><th>The Evidence Required (live calls, never roleplay alone)</th></tr>
+    <tr><td><b>Rookie → Advisor</b></td><td>5 consecutive calls where you identify concern vs. symptom correctly without coach prompting, and run M1–M2 without visibly reading the script. Plus: 6/6 Rapport mastery checks across 3 consecutive inbound calls.</td></tr>
+    <tr><td><b>Advisor → Closer</b></td><td>10 consecutive calls where Diamond order is correct, PRS is complete, and the East-West close is used. At least 3 must include a Boss Battle handled to authorization. Plus: 7/7 base-selling checks across 2 real workflows.</td></tr>
+    <tr><td><b>Closer → Pro</b></td><td>All 8 Boss Battles defeated in live calls within a single 30-day window. At least 2 Short Stop re-opens converted to authorization. Library-certified (3 random worked examples, back to back, from memory).</td></tr>
+    <tr><td><b>Pro → Champion</b></td><td>Customers request you by name (verifiable from intake logs). You train another advisor through at least one mastery check. You own a shop-floor coaching ritual (lead the daily drill or a Friday 1:1 for peers). L.A.S.T. used on 3 real recoveries with documented retention + a positive review.</td></tr>
+  </table>
+
+  <h3>Certification Tracker</h3>
+  <div class="co mastery"><span class="lbl">🟡 Mastery Check · Sign as you go</span>
+  <ul class="check">
+    <li><b>Level 1 → ADVISOR:</b> 6/6 mastery checks across 3 inbound calls. Signed by Trainer: __________ Date: ______</li>
+    <li><b>Level 2 → TOUR GUIDE / CREDIBILITY CERTIFIED:</b> 8+ score on three live shop tours under 90 seconds. Signed by Trainer: __________ Date: ______</li>
+    <li><b>Level 3 → CLOSER:</b> 7/7 base-selling checks across 2 workflows. Signed by Manager: __________ Date: ______</li>
+    <li><b>Level 4 → PRO:</b> All 8 Boss Battles defeated in 30 days. Signed by Manager: __________ Date: ______</li>
+    <li><b>Level 5 → CHAMPION:</b> L.A.S.T. on 3 real recoveries + positive review + trained another advisor. Signed by Owner: __________ Date: ______</li>
+  </ul></div>
+
+  <div class="co protip"><span class="lbl">⚪ Pro Tip · The two hard jumps</span>
+  The transition from Advisor to Closer is the hardest — it's where scripts become strategy. The
+  transition from Pro to Champion is the longest — it's where skill becomes culture. Most advisors
+  plateau at Closer. Don't. The Champion promotion is the moment a shop's culture inflects, and it can be you.</div>
+
+  <h3>Your Weekly Self-Audit (all modules)</h3>
+  <div class="co worked"><span class="lbl">🟨 End-of-shift, two minutes</span>
+  <ul class="check">
+    <li>One win I'll repeat tomorrow: ______________________________</li>
+    <li>One gap I'll close tomorrow: ______________________________</li>
+    <li>One ask for my coach: ______________________________</li>
+  </ul></div>
+
+  <div class="pull" style="text-align:center;">From uncertainty to certainty. From script to instinct. From advisor to closer.</div>
+
+  <div class="oathpage" style="page-break-after:auto;padding:30px 30px 0 30px;">
+    <div class="oathbox" style="padding:36px 40px;">
+      <h2>RECOMMIT</h2>
+      <div class="line">I will treat every car as if it carries my own family.</div>
+      <div class="tagline">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</div>
+      <div style="margin-top:22px;font-size:8.5pt;letter-spacing:2px;color:var(--cream);">HAB ADVISOR BOOK · VERSION 2.0 · CONFIDENTIAL &amp; PROPRIETARY · HEALTHY AUTO BUSINESS</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

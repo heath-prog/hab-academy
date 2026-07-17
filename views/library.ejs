@@ -20,7 +20,10 @@
 <div class="tier-section">
   <h2><%= b.title %> <span style="font-weight:400; opacity:.7;">— <%= b.subtitle %></span></h2>
   <p><%= b.blurb %></p>
-  <p><a class="btn <%= b.coachOnly ? 'ghost' : '' %>" href="/library/<%= b.slug %>" target="_blank" rel="noopener">Open the <%= b.title.replace('HAB ', '') %></a></p>
+  <p>
+    <a class="btn <%= b.coachOnly ? 'ghost' : '' %>" href="/library/<%= b.slug %>" target="_blank" rel="noopener">Open the <%= b.title.replace('HAB ', '') %></a>
+    <% if (b.pdf) { %><a class="btn ghost" href="/library/<%= b.slug %>/pdf" target="_blank" rel="noopener">PDF edition</a><% } %>
+  </p>
 </div>
 <% } }) %>
 

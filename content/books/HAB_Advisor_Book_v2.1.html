@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <!--
   HAB Advisor Book — The Sales OS for Service Advisors
-  Version: 2.0 · Last updated: 2026-07-16
+  Version: 2.1 · Last updated: 2026-07-17
+  v2.1: every taught script now appears first as a CLEAN SCRIPT block (speakers only, roleplay-ready),
+  and Module 1 gains the "Script Variations & The Quick Close" chapter (the Anytime Quick Close + branches).
   Comprehensive standalone edition. Fully matches the HAB Sales Operating System Master
   Curriculum v1.3: Foundation, Modules 1-9 with full scripts, all 8 Boss Battles, L.A.S.T.,
   Worked-Example Library, Glossary, KPIs, Mastery Tracker. Print-ready US Letter.
@@ -10,7 +12,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>HAB Advisor Book v2.0 — The Sales OS for Service Advisors</title>
+<title>HAB Advisor Book v2.1 — The Sales OS for Service Advisors</title>
 <style>
 :root{
   --navy:#1B3358; --navy-deep:#112341; --navy-soft:#2C4A75;
@@ -55,6 +57,13 @@ p{margin:7px 0;}
 .co .say{font-weight:400;}
 .co .who{font-weight:700;color:var(--navy);}
 .co.coach .who{color:var(--gold);}
+/* Clean Script blocks — v2.1. Roleplay-ready: high contrast, print friendly, speakers bolded. */
+.clean{background:#FFFFFF;border:2px solid var(--navy);border-radius:4px;padding:12px 16px;margin:14px 0;page-break-inside:avoid;}
+.clean .lbl{display:block;font-size:7.5pt;font-weight:800;letter-spacing:5px;text-transform:uppercase;color:var(--navy);border-bottom:2px solid var(--gold);padding-bottom:4px;margin-bottom:8px;}
+.clean p{margin:6px 0;color:#000;}
+.clean .who{font-weight:800;color:#000;}
+.clean .dir{font-style:italic;color:#555;}
+.clean .br{display:block;font-weight:800;color:var(--navy);font-size:9pt;letter-spacing:1.5px;text-transform:uppercase;margin-top:10px;}
 /* Tables */
 table{width:100%;border-collapse:collapse;margin:10px 0;font-size:9.3pt;page-break-inside:avoid;}
 th{background:var(--navy);color:#fff;text-align:left;padding:6px 8px;font-size:8.3pt;letter-spacing:1px;text-transform:uppercase;}
@@ -140,7 +149,7 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
     <div><div class="n">8</div><div class="l">Boss Battles</div></div>
     <div><div class="n">27</div><div class="l">Named Techniques</div></div>
   </div>
-  <div class="foot">Version 2.0 · Confidential &amp; Proprietary<br><br>Do what's Right · Do what's Fair · Do Your Best</div>
+  <div class="foot">Version 2.1 · Confidential &amp; Proprietary<br><br>Do what's Right · Do what's Fair · Do Your Best</div>
 </div>
 
 <!-- ======================= OATH ======================= -->
@@ -163,12 +172,13 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
 
 <!-- ======================= TABLE OF CONTENTS ======================= -->
 <div>
-  <span class="eyebrow">HAB Advisor Book v2.0</span>
+  <span class="eyebrow">HAB Advisor Book v2.1</span>
   <h2>Table of Contents</h2>
   <div class="toc">
     <div class="row"><div class="num">—</div><div class="t"><b>Preface — How to Use This Book</b><div class="d">Reading plan, the callout color code, the five levels</div></div></div>
     <div class="row"><div class="num">Ch 0</div><div class="t"><b>Foundation — The Operating System</b><div class="d">Core principle, the six objectives, the 8-step map, the customer's inner journey, the Trust Triangle, the Mastery Ladder</div></div></div>
     <div class="row"><div class="num">Ch 1</div><div class="t"><b>Establish Rapport — Make a Friend in 90 Seconds</b><div class="d">The psychology, three channels, the 90-second window, full inbound-call scripts, the four inbound Mini-Bosses, East-West, five mistakes, four drills, mastery</div></div></div>
+    <div class="row"><div class="num">Ch 1.5</div><div class="t"><b>Script Variations &amp; The Quick Close</b><div class="d">The goal behind every script, the Anytime Quick Close clean script, first-time and returning branches, rolling back into the full call, when to run which play</div></div></div>
     <div class="row"><div class="num">Ch 2</div><div class="t"><b>Establish Credibility — Build Authority</b><div class="d">Trust Triangle in action, shop-tour anatomy, three hidden sales, full tour script, mastery</div></div></div>
     <div class="row"><div class="num">Ch 3</div><div class="t"><b>Collect Data — Get Custody</b><div class="d">Custody psychology, concern vs. symptom, the diagnosis funnel, question sequences, the boom board</div></div></div>
     <div class="row"><div class="num">Ch 4</div><div class="t"><b>Inspect &amp; Analyze — The DVI Is the X-Ray</b><div class="d">Vehicle Health Dashboard (Green/Yellow/Red), reciprocity of effort, tech-advisor walk-the-bay</div></div></div>
@@ -213,6 +223,7 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
   <div class="co stop"><span class="lbl">🔴 Stop</span>A hard gate. Do not advance until the action is complete. These exist because skipping them has cost real sales.</div>
   <div class="co protip"><span class="lbl">⚪ Pro Tip</span>A veteran shortcut — earned the hard way so you don't have to.</div>
   <div class="co coach"><span class="lbl">🔷 Coach's Corner</span>How your coach will coach this step — what they listen for, what they score, what they praise, what they correct. Read it so you know what "good" looks like from the other side of the clipboard.</div>
+  <div class="clean"><span class="lbl">Clean Script</span><p>New in v2.1. The complete script by itself: labeled speakers only, no teaching, no interruptions. Every taught script in this book appears as a Clean Script FIRST so you can read it straight through in a roleplay session. The teaching (decoders, callouts, drills) always follows the clean version. It never replaces it.</p></div>
 
   <h3>The Five Levels</h3>
   <div class="ladder">
@@ -224,7 +235,7 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
   </div>
   <p class="small">Promotion is evidence-based — mastery checks passed in live customer calls. Never tenure. Never vibes.</p>
 
-  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Advisor Book v2.0</span></div>
+  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Advisor Book v2.1</span></div>
 </div>
 <!-- ======================= CH 0 FOUNDATION ======================= -->
 <div class="chapter">
@@ -365,7 +376,7 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
   <div class="co protip"><span class="lbl">⚪ Pro Tip</span>The whole book in one sentence: remove the customer's uncertainty one step at a time, in order,
   with evidence — and the close takes care of itself.</div>
 
-  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Advisor Book v2.0</span></div>
+  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Advisor Book v2.1</span></div>
 </div>
 
 <!-- ======================= CH 1 RAPPORT ======================= -->
@@ -438,6 +449,34 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
 
   <h3>Scripts — The Full Inbound Call</h3>
 
+  <p>First, the entire call, clean. Read it straight through. Roleplay it. Memorize it. The taught
+  version, with the psychology behind every line, follows right after. And keep the goal of the whole
+  call in view before you memorize a word of it: <b>get the car into the shop.</b> If the caller is hot
+  to come in right now, run the Anytime Quick Close (Chapter 1.5) and let this full script serve the booking.</p>
+
+  <div class="clean"><span class="lbl">Clean Script · The Full Inbound Call</span>
+  <p class="dir">[Pick up before the third ring. Smile before you speak.]</p>
+  <p><span class="who">Advisor:</span> "Thank you for calling [Shop]. My name is [Your Name]." <span class="dir">[Pause. Let the customer speak.]</span></p>
+  <p><span class="who">Customer:</span> "Hi, do you work on brakes?"</p>
+  <p><span class="who">Advisor:</span> "You called the right place! Is this your first time with our shop?"</p>
+  <p><span class="who">Customer:</span> "Yes, it's my first time."</p>
+  <p><span class="who">Advisor:</span> "Thank you so much for calling us! We are [Shop], your certified dealer alternative, located at [address], open six days a week from [store hours]. We have ASE and dealer-certified technicians ready to handle all of your vehicle needs, from tires and service to major repairs. We stand behind our work with warranties up to 3 years or 36,000 miles. We also offer complimentary shuttles, vehicle pick-up and drop-off, ride services, rental car reimbursement, and loaner vehicles when available! What kind of concern are you having with your brakes?"</p>
+  <p><span class="who">Customer:</span> "They squeak when I stop."</p>
+  <p><span class="who">Advisor:</span> "Oh wow! WHEN you're experiencing squeaking like that, it's always best to bring your vehicle in and have it inspected by one of our certified technicians! Is now a good time?"</p>
+  <p><span class="who">Customer:</span> "I could come in this morning."</p>
+  <p><span class="who">Advisor:</span> "Great, stay with me on the line really quick while I gather your information to build a customer profile."</p>
+  <p class="dir">[Gather name, number, email, vehicle year, make, and model. Document the concern in the customer's own words.]</p>
+  <p><span class="who">Advisor:</span> "I have an opening at 9:15 or 10:45. Which works best for you?"</p>
+  <p><span class="who">Customer:</span> "9:15 works."</p>
+  <p><span class="who">Advisor:</span> "Perfect, [Customer Name], you're set for 9:15. We'll see you and your vehicle then!"</p>
+  <span class="br">Variation · Returning caller</span>
+  <p><span class="who">Customer:</span> "I've been in before, I was just hoping for a quote."</p>
+  <p><span class="who">Advisor:</span> "I completely understand. What kind of concern are you having with your brakes?"</p>
+  <p class="dir">[Resume at the concern pivot above: "Oh wow! WHEN you're experiencing..."]</p>
+  </div>
+
+  <p><b>Now the same call, taught beat by beat.</b></p>
+
   <div class="co stop"><span class="lbl">🔴 Stop · The Golden Rule</span>
   Your immediate goal is NOT a sale. It is to convert the inquiry into a vehicle committed for service.
   Quote a price over the phone and you lose both the sale and the relationship.</div>
@@ -487,10 +526,10 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
 
   <div class="co script"><span class="lbl">🔵 Script · Customer Commits + East-West Scheduling</span>
   <p><span class="who">Customer:</span> "Yes, I'm bringing the car in."</p>
-  <p><span class="who">You:</span> "Great — stay with me on the line really quick while I…"<br>
+  <p><span class="who">You:</span> "Great, stay with me on the line really quick while I…"<br>
   <i>Returning customer:</i> "…get you confirmed in our system."<br>
   <i>New customer:</i> "…gather your information to build a customer profile."</p>
-  <p><span class="who">You:</span> "I have an opening at <b>9:15</b> or <b>10:45</b> — which works best for you?"</p></div>
+  <p><span class="who">You:</span> "I have an opening at <b>9:15</b> or <b>10:45</b>, which works best for you?"</p></div>
 
   <div class="co decoder"><span class="lbl">🟣 Psychology Decoder · Why East-West beats "What time works?"</span>
   Open-ended scheduling forces the customer to pick from infinity — and the brain's default response to
@@ -507,7 +546,7 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
 
   <div class="co script"><span class="lbl">🔵 Script · The Arrival (in person)</span>
   <p><span class="who">You:</span> [Greet at the front door or parking lot, boom board in hand]
-  "Welcome to [Shop]. I'm [Your Name] and I'll be taking care of you today — may I have your keys, please?"</p></div>
+  "Welcome to [Shop]. I'm [Your Name] and I'll be taking care of you today, may I have your keys, please?"</p></div>
 
   <div class="co decoder"><span class="lbl">🟣 Psychology Decoder · Why we ask for the keys first</span>
   Asking for the keys is the lightest possible custody request. It signals competence, gives the customer
@@ -524,14 +563,29 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
   <p>Four objections live on every inbound call. Each has a tell — the line the customer says — and a
   counter you deliver without hesitation. Drill them until you counter on reflex.</p>
 
+  <div class="clean"><span class="lbl">Clean Script · The Four Inbound Mini-Bosses</span>
+  <span class="br">Mini-Boss 1 · "Just tell me how much it will cost."</span>
+  <p><span class="who">Customer:</span> "Yeah, I just want to know how much it will cost before I come in."</p>
+  <p><span class="who">Advisor:</span> "AT NO COST TO YOU, I will personally inspect your vehicle alongside one of our certified technicians and provide you with a complete written estimate. When should we expect to see the vehicle?"</p>
+  <span class="br">Mini-Boss 2 · "I already have a quote."</span>
+  <p><span class="who">Customer:</span> "I have a quote already from another shop. That's why I'm just looking for a price."</p>
+  <p><span class="who">Advisor:</span> "Oh, excellent! If you can bring that with you, that would be tremendously helpful! We have a Meet-or-Beat policy that allows us to price-match like-for-like quotes if we don't naturally beat the price with our estimate. To give you the most accurate pricing, though, it's best if our certified technician takes a look first to identify exactly what's needed to fix the [customer concern]. When should we expect to see the vehicle?"</p>
+  <span class="br">Mini-Boss 3 · "Do you have a ballpark?"</span>
+  <p><span class="who">Customer:</span> "Do you have a ballpark for me? I just want to know roughly how much."</p>
+  <p><span class="who">Advisor:</span> "I completely understand! I will personally inspect your vehicle alongside one of our certified technicians and provide a complete written estimate so you can make informed decisions. If budget is your primary concern, I will work with you to select cost-effective solutions that still carry good warranty coverage on parts and labor. As far as a ballpark, I can pull up a tool we use called RepairPal and give you an idea of what something like this normally costs to repair."</p>
+  <span class="br">Mini-Boss 4 · "Let me think about it."</span>
+  <p><span class="who">Customer:</span> "I'm not sure yet. Let me think about it."</p>
+  <p><span class="who">Advisor:</span> "I completely understand. Before you decide, may I ask what's most important to you: price, turnaround time, or overall service?" <span class="dir">[Listen carefully.]</span></p>
+  </div>
+
   <div class="co script"><span class="lbl">🔵 Script · Mini-Boss #1 — "Just tell me how much it will cost."</span>
   <p><span class="who">They say:</span> "Yeah, I just want to know how much it will cost before I come in."</p>
-  <p><span class="who">You say:</span> (confident tone) "AT NO COST TO YOU — I will personally inspect your vehicle alongside one of
+  <p><span class="who">You say:</span> (confident tone) "AT NO COST TO YOU, I will personally inspect your vehicle alongside one of
   our certified technicians and provide you with a complete written estimate. When should we expect to see the vehicle?"</p>
   <p class="small"><b>Why it works:</b> reframes the price ask into a free personal benefit. The closing question assumes the appointment, not the price quote.</p></div>
 
   <div class="co script"><span class="lbl">🔵 Script · Mini-Boss #2 — "I already have a quote from another shop."</span>
-  <p><span class="who">They say:</span> "I have a quote already from another shop — that's why I'm just looking for a price."</p>
+  <p><span class="who">They say:</span> "I have a quote already from another shop, that's why I'm just looking for a price."</p>
   <p><span class="who">You say:</span> "Oh, excellent! If you can bring that with you, that would be tremendously helpful! We have a
   Meet-or-Beat policy that allows us to price-match like-for-like quotes if we don't naturally beat the price with our
   estimate. To give you the most accurate pricing, though, it's best if our certified technician takes a look first to
@@ -543,14 +597,13 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
   <p><span class="who">You say:</span> "I completely understand! I will personally inspect your vehicle alongside one of our certified
   technicians and provide a complete written estimate so you can make informed decisions. If budget is your primary
   concern, I will work with you to select cost-effective solutions that still carry good warranty coverage on parts and
-  labor. As far as a ballpark — I can pull up a tool we use called RepairPal and give you an idea of what something
+  labor. As far as a ballpark, I can pull up a tool we use called RepairPal and give you an idea of what something
   like this normally costs to repair."</p>
   <p class="small"><b>Why it works:</b> validates the request, then offers a third-party data point instead of an unbacked price you can't honor.</p></div>
 
   <div class="co script"><span class="lbl">🔵 Script · Mini-Boss #4 — "Let me think about it."</span>
   <p><span class="who">They say:</span> "I'm not sure yet. Let me think about it."</p>
-  <p><span class="who">You say:</span> "I completely understand. Before you decide, may I ask what's most important to you —
-  price, turnaround time, or overall service?" <i>(Listen carefully.)</i></p>
+  <p><span class="who">You say:</span> "I completely understand. Before you decide, may I ask what's most important to you, price, turnaround time, or overall service?" <i>(Listen carefully.)</i></p>
   <p class="small"><b>Why it works:</b> loops the conversation back open with a value-priorities question — almost no one says "price" when forced to rank.</p></div>
 
   <div class="co decoder"><span class="lbl">🟣 Psychology Decoder · The Ballpark Trap</span>
@@ -633,8 +686,152 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
     <li>One win I'll repeat tomorrow: ______________________________</li>
   </ul></div>
 
-  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Advisor Book v2.0</span></div>
+  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Advisor Book v2.1</span></div>
 </div>
+<!-- ======================= CH 1.5 SCRIPT VARIATIONS & THE QUICK CLOSE ======================= -->
+<div class="chapter">
+  <div class="ch-head">
+    <span class="eyebrow">Module 1 · Variation Play · New in v2.1</span>
+    <h2>Script Variations &amp; The Quick Close</h2>
+    <div class="mission">Mission: Book the car. The script is a map, not a cage. When the customer is ready to come in, close first and let the rest of the call serve the booking.</div>
+    <div class="removes">This chapter removes the advisor's uncertainty: <b>"Do I have to run the whole script every time?"</b> No. You have to book the car every time.</div>
+    <div class="statbar">
+      <div class="stat"><div class="k">Objective</div><div class="v">BOOK THE CAR</div></div>
+      <div class="stat"><div class="k">Trigger</div><div class="v">HOT BUYING SIGNAL</div></div>
+      <div class="stat"><div class="k">Core Move</div><div class="v">QUICK CLOSE FIRST</div></div>
+      <div class="stat"><div class="k">Failure Mode</div><div class="v">SCRIPT RIGIDITY</div></div>
+    </div>
+  </div>
+
+  <h3>The Point of the Call — Never Lose It</h3>
+  <p>The ultimate goal of every inbound call is one thing: <b>get the car into the shop.</b> Book the
+  appointment. Everything else in Module 1 — the relief line, the shop introduction, the concern pivot —
+  exists to serve that goal. The shop introduction builds rapport and credibility, and it matters. But it
+  is a servant, not a gate. If the customer is ready to come in at second eight of the call, you book the
+  car at second nine. You do not make them sit through a paragraph they no longer need.</p>
+  <div class="pull">The full script serves the quick close. The quick close never waits for the full script.</div>
+  <p>Advisors who treat the script as a rigid track lose hot customers two ways: they talk past the yes,
+  or they freeze when the call doesn't match the page. Neither happens once you know the variations. The
+  script gives you the words. This chapter gives you the judgment.</p>
+  <table>
+    <tr><th style="width:32%">Priority</th><th>What It Means</th></tr>
+    <tr><td><b>1 · Book the appointment</b></td><td>The car in the bay is the sale. Everything bends to this.</td></tr>
+    <tr><td><b>2 · Build rapport &amp; credibility</b></td><td>The shop introduction and tour do this — on the call for first-timers who need it, at the counter and on the tour for everyone else. It supports the booking; it never blocks it.</td></tr>
+    <tr><td><b>3 · Document the concern</b></td><td>Captured while you build the profile, or at arrival. Never blocks the booking.</td></tr>
+  </table>
+
+  <h3>The Anytime Quick Close</h3>
+  <p>Clean script first. This is the play for the hot caller — the customer whose first question already
+  contains the visit. Read it straight through, then work the branches.</p>
+
+  <div class="clean"><span class="lbl">Clean Script · The Anytime Quick Close</span>
+  <p><span class="who">Customer:</span> "Do you do brakes?"</p>
+  <p><span class="who">Advisor:</span> "Absolutely, is now a good time to bring your vehicle in?"</p>
+  <p><span class="who">Customer:</span> "How much does it cost to have my brakes inspected?"</p>
+  <p><span class="who">Advisor:</span> "At no charge to you, my certified technicians and I will inspect your complete brake system and provide you a written estimate. Is now a good time to bring your vehicle in?"</p>
+  <p><span class="who">Customer:</span> "Yeah, I can head over now."</p>
+  <p><span class="who">Advisor:</span> "Great, is it your first time with us?"</p>
+  <span class="br">Branch A · First-time customer</span>
+  <p><span class="who">Customer:</span> "Yes, it is."</p>
+  <p><span class="who">Advisor:</span> "Thank you so much for choosing us! We are [Shop], your certified dealer alternative, located at [address]. We have ASE and dealer-certified technicians ready to handle all of your vehicle needs, and we stand behind our work with warranties up to 3 years or 36,000 miles. Stay with me really quick while I gather your information to build a customer profile. What's the year, make, and model of your vehicle?"</p>
+  <p class="dir">[Build the profile. Document the concern. Confirm the arrival time. From here you are inside the full inbound call script.]</p>
+  <p><span class="who">Advisor:</span> "Perfect, [Customer Name], we'll see you and your vehicle shortly!"</p>
+  <span class="br">Branch B · Returning customer</span>
+  <p><span class="who">Customer:</span> "No, I've been in before."</p>
+  <p><span class="who">Advisor:</span> "Great, is this still the best number for you?"</p>
+  <p><span class="who">Customer:</span> "Yes it is."</p>
+  <p class="dir">[Pull up the profile. Confirm vehicle and concern. Book the appointment.]</p>
+  <p><span class="who">Advisor:</span> "Perfect, I have your profile pulled up and you're all set. We'll see you shortly, [Customer Name]!"</p>
+  <span class="br">Branch C · Customer pushes on price again</span>
+  <p><span class="who">Customer:</span> "I really just want to know what it costs first."</p>
+  <p><span class="who">Advisor:</span> "I completely understand! At no charge to you, my certified technicians and I will inspect your complete brake system and provide you a written estimate so you can make an informed decision before we do anything. Is now a good time to bring your vehicle in?"</p>
+  <span class="br">Branch D · Not today: roll into the full call</span>
+  <p><span class="who">Customer:</span> "I can't come in today."</p>
+  <p><span class="who">Advisor:</span> "No problem at all. What kind of concern are you having with your brakes?"</p>
+  <p><span class="who">Customer:</span> "They grind a little in the morning."</p>
+  <p><span class="who">Advisor:</span> "Oh wow! WHEN you're experiencing grinding like that, it's always best to have it inspected by one of our certified technicians. I have an opening tomorrow at 9:15 or 10:45. Which works best for you?"</p>
+  <p class="dir">[From here, run the full inbound call script: build or confirm the profile, document the concern, confirm the appointment.]</p>
+  </div>
+
+  <h3>Now the Teaching — Why the Quick Close Works</h3>
+  <div class="co decoder"><span class="lbl">🟣 Psychology Decoder · The hot buying signal</span>
+  A customer who opens with "Do you do brakes?" is usually not shopping for information — they're shopping
+  for permission. The visit is already in their head; your job is to say yes to it before uncertainty
+  regrows. The fastest path from their question to your bay is one sentence: "Absolutely, is now a good
+  time to bring your vehicle in?" Every additional sentence you deliver before that close gives doubt time
+  to re-form — and can turn a hot caller into a comparison shopper. The quick close skips nothing that
+  matters: rapport and credibility still happen. For first-timers they happen right after the yes (Branch A
+  rolls straight into the shop introduction); for everyone they happen again at the counter and on the tour.</div>
+
+  <div class="co decoder"><span class="lbl">🟣 Psychology Decoder · The no-charge line is Mini-Boss 1, compressed</span>
+  "At no charge to you, my certified technicians and I will inspect your complete brake system and provide
+  you a written estimate" answers the price question with a gift instead of a number. Then you re-ask the
+  exact same close, in the exact same words. The repetition is deliberate: it signals calm certainty, and
+  it keeps the call pointed at the only outcome that matters — the vehicle in the shop. If they push on
+  price a second time (Branch C), the answer is the same line again, warmer, never a number.</div>
+
+  <div class="co stop"><span class="lbl">🔴 Stop · What the quick close is NOT</span>
+  It is not permission to quote — the answer to a price question is still never a number over the phone.
+  It is not permission to skip documentation — profile built and concern documented before the call ends,
+  or captured at arrival for the customer already driving over. And it is not the death of the shop
+  introduction — first-timers still get it, on the call or at the counter. The first-time question
+  ("is it your first time with us?") is the hinge that decides where the introduction happens.</div>
+
+  <h3>When to Run Which Play</h3>
+  <table>
+    <tr><th style="width:42%">What You Hear</th><th style="width:20%">Signal</th><th>The Play</th></tr>
+    <tr><td>"Do you do brakes?" · "Can you get me in today?" · "My car just died, do you do alternators?"</td><td><b>HOT</b></td><td>Quick close first. "Absolutely, is now a good time to bring your vehicle in?"</td></tr>
+    <tr><td>"What do you charge for a brake job?" · "I'm calling around for prices."</td><td>Comparison</td><td>Full script: relief line, first-time question, concern pivot. Mini-Bosses ready.</td></tr>
+    <tr><td>Long story, nervous tone, unsure what's wrong.</td><td>Uncertain</td><td>Full script. Rapport does the heavy lifting; don't rush the close.</td></tr>
+    <tr><td>Hot signal, but can't come in now.</td><td>Hot + friction</td><td>Quick close, then Branch D: roll into the full call and East-West a future slot.</td></tr>
+  </table>
+
+  <div class="co protip"><span class="lbl">⚪ Pro Tip · The order flexes; the pieces don't disappear</span>
+  In a quick close the shop introduction moves later — it does not vanish. The 8 steps still run in order
+  once the customer arrives: rapport at the door, credibility on the tour, custody with the keys. All the
+  quick close does is move the booking to the front of the line, where it belongs.</div>
+
+  <h3>Drills — Build the Judgment</h3>
+  <div class="co drill"><span class="lbl">🟢 Drill 1.F · Signal Sort</span>
+  <b>Setup:</b> partner throws 10 random call openers, mixed hot and cold. Within two seconds you call the
+  play — "quick close" or "full script" — and deliver the correct first line.<br>
+  <b>Score:</b> correct sort + correct first line, 10 reps.<br>
+  <b>Goal:</b> 9/10. Sorting is the skill; the lines you already know.</div>
+  <div class="co drill"><span class="lbl">🟢 Drill 1.G · Quick Close Reps</span>
+  <b>Setup:</b> partner opens with "Do you do [service]?" and secretly picks a branch (first-time / returning /
+  price-push / can't-come-today). You run the quick close through whatever branch appears.<br>
+  <b>Score:</b> close asked within the first ten seconds + no price quoted + branch handled + booking or
+  future appointment completed.<br>
+  <b>Goal:</b> 5 consecutive clean reps across all four branches.</div>
+
+  <div class="co mastery"><span class="lbl">🟡 Mastery Check · Variation Mastery</span>
+  <ul class="check">
+    <li>On hot calls, asked for the visit within the first two exchanges.</li>
+    <li>Used the no-charge inspection line on every price question, then re-asked the same close.</li>
+    <li>Asked "is it your first time with us?" after every yes.</li>
+    <li>First-timers received the shop introduction (on the call or at the counter); returning customers got "is this still the best number for you?" and a profile confirmation.</li>
+    <li>Rolled into the full inbound script without stumbling when the customer couldn't come in now.</li>
+    <li>Never quoted a price. Concern documented before the call ended.</li>
+  </ul>
+  <b>Pass all 6 across three consecutive hot calls → Variation certified.</b></div>
+
+  <div class="co coach"><span class="lbl">🔷 Coach's Corner · Coach the sort, not just the script</span>
+  The coach listens for recognition: did the advisor hear the hot signal and close early, or make a ready
+  customer sit through the full introduction? Scoring flips on quick-close calls — the advisor gets marked
+  <b>down</b> for delivering the whole introduction before the first close attempt. Red flag: an advisor who
+  runs the identical word-for-word script on all ten calls of a shift isn't disciplined, they're rigid.
+  Rigidity and abandonment get coached the same way: replay the call, sort the signal, re-script aloud.</div>
+
+  <h3>KPIs</h3>
+  <div class="kpis">
+    <div class="kpi"><div class="name">Time to First Close Ask</div><div class="target">≤ 15 sec</div><div class="note">On hot-signal calls, seconds from the customer's opening question to "is now a good time to bring your vehicle in?"</div></div>
+    <div class="kpi"><div class="name">Hot-Call Booking %</div><div class="target">≥ 85%</div><div class="note">% of hot-signal calls that end booked. Hot callers who don't book were talked out of it.</div></div>
+    <div class="kpi"><div class="name">Phone Quote Rate</div><div class="target">0%</div><div class="note">Prices quoted over the phone. The quick close never changes this number.</div></div>
+  </div>
+
+  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Advisor Book v2.1</span></div>
+</div>
+
 <!-- ======================= CH 2 CREDIBILITY ======================= -->
 <div class="chapter">
   <div class="ch-head">
@@ -687,8 +884,18 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
   </table>
 
   <h3>Scripts</h3>
+  <p>The clean version first: the approach and the full tour, straight through. The teaching follows.</p>
+  <div class="clean"><span class="lbl">Clean Script · The Approach + The Shop Tour</span>
+  <p class="dir">[Greet at the front door or parking lot, boom board in hand.]</p>
+  <p><span class="who">Advisor:</span> "Welcome to [Shop]. I'm [Your Name] and I'll be assisting you today. May I have your keys, please?"</p>
+  <p><span class="who">Customer:</span> "Sure, here you go."</p>
+  <p><span class="who">Advisor:</span> "Thank you! Let me show you around while we get you checked in."</p>
+  <p class="dir">[Walking pace. Eye contact. Warmth.]</p>
+  <p><span class="who">Advisor:</span> "Welcome to [Shop], your certified dealer alternative. We're proud to have certified technicians ready to take care of all your vehicle needs: tires, routine maintenance, and major repairs. We also partner with trusted local specialists for accessory work like dent repair, body work, and windshield replacement, so you're covered in one place. To make your visit convenient, we offer complimentary shuttle rides, Uber or Lyft, rental car reimbursement, and loaner vehicles when available. If you stay, the waiting area has complimentary water, coffee, and tea, but there's no need to wait if transportation works better. Once you drop off, we keep you informed every step of the way: calls, texts, digital vehicle inspections, and electronic approvals for estimates, invoices, and payment. Clear, simple, transparent. We're excited to serve you today, and thank you for trusting [Shop]. Can I get you something to drink? Coffee, water, or tea?"</p>
+  <p class="dir">[Escort to the waiting lobby. Customer seated or comfortable before you step away.]</p>
+  </div>
   <div class="co script"><span class="lbl">🔵 Script · The Approach</span>
-  <p><span class="who">You:</span> "Welcome to [Shop] — I'm [Your Name] and I'll be assisting you today. May I have your keys, please?"</p>
+  <p><span class="who">You:</span> "Welcome to [Shop], I'm [Your Name] and I'll be assisting you today. May I have your keys, please?"</p>
   <p class="small">Greet the customer in the parking lot or by the front door, boom board in hand. If the customer already
   called the shop, you should need nothing but the keys and confirmation of contact information. For walk-ins,
   fill out the boom sheet and proceed. Full tour for every first-time customer; returning customers get told
@@ -696,7 +903,7 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
 
   <div class="co script"><span class="lbl">🔵 Script · The Shop Tour — walking pace, eye contact, warmth</span>
   <p>"Welcome to [Shop], your certified dealer alternative. We're proud to have certified technicians
-  ready to take care of all your vehicle needs — tires, routine maintenance, major repairs. We also partner
+  ready to take care of all your vehicle needs, tires, routine maintenance, major repairs. We also partner
   with trusted local specialists for accessory work like dent repair, body work, and windshield replacement,
   so you're covered in one place.</p>
   <p>To make your visit convenient, we offer complimentary shuttle rides, Uber or Lyft, rental car
@@ -745,7 +952,7 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
     <div class="kpi"><div class="name">Tour Duration</div><div class="target">75–90 sec</div><div class="note">Faster = rushed. Slower = lost.</div></div>
   </div>
 
-  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Advisor Book v2.0</span></div>
+  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Advisor Book v2.1</span></div>
 </div>
 
 <!-- ======================= CH 3 CUSTODY ======================= -->
@@ -834,7 +1041,7 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
     <div class="kpi"><div class="name">Separation Time</div><div class="target">≤ 10 min</div><div class="note">Time from arrival to customer in lobby / shuttle / loaner.</div></div>
   </div>
 
-  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Advisor Book v2.0</span></div>
+  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Advisor Book v2.1</span></div>
 </div>
 
 <!-- ======================= CH 4 INSPECT ======================= -->
@@ -950,7 +1157,7 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
     <div class="kpi"><div class="name">DVI View-Rate</div><div class="target">≥ 75%</div><div class="note">% of customers who open the DVI before the presentation call. Strong leading indicator of authorization.</div></div>
   </div>
 
-  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Advisor Book v2.0</span></div>
+  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Advisor Book v2.1</span></div>
 </div>
 <!-- ======================= CH 5 STRATEGIZE ======================= -->
 <div class="chapter">
@@ -1044,6 +1251,16 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
   close rate.</div>
 
   <h3>Scripts — First Base: Isolate the Customer Concern</h3>
+  <p>Each base call appears clean first, then taught. Read the clean version straight through before you study the beats.</p>
+  <div class="clean"><span class="lbl">Clean Script · The First Base Call</span>
+  <p><span class="who">Advisor:</span> "Hi [Customer Name], this is [Your Name] with [Shop]. Is now a good time to review our findings?"</p>
+  <p><span class="who">Customer:</span> "Sure, go ahead."</p>
+  <p><span class="who">Advisor:</span> "You brought your vehicle in for [customer concern] and I reviewed the findings personally with the technician to ensure accuracy. Good news is I was able to capture a good video of what is going on. Did you receive the DVI findings I sent via text?"</p>
+  <p><span class="who">Customer:</span> "Yes, I saw them."</p>
+  <p><span class="who">Advisor:</span> "More good news, we have identified the cause of your concern! The problem is [Problem]. If it's left as it is, [Risk]. The proper solution is [Solution]. The total investment to take care of this today is $[XXX], and everything is covered by our 3-year, 36,000-mile nationwide warranty on parts and labor. While the vehicle is here we will also finish up the complete bumper-to-bumper inspection and will reach out with any additional concerns. Is this still the best number to reach you?"</p>
+  <p><span class="who">Customer:</span> "Yes it is."</p>
+  <p><span class="who">Advisor:</span> "Perfect. I'll get the parts ordered and have the technician get started right away."</p>
+  </div>
   <div class="co script"><span class="lbl">🔵 Script · 1st Base · Step 1 — Permission to Speak</span>
   <p><span class="who">You:</span> "Hi [Customer Name], this is [Your Name] with [Shop]. Is now a good time to review our findings?"</p></div>
 
@@ -1052,7 +1269,7 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
   technician to ensure accuracy."</p>
   <p>"Good news is I was able to capture a good video of what is going on. Did you receive the DVI findings
   I sent via text/email?" <i>(Do not continue without confirmation.)</i></p>
-  <p>"More good news — we have identified the cause of your concern!"</p></div>
+  <p>"More good news, we have identified the cause of your concern!"</p></div>
 
   <div class="co script"><span class="lbl">🔵 Script · 1st Base · Step 3 — Problem · Risk · Solution</span>
   <p>Speak confidently, in this order:</p>
@@ -1083,15 +1300,23 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
   could, might, or should be done alongside critical concerns.</div>
 
   <h3>Scripts — Second Base: Additional Concern Presentation</h3>
+  <div class="clean"><span class="lbl">Clean Script · The Second Base Call</span>
+  <p><span class="who">Advisor:</span> "Hi [Customer Name], this is [Your Name] with [Shop]. We have completed the service inspection and have concerns that require your attention. Is now a good time to review the inspection findings?"</p>
+  <p><span class="who">Customer:</span> "Sure."</p>
+  <p><span class="who">Advisor:</span> "Did you have a chance to review the pictures and videos I sent over on the report?"</p>
+  <p><span class="who">Customer:</span> "I did."</p>
+  <p><span class="who">Advisor:</span> "Good news is your vehicle's overall health is in EXCELLENT condition! The suspension system is operating properly. However, the axle boot is leaking grease. It's not an immediate failure, but left unaddressed it can damage the joint. The proper repair is to replace the CV axle to ensure proper lubrication and protection. To address all the concerns, the updated total investment is $[XXX], and obviously everything is covered by our 3-year, 36,000-mile nationwide warranty on both parts and labor. With the [safety or customer concern] in progress, I can go ahead and order these parts and have the technician take care of everything at once. I'll call you with an updated ETA when the parts arrive."</p>
+  <p><span class="who">Customer:</span> "Okay, that works."</p>
+  <p><span class="who">Advisor:</span> "Great, we'll get the parts ordered right now. The last thing I'm going to do is check for any upcoming scheduled maintenance and call you back with the maintenance plan to protect this investment, so work doesn't build up like this again, and you know what to anticipate for your next visit!"</p>
+  </div>
   <div class="co script"><span class="lbl">🔵 Script · 2nd Base · Steps 1–3</span>
   <p><b>Step 1 — Permission to speak:</b> "Hi [Customer Name], this is [Your Name] with [Shop]. We have
-  completed the service inspection and have concerns that require your attention — is now a good time to
+  completed the service inspection and have concerns that require your attention, is now a good time to
   review the inspection findings?"</p>
   <p><b>Step 2 — Media verification:</b> "Did you have a chance to review the pictures and videos I sent
   over on the report?" If yes: continue. If no: ask permission to summarize, or wait for media confirmation.</p>
   <p><b>Step 3 — Good-Good-Bad:</b> "Good news is your vehicle's overall health is in EXCELLENT
-  condition!" "The suspension system is operating properly. However — [state Problem, Risk, Solution]
-  — the axle boot is leaking grease. It's not an immediate failure, but left unaddressed it can damage
+  condition!" "The suspension system is operating properly. However, [state Problem, Risk, Solution], the axle boot is leaking grease. It's not an immediate failure, but left unaddressed it can damage
   the joint. The proper repair is to replace the CV axle to ensure proper lubrication and protection."
   <i>Repeat until all Problems, Risks, and Solutions have been presented.</i></p></div>
 
@@ -1105,22 +1330,30 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
   <p><b>Step 6:</b> Answer questions, overcome objections. <b>Step 7:</b> Obtain authorization.
   <b>Step 8 — Tee up 3rd base:</b> "Great, we'll get the parts ordered right now. The last thing I'm going
   to do is check for any upcoming scheduled maintenance and call you back with the maintenance plan to
-  protect this investment — so work doesn't build up like this again, and you know what to anticipate for
+  protect this investment, so work doesn't build up like this again, and you know what to anticipate for
   your next visit!"</p></div>
 
   <div class="co stop"><span class="lbl">🔴 Stop</span>
   Don't roll into 3rd base on the same call. Hang up. Reset. Re-call. Earn the next conversation.</div>
 
   <h3>Scripts — Short Stop: The Missed-Sale Re-Open</h3>
+  <div class="clean"><span class="lbl">Clean Script · The Short Stop Re-Open</span>
+  <p class="dir">[Fresh voice, not the original advisor. Tone: concerned, never pushy.]</p>
+  <p><span class="who">Advisor:</span> "Hi [Customer Name], this is [Your Name] from [Shop]. I understand you've been working with [first advisor]. Do you have a second for me?"</p>
+  <p><span class="who">Customer:</span> "Sure, what's this about?"</p>
+  <p><span class="who">Advisor:</span> "Great. I'm just calling about [the item that must be handled to keep this car safe and reliable]. I know [first advisor] called to review the concern with you, and he's informed me that you didn't want to proceed with the repair. Is that accurate?"</p>
+  <p><span class="who">Customer:</span> "Yeah, it's just not in the budget right now."</p>
+  <p><span class="who">Advisor:</span> "I see, and that brings me to the reason I'm calling. I wanted to ensure we effectively communicated the severity of the concern. [Simple Problem]. [Simple Risk]. [Minimum viable Solution]. If budget is the main concern, we have flexible payment options that can take care of the safety issue today. Can I get that set up for you?"</p>
+  </div>
   <div class="co script"><span class="lbl">🔵 Script · Short Stop — tone: concerned, fresh voice</span>
   <p>"Hi [Customer Name], this is [Your Name] from [Shop]. I understand you've been working with
   [advisor who struck out]. Do you… have a second for me?"</p>
-  <p>"Great — I'm just calling about [whatever must be sold to keep this car safe and reliable]. I know
+  <p>"Great, I'm just calling about [whatever must be sold to keep this car safe and reliable]. I know
   [advisor] called to review the concern with you, and he's informed me that you didn't want to proceed
   with the repair. Is that accurate?"</p>
   <p><i>The customer will either confirm or state the true objection. If objection: overcome it (Chapter 7).
   If confirmation:</i></p>
-  <p>"I see — that brings me to the reason I'm calling. I wanted to ensure we effectively communicated
+  <p>"I see, that brings me to the reason I'm calling. I wanted to ensure we effectively communicated
   the severity of the concern: [simple Problem, simple Risk, minimum viable Solution]."</p>
   <p><i>Overcome objections. CLOSE.</i></p></div>
 
@@ -1130,6 +1363,11 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
   from someone who genuinely cares about their safety.</div>
 
   <h3>Scripts — Third Base: Scheduled Maintenance</h3>
+  <div class="clean"><span class="lbl">Clean Script · The Third Base Call</span>
+  <p><span class="who">Advisor:</span> "Hi [Customer Name], this is [Your Name] with [Shop], calling back with that maintenance plan. Is now a good time?"</p>
+  <p><span class="who">Customer:</span> "Sure."</p>
+  <p><span class="who">Advisor:</span> "The remaining items fall into preventative maintenance. Your transmission and differential fluids are overdue or coming due within the next 10,000 miles based on mileage, so ideally we should address those two services today while we have the car. Addressing them now keeps the systems up to date and maintains the lifetime protection plan, leaving the only services due next visit [services due within 10k], and the service after that will be the [plan]. Addressing the items due will move your total investment for today's work from $[XXX] to $[XXXX]. These services are covered by the lifetime protection plan that keeps major system components like the [expensive part] covered for unlimited miles, so long as the services don't go overdue. Can I have the tech get everything fully up to date while it's in the shop?"</p>
+  </div>
   <div class="co script"><span class="lbl">🔵 Script · The 3rd-Base Pitch</span>
   <p><span class="who">You:</span> "The remaining items fall into preventative maintenance. Your transmission and differential
   fluids are overdue or coming due within the next 10k based on mileage, so ideally we should address those
@@ -1151,13 +1389,20 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
   keep flowing to Coverage. Close confidently: you did not cause the problem, you have the SOLUTION.</div>
 
   <h3>Scripts — The Manager Re-Open (Missed Safety Sale)</h3>
+  <div class="clean"><span class="lbl">Clean Script · The Manager Re-Open</span>
+  <p><span class="who">Advisor:</span> "Hi [Mr./Mrs. Customer], this is [Manager Name] with [Shop]. I just wanted to personally thank you for your visit and check in on your vehicle. Did I catch you at a good time?" <span class="dir">[Pause]</span></p>
+  <p><span class="who">Customer:</span> "Sure."</p>
+  <p><span class="who">Advisor:</span> "One reason I'm calling: there was a safety concern discussed during your visit. I reviewed it myself, and I just want to make sure you have a plan to address it, whether that's with us or elsewhere. My goal is simply to make sure you and your family are protected."</p>
+  <p><span class="who">Customer:</span> "We haven't really figured it out yet."</p>
+  <p><span class="who">Advisor:</span> "If there's anything we can do, scheduling, transportation, payment options, we have availability. Would you like us to take care of that for you?"</p>
+  </div>
   <div class="co script"><span class="lbl">🔵 Script · Manager Re-Open</span>
   <p>"Hi [Mr./Mrs. Customer], this is [Manager Name] with [Shop]. I just wanted to personally thank you
   for your visit and check in on your vehicle. Did I catch you at a good time?" <i>[Pause]</i></p>
-  <p>"One reason I'm calling — there was a safety concern discussed during your visit. I reviewed it
+  <p>"One reason I'm calling, there was a safety concern discussed during your visit. I reviewed it
   myself, and I just want to make sure you have a plan to address it, whether that's with us or elsewhere."</p>
   <p>"My goal is simply to make sure you and your family are protected."</p>
-  <p>"If there's anything we can do — scheduling, transportation, payment options — we have
+  <p>"If there's anything we can do, scheduling, transportation, payment options, we have
   availability. Would you like us to take care of that for you?"</p></div>
 
   <div class="co decoder"><span class="lbl">🟣 Psychology Decoder · Why "whether with us or elsewhere" closes</span>
@@ -1193,7 +1438,7 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
     <div class="kpi"><div class="name">Same-Call Mixing</div><div class="target">≤ 5%</div><div class="note">% of calls where more than one base was presented.</div></div>
   </div>
 
-  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Advisor Book v2.0</span></div>
+  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Advisor Book v2.1</span></div>
 </div>
 
 <!-- ======================= CH 6 PRESENT ======================= -->
@@ -1221,6 +1466,13 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
   when the content is correct. The discipline: every 60–90 seconds, insert a micro-question that re-engages
   the customer's mind and confirms they're still tracking.</p>
 
+  <div class="clean"><span class="lbl">Clean Script · Re-Engagement Micro-Questions</span>
+  <p><span class="who">Advisor:</span> "Does that make sense so far?"</p>
+  <p><span class="who">Advisor:</span> "Were you able to see that in the photo I sent?"</p>
+  <p><span class="who">Advisor:</span> "Any questions on what we've covered so far?"</p>
+  <p><span class="who">Advisor:</span> "Any other concerns you'd like to share?"</p>
+  <p><span class="who">Advisor:</span> "Is this still the best number to reach you?"</p>
+  </div>
   <div class="co script"><span class="lbl">🔵 Script · Re-Engagement Micro-Questions</span>
   <p>"Does that make sense so far?"</p>
   <p>"Were you able to see that in the photo I sent?"</p>
@@ -1259,9 +1511,20 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
   <p>The water-pump-leak example is the canonical reference template for any 1st-base safety call. Every
   sentence maps to a deliberate move.</p>
 
+  <p><b>Clean first.</b> The complete call, straight through, exactly as the customer hears it. The anatomized teaching version follows.</p>
+  <div class="clean"><span class="lbl">Clean Script · The 10-Step ISO Presentation (Water Pump)</span>
+  <p><span class="who">Advisor:</span> "Hi [Customer], this is [Advisor] from [Shop]. Thanks for your patience. Is now a good time to go over your vehicle?"</p>
+  <p><span class="who">Customer:</span> "Yes, now works."</p>
+  <p><span class="who">Advisor:</span> "I personally reviewed your vehicle with our certified technician so I could give you a clear picture of what's going on. Were you able to view the photos, videos, or the digital inspection report we sent over?"</p>
+  <p><span class="who">Customer:</span> "I did, yes."</p>
+  <p><span class="who">Advisor:</span> "You brought your vehicle in for an oil change. We've completed the initial inspection and I wanted to review what we found. The good news is your digital inspection report clearly documents everything with photos and notes so you can see exactly what we're seeing, and we caught this early, before it turned into a bigger issue. More good news: during our inspection we found that your water pump is leaking, which is separate from your original visit and something we can take care of now before it leads to further damage. If left as is, a leaking water pump can lead to engine overheating, coolant loss, and eventually major engine damage. The proper repair is to remove and replace the water pump and complete a full cooling system service so everything is clean, sealed, and operating at the correct temperature. The total investment for today's work, including the cooling system service, is $1,695.46, parts and labor included, and this work is covered by our 3-year, 36,000-mile nationwide warranty on parts and labor. While your vehicle is here, we'll finish the full bumper-to-bumper digital inspection and I'll reach out if anything else needs attention. Is this still the best number to reach you?"</p>
+  <p><span class="who">Customer:</span> "Yes, that number is best."</p>
+  <p><span class="who">Advisor:</span> "Perfect. I'll get everything moving and call you with an update."</p>
+  </div>
+
   <div class="co worked"><span class="lbl">🟨 Worked Example · Base-1 ISO Safety Presentation — Water Pump Leak</span>
   <p><b>1 · Warm Opening &amp; Time Check.</b> "Hi [Customer], this is [Advisor] from [Shop]. Thanks for
-  your patience — is now a good time to go over your vehicle?"</p>
+  your patience, is now a good time to go over your vehicle?"</p>
   <p><b>2 · Advisor Co-Review (Credibility).</b> "I personally reviewed your vehicle with our certified
   technician so I could give you a clear picture of what's going on."</p>
   <p><b>3 · Media Confirmation.</b> "Were you able to view the photos, videos, or the digital inspection
@@ -1269,18 +1532,18 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
   <p><b>4 · Concern &amp; Inspection.</b> "You brought your vehicle in for an oil change. We've completed
   the initial inspection and I wanted to review what we found."</p>
   <p><b>5 · Good News (positives).</b> "The good news is your digital inspection report clearly documents
-  everything with photos and notes so you can see exactly what we're seeing — and we caught this early,
+  everything with photos and notes so you can see exactly what we're seeing, and we caught this early,
   before it turned into a bigger issue."</p>
-  <p><b>6 · More Good News (discovery).</b> "More good news — during our inspection we found that your
+  <p><b>6 · More Good News (discovery).</b> "More good news, during our inspection we found that your
   water pump is leaking, which is separate from your original visit and something we can take care of now
   before it leads to further damage."</p>
   <p><b>7 · Risk → Solution.</b> "If left as-is, a leaking water pump can lead to engine overheating,
   coolant loss, and eventually major engine damage. The proper repair is to remove and replace the water
   pump and complete a full cooling system service so everything is clean, sealed, and operating at the
   correct temperature."</p>
-  <p><b>8 · Total Investment.</b> "The total investment for today's work — including the cooling system
-  service — is $1,695.46, parts and labor included."</p>
-  <p><b>9 · Coverage.</b> "This work is covered by our 3-year / 36,000-mile nationwide warranty — parts
+  <p><b>8 · Total Investment.</b> "The total investment for today's work, including the cooling system
+  service, is $1,695.46, parts and labor included."</p>
+  <p><b>9 · Coverage.</b> "This work is covered by our 3-year / 36,000-mile nationwide warranty, parts
   and labor."</p>
   <p><b>10 · Tee-Up &amp; Callback.</b> "While your vehicle is here, we'll finish the full bumper-to-bumper
   digital inspection and I'll reach out if anything else needs attention. Is this still the best number to
@@ -1314,7 +1577,7 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
     <div class="kpi"><div class="name">DVI View Before Call</div><div class="target">≥ 75%</div><div class="note">Strong leading indicator of authorization.</div></div>
   </div>
 
-  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Advisor Book v2.0</span></div>
+  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Advisor Book v2.1</span></div>
 </div>
 <!-- ======================= CH 7 BOSS BATTLES ======================= -->
 <div class="chapter">
@@ -1358,21 +1621,30 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
   <p class="small">Mirror the emotion, name the underlying concern, then bridge to the script. Never use "but."</p>
 
   <h3>Boss 1 — "I'm Selling the Car"</h3>
+
+  <div class="clean"><span class="lbl">Clean Script · Boss 1</span>
+  <p><span class="who">Customer:</span> "I appreciate everything, but I'm probably just going to sell it. I don't want to put more money into it."</p>
+  <p><span class="who">Advisor:</span> "I completely understand. Big repairs can make you step back and rethink things. Out of curiosity, are you planning to replace it with something newer or used?"</p>
+  <p><span class="who">Customer:</span> "Probably used. I don't want another big payment."</p>
+  <p><span class="who">Advisor:</span> "That makes sense. Let me give you something to consider. Most used vehicles today are still a major investment, and you're inheriting someone else's maintenance history. With your vehicle, we know exactly what condition it's in because we just inspected it bumper to bumper. Based on what we saw, this vehicle still has strong life left in it. Let me ask you this: if you could purchase this exact vehicle, knowing the major systems have just been inspected and repaired, for a fraction of the cost of another vehicle, would that make sense?"</p>
+  <p><span class="who">Customer:</span> "I didn't think about it that way."</p>
+  <p><span class="who">Advisor:</span> "Right now you're not throwing money at an old car. You're making a smart investment in a vehicle you already own and understand. The average used car today runs up to $25,000, and the insurance rates are outrageous. To get this vehicle back to safe and reliable, we're talking about [total investment]. I completely understand if you're simply in the market for a new car, but if you're looking to make a smart financial decision, my professional advice would be to repair the car instead of buying a used car that may need the same in repairs, or more."</p>
+  </div>
   <div class="co script"><span class="lbl">🔵 Script · Boss 1 · The Exchange</span>
   <p><span class="who">Customer:</span> "I appreciate everything, but I'm probably just going to sell it. I don't want to put more money into it."</p>
-  <p><span class="who">You:</span> "I completely understand. Big repairs can make you step back and rethink things. Out of curiosity — are you planning to replace it with something newer or used?"</p>
+  <p><span class="who">You:</span> "I completely understand. Big repairs can make you step back and rethink things. Out of curiosity, are you planning to replace it with something newer or used?"</p>
   <p><span class="who">Customer:</span> "Probably used. I don't want another big payment."</p>
   <p><span class="who">You:</span> "That makes sense. Let me give you something to consider. Most used vehicles today are still a
   major investment, and you're inheriting someone else's maintenance history. With your vehicle, we know
   exactly what condition it's in because we just inspected it bumper to bumper. Based on what we saw, this
-  vehicle still has strong life left in it. Let me ask you this — if you could purchase this exact vehicle,
+  vehicle still has strong life left in it. Let me ask you this, if you could purchase this exact vehicle,
   knowing the major systems have just been inspected and repaired, for a fraction of the cost of another
   vehicle… would that make sense?"</p>
   <p><span class="who">Customer:</span> "I didn't think about it that way."</p>
-  <p><span class="who">You:</span> "Right now you're not throwing money at an old car — you're making a smart investment in a
+  <p><span class="who">You:</span> "Right now you're not throwing money at an old car, you're making a smart investment in a
   vehicle you already own and understand. The average used car today runs up to $25,000, and the insurance
   rates are outrageous. To get this vehicle back to safe and reliable, we're talking about [state total
-  investment]. I completely understand if you're simply in the market for a new car — but if you're
+  investment]. I completely understand if you're simply in the market for a new car, but if you're
   looking to make a smart financial decision, my professional advice would be to repair the car instead of
   buying a used car that may need the same in repairs, or more."</p></div>
   <div class="co decoder"><span class="lbl">🟣 Psychology Decoder · Reframing buy vs. repair</span>
@@ -1380,14 +1652,23 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
   risk, and unknown history of another vehicle. Once that frame lands, your repair becomes the cheap option.</div>
 
   <h3>Boss 2 — "The Price Is Too High"</h3>
+
+  <div class="clean"><span class="lbl">Clean Script · Boss 2</span>
+  <p><span class="who">Customer:</span> "That just seems like a lot."</p>
+  <p><span class="who">Advisor:</span> "I hear you. Let me ask, is it more than you expected, or are you comparing it to another estimate?"</p>
+  <p><span class="who">Customer:</span> "It just feels high."</p>
+  <p><span class="who">Advisor:</span> "Fair enough. We're not positioned as the lowest-priced option in town, and that's intentional. We invest in experienced, certified technicians. We back our work with a 3-year, 36,000-mile nationwide warranty. And we stand behind it with real support if something ever comes up. You're not just paying for parts. You're investing in doing it correctly the first time. Have you ever gone with the cheaper option before and ended up paying for it twice?"</p>
+  <p><span class="who">Customer:</span> "Yeah, I suppose."</p>
+  <p><span class="who">Advisor:</span> "That's exactly what we're helping you avoid. Let's go ahead and get this handled properly so you don't have to revisit it again. I'll get it moving and keep you updated. Is this still the best number?"</p>
+  </div>
   <div class="co script"><span class="lbl">🔵 Script · Boss 2 · The Exchange</span>
   <p><span class="who">Customer:</span> "That just seems like a lot."</p>
-  <p><span class="who">You:</span> "I hear you. Let me ask — is it more than you expected, or are you comparing it to another estimate?"</p>
+  <p><span class="who">You:</span> "I hear you. Let me ask, is it more than you expected, or are you comparing it to another estimate?"</p>
   <p><span class="who">Customer:</span> "It just feels high."</p>
   <p><span class="who">You:</span> "Fair enough. We're not positioned as the lowest-priced option in town, and that's intentional.
   We invest in experienced, certified technicians. We back our work with a 3-year / 36,000-mile nationwide
   warranty. And we stand behind it with real support if something ever comes up. You're not just paying for
-  parts — you're investing in doing it correctly the first time. Have you ever gone with the cheaper
+  parts, you're investing in doing it correctly the first time. Have you ever gone with the cheaper
   option before and ended up paying for it twice?"</p>
   <p><span class="who">Customer:</span> "Yeah… I suppose."</p>
   <p><span class="who">You:</span> "That's exactly what we're helping you avoid. Let's go ahead and get this handled properly so
@@ -1398,9 +1679,16 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
   apologize for price — and never disparage the competitor; raise your own bar instead.</div>
 
   <h3>Boss 3 — "I Don't Have the Money Right Now"</h3>
+
+  <div class="clean"><span class="lbl">Clean Script · Boss 3</span>
+  <p><span class="who">Customer:</span> "I just don't have the money today."</p>
+  <p><span class="who">Advisor:</span> "I completely understand. Auto repairs rarely show up at a convenient time. Always after a big expense, or when you least expect it. Something a lot of our customers LOVE to take advantage of is our flexible payment options. If I can take care of the repair now and let you pay me back with no interest, can I get the parts ordered and move forward?"</p>
+  <p><span class="who">Customer:</span> "Yes!"</p>
+  <p><span class="who">Advisor:</span> "I just sent you a link to fill out a form with one of our payment partners. Once it's complete I'll see it come through on my side and we can go from there! Did you receive the link?"</p>
+  </div>
   <div class="co script"><span class="lbl">🔵 Script · Boss 3 · The Exchange</span>
   <p><span class="who">Customer:</span> "I just don't have the money today."</p>
-  <p><span class="who">You:</span> "I completely understand. Auto repairs rarely show up at a convenient time — always after a
+  <p><span class="who">You:</span> "I completely understand. Auto repairs rarely show up at a convenient time, always after a
   big expense, or when you least expect it. Something a lot of our customers LOVE to take advantage of is
   our flexible payment options. If I can take care of the repair now and let you pay me back with no
   interest, can I get the parts ordered and move forward?"</p>
@@ -1416,9 +1704,15 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
   one declines that.</div>
 
   <h3>Boss 4 — "I Need to Talk to My Spouse"</h3>
+
+  <div class="clean"><span class="lbl">Clean Script · Boss 4</span>
+  <p><span class="who">Customer:</span> "I need to run this by my spouse first."</p>
+  <p><span class="who">Advisor:</span> "I completely understand. Decisions like this are definitely best made together. To make sure both you and your spouse have all the correct information at the same time, the most efficient way to proceed is a brief three-way call. I can review everything I just covered, you'll both be fully informed, and you can make the best decision for your situation. Is your spouse available to join us now, or should I reach out to them to review this information and call you back?"</p>
+  <p><span class="who">Customer:</span> "Let me try to get them on the phone."</p>
+  </div>
   <div class="co script"><span class="lbl">🔵 Script · Boss 4 · The Exchange</span>
   <p><span class="who">Customer:</span> "I need to run this by my spouse first."</p>
-  <p><span class="who">You:</span> "I completely understand — decisions like this are definitely best made together. To make sure
+  <p><span class="who">You:</span> "I completely understand, decisions like this are definitely best made together. To make sure
   both you and your spouse have all the correct information at the same time, the most efficient way to
   proceed is a brief three-way call. I can review everything I just covered, you'll both be fully informed,
   and you can make the best decision for your situation. Is your spouse available to join us now, or should
@@ -1430,6 +1724,19 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
   spouse hears the same PRS and warranty story that built trust in the first place.</div>
 
   <h3>Boss 5 — "I'm Going to Wait"</h3>
+
+  <div class="clean"><span class="lbl">Clean Script · Boss 5</span>
+  <span class="br">Version 1 · Safety concern</span>
+  <p><span class="who">Customer:</span> "I think I'll wait on that."</p>
+  <p><span class="who">Advisor:</span> "I understand. I do want to be transparent. This one falls into a safety category. Right now the brakes are past normal wear and into potential damage. That can affect stopping distance and control. Are you planning to drive it?"</p>
+  <p><span class="who">Customer:</span> "Yes, just around town."</p>
+  <p><span class="who">Advisor:</span> "Even short trips carry risk in this condition. My job is to protect you, not pressure you. If budget is the concern, we can look at payment options, but I don't recommend postponing something that affects safety."</p>
+  <span class="br">Version 2 · Preventative maintenance</span>
+  <p><span class="who">Customer:</span> "I'll just wait on the fluid services."</p>
+  <p><span class="who">Advisor:</span> "No worries, they're not urgent today. What we're seeing in those systems is buildup that doesn't show symptoms until damage starts. Doing them now protects the components while everything is accessible. If we skip them today, are you planning to schedule it soon, or wait until something starts acting up?"</p>
+  <p><span class="who">Customer:</span> "Probably the next oil change."</p>
+  <p><span class="who">Advisor:</span> "Understood. Just keep in mind preventative service is always less expensive than corrective repair. If it makes sense to bundle it while it's already here, we can space out the cost as well."</p>
+  </div>
   <div class="co protip"><span class="lbl">⚪ Pro Tip · Boss 5 strategy</span>
   This usually means one of two things: they're unsure about urgency, or they're avoiding committing.
   Your job: clarify risk if it's a safety concern; reframe value if it's maintenance. If it's the "just do
@@ -1437,16 +1744,16 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
   leave with an appointment for the rest.</div>
   <div class="co script"><span class="lbl">🔵 Script · Boss 5 · Example 1 — Safety Concern</span>
   <p><span class="who">Customer:</span> "I think I'll wait on that."</p>
-  <p><span class="who">You:</span> "I understand. I do want to be transparent — this one falls into a safety category. Right now
+  <p><span class="who">You:</span> "I understand. I do want to be transparent, this one falls into a safety category. Right now
   the brakes are past normal wear and into potential damage. That can affect stopping distance and control.
   Are you planning to drive it?"</p>
   <p><span class="who">Customer:</span> "Yes, just around town."</p>
   <p><span class="who">You:</span> "Even short trips carry risk in this condition. My job is to protect you, not pressure you. If
-  budget is the concern, we can look at payment options — but I don't recommend postponing something that
+  budget is the concern, we can look at payment options, but I don't recommend postponing something that
   affects safety."</p></div>
   <div class="co script"><span class="lbl">🔵 Script · Boss 5 · Example 2 — Preventative Maintenance</span>
   <p><span class="who">Customer:</span> "I'll just wait on the fluid services."</p>
-  <p><span class="who">You:</span> "No worries — they're not urgent today. What we're seeing in those systems is buildup that
+  <p><span class="who">You:</span> "No worries, they're not urgent today. What we're seeing in those systems is buildup that
   doesn't show symptoms until damage starts. Doing them now protects the components while everything is
   accessible. If we skip them today, are you planning to schedule it soon, or wait until something starts
   acting up?"</p>
@@ -1455,9 +1762,14 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
   repair. If it makes sense to bundle it while it's already here, we can space out the cost as well."</p></div>
 
   <h3>Boss 6 — "You're Always Trying to Sell Me"</h3>
+
+  <div class="clean"><span class="lbl">Clean Script · Boss 6</span>
+  <p><span class="who">Customer:</span> "Every time I come in, you try to sell me something."</p>
+  <p><span class="who">Advisor:</span> "I appreciate you saying that. My goal isn't to sell you. It's to inspect your vehicle thoroughly and give you accurate information. Every car that comes through our shop receives a full digital inspection. That means checking safety components, wear items, and potential issues before they become problems. You're never obligated to approve anything. But it's my Professional Obligation to make sure you know what we see. Would you like me to walk you through today's inspection results so you can decide what makes sense?"</p>
+  </div>
   <div class="co script"><span class="lbl">🔵 Script · Boss 6 · The Exchange</span>
   <p><span class="who">Customer:</span> "Every time I come in, you try to sell me something."</p>
-  <p><span class="who">You:</span> "I appreciate you saying that. My goal isn't to sell you — it's to inspect your vehicle
+  <p><span class="who">You:</span> "I appreciate you saying that. My goal isn't to sell you, it's to inspect your vehicle
   thoroughly and give you accurate information. Every car that comes through our shop receives a full
   digital inspection. That means checking safety components, wear items, and potential issues before they
   become problems. You're never obligated to approve anything. But it's my Professional Obligation to make
@@ -1468,6 +1780,13 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
   defenses drop because you just told them they are in control.</div>
 
   <h3>Boss 7 — "I Need My Car Today"</h3>
+
+  <div class="clean"><span class="lbl">Clean Script · Boss 7</span>
+  <p><span class="who">Customer:</span> "I really need my car today."</p>
+  <p><span class="who">Advisor:</span> "I understand. Let's solve the transportation side first. We have loaner vehicles, Uber rides, and pickup and drop-off options. Would one of those help make this easier for you?"</p>
+  <p><span class="who">Customer:</span> "An Uber ride would help."</p>
+  <p><span class="who">Advisor:</span> "Perfect. I'll get that arranged so we can repair your vehicle properly without rushing anything. Once it's complete, I'll give you a call. Still the best number?"</p>
+  </div>
   <div class="co protip"><span class="lbl">⚪ Pro Tip · Boss 7 strategy</span>
   Two possibilities: a real logistical need, or avoiding the decision. First solve transportation. Then
   return to the repair.</div>
@@ -1480,11 +1799,16 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
   anything. Once it's complete, I'll give you a call. Still the best number?"</p></div>
 
   <h3>Boss 8 — "Can I Get a Parts and Labor Breakdown?"</h3>
+
+  <div class="clean"><span class="lbl">Clean Script · Boss 8</span>
+  <p><span class="who">Customer:</span> "Can you break down parts and labor?"</p>
+  <p><span class="who">Advisor:</span> "I can absolutely review the estimate with you. Just to clarify, we're not structured as a parts-and-labor shop. We're structured around protection and execution. You're paying for certified technicians, proper procedures, warranty coverage, and post-repair support, not just the components themselves. We also include a 3-year, 36,000-mile nationwide warranty, roadside assistance, a quality-control inspection, and digital documentation. That's why it doesn't break down into a simple commodity model. Does that help clarify where the value is?"</p>
+  </div>
   <div class="co script"><span class="lbl">🔵 Script · Boss 8 · The Exchange</span>
   <p><span class="who">Customer:</span> "Can you break down parts and labor?"</p>
-  <p><span class="who">You:</span> "I can absolutely review the estimate with you. Just to clarify — we're not structured as a
+  <p><span class="who">You:</span> "I can absolutely review the estimate with you. Just to clarify, we're not structured as a
   parts-and-labor shop. We're structured around protection and execution. You're paying for certified
-  technicians, proper procedures, warranty coverage, and post-repair support — not just the components
+  technicians, proper procedures, warranty coverage, and post-repair support, not just the components
   themselves. We also include: a 3-year / 36,000-mile nationwide warranty, roadside assistance, a
   quality-control inspection, and digital documentation. That's why it doesn't break down into a simple
   commodity model. Does that help clarify where the value is?"</p></div>
@@ -1526,7 +1850,7 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
     <div class="kpi"><div class="name">Boss Coverage</div><div class="target">8/8</div><div class="note">Each advisor has defeated all 8 bosses in live calls.</div></div>
   </div>
 
-  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Advisor Book v2.0</span></div>
+  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Advisor Book v2.1</span></div>
 </div>
 
 <!-- ======================= CH 8 CLOSE ======================= -->
@@ -1572,12 +1896,19 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
     <tr><td><b>3 · Logistical</b></td><td>The brain has to engage with parking, not price. By the time it's engaged, the price is silently accepted.</td><td>"Which direction would you like your vehicle facing when we bring it up?"</td></tr>
   </table>
 
+  <div class="clean"><span class="lbl">Clean Script · Assumptive Close Lines</span>
+  <p><span class="who">Advisor:</span> "I'll go ahead and move forward with that!"</p>
+  <p><span class="who">Advisor:</span> "The parts will take a few hours to get here so long as I can hang up and place the order now!"</p>
+  <p><span class="who">Advisor:</span> "Would you prefer option A or option B?"</p>
+  <p><span class="who">Advisor:</span> "Anything else you'd like to add before we move forward?"</p>
+  <p><span class="who">Advisor:</span> "We really need to fix this problem. Do you need any more information from me?"</p>
+  </div>
   <div class="co script"><span class="lbl">🔵 Script · Assumptive close lines — land these without hesitation</span>
   <p>"I'll go ahead and move forward with that!"</p>
   <p>"The parts will take a few hours to get here so long as I can hang up and place the order now!"</p>
   <p>"Would you prefer option A or option B?"</p>
   <p>"Anything else you'd like to add before we move forward?"</p>
-  <p>"We really need to fix this problem — do you need any more information from me?"</p></div>
+  <p>"We really need to fix this problem, do you need any more information from me?"</p></div>
 
   <div class="co decoder"><span class="lbl">🟣 Psychology Decoder · Why "which direction facing?" is the most quietly powerful close in the book</span>
   The brain processes "which direction?" as a logistics problem. Logistics problems are answered on
@@ -1590,9 +1921,17 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
   customer becomes a repeat customer for life. Confirm the work, reinforce the value, set the next
   appointment, close the loop. This is where retention is built.</p>
 
+  <div class="clean"><span class="lbl">Clean Script · Home Plate + Booking the Next Visit</span>
+  <p><span class="who">Advisor:</span> "[Mr./Mrs. Customer], thank you again for trusting us with your vehicle today. Here's what we completed: [services]. Everything is digitally documented in your invoice. Your total investment today is $[XXX]. Which direction would you like your vehicle facing when we bring it up?"</p>
+  <p><span class="who">Customer:</span> "Facing out would be great."</p>
+  <p><span class="who">Advisor:</span> "You got it. Before you head out, a few benefits included with today's service: our 3-year, 36,000-mile nationwide warranty, 365-day roadside assistance, a post-repair inspection, and maintenance reminders. Looking at your maintenance schedule, your next service will be due around [date or mileage]. Let's get that on the books now so it's one less thing to think about. Does a morning or an afternoon usually work better for you?"</p>
+  <p><span class="who">Customer:</span> "Mornings, usually."</p>
+  <p><span class="who">Advisor:</span> "Perfect, I have a 9:15 on [date]. I'll put you down and send you a reminder as it gets closer. We appreciate your business, [Customer Name], and we'll be here whenever you need us!"</p>
+  </div>
+
   <div class="co script"><span class="lbl">🔵 Script · Home Plate · Final Invoice Review</span>
   <p>"[Mr./Mrs. Customer], thank you again for trusting us with your vehicle today. Here's what we
-  completed: [services — e.g., replaced brake pads and rotors, repaired the axle, updated your maintenance
+  completed: [services, e.g., replaced brake pads and rotors, repaired the axle, updated your maintenance
   services]. Everything is digitally documented in your invoice. Your total investment today is $____.
   <b>Which direction would you like your vehicle facing when we bring it up?</b></p>
   <p>Before you head out, a few benefits included with today's service: 3-year / 36,000-mile nationwide
@@ -1626,7 +1965,7 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
     <div class="kpi"><div class="name">5-Star Review %</div><div class="target">≥ 80%</div><div class="note">Customers asked at Home Plate for a review — conversion to 5-star. Cumulative across all modules.</div></div>
   </div>
 
-  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Advisor Book v2.0</span></div>
+  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Advisor Book v2.1</span></div>
 </div>
 <!-- ======================= CH 9 LAST ======================= -->
 <div class="chapter">
@@ -1705,29 +2044,48 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
   </table>
 
   <h3>Scripts — The Four Most Common Hot Counters</h3>
+  <p>Clean versions first: pure dialogue, straight through. The taught versions with the L.A.S.T. beats labeled follow.</p>
+  <div class="clean"><span class="lbl">Clean Script · The Four Hot Counters</span>
+  <span class="br">Hot Counter 1 · No callback for two days</span>
+  <p><span class="who">Customer:</span> "My car's been here for two days and no one called me!"</p>
+  <p><span class="who">Advisor:</span> "Okay, walk me through it. When did you drop it off, and what were you expecting to hear?" <span class="dir">[Listen. No interrupting.]</span></p>
+  <p><span class="who">Advisor:</span> "I completely understand. Not hearing back when you're waiting on your car is one of the most frustrating things, and that's on us to do better. Here's what I'm going to do. I'm pulling your RO right now. I'll get you the current status, a real ETA, and I'll call you back personally within 30 minutes whether the news is good or not. Thank you for letting me know. We'd much rather hear this from you than read about it later."</p>
+  <span class="br">Hot Counter 2 · The bill is higher than the quote</span>
+  <p><span class="who">Customer:</span> "The bill is way more than what you quoted!"</p>
+  <p><span class="who">Advisor:</span> "Tell me what number you were expecting and what number you're seeing." <span class="dir">[Listen fully.]</span></p>
+  <p><span class="who">Advisor:</span> "That's a fair concern. If you were planning on one number and the bill comes in higher, that breaks trust, and I get why you're frustrated. Let me pull the estimate and the final invoice side by side. I'll walk you line by line through what changed, and if any of that wasn't properly authorized, I'll make it right today. I appreciate you raising this instead of just walking away unhappy. Let's figure it out."</p>
+  <span class="br">Hot Counter 3 · The noise came back</span>
+  <p><span class="who">Customer:</span> "I just paid for this last month and the same noise is back!"</p>
+  <p><span class="who">Advisor:</span> "Tell me about the noise. When does it happen, is it exactly the same, did it ever fully go away?" <span class="dir">[Listen fully.]</span></p>
+  <p><span class="who">Advisor:</span> "That's exactly the kind of thing that should not be happening, and I understand why it feels like we let you down. Here's what we're going to do. We carry a 3-year, 36,000-mile warranty on parts and labor, so this is covered. I'm getting you on the schedule today or tomorrow, no charge, and we'll diagnose it personally. Can you bring it in this afternoon, or in the morning? And thank you for bringing it back to us instead of going somewhere else. We're going to make this right."</p>
+  <span class="br">Hot Counter 4 · Grease on the seat</span>
+  <p><span class="who">Customer:</span> "Your tech left grease on my seat."</p>
+  <p><span class="who">Advisor:</span> "Can you show me?" <span class="dir">[Walk to the car. Look. Do not minimize.]</span></p>
+  <p><span class="who">Advisor:</span> "You're right, that's not what should happen. That's on us. Here's what we're going to do. We use seat covers on every job and that wasn't followed today. I'm going to get this professionally detailed at our cost and have your car back to you cleaner than when it came in. I'll arrange a loaner or an Uber so you're not without a ride. When works best? And thank you for telling me directly. This is how we get better, one customer at a time."</p>
+  </div>
   <div class="co script"><span class="lbl">🔵 Script · Hot Counter 1 · "My car's been here for two days and no one called me."</span>
-  <p><b>L:</b> "Okay, walk me through it — when did you drop it off and what were you expecting to hear?" <i>[Listen. No interrupting.]</i></p>
-  <p><b>A:</b> "I completely understand — not hearing back when you're waiting on your car is one of the most frustrating things, and that's on us to do better."</p>
+  <p><b>L:</b> "Okay, walk me through it, when did you drop it off and what were you expecting to hear?" <i>[Listen. No interrupting.]</i></p>
+  <p><b>A:</b> "I completely understand, not hearing back when you're waiting on your car is one of the most frustrating things, and that's on us to do better."</p>
   <p><b>S:</b> "Here's what I'm going to do. I'm pulling your RO right now. I'll get you the current status, a real ETA, and I'll call you back personally within 30 minutes whether the news is good or not."</p>
   <p><b>T:</b> "Thank you for letting me know. We'd much rather hear this from you than read about it later."</p></div>
 
   <div class="co script"><span class="lbl">🔵 Script · Hot Counter 2 · "The bill is way more than what you quoted."</span>
   <p><b>L:</b> "Tell me what number you were expecting and what number you're seeing."</p>
-  <p><b>A:</b> "That's a fair concern — if you were planning on one number and the bill comes in higher, that breaks trust, and I get why you're frustrated."</p>
+  <p><b>A:</b> "That's a fair concern, if you were planning on one number and the bill comes in higher, that breaks trust, and I get why you're frustrated."</p>
   <p><b>S:</b> "Let me pull the estimate and the final invoice side by side. I'll walk you line by line through what changed, and if any of that wasn't properly authorized, I'll make it right today."</p>
   <p><b>T:</b> "I appreciate you raising this instead of just walking away unhappy. Let's figure it out."</p></div>
 
   <div class="co script"><span class="lbl">🔵 Script · Hot Counter 3 · "I just paid for this last month and the same noise is back!"</span>
-  <p><b>L:</b> "Tell me about the noise — when does it happen, is it exactly the same, did it ever fully go away?"</p>
+  <p><b>L:</b> "Tell me about the noise, when does it happen, is it exactly the same, did it ever fully go away?"</p>
   <p><b>A:</b> "That's exactly the kind of thing that should not be happening, and I understand why it feels like we let you down."</p>
-  <p><b>S:</b> "Here's what we're going to do. We carry a 3-year / 36,000-mile warranty on parts and labor — this is covered. I'm getting you on the schedule today or tomorrow, no charge, and we'll diagnose it personally. Can you bring it in this afternoon, or in the morning?"</p>
+  <p><b>S:</b> "Here's what we're going to do. We carry a 3-year / 36,000-mile warranty on parts and labor, this is covered. I'm getting you on the schedule today or tomorrow, no charge, and we'll diagnose it personally. Can you bring it in this afternoon, or in the morning?"</p>
   <p><b>T:</b> "Thank you for bringing it back to us instead of going somewhere else. We're going to make this right."</p></div>
 
   <div class="co script"><span class="lbl">🔵 Script · Hot Counter 4 · "Your tech left grease on my seat."</span>
   <p><b>L:</b> "Can you show me?" <i>[Walk to the car. Look. Do not minimize.]</i></p>
-  <p><b>A:</b> "You're right — that's not what should happen. That's on us."</p>
+  <p><b>A:</b> "You're right, that's not what should happen. That's on us."</p>
   <p><b>S:</b> "Here's what we're going to do. We use seat covers on every job and that wasn't followed today. I'm going to get this professionally detailed at our cost and have your car back to you cleaner than when it came in. I'll arrange a loaner or an Uber so you're not without a ride. When works best?"</p>
-  <p><b>T:</b> "Thank you for telling me directly. This is how we get better — one customer at a time."</p></div>
+  <p><b>T:</b> "Thank you for telling me directly. This is how we get better, one customer at a time."</p></div>
 
   <div class="co stop"><span class="lbl">🔴 Stop · The banned word is "policy"</span>
   Never use the word "policy" during a recovery. It tells the customer "you don't matter, the rule does."
@@ -1802,7 +2160,7 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
     <li>Process change to prevent recurrence: ______________________________</li>
   </ul></div>
 
-  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Advisor Book v2.0</span></div>
+  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Advisor Book v2.1</span></div>
 </div>
 
 <!-- ======================= APP A WORKED EXAMPLES ======================= -->
@@ -1828,13 +2186,13 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
   <h3>1 · Brakes — Front Pads &amp; Rotors (Safety)</h3>
   <p class="small"><b>Scenario:</b> customer came in for a brake squeal. DVI confirms front pads at 2mm with rotor scoring.</p>
   <div class="co worked"><span class="lbl">🟨 Base-1 ISO · Front Brakes</span>
-  <p><b>1.</b> "Hi [Customer], this is [Advisor] from [Shop]. Thanks for your patience — is now a good time to go over your vehicle?"</p>
+  <p><b>1.</b> "Hi [Customer], this is [Advisor] from [Shop]. Thanks for your patience, is now a good time to go over your vehicle?"</p>
   <p><b>2.</b> "I personally walked the vehicle with our certified tech so I could give you a clear picture of what's going on with the braking system."</p>
   <p><b>3.</b> "Were you able to view the photos and the brake-measurement video on the digital inspection report I sent?"</p>
   <p><b>4.</b> "You brought the vehicle in because of the squealing when braking. We've fully inspected the system."</p>
   <p><b>5.</b> "The good news is the rear brakes still have plenty of life left, and the brake fluid tested clean."</p>
-  <p><b>6.</b> "More good news — we caught the front brakes right at the safety threshold and not past it, which means we can replace the components without damage to the caliper or hydraulic system."</p>
-  <p><b>7.</b> "If left as-is, the front pads are at 2 millimeters — that means metal-on-metal is the next stop, which destroys the rotors and can compromise stopping distance. The proper repair is to replace the front pads and rotors, perform a full brake system service including hardware and fluid bleed, and road-test under load to confirm."</p>
+  <p><b>6.</b> "More good news, we caught the front brakes right at the safety threshold and not past it, which means we can replace the components without damage to the caliper or hydraulic system."</p>
+  <p><b>7.</b> "If left as-is, the front pads are at 2 millimeters, that means metal-on-metal is the next stop, which destroys the rotors and can compromise stopping distance. The proper repair is to replace the front pads and rotors, perform a full brake system service including hardware and fluid bleed, and road-test under load to confirm."</p>
   <p><b>8.</b> "The total investment for today's work, parts and labor included, is $[XXX]."</p>
   <p><b>9.</b> "This work is fully covered by our 3-year / 36,000-mile nationwide warranty on both parts and labor."</p>
   <p><b>10.</b> "While your vehicle is here, we'll finish the full bumper-to-bumper inspection and I'll reach out if anything else needs attention. Is this still the best number to reach you?"</p></div>
@@ -1846,15 +2204,15 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
   <h3>2 · Suspension — CV Axle Boot Leak (2nd-Base Discovery)</h3>
   <p class="small"><b>Scenario:</b> customer came in for an oil change. DVI finds the CV axle boot torn with grease slung on inner suspension.</p>
   <div class="co worked"><span class="lbl">🟨 Base-2 Additional Concern · CV Axle</span>
-  <p><b>1.</b> "Hi [Customer], this is [Advisor] from [Shop]. I have an update on the inspection — is now a good time?"</p>
+  <p><b>1.</b> "Hi [Customer], this is [Advisor] from [Shop]. I have an update on the inspection, is now a good time?"</p>
   <p><b>2.</b> "I just finished walking the vehicle with our tech so I could explain exactly what we found."</p>
   <p><b>3.</b> "Did you have a chance to see the photos of the axle area on the report?"</p>
-  <p><b>4.</b> "You came in for the oil change — that's done. During the inspection we identified an additional finding I want to walk you through."</p>
-  <p><b>5.</b> "Good news is your suspension and steering components are otherwise in solid shape — ball joints, tie rods, and bushings all check out."</p>
-  <p><b>6.</b> "More good news — we caught the axle boot leak before the joint itself failed. That's a meaningful difference in cost and complexity."</p>
+  <p><b>4.</b> "You came in for the oil change, that's done. During the inspection we identified an additional finding I want to walk you through."</p>
+  <p><b>5.</b> "Good news is your suspension and steering components are otherwise in solid shape, ball joints, tie rods, and bushings all check out."</p>
+  <p><b>6.</b> "More good news, we caught the axle boot leak before the joint itself failed. That's a meaningful difference in cost and complexity."</p>
   <p><b>7.</b> "If left as-is, the torn boot lets the lubricating grease escape and lets dirt and water in. Inside of a few thousand miles that will destroy the CV joint, which can fail under acceleration and leave you stranded. The proper repair is to replace the CV axle assembly, inspect the inner CV joint and surrounding components, and verify alignment."</p>
   <p><b>8.</b> "The total updated investment, including the oil change you already authorized, is $[XXX]."</p>
-  <p><b>9.</b> "Everything is covered by our 3-year / 36,000-mile nationwide warranty — parts and labor."</p>
+  <p><b>9.</b> "Everything is covered by our 3-year / 36,000-mile nationwide warranty, parts and labor."</p>
   <p><b>10.</b> "With the axle work in progress I'll have the tech finish the remaining inspection items and loop back if anything else surfaces. Still the best number?"</p></div>
   <div class="co protip"><span class="lbl">⚪ Pro Tip · For 2nd-base findings, name what's already healthy first</span>
   Beat 5 on a 2nd-base call should always name healthy adjacent components. This prevents the customer from
@@ -1867,9 +2225,9 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
   <p><b>1.</b> "Hi [Customer], this is [Advisor] from [Shop]. Is now a good time to walk through what we found?"</p>
   <p><b>2.</b> "I personally reviewed the cooling system with our tech so I could give you a complete picture."</p>
   <p><b>3.</b> "Did the report with the thermal-reading photos come through okay?"</p>
-  <p><b>4.</b> "You brought it in because the heater isn't getting hot — that's the symptom. We've identified the cause."</p>
-  <p><b>5.</b> "Good news is the water pump, radiator, and hoses all checked out clean — no leaks, no contamination."</p>
-  <p><b>6.</b> "More good news — the cause is a single component, not a system-wide problem. That keeps the repair targeted."</p>
+  <p><b>4.</b> "You brought it in because the heater isn't getting hot, that's the symptom. We've identified the cause."</p>
+  <p><b>5.</b> "Good news is the water pump, radiator, and hoses all checked out clean, no leaks, no contamination."</p>
+  <p><b>6.</b> "More good news, the cause is a single component, not a system-wide problem. That keeps the repair targeted."</p>
   <p><b>7.</b> "The thermostat is stuck in the open position, which means the engine never reaches proper operating temperature. Beyond no heat in the cabin, this causes excess fuel consumption, increased emissions, and accelerated engine wear over time. The proper repair is to replace the thermostat and gasket and complete a partial coolant service to refresh the system."</p>
   <p><b>8.</b> "The total investment for today is $[XXX]."</p>
   <p><b>9.</b> "Covered by our 3-year / 36,000-mile nationwide warranty on parts and labor."</p>
@@ -1878,16 +2236,16 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
   <h3>4 · Transmission — Fluid Service (3rd-Base Preventative)</h3>
   <p class="small"><b>Scenario:</b> 75k miles, fluid never serviced. Maintenance recommendation on 3rd base after primary work is authorized.</p>
   <div class="co worked"><span class="lbl">🟨 3rd-Base Soft Sell · Transmission Service</span>
-  <p><b>1.</b> "Hi [Customer], one quick maintenance item I want to mention before we wrap — is now a good time?"</p>
-  <p><b>2.</b> "I reviewed your service history with the tech — this isn't a problem today, this is a protect-your-investment item."</p>
-  <p><b>3.</b> "You should see this in the maintenance section of the DVI — the transmission service status is highlighted yellow."</p>
+  <p><b>1.</b> "Hi [Customer], one quick maintenance item I want to mention before we wrap, is now a good time?"</p>
+  <p><b>2.</b> "I reviewed your service history with the tech, this isn't a problem today, this is a protect-your-investment item."</p>
+  <p><b>3.</b> "You should see this in the maintenance section of the DVI, the transmission service status is highlighted yellow."</p>
   <p><b>4.</b> "Your vehicle has 75,000 miles and the transmission fluid hasn't been serviced since new. The manufacturer interval is 60k."</p>
-  <p><b>5.</b> "Good news is the transmission is operating smoothly with no codes and no slippage — everything works."</p>
-  <p><b>6.</b> "More good news — servicing the fluid now keeps your lifetime protection plan intact and prevents the most expensive repair on the vehicle."</p>
-  <p><b>7.</b> "Old fluid loses its protective additives and starts depositing varnish on internal components. Left long enough, that leads to shifting issues and eventually transmission replacement — a multi-thousand-dollar repair. The service is a full fluid exchange with manufacturer-spec fluid and a filter replacement where serviceable."</p>
+  <p><b>5.</b> "Good news is the transmission is operating smoothly with no codes and no slippage, everything works."</p>
+  <p><b>6.</b> "More good news, servicing the fluid now keeps your lifetime protection plan intact and prevents the most expensive repair on the vehicle."</p>
+  <p><b>7.</b> "Old fluid loses its protective additives and starts depositing varnish on internal components. Left long enough, that leads to shifting issues and eventually transmission replacement, a multi-thousand-dollar repair. The service is a full fluid exchange with manufacturer-spec fluid and a filter replacement where serviceable."</p>
   <p><b>8.</b> "Adding this to today's work moves your total from $[XXX] to $[XXX]."</p>
   <p><b>9.</b> "The service is covered by warranty and keeps your lifetime protection plan active on the transmission."</p>
-  <p><b>10.</b> "If today doesn't work for you, we can absolutely schedule it for next visit — I just want to make sure you know it's on the horizon. What would you like to do?"</p></div>
+  <p><b>10.</b> "If today doesn't work for you, we can absolutely schedule it for next visit, I just want to make sure you know it's on the horizon. What would you like to do?"</p></div>
   <div class="co decoder"><span class="lbl">🟣 Psychology Decoder · Why 3rd base ends with a real opt-out</span>
   Beat 10 on a 3rd-base call explicitly offers to defer. This isn't weakness — it's positioning.
   Maintenance items are not safety items, and pressuring a maintenance sale erodes the trust built on 1st
@@ -1901,9 +2259,9 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
   <p><b>2.</b> "I just reviewed the charging-system test results with our tech to make sure I can walk you through them accurately."</p>
   <p><b>3.</b> "Did you receive the digital report with the battery load-test and alternator-output numbers?"</p>
   <p><b>4.</b> "You came in because of the slow cranking. We've tested the full charging system and identified the cause."</p>
-  <p><b>5.</b> "Good news is the starter motor itself is testing strong — that's a major component in good shape."</p>
-  <p><b>6.</b> "More good news — we caught this before the vehicle stranded you. A no-start in a parking lot is a much worse day than this conversation."</p>
-  <p><b>7.</b> "The battery is testing at 60% of its rated capacity — past serviceable life. And the alternator is producing output below the manufacturer threshold at idle, which is why the battery isn't being properly recharged on short drives. Left as-is, this is a no-start event waiting for the right cold morning. The proper repair is to replace the battery with a manufacturer-spec unit and replace the alternator, then re-test the full charging system under load."</p>
+  <p><b>5.</b> "Good news is the starter motor itself is testing strong, that's a major component in good shape."</p>
+  <p><b>6.</b> "More good news, we caught this before the vehicle stranded you. A no-start in a parking lot is a much worse day than this conversation."</p>
+  <p><b>7.</b> "The battery is testing at 60% of its rated capacity, past serviceable life. And the alternator is producing output below the manufacturer threshold at idle, which is why the battery isn't being properly recharged on short drives. Left as-is, this is a no-start event waiting for the right cold morning. The proper repair is to replace the battery with a manufacturer-spec unit and replace the alternator, then re-test the full charging system under load."</p>
   <p><b>8.</b> "The total investment for today's work is $[XXX], parts and labor."</p>
   <p><b>9.</b> "The battery comes with a manufacturer pro-rated warranty, and the alternator and labor are covered under our 3-year / 36,000-mile nationwide warranty."</p>
   <p><b>10.</b> "We'll wrap the rest of the bumper-to-bumper while we're in there and loop back with anything else. Still the best number?"</p></div>
@@ -1914,9 +2272,9 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
   <p><b>1.</b> "Hi [Customer], this is [Advisor] from [Shop]. Is now a good time to go over what we found?"</p>
   <p><b>2.</b> "I personally measured the tires with our tech and pulled the load-rating and date-code data so I could give you a complete picture."</p>
   <p><b>3.</b> "Were you able to see the tire-tread photos on the inspection report?"</p>
-  <p><b>4.</b> "You came in for a check on the tires — we've fully inspected them."</p>
+  <p><b>4.</b> "You came in for a check on the tires, we've fully inspected them."</p>
   <p><b>5.</b> "Good news is the wear pattern is even, which means your alignment is in good shape and we don't have a separate suspension issue contributing."</p>
-  <p><b>6.</b> "More good news — we have manufacturer-quality tire options that fit your vehicle in a price range that protects both safety and budget."</p>
+  <p><b>6.</b> "More good news, we have manufacturer-quality tire options that fit your vehicle in a price range that protects both safety and budget."</p>
   <p><b>7.</b> "All four tires are at 3/32-inch tread depth. The legal minimum is 2/32, but real-world stopping distance on wet pavement degrades significantly below 4/32. With the rainy season ahead, the risk is meaningfully longer stopping distance in exactly the conditions that need it most. The proper recommendation is a matched set of four new tires with a road-force balance, mount, and a 4-wheel alignment."</p>
   <p><b>8.</b> "The total investment for the recommended tire package, installation, and alignment is $[XXX]."</p>
   <p><b>9.</b> "Tires carry the manufacturer's road-hazard and tread warranty, plus our 3-year / 36,000-mile labor coverage."</p>
@@ -1933,9 +2291,9 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
   <p><b>2.</b> "I reviewed the alignment readings and the tire-wear evidence with our tech so I could give you the full story."</p>
   <p><b>3.</b> "Were you able to see the alignment-spec sheet and the tire-wear photos on the report?"</p>
   <p><b>4.</b> "You brought the vehicle in for the pulling-right concern. We've identified the cause."</p>
-  <p><b>5.</b> "Good news is the steering and suspension components themselves are mechanically sound — this isn't a worn-part problem."</p>
-  <p><b>6.</b> "More good news — we caught this early enough that the tires still have usable life. Another few thousand miles and you'd be buying tires too."</p>
-  <p><b>7.</b> "The left-front toe is out of specification — that's what's causing the pull, and it's what's scrubbing the inside edge of the tire. Left as-is, you'll need a full set of tires inside of 5,000 miles, plus the steering input it takes to keep the car straight increases driver fatigue and impacts emergency handling. The proper repair is a four-wheel alignment to manufacturer spec with a printed before-and-after report."</p>
+  <p><b>5.</b> "Good news is the steering and suspension components themselves are mechanically sound, this isn't a worn-part problem."</p>
+  <p><b>6.</b> "More good news, we caught this early enough that the tires still have usable life. Another few thousand miles and you'd be buying tires too."</p>
+  <p><b>7.</b> "The left-front toe is out of specification, that's what's causing the pull, and it's what's scrubbing the inside edge of the tire. Left as-is, you'll need a full set of tires inside of 5,000 miles, plus the steering input it takes to keep the car straight increases driver fatigue and impacts emergency handling. The proper repair is a four-wheel alignment to manufacturer spec with a printed before-and-after report."</p>
   <p><b>8.</b> "The total investment for today's alignment service is $[XXX]."</p>
   <p><b>9.</b> "Alignment work is covered by our service warranty and includes a free re-check inside 30 days if anything feels off."</p>
   <p><b>10.</b> "While the vehicle's on the rack we'll finish the remaining inspection items and let you know if anything else surfaces. Still the best number?"</p></div>
@@ -1944,12 +2302,12 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
   <p class="small"><b>Scenario:</b> A/C blows warm. Diagnostic: low charge with UV-dye-confirmed leak at the condenser.</p>
   <div class="co worked"><span class="lbl">🟨 Base-1 ISO · A/C System</span>
   <p><b>1.</b> "Hi [Customer], this is [Advisor] from [Shop]. Is now a good time to go through the A/C diagnosis?"</p>
-  <p><b>2.</b> "I reviewed the leak-test results with our tech — we ran UV dye through the system and pulled a vacuum to confirm."</p>
+  <p><b>2.</b> "I reviewed the leak-test results with our tech, we ran UV dye through the system and pulled a vacuum to confirm."</p>
   <p><b>3.</b> "Did you receive the photos showing the leak source on the digital report?"</p>
-  <p><b>4.</b> "You brought it in because the A/C is blowing warm — we've identified exactly why."</p>
-  <p><b>5.</b> "Good news is the compressor and the evaporator both test as functional — those are the most expensive components, and they're fine."</p>
-  <p><b>6.</b> "More good news — we pinpointed the leak source on the first test, which means we know exactly what to repair instead of replacing components on guesswork."</p>
-  <p><b>7.</b> "The refrigerant charge is critically low because the condenser has a confirmed leak. If we just recharge it without fixing the leak, you'll be back inside a few weeks with the same problem — and refrigerant venting to atmosphere is both an environmental and a legal concern. The proper repair is to replace the condenser, replace the receiver-drier, evacuate the system, and recharge to manufacturer specification with a verified leak test."</p>
+  <p><b>4.</b> "You brought it in because the A/C is blowing warm, we've identified exactly why."</p>
+  <p><b>5.</b> "Good news is the compressor and the evaporator both test as functional, those are the most expensive components, and they're fine."</p>
+  <p><b>6.</b> "More good news, we pinpointed the leak source on the first test, which means we know exactly what to repair instead of replacing components on guesswork."</p>
+  <p><b>7.</b> "The refrigerant charge is critically low because the condenser has a confirmed leak. If we just recharge it without fixing the leak, you'll be back inside a few weeks with the same problem, and refrigerant venting to atmosphere is both an environmental and a legal concern. The proper repair is to replace the condenser, replace the receiver-drier, evacuate the system, and recharge to manufacturer specification with a verified leak test."</p>
   <p><b>8.</b> "The total investment is $[XXX], parts and labor included."</p>
   <p><b>9.</b> "Fully covered by our 3-year / 36,000-mile nationwide warranty on parts and labor."</p>
   <p><b>10.</b> "Once you authorize we'll order the parts and finish the full inspection while we wait. Still the best number?"</p></div>
@@ -1984,7 +2342,7 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
   back, from memory, with all 10 beats present and the Risk step explicit on every one. Coach signs off.
   This is one of the gates between Closer (Level 3) and Pro (Level 4).</div>
 
-  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Advisor Book v2.0</span></div>
+  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Advisor Book v2.1</span></div>
 </div>
 <!-- ======================= APP B GLOSSARY ======================= -->
 <div class="chapter">
@@ -2098,7 +2456,7 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
     <tr><td>Vague recoveries</td><td>"We'll get back to you" instead of "I'll call you by 3pm."</td></tr>
   </table>
 
-  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Advisor Book v2.0</span></div>
+  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Advisor Book v2.1</span></div>
 </div>
 
 <!-- ======================= APP C KPIS ======================= -->
@@ -2141,7 +2499,7 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
     <tr><td>M9 Recovery</td><td>Recovery Rate ≥ 90% · Time-to-Acknowledge ≤ 1 hr · Post-Recovery 5-Star ≥ 60%</td></tr>
   </table>
 
-  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Advisor Book v2.0</span></div>
+  <div class="ch-foot"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Advisor Book v2.1</span></div>
 </div>
 
 <!-- ======================= APP D MASTERY TRACKER ======================= -->
@@ -2191,7 +2549,7 @@ ul.check li:before{content:"▢";position:absolute;left:0;color:var(--gold-deep)
       <h2>RECOMMIT</h2>
       <div class="line">I will treat every car as if it carries my own family.</div>
       <div class="tagline">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</div>
-      <div style="margin-top:22px;font-size:8.5pt;letter-spacing:2px;color:var(--cream);">HAB ADVISOR BOOK · VERSION 2.0 · CONFIDENTIAL &amp; PROPRIETARY · HEALTHY AUTO BUSINESS</div>
+      <div style="margin-top:22px;font-size:8.5pt;letter-spacing:2px;color:var(--cream);">HAB ADVISOR BOOK · VERSION 2.1 · CONFIDENTIAL &amp; PROPRIETARY · HEALTHY AUTO BUSINESS</div>
     </div>
   </div>
 </div>

@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<!--
+  HAB Script Book — Clean Scripts for Roleplay & Memorization
+  Version: 3.7 · Last updated: 2026-07-23
+  v3.7: OWNER REVISION (round 8). THE "NOT JUST X" BAN IS NOW UNIVERSAL: the construction
+  ("not just X," "we won't just change your oil," and all variants) is banned in ALL
+  customer-facing dialogue, in every script and every boss battle, not only in the
+  customer-request context. In the customer's mind "not just X" negates their request and
+  insinuates extra, and extra means extra cost — an undisclosed upsell that creates distrust.
+  Value is stated affirmatively instead. Dialogue rephrased: Boss 2 ("You're not just paying
+  for parts" becomes "You're paying for the parts, the certified installation, the warranty
+  that protects them, and a shop that stands behind the work") and Boss 8 ("not just the
+  components themselves" becomes "and the components come backed by all of it").
+  Advisor-facing teaching may still explain the rule.
+  v3.6: OWNER REVISION (round 7). BOSS BATTLE 9 REWORKED. The live tag-in voice is now labeled
+  SHORT STOP (ideally it IS the technician; realistically it is whoever the shop trusts to run
+  the play). New hard rule carried in the stage directions: the Short Stop NEVER contradicts what
+  the advisor already told the customer; he REINFORCES first (the presented repair is the proper
+  solution, exactly as presented), and only then opens collaborative problem-solving. New Repair
+  Plan move: "Can we create a repair plan where we take care of a portion of it today and move
+  on?" with the levers (flexible payment options, comped labor time, comped accompanying oil
+  service). New named close: the Customer-for-Life Close; the prize of the battle is a customer
+  for life, not this repair. New worked-example page 21: the Full Engine Reseal Repair Plan
+  (customer expected a $1,500-$2,000 pan reseal; upper pan, lower pan, timing cover, and both
+  valve covers all leaking; proper repair is a full engine reseal, 33 hours book time, about
+  $7,000; purely price). Later scripts renumbered (L.A.S.T. 22, Re-Open 23, Home Plate 24).
+  COVER CLEANED for client-facing print: all changelog blurbs removed from the cover; new
+  Version History page (everything changed since Version 1) added after the cover. Detailed
+  changelogs live only in this comment.
+  v3.5: OWNER PAGE-BY-PAGE REVISION (round 6). (1) Root Concern oil-pressure branch: "not just
+  change the oil" and "so we know exactly what that light is telling us" DELETED from all dialogue.
+  Never say "not just X" (subliminal no + insinuates extra, and extra means extra cost); the
+  no-charge line needs no justification. New acknowledge-first beat ("Oh, no no.") plus the
+  ballpark push answer ("What I really need from you right now is not money."). (2) Custody /
+  Arrival & Intake reworked: the intake walk carries the REAL shop tour (inspection-rack line),
+  and the waiting-area offer is replaced by the keys moment ("And you're dropping this off with
+  me, right?") with the waiting-customer audible (one critical safety concern, show and sell).
+  (3) First-base PRS: acknowledge the yes ("Awesome."), assume the sale, and the close becomes
+  the natural bumper to bumper introduction. (4) 10-step ISO: "including" now references the
+  already-approved initial service, never the presented repair; same assumptive seal. (5) Second-
+  and third-base calls open with in-progress reassurance and label all findings "additional."
+  v3.4: NEW BOSS BATTLE 9 — "The Second Opinion / I Can Get It Done Cheaper" (post-inspection).
+  Opens on the price-boss train of thought (empathy + "Have you ever paid for something twice and
+  not got it done?"), then the Honest Disarm ("the reality is we are able to do this cheaper…
+  but it might also reduce the warranty"), then the Minimum Viable Repair huddle: the advisor
+  grabs the technician, who joins the same call or visit as a live Technician Short Stop,
+  re-runs the PRS with the evidence, and walks the options from minimum viable to comprehensive.
+  The customer chooses a tier instead of leaving to shop around. The eight Boss Battles become
+  nine; later scripts renumbered (L.A.S.T. 21, Re-Open 22, Home Plate 23).
+  v3.3: NEW NAMED PRINCIPLE — "Say Yes, Get Them In — No Pre-Education." The inbound call has one
+  job: say yes to the customer and get them in the door. Questions, urgency, and value framing are
+  allowed on the phone; warnings, caveats, and education about whether the requested service will
+  fix the problem are banned until the inspection produces evidence. Root Concern script rewritten
+  (oil-pressure-light branch and Silverado engine branch) per owner correction.
+  v3.2: the full inbound call now ships in TWO clean versions — Version 1 (customer ready / direct
+  ask: close immediately) and Version 2 (price or quote inquiry: concern question → urgency line →
+  no-charge "and I" line → close). New Root Concern Rule script (self-diagnosis defense). The
+  no-charge line is now "At no charge to you, my certified technician AND I will inspect…"
+  everywhere. Branch D East-West carries the urgency built from the concern. Concern Discovery is
+  marked as a trained checkpoint.
+  v3.1: the inbound call OPENS with the "When Is Now a Good Time" Quick Close.
+  The clean-script companion to the HAB Advisor Book v2.8. Scripts only: labeled speakers,
+  no psychology decoders, no teaching callouts. One script per page. Roleplay-ready.
+  HAB Enterprises 3 LLC · Do what's Right · Do what's Fair · Do Your Best.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HAB Script Book v3.7 — Clean Scripts for Roleplay &amp; Memorization</title>
+<style>
+:root{
+  --navy:#1B3358; --navy-deep:#112341; --navy-soft:#2C4A75;
+  --gold:#C8A75C; --gold-deep:#A78743;
+  --cream:#FAF4E4; --ink:#1A1A1A; --paper:#FFFFFF;
+}
+*{box-sizing:border-box;}
+@page{ size:letter; margin:0.6in 0.65in; }
+html,body{margin:0;padding:0;}
+body{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;color:var(--ink);background:var(--paper);font-size:11pt;line-height:1.55;}
+.page{page-break-before:always;padding-top:4px;}
+h1,h2{color:var(--navy);line-height:1.2;margin:0 0 8px 0;}
+h2{font-size:19pt;font-weight:800;}
+.eyebrow{display:inline-block;font-size:8pt;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:var(--gold-deep);margin-bottom:4px;}
+.ph{border-bottom:3px solid var(--navy);padding-bottom:8px;margin-bottom:14px;}
+.ph .use{font-style:italic;color:var(--navy-soft);font-size:10pt;margin-top:3px;}
+.script p{margin:8px 0;color:#000;}
+.who{font-weight:800;color:#000;}
+.dir{font-style:italic;color:#555;}
+.br{display:block;font-weight:800;color:var(--navy);font-size:9.5pt;letter-spacing:2px;text-transform:uppercase;margin:14px 0 4px 0;border-top:1.5px solid var(--gold);padding-top:8px;}
+.chk{display:block;font-size:8pt;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold-deep);margin:10px 0 2px 0;}
+.grp{page-break-inside:avoid;}
+.pf{margin-top:22px;border-top:1.5px solid var(--gold);padding-top:6px;display:flex;justify-content:space-between;font-size:8pt;color:var(--navy-soft);letter-spacing:1px;}
+.pf .tag{letter-spacing:2px;font-weight:600;}
+/* Cover */
+.cover{background:linear-gradient(160deg,var(--navy-deep) 0%,var(--navy) 55%,var(--navy-soft) 100%);color:#fff;min-height:9.6in;padding:70px 60px;display:flex;flex-direction:column;border-radius:2px;}
+.cover .chip{font-size:9pt;letter-spacing:8px;color:var(--gold);font-weight:600;text-transform:uppercase;}
+.cover h1{color:#fff;font-size:36pt;font-weight:800;margin:26px 0 10px 0;line-height:1.1;}
+.cover .sub{font-size:15pt;color:var(--cream);font-weight:400;}
+.cover .for{margin-top:40px;background:rgba(250,244,228,0.08);border-left:4px solid var(--gold);padding:14px 18px;font-size:10.5pt;line-height:1.6;max-width:5.8in;}
+.cover .foot{margin-top:auto;padding-top:40px;font-size:9pt;letter-spacing:3px;color:var(--gold);text-transform:uppercase;}
+/* Contents */
+.toc .row{display:flex;border-bottom:1px dotted #C9C1AA;padding:6px 2px;}
+.toc .num{width:0.6in;font-weight:800;color:var(--gold-deep);}
+.toc .t{flex:1;color:var(--navy);font-weight:700;}
+.rules{background:var(--cream);border-left:5px solid var(--gold);padding:10px 14px;margin:12px 0;font-size:10pt;}
+</style>
+</head>
+<body>
+
+<!-- ======================= COVER ======================= -->
+<div class="cover">
+  <div class="chip">HAB · Healthy Auto Business · Sales Operating System</div>
+  <h1>HAB Script Book</h1>
+  <div class="sub">Clean Scripts for Roleplay &amp; Memorization</div>
+  <div class="for">
+    <b>Scripts only.</b> No psychology, no callouts, no interruptions — just the exact words, with
+    speakers labeled, one script per page. Use this book at the counter, in morning roleplay, and for
+    memorization reps. The teaching behind every script lives in the HAB Advisor Book.
+    <br><br>
+    <b>The one rule above every script:</b> the goal of every inbound call is to get the car into the
+    shop. Book the appointment. The sales process (secure the appointment) leads; the sales objectives
+    (rapport, credibility, education) are earned through and after the close. The scripts serve the
+    booking — never the other way around.
+    </div>
+  <div class="foot">Version 3.7 · Confidential &amp; Proprietary<br><br>Do what's Right · Do what's Fair · Do Your Best</div>
+</div>
+
+<!-- ======================= VERSION HISTORY ======================= -->
+<div class="page">
+  <div class="ph"><span class="eyebrow">Version History</span>
+    <h2>What's New Since Version 1</h2>
+    <div class="use">Your shop received Version 1 of this book. This edition replaces it. Here is everything that has changed, in plain language. Where this book and your memory of the old scripts disagree, this book wins.</div>
+  </div>
+  <p><b>The Quick Close now opens every inbound call.</b> The call opens by answering the customer's question and closing for the visit in the same breath: "Absolutely, you've called the right place. Is now a good time to bring your vehicle in?" There is no shop introduction until the appointment is secured. If they can't come now, East-West scheduling offers two specific times.</p>
+  <p><b>The full inbound call ships in two versions.</b> Version 1 for the customer who asks directly (answer and close immediately) and Version 2 for the price or quote inquiry (concern question, urgency line, no-charge line, then the close). Concern Discovery is a trained checkpoint on every rep.</p>
+  <p><b>Say Yes, Get Them In — No Pre-Education.</b> The phone call has one job: say yes and get the vehicle in the door. Questions, urgency, and value framing are allowed. Warnings and caveats about whether the requested service will fix the problem are banned until the inspection produces evidence. Never say "not just [what they asked for]," and never justify the no-charge line — it stands on its own. The price barrier is met first with the warm "Oh, no no" beat.</p>
+  <p><b>Value is stated affirmatively — in every script.</b> The "not just [what they asked for]" construction is banned in all customer-facing dialogue, in every script and every boss battle, not only on the phone. In the customer's mind "not just X" negates their request and hints at extra, and extra means extra cost. Every script states the value directly instead.</p>
+  <p><b>The Root Concern Rule.</b> Even when the customer names a service and says yes, the advisor finds the TRUE root concern before writing the job — with questions, never with warnings.</p>
+  <p><b>The Keys Moment and the Audible.</b> Intake was rebuilt. The real shop tour happens on the walk in (the inspection-rack line), and the waiting-area offer is replaced by the keys moment: "And you're dropping this off with me, right?" If the customer plans to wait, the audible surfaces the single most critical safety concern and shows it in person.</p>
+  <p><b>The DVI Timing Rule.</b> Never book the appointment with the inspection — book with the customer's concern. The inspection is presented only after the concern is addressed or the first approval is secured, wrapped inside a waiting window.</p>
+  <p><b>The ISO total's "including" points backward.</b> The investment line may reference only work the customer has already approved ("including the oil service you already approved"), never the repair being presented.</p>
+  <p><b>Reassurance opens on second and third base.</b> Follow-up calls open by confirming the approved work is already moving, and everything new is labeled "additional." First base closes by acknowledging the yes, assuming the sale, and introducing the bumper to bumper inspection naturally.</p>
+  <p><b>Boss Battle 9 — The Second Opinion.</b> The eight Boss Battles are now nine. The new battle counters "I want a second opinion / I can get it done cheaper" with the Honest Disarm, the Short Stop live play (the Short Stop reinforces the advisor first and never contradicts him), the Repair Plan, and the Customer-for-Life Close — with a full worked example.</p>
+  <p><b>Clean scripts only, one per page.</b> This book is the roleplay companion: labeled speakers, no teaching interruptions. All of the psychology and coaching behind these scripts lives in the HAB Advisor Book.</p>
+  <div class="pf"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Script Book v3.7</span></div>
+</div>
+
+<!-- ======================= CONTENTS ======================= -->
+<div class="page">
+  <span class="eyebrow">HAB Script Book v3.7</span>
+  <h2>Contents</h2>
+  <div class="toc">
+    <div class="row"><div class="num">1</div><div class="t">The Full Inbound Call — Version 1 · Customer Ready (Direct Ask)</div></div>
+    <div class="row"><div class="num">2</div><div class="t">The Full Inbound Call — Version 2 · Price / Quote Inquiry</div></div>
+    <div class="row"><div class="num">3</div><div class="t">The "When Is Now a Good Time" Quick Close + Branches</div></div>
+    <div class="row"><div class="num">4</div><div class="t">The Root Concern Rule — Self-Diagnosis Defense</div></div>
+    <div class="row"><div class="num">5</div><div class="t">The Four Inbound Mini-Bosses (Price Counters)</div></div>
+    <div class="row"><div class="num">6</div><div class="t">The Approach + The Shop Tour</div></div>
+    <div class="row"><div class="num">7</div><div class="t">Custody — The Arrival &amp; Intake</div></div>
+    <div class="row"><div class="num">8</div><div class="t">The PRS Write-Up Verbal (First Base Call)</div></div>
+    <div class="row"><div class="num">9</div><div class="t">The 10-Step ISO Presentation (Water Pump)</div></div>
+    <div class="row"><div class="num">10</div><div class="t">Second Base — Additional Findings Call</div></div>
+    <div class="row"><div class="num">11</div><div class="t">Third Base — Scheduled Maintenance Call</div></div>
+    <div class="row"><div class="num">12</div><div class="t">Boss Battle 1 — "I'm Selling the Car"</div></div>
+    <div class="row"><div class="num">13</div><div class="t">Boss Battle 2 — "The Price Is Too High"</div></div>
+    <div class="row"><div class="num">14</div><div class="t">Boss Battle 3 — "I Don't Have the Money Right Now"</div></div>
+    <div class="row"><div class="num">15</div><div class="t">Boss Battle 4 — "I Need to Talk to My Spouse"</div></div>
+    <div class="row"><div class="num">16</div><div class="t">Boss Battle 5 — "I'm Going to Wait"</div></div>
+    <div class="row"><div class="num">17</div><div class="t">Boss Battle 6 — "You're Always Trying to Sell Me"</div></div>
+    <div class="row"><div class="num">18</div><div class="t">Boss Battle 7 — "I Need My Car Today"</div></div>
+    <div class="row"><div class="num">19</div><div class="t">Boss Battle 8 — "Can I Get a Parts and Labor Breakdown?"</div></div>
+    <div class="row"><div class="num">20</div><div class="t">Boss Battle 9 — "I Want a Second Opinion / I Can Get It Done Cheaper"</div></div>
+    <div class="row"><div class="num">21</div><div class="t">Boss Battle 9 Worked Example — The Full Engine Reseal Repair Plan</div></div>
+    <div class="row"><div class="num">22</div><div class="t">L.A.S.T. Recovery — The Four Hot Counters</div></div>
+    <div class="row"><div class="num">23</div><div class="t">The Re-Open Calls — Short Stop &amp; Manager Follow-Up</div></div>
+    <div class="row"><div class="num">24</div><div class="t">Home Plate — Booking the Next Visit</div></div>
+  </div>
+  <div class="rules">
+    <b>Roleplay rules:</b> One partner reads Customer, one reads Advisor. Swap roles every rep. Read at
+    conversation pace, not reading pace. Stage directions in [brackets] are performed, not spoken.
+    Bracketed placeholders like [Shop] and [Customer Name] get filled with real words, out loud, every time.
+    <br><br>
+    <b>Trained checkpoint — Concern Discovery:</b> in every inbound rep, the advisor must be able to state
+    the customer's true concern in the customer's own words before the call ends. If you can't state it,
+    you ask for it. The checkpoint is marked inside the scripts where it must happen.
+    <br><br>
+    <b>Say Yes, Get Them In — No Pre-Education:</b> the inbound call has ONE job: say yes to the customer
+    and get them in the door. Questions are allowed. Urgency is allowed. Value framing is allowed
+    ("at no cost to you, my certified technician and I will inspect your complete oil system and provide
+    you a complete written estimate"). Never say "not just [what they asked for]" — and the ban is universal: the
+    "not just X" construction is banned in ALL customer-facing dialogue, in every script in this
+    book, because it subliminally tells the customer no, insinuates extra, and extra means extra
+    cost. State the value affirmatively instead. The no-charge line needs no
+    justification. Warnings, caveats, and education
+    about whether the customer's requested fix will work are banned until the vehicle is in and the
+    inspection produces evidence. The customer hangs up thinking "yes, I'm getting my oil change done."
+  </div>
+</div>
+
+<!-- ======================= 1 · FULL INBOUND CALL — VERSION 1 ======================= -->
+<div class="page">
+  <div class="ph"><span class="eyebrow">Script 1 · Inbound Phone</span>
+    <h2>The Full Inbound Call — Version 1 · Customer Ready (Direct Ask)</h2>
+    <div class="use">The customer asks directly for a service. Answer the question, close for the visit immediately, then branch. Never quote a price on the phone.</div>
+  </div>
+  <div class="script">
+  <p class="dir">[Pick up before the third ring. Smile before you speak.]</p>
+  <p><span class="who">Advisor:</span> "Thank you for calling [Shop]. My name is [Your Name]." <span class="dir">[Pause. Let the customer speak.]</span></p>
+  <p><span class="who">Customer:</span> "Hi, do you work on brakes?"</p>
+  <p><span class="who">Advisor:</span> "Absolutely, you've called the right place. Is now a good time to bring your vehicle in?"</p>
+  <p><span class="who">Customer:</span> "Yeah, I can head over now."</p>
+  <p><span class="who">Advisor:</span> "Great, have you been with us before?"</p>
+  <div class="grp">
+  <span class="br">Branch A · First-time customer</span>
+  <p><span class="who">Customer:</span> "No, this will be my first time."</p>
+  <p><span class="who">Advisor:</span> "Thank you so much for choosing us! We are [Shop], your certified dealer alternative, located at [address], open six days a week from [store hours]. We have ASE and dealer-certified technicians ready to handle all of your vehicle needs, from tires and service to major repairs. We stand behind our work with warranties up to 3 years or 36,000 miles. We also offer complimentary shuttles, vehicle pick-up and drop-off, ride services, rental car reimbursement, and loaner vehicles when available! Stay with me really quick while I gather your information to build a customer profile."</p>
+  <p class="dir">[Gather name, number, email, vehicle year, make, and model.]</p>
+  <p><span class="who">Advisor:</span> "And so I can point our technician at exactly the right thing, what kind of concern are you having with your brakes?"</p>
+  <p><span class="who">Customer:</span> "They squeak when I stop."</p>
+  <p><span class="who">Advisor:</span> "Oh my goodness, when you have a squeak coming from your brake system, you've got to have it inspected by one of our ASE-certified technicians, so I'm glad you're coming in. Perfect, [Customer Name], you're all set. We'll see you and your vehicle shortly!"</p>
+  <span class="chk">✔ Trained checkpoint · Concern Discovery — concern captured in the customer's own words before the call ends.</span>
+  </div>
+  <div class="grp">
+  <span class="br">Branch B · Returning customer</span>
+  <p><span class="who">Customer:</span> "Yes, I've been in before."</p>
+  <p><span class="who">Advisor:</span> "Welcome back! Is this still the best number for you?"</p>
+  <p><span class="who">Customer:</span> "Yes it is."</p>
+  <p><span class="who">Advisor:</span> "Perfect, I have your profile pulled up. Since your last visit, [brief shop news: a new certification, new equipment, a new team member, or what's new around the shop]. What kind of concern are you having with your brakes?"</p>
+  <p><span class="who">Customer:</span> "They squeak when I stop."</p>
+  <p><span class="who">Advisor:</span> "Oh my goodness, when you have a squeak coming from your brake system, you've got to have it inspected by one of our ASE-certified technicians. We'll get that handled. We'll see you and your vehicle shortly!"</p>
+  <p class="dir">[Customers visit only 2 to 4 times a year; the shop-news update re-syncs the rapport.]</p>
+  </div>
+  <div class="grp">
+  <span class="br">Branch D · Can't come now</span>
+  <p><span class="who">Customer:</span> "I can't come in right now."</p>
+  <p><span class="who">Advisor:</span> "Okay, no worries. I've got 11:15 or 2:15 open today. Which works best for you?"</p>
+  <p><span class="who">Customer:</span> "2:15 works."</p>
+  <p><span class="who">Advisor:</span> "Perfect, [Customer Name], you're set for 2:15. What kind of concern are you having with your brakes?"</p>
+  <p><span class="who">Customer:</span> "They squeak when I stop."</p>
+  <p><span class="who">Advisor:</span> "Oh my goodness, when you have a squeak coming from your brake system, you've got to have it inspected by one of our ASE-certified technicians, so I'm glad we've got you in at 2:15. We'll see you and your vehicle then!"</p>
+  <p class="dir">[First-time: run the Branch A introduction and build the profile. Returning: confirm the number and share the shop news.]</p>
+  </div>
+  </div>
+  <div class="pf"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Script Book v3.7</span></div>
+</div>
+
+<!-- ======================= 2 · FULL INBOUND CALL — VERSION 2 ======================= -->
+<div class="page">
+  <div class="ph"><span class="eyebrow">Script 2 · Inbound Phone</span>
+    <h2>The Full Inbound Call — Version 2 · Price / Quote Inquiry</h2>
+    <div class="use">The request is vague or a quote. Ask for the concern, amplify the urgency, THEN close. The concern feeds the urgency; the urgency feeds the close. Never quote a price on the phone.</div>
+  </div>
+  <div class="script">
+  <p class="dir">[Pick up before the third ring. Smile before you speak.]</p>
+  <p><span class="who">Advisor:</span> "Thank you for calling [Shop]. My name is [Your Name]." <span class="dir">[Pause. Let the customer speak.]</span></p>
+  <p><span class="who">Customer:</span> "Hi, I was hoping to get a quote on some brakes."</p>
+  <p><span class="who">Advisor:</span> "Yeah, absolutely, you've called the right place. What kind of concern are you having with your brakes?"</p>
+  <p><span class="who">Customer:</span> "They're squeaking when I drive."</p>
+  <p><span class="who">Advisor:</span> "Oh my goodness, when you have a squeak coming from your brake system, you've got to bring it in and have it inspected by one of our ASE-certified technicians. Is now a good time to bring it in?"</p>
+  <span class="chk">✔ Trained checkpoint · Concern Discovery — the concern question comes before the close on every vague or quote call.</span>
+  <div class="grp">
+  <span class="br">If the customer pushes for a price</span>
+  <p><span class="who">Customer:</span> "Well, how much is it going to cost?"</p>
+  <p><span class="who">Advisor:</span> "At no charge to you, my certified technician AND I will inspect your complete brake system and provide you a written estimate. Is now a good time to bring it in?"</p>
+  <p><span class="who">Customer:</span> "Okay, yeah, I can come in now."</p>
+  <p><span class="who">Advisor:</span> "Great, have you been with us before?"</p>
+  <p class="dir">[Carry on with the full inbound call: first-time introduction and profile, or best-number check and shop news for a returning customer. The concern is already documented.]</p>
+  </div>
+  <div class="grp">
+  <span class="br">If the customer can't come now</span>
+  <p><span class="who">Customer:</span> "I can't come in right now."</p>
+  <p><span class="who">Advisor:</span> "Okay, no worries. With that squeak coming from your brake system, we don't want to leave it unchecked long. I've got 11:15 or 2:15 open today. Which works best for you?"</p>
+  <p><span class="who">Customer:</span> "2:15 works."</p>
+  <p><span class="who">Advisor:</span> "Perfect, [Customer Name], you're set for 2:15. We'll see you and your vehicle then!"</p>
+  <p class="dir">[First-time: run the introduction and build the profile. Returning: confirm the number and share the shop news.]</p>
+  </div>
+  </div>
+  <div class="pf"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Script Book v3.7</span></div>
+</div>
+
+<!-- ======================= 3 · WHEN IS NOW A GOOD TIME QUICK CLOSE ======================= -->
+<div class="page">
+  <div class="ph"><span class="eyebrow">Script 3 · Inbound Phone · The Opening</span>
+    <h2>The "When Is Now a Good Time" Quick Close + Branches</h2>
+    <div class="use">This IS the opening of the inbound call, not a variation. Direct ask: answer and close. Vague or quote ask: concern question, urgency line, then close.</div>
+  </div>
+  <div class="script">
+  <p><span class="who">Customer:</span> "Hi, do you work on brakes?"</p>
+  <p><span class="who">Advisor:</span> "Absolutely, you've called the right place. Is now a good time to bring your vehicle in?"</p>
+  <p><span class="who">Customer:</span> "Yeah, I can head over now."</p>
+  <p><span class="who">Advisor:</span> "Great, have you been with us before?"</p>
+  <div class="grp">
+  <span class="br">Branch A · First-time customer</span>
+  <p><span class="who">Customer:</span> "No, this will be my first time."</p>
+  <p><span class="who">Advisor:</span> "Thank you so much for choosing us! We are [Shop], your certified dealer alternative, located at [address]. We have ASE and dealer-certified technicians ready to handle all of your vehicle needs, and we stand behind our work with warranties up to 3 years or 36,000 miles. Stay with me really quick while I gather your information to build a customer profile. What's the year, make, and model of your vehicle?"</p>
+  <p class="dir">[Build the profile. Ask the concern question and document the answer. Confirm the arrival time. You are now inside the full inbound call script.]</p>
+  <p><span class="who">Advisor:</span> "Perfect, [Customer Name], we'll see you and your vehicle shortly!"</p>
+  </div>
+  <div class="grp">
+  <span class="br">Branch B · Returning customer</span>
+  <p><span class="who">Customer:</span> "Yes, I've been in before."</p>
+  <p><span class="who">Advisor:</span> "Welcome back! Is this still the best number for you?"</p>
+  <p><span class="who">Customer:</span> "Yes it is."</p>
+  <p><span class="who">Advisor:</span> "Perfect, I have your profile pulled up. Since your last visit, [brief shop news: a new certification, new equipment, a new team member, or what's new around the shop]. We'll see you and your vehicle shortly!"</p>
+  <p class="dir">[Ask the concern question and document the answer. Customers visit only 2 to 4 times a year; the shop-news update re-syncs the rapport.]</p>
+  </div>
+  <div class="grp">
+  <span class="br">Branch C · Price or quote question</span>
+  <p><span class="who">Customer:</span> "How much does it cost to have my brakes inspected?"</p>
+  <p><span class="who">Advisor:</span> "Yeah, absolutely, you've called the right place. What kind of concern are you having with your brakes?"</p>
+  <p><span class="who">Customer:</span> "They're squeaking when I drive."</p>
+  <p><span class="who">Advisor:</span> "Oh my goodness, when you have a squeak coming from your brake system, you've got to bring it in and have it inspected by one of our ASE-certified technicians. Is now a good time to bring it in?"</p>
+  <p><span class="who">Customer:</span> "I really just want to know what it costs first."</p>
+  <p><span class="who">Advisor:</span> "At no charge to you, my certified technician AND I will inspect your complete brake system and provide you a written estimate. Is now a good time to bring it in?"</p>
+  <span class="chk">✔ Trained checkpoint · Concern Discovery — concern question before the close on every vague or quote call.</span>
+  </div>
+  <div class="grp">
+  <span class="br">Branch D · Can't come now</span>
+  <p><span class="who">Customer:</span> "I can't come in right now."</p>
+  <p><span class="who">Advisor:</span> "Okay, no worries. With that squeak coming from your brake system, we don't want to leave it unchecked long. I've got 11:15 or 2:15 open today. Which works best for you?"</p>
+  <p class="dir">[If the concern isn't captured yet, ask the concern question right after the time locks, then deliver the urgency line tied to the booked time. Then run the first-time or returning branch and the rest of the full inbound call script.]</p>
+  </div>
+  </div>
+  <div class="pf"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Script Book v3.7</span></div>
+</div>
+
+<!-- ======================= 4 · ROOT CONCERN RULE ======================= -->
+<div class="page">
+  <div class="ph"><span class="eyebrow">Script 4 · Inbound Phone · Self-Diagnosis Defense</span>
+    <h2>The Root Concern Rule — Self-Diagnosis Defense</h2>
+    <div class="use">Even when the customer names a service and says yes to coming in, find the TRUE root concern before writing the job. Discovery runs on questions, urgency, and value only. Never warn the customer on the phone that their fix may not work. Say yes, get them in. Education comes after the inspection produces evidence.</div>
+  </div>
+  <div class="script">
+  <div class="grp">
+  <span class="br">Version A · The named service (oil change)</span>
+  <p><span class="who">Customer:</span> "Can you do an oil change?"</p>
+  <p><span class="who">Advisor:</span> "Absolutely, you've called the right place. Is now a good time to bring your vehicle in?"</p>
+  <p><span class="who">Customer:</span> "Yeah, I can come in now."</p>
+  <p><span class="who">Advisor:</span> "Perfect. And real quick, what's going on with your oil system? Why are we doing an oil change?"</p>
+  <p><span class="who">Customer:</span> "I'm just overdue on the miles."</p>
+  <p><span class="who">Advisor:</span> "Got it, we'll get you right back on schedule. Have you been with us before?"</p>
+  <span class="br">Same call, different answer · The light changes everything</span>
+  <p><span class="who">Customer:</span> "The oil pressure light came on."</p>
+  <p><span class="who">Advisor:</span> "Oh my goodness, when your oil pressure light comes on, you've got to bring it in and have it inspected by one of our certified technicians. Is right now a good time to bring it in?"</p>
+  <p><span class="who">Customer:</span> "I just want to make sure I know how much it costs first."</p>
+  <p><span class="who">Advisor:</span> <span class="dir">[Warm, almost surprised. Meet the price worry, don't pitch at it.]</span> "Oh, no no. At no cost to you, my certified technician and I will inspect your complete oil system and provide you a complete written estimate. Are you able to bring it in right now?"</p>
+  <span class="br">If the customer pushes for a ballpark</span>
+  <p><span class="who">Customer:</span> "Can you just ballpark me how much the oil change will be?"</p>
+  <p><span class="who">Advisor:</span> "Yeah, absolutely. Our oil changes are on par with everybody else in town. But the reality is you've got an oil pressure light on, so I'd really prefer not to charge you anything. Come in, let me take a look at that oil light, we can determine the correct oil change that's really going to solve the problem, and I'll provide you a complete written estimate. That costs you nothing. What I really need from you right now is not money. I need you to bring the car in so we can take a look and start addressing your problem."</p>
+  <span class="chk">✔ Trained checkpoint · Root Concern — never write the job until you can state the true customer concern. If you can't state it, ask. Questions and urgency only; education waits for the inspection.</span>
+  </div>
+  <div class="grp">
+  <span class="br">Version B · The customer-supplied diagnosis (engine)</span>
+  <p><span class="who">Customer:</span> "I've got a 2014 Chevy Silverado and my own engine. Can you guys remove the old one and install this new one?"</p>
+  <p><span class="who">Advisor:</span> "Absolutely, but let's back up for a second. Why do you need a new engine? What's happened, what's going on with the vehicle?"</p>
+  <p><span class="who">Customer:</span> "It started knocking real bad, so I found a replacement engine."</p>
+  <p><span class="who">Advisor:</span> "Oh my goodness, with a knock like that, you've got to bring it in and have it inspected by one of our certified technicians. At no cost to you, my certified technician and I will inspect your complete engine and vehicle and provide you a complete written estimate. Is now a good time to bring it in?"</p>
+  <p class="dir">[The inheritance reasoning stays in the advisor's head, never in the customer's ear: a customer-supplied part plus a customer-supplied diagnosis is double inheritance, and the shop never installs a fix for a diagnosis it hasn't confirmed. On the phone: questions, urgency, value. The evidence conversation happens after the inspection.]</p>
+  </div>
+  </div>
+  <div class="pf"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Script Book v3.7</span></div>
+</div>
+
+<!-- ======================= 5 · MINI-BOSSES ======================= -->
+<div class="page">
+  <div class="ph"><span class="eyebrow">Script 5 · Inbound Phone · Price Counters</span>
+    <h2>The Four Inbound Mini-Bosses</h2>
+    <div class="use">Counter, then close for the visit. Never a number over the phone.</div>
+  </div>
+  <div class="script">
+  <span class="br">Mini-Boss 1 · "Just tell me how much it will cost."</span>
+  <p><span class="who">Customer:</span> "Yeah, I just want to know how much it will cost before I come in."</p>
+  <p><span class="who">Advisor:</span> "AT NO CHARGE TO YOU, my certified technician AND I will inspect your vehicle and provide you with a complete written estimate. Is now a good time to bring it in?"</p>
+  <span class="br">Mini-Boss 2 · "I already have a quote."</span>
+  <p><span class="who">Customer:</span> "I have a quote already from another shop. That's why I'm just looking for a price."</p>
+  <p><span class="who">Advisor:</span> "Oh, excellent! If you can bring that with you, that would be tremendously helpful! We have a Meet-or-Beat policy that allows us to price-match like-for-like quotes if we don't naturally beat the price with our estimate. To give you the most accurate pricing, though, it's best if my certified technician and I take a look first to identify exactly what's needed to fix the [customer concern]. When should we expect to see the vehicle?"</p>
+  <span class="br">Mini-Boss 3 · "Do you have a ballpark?"</span>
+  <p><span class="who">Customer:</span> "Do you have a ballpark for me? I just want to know roughly how much."</p>
+  <p><span class="who">Advisor:</span> "I completely understand! At no charge to you, my certified technician AND I will inspect your vehicle and provide a complete written estimate so you can make informed decisions. If budget is your primary concern, I will work with you to select cost-effective solutions that still carry good warranty coverage on parts and labor. As far as a ballpark, I can pull up a tool we use called RepairPal and give you an idea of what something like this normally costs to repair."</p>
+  <span class="br">Mini-Boss 4 · "Let me think about it."</span>
+  <p><span class="who">Customer:</span> "I'm not sure yet. Let me think about it."</p>
+  <p><span class="who">Advisor:</span> "I completely understand. Before you decide, may I ask what's most important to you: price, turnaround time, or overall service?" <span class="dir">[Listen carefully.]</span></p>
+  </div>
+  <div class="pf"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Script Book v3.7</span></div>
+</div>
+
+<!-- ======================= 6 · SHOP TOUR ======================= -->
+<div class="page">
+  <div class="ph"><span class="eyebrow">Script 6 · In Person</span>
+    <h2>The Approach + The Shop Tour</h2>
+    <div class="use">Every first-time customer. Walking pace, under 90 seconds, drink offer at the end.</div>
+  </div>
+  <div class="script">
+  <p class="dir">[Greet at the front door or parking lot, boom board in hand.]</p>
+  <p><span class="who">Advisor:</span> "Welcome to [Shop]. I'm [Your Name] and I'll be assisting you today. May I have your keys, please?"</p>
+  <p><span class="who">Customer:</span> "Sure, here you go."</p>
+  <p><span class="who">Advisor:</span> "Thank you! Let me show you around while we get you checked in."</p>
+  <p class="dir">[Walking pace. Eye contact. Warmth.]</p>
+  <p><span class="who">Advisor:</span> "Welcome to [Shop], your certified dealer alternative. We're proud to have certified technicians ready to take care of all your vehicle needs: tires, routine maintenance, and major repairs. We also partner with trusted local specialists for accessory work like dent repair, body work, and windshield replacement, so you're covered in one place. To make your visit convenient, we offer complimentary shuttle rides, Uber or Lyft, rental car reimbursement, and loaner vehicles when available. If you stay, the waiting area has complimentary water, coffee, and tea, but there's no need to wait if transportation works better. Once you drop off, we keep you informed every step of the way: calls, texts, digital vehicle inspections, and electronic approvals for estimates, invoices, and payment. Clear, simple, transparent. We're excited to serve you today, and thank you for trusting [Shop]. Can I get you something to drink? Coffee, water, or tea?"</p>
+  <p class="dir">[Escort to the waiting lobby. Customer seated or comfortable before you step away.]</p>
+  </div>
+  <div class="pf"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Script Book v3.7</span></div>
+</div>
+
+<!-- ======================= 7 · CUSTODY ======================= -->
+<div class="page">
+  <div class="ph"><span class="eyebrow">Script 7 · In Person</span>
+    <h2>Custody — The Arrival &amp; Intake</h2>
+    <div class="use">Keys first, concern documented, the real shop tour on the walk in, customer separated from the vehicle within 10 minutes. The keys moment closes the intake.</div>
+  </div>
+  <div class="script">
+  <p class="dir">[Greet at the front door or parking lot, boom board in hand.]</p>
+  <p><span class="who">Advisor:</span> "Welcome to [Shop]. I'm [Your Name] and I'll be taking care of you today. May I have your keys, please?"</p>
+  <p><span class="who">Customer:</span> "Sure, here you go."</p>
+  <p><span class="who">Advisor:</span> "Thank you! Let me confirm what we have: you're here for [customer concern], and the best number to reach you is [number], correct?"</p>
+  <p><span class="who">Customer:</span> "That's right."</p>
+  <p class="dir">[Walk the customer inside past the inspection rack. Walking pace. This walk is the real shop tour.]</p>
+  <p><span class="who">Advisor:</span> "We keep this rack open so we can get you answers as soon as possible. This is also where we perform our bumper to bumper inspections, so you know the full health of your vehicle. It's not so I can present you an estimate later. It's so you have evidence and information about your car. At the end of the day we deliver safe and reliable vehicles."</p>
+  <p><span class="who">Advisor:</span> "While the vehicle is here, my certified technician and I will complete a full digital inspection with photos and video, I'll make sure the technician understands exactly what you're experiencing, and nothing happens without your approval. You'll see everything we see, and I'll personally walk you through the written estimate before anything moves forward."</p>
+  <p><span class="who">Customer:</span> "Sounds good."</p>
+  <p class="dir">[The keys moment. Hold the keys up.]</p>
+  <p><span class="who">Advisor:</span> "And you're dropping this off with me, right?"</p>
+  <div class="grp">
+  <span class="br">If the customer plans to wait · The audible</span>
+  <p><span class="who">Customer:</span> "No, I was planning on waiting."</p>
+  <p><span class="who">Advisor:</span> "Oh, no worries. Can I get you a coffee, water, or tea?"</p>
+  <p class="dir">[Call the audible: the separate-the-customer-from-the-vehicle procedure begins. During the inspection, identify the one most critical safety concern, then return to the customer.]</p>
+  <p><span class="who">Advisor:</span> "Hey, we've identified something that requires your immediate attention. Do you mind coming to take a look at it with us?"</p>
+  <p class="dir">[At the vehicle: show them it is broken. Show and sell.]</p>
+  <p><span class="who">Advisor:</span> "We've got to have our master technician get this fixed so it's safe and reliable."</p>
+  <p><span class="who">Customer:</span> "How much is that going to cost?"</p>
+  <p><span class="who">Advisor:</span> "I don't know yet. We'll source the parts and I will call you before anything else moves forward."</p>
+  </div>
+  <p class="dir">[Boom board complete before the vehicle enters the bay. Customer separated from the vehicle within 10 minutes.]</p>
+  </div>
+  <div class="pf"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Script Book v3.7</span></div>
+</div>
+
+<!-- ======================= 8 · PRS FIRST BASE ======================= -->
+<div class="page">
+  <div class="ph"><span class="eyebrow">Script 8 · Phone · First Base</span>
+    <h2>The PRS Write-Up Verbal (First Base Call)</h2>
+    <div class="use">Isolate the customer's original concern. Problem, Risk, Solution, Investment, Coverage — no pause before Coverage.</div>
+  </div>
+  <div class="script">
+  <p><span class="who">Advisor:</span> "Hi [Customer Name], this is [Your Name] with [Shop]. Is now a good time to review our findings?"</p>
+  <p><span class="who">Customer:</span> "Sure, go ahead."</p>
+  <p><span class="who">Advisor:</span> "You brought your vehicle in for [customer concern] and I inspected the vehicle with the technician personally to ensure accuracy. Good news is I was able to capture a good video of what is going on. Did you receive the DVI findings I sent via text?"</p>
+  <p><span class="who">Customer:</span> "Yes, I saw them."</p>
+  <p><span class="who">Advisor:</span> "Awesome. More good news. We've identified the cause of your concern. The problem is [Problem]. If it's left as it is, [Risk]. The proper solution is [Solution]. The total investment to take care of this today is $[XXX], and everything is covered by our 3-year, 36,000-mile nationwide warranty on parts and labor."</p>
+  <p><span class="who">Customer:</span> "Okay, let's take care of it."</p>
+  <p><span class="who">Advisor:</span> "Awesome. I'll go ahead and get those parts ordered so we can keep moving forward, and while we're waiting on the parts we'll complete the bumper to bumper inspection and I'll reach out with any additional concerns. Is this still the best number to reach you?"</p>
+  <p><span class="who">Customer:</span> "Yes it is."</p>
+  <p><span class="who">Advisor:</span> "Great."</p>
+  <p class="dir">[If an objection comes instead of the yes, handle it normally, then seal with the same close. Obtain authorization before advancing to second base. Hang up between bases.]</p>
+  </div>
+  <div class="pf"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Script Book v3.7</span></div>
+</div>
+
+<!-- ======================= 9 · 10-STEP ISO ======================= -->
+<div class="page">
+  <div class="ph"><span class="eyebrow">Script 9 · Phone · First Base Safety</span>
+    <h2>The 10-Step ISO Presentation (Water Pump)</h2>
+    <div class="use">The canonical safety presentation. Structure never changes; only the technical content does.</div>
+  </div>
+  <div class="script">
+  <p><span class="who">Advisor:</span> "Hi [Customer], this is [Advisor] from [Shop]. Thanks for your patience. Is now a good time to go over your vehicle?"</p>
+  <p><span class="who">Customer:</span> "Yes, now works."</p>
+  <p><span class="who">Advisor:</span> "I personally reviewed your vehicle with our certified technician so I could give you a clear picture of what's going on. Were you able to view the photos, videos, or the digital inspection report we sent over?"</p>
+  <p><span class="who">Customer:</span> "I did, yes."</p>
+  <p><span class="who">Advisor:</span> "You brought your vehicle in for an oil change. We've completed the initial inspection and I wanted to review what we found. The good news is your digital inspection report clearly documents everything with photos and notes so you can see exactly what we're seeing, and we caught this early, before it turned into a bigger issue."</p>
+  <p><span class="who">Customer:</span> "Okay."</p>
+  <p><span class="who">Advisor:</span> "More good news: during our inspection we found that your water pump is leaking, which is separate from your original visit and something we can take care of now before it leads to further damage. If left as is, a leaking water pump can lead to engine overheating, coolant loss, and eventually major engine damage. The proper repair is to remove and replace the water pump and complete a full cooling system service so everything is clean, sealed, and operating at the correct temperature. The total investment for today's work, including the oil service you already approved, is $1,695.46, parts and labor included, and this work is covered by our 3-year, 36,000-mile nationwide warranty on parts and labor."</p>
+  <p><span class="who">Customer:</span> "Alright, let's go ahead and do it."</p>
+  <p><span class="who">Advisor:</span> "Okay, great. I'll get the parts ordered, and while we're waiting on those we'll finish the bumper to bumper digital inspection and I'll reach out if anything else needs attention. Is this still the best number to reach you?"</p>
+  <p><span class="who">Customer:</span> "Yes, that number is best."</p>
+  <p><span class="who">Advisor:</span> "Perfect. I'll get everything moving and call you with an update."</p>
+  </div>
+  <div class="pf"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Script Book v3.7</span></div>
+</div>
+
+<!-- ======================= 10 · SECOND BASE ======================= -->
+<div class="page">
+  <div class="ph"><span class="eyebrow">Script 10 · Phone · Second Base</span>
+    <h2>Second Base — Additional Findings Call</h2>
+    <div class="use">Separate call after first base authorization. Open with reassurance: the approved work is in progress. Everything presented here is additional. Expand with inspection findings, most safety-critical first.</div>
+  </div>
+  <div class="script">
+  <p><span class="who">Advisor:</span> "Hey [Customer Name], this is [Your Name] at [Shop]. We've completed the service inspection and we're in progress on everything we've already talked about. Plus, we've completed the full vehicle inspection and we have a couple of additional concerns that require your attention. Is now a good time to review the inspection findings?"</p>
+  <p><span class="who">Customer:</span> "Sure."</p>
+  <p><span class="who">Advisor:</span> "Did you have a chance to review the pictures and videos I sent over? I refreshed the report, so there's more on there now."</p>
+  <p><span class="who">Customer:</span> "I did."</p>
+  <p><span class="who">Advisor:</span> "Good news is your vehicle's overall health is in EXCELLENT condition! The suspension system is operating properly. However, the axle boot is leaking grease. It's not an immediate failure, but left unaddressed it can damage the joint. The proper repair is to replace the CV axle to ensure proper lubrication and protection. To address all the additional concerns, the updated total investment is $[XXX], and obviously everything is covered by our 3-year, 36,000-mile nationwide warranty on both parts and labor. With the [safety or customer concern] in progress, I can go ahead and order these parts and have the technician take care of everything at once. I'll call you with an updated ETA when the parts arrive."</p>
+  <p><span class="who">Customer:</span> "Okay, that works."</p>
+  <p><span class="who">Advisor:</span> "Great, we'll get the parts ordered right now. The last thing I'm going to do is check for any upcoming scheduled maintenance and call you back with the maintenance plan to protect this investment, so work doesn't build up like this again, and you know what to anticipate for your next visit!"</p>
+  <p class="dir">[Hang up. Reset. Third base is its own call.]</p>
+  </div>
+  <div class="pf"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Script Book v3.7</span></div>
+</div>
+
+<!-- ======================= 11 · THIRD BASE ======================= -->
+<div class="page">
+  <div class="ph"><span class="eyebrow">Script 11 · Phone · Third Base</span>
+    <h2>Third Base — Scheduled Maintenance Call</h2>
+    <div class="use">Soft sell. By this call three or four conversations have already happened: open with in-progress reassurance, then the additional maintenance items. Calm tone, no urgency stacking. A real opt-out is part of the script.</div>
+  </div>
+  <div class="script">
+  <p><span class="who">Advisor:</span> "Hi [Customer Name], this is [Your Name] with [Shop]. Everything we've talked about is in progress and moving right along. I'm calling back with that maintenance plan, a few additional maintenance items to review. Is now a good time?"</p>
+  <p><span class="who">Customer:</span> "Sure."</p>
+  <p><span class="who">Advisor:</span> "The remaining items fall into preventative maintenance. Your transmission and differential fluids are overdue or coming due within the next 10,000 miles based on mileage, so ideally we should address those two services today while we have the car. Addressing them now keeps the systems up to date and maintains the lifetime protection plan, leaving the only services due next visit [services due], and the service after that will be the [plan]. Addressing the items due will move your total investment for today's work from $[XXX] to $[XXXX]. These services are covered by the lifetime protection plan that keeps major system components like the [expensive part] covered for unlimited miles, so long as the services don't go overdue. Can I have the tech get everything fully up to date while it's in the shop?"</p>
+  <p><span class="who">Customer:</span> "I'm not sure about doing all of it today."</p>
+  <p><span class="who">Advisor:</span> "No problem at all. We can absolutely schedule the services for your next visit so nothing goes overdue. Would you like me to set that up now so it's on the books?"</p>
+  </div>
+  <div class="pf"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Script Book v3.7</span></div>
+</div>
+
+<!-- ======================= 12 · BOSS 1 ======================= -->
+<div class="page">
+  <div class="ph"><span class="eyebrow">Script 12 · Objection</span>
+    <h2>Boss Battle 1 — "I'm Selling the Car"</h2>
+    <div class="use">Reframe repair cost against the real alternative: buying someone else's unknown history.</div>
+  </div>
+  <div class="script">
+  <p><span class="who">Customer:</span> "I appreciate everything, but I'm probably just going to sell it. I don't want to put more money into it."</p>
+  <p><span class="who">Advisor:</span> "I completely understand. Big repairs can make you step back and rethink things. Out of curiosity, are you planning to replace it with something newer or used?"</p>
+  <p><span class="who">Customer:</span> "Probably used. I don't want another big payment."</p>
+  <p><span class="who">Advisor:</span> "That makes sense. Let me give you something to consider. Most used vehicles today are still a major investment, and you're inheriting someone else's maintenance history. With your vehicle, we know exactly what condition it's in because we just inspected it bumper to bumper. Based on what we saw, this vehicle still has strong life left in it. Let me ask you this: if you could purchase this exact vehicle, knowing the major systems have just been inspected and repaired, for a fraction of the cost of another vehicle, would that make sense?"</p>
+  <p><span class="who">Customer:</span> "I didn't think about it that way."</p>
+  <p><span class="who">Advisor:</span> "Right now you're not throwing money at an old car. You're making a smart investment in a vehicle you already own and understand. The average used car today runs up to $25,000, and the insurance rates are outrageous. To get this vehicle back to safe and reliable, we're talking about [total investment]. I completely understand if you're simply in the market for a new car, but if you're looking to make a smart financial decision, my professional advice would be to repair the car instead of buying a used car that may need the same in repairs, or more."</p>
+  </div>
+  <div class="pf"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Script Book v3.7</span></div>
+</div>
+
+<!-- ======================= 13 · BOSS 2 ======================= -->
+<div class="page">
+  <div class="ph"><span class="eyebrow">Script 13 · Objection</span>
+    <h2>Boss Battle 2 — "The Price Is Too High"</h2>
+    <div class="use">Own the position. Never apologize for price. Never discount on reflex.</div>
+  </div>
+  <div class="script">
+  <p><span class="who">Customer:</span> "That just seems like a lot."</p>
+  <p><span class="who">Advisor:</span> "I hear you. Let me ask, is it more than you expected, or are you comparing it to another estimate?"</p>
+  <p><span class="who">Customer:</span> "It just feels high."</p>
+  <p><span class="who">Advisor:</span> "Fair enough. We're not positioned as the lowest-priced option in town, and that's intentional. We invest in experienced, certified technicians. We back our work with a 3-year, 36,000-mile nationwide warranty. And we stand behind it with real support if something ever comes up. You're paying for the parts, the certified installation, the warranty that protects them, and a shop that stands behind the work. You're investing in doing it correctly the first time. Have you ever gone with the cheaper option before and ended up paying for it twice?"</p>
+  <p><span class="who">Customer:</span> "Yeah, I suppose."</p>
+  <p><span class="who">Advisor:</span> "That's exactly what we're helping you avoid. Let's go ahead and get this handled properly so you don't have to revisit it again. I'll get it moving and keep you updated. Is this still the best number?"</p>
+  </div>
+  <div class="pf"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Script Book v3.7</span></div>
+</div>
+
+<!-- ======================= 14 · BOSS 3 ======================= -->
+<div class="page">
+  <div class="ph"><span class="eyebrow">Script 14 · Objection</span>
+    <h2>Boss Battle 3 — "I Don't Have the Money Right Now"</h2>
+    <div class="use">"No money" means "no money TODAY." Sell the option of solving it now and paying later.</div>
+  </div>
+  <div class="script">
+  <p><span class="who">Customer:</span> "I just don't have the money today."</p>
+  <p><span class="who">Advisor:</span> "I completely understand. Auto repairs rarely show up at a convenient time. Always after a big expense, or when you least expect it. Something a lot of our customers LOVE to take advantage of is our flexible payment options. If I can take care of the repair now and let you pay me back with no interest, can I get the parts ordered and move forward?"</p>
+  <p><span class="who">Customer:</span> "Yes!"</p>
+  <p><span class="who">Advisor:</span> "I just sent you a link to fill out a form with one of our payment partners. Once it's complete I'll see it come through on my side and we can go from there! Did you receive the link?"</p>
+  <p class="dir">[Stay on the phone while they complete the form. Close the moment the approval comes through.]</p>
+  </div>
+  <div class="pf"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Script Book v3.7</span></div>
+</div>
+
+<!-- ======================= 15 · BOSS 4 ======================= -->
+<div class="page">
+  <div class="ph"><span class="eyebrow">Script 15 · Objection</span>
+    <h2>Boss Battle 4 — "I Need to Talk to My Spouse"</h2>
+    <div class="use">The Three-Way Bypass: both decision-makers hear the same story, first-hand.</div>
+  </div>
+  <div class="script">
+  <p><span class="who">Customer:</span> "I need to run this by my spouse first."</p>
+  <p><span class="who">Advisor:</span> "I completely understand. Decisions like this are definitely best made together. To make sure both you and your spouse have all the correct information at the same time, the most efficient way to proceed is a brief three-way call. I can review everything I just covered, you'll both be fully informed, and you can make the best decision for your situation. Is your spouse available to join us now, or should I reach out to them to review this information and call you back?"</p>
+  <p><span class="who">Customer:</span> "Let me try to get them on the phone."</p>
+  <p class="dir">[On the three-way call, re-run the PRS and warranty exactly as delivered the first time.]</p>
+  </div>
+  <div class="pf"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Script Book v3.7</span></div>
+</div>
+
+<!-- ======================= 16 · BOSS 5 ======================= -->
+<div class="page">
+  <div class="ph"><span class="eyebrow">Script 16 · Objection</span>
+    <h2>Boss Battle 5 — "I'm Going to Wait"</h2>
+    <div class="use">Clarify risk if safety; reframe value if maintenance. Schedule whatever gets deferred.</div>
+  </div>
+  <div class="script">
+  <span class="br">Version 1 · Safety concern</span>
+  <p><span class="who">Customer:</span> "I think I'll wait on that."</p>
+  <p><span class="who">Advisor:</span> "I understand. I do want to be transparent. This one falls into a safety category. Right now the brakes are past normal wear and into potential damage. That can affect stopping distance and control. Are you planning to drive it?"</p>
+  <p><span class="who">Customer:</span> "Yes, just around town."</p>
+  <p><span class="who">Advisor:</span> "Even short trips carry risk in this condition. My job is to protect you, not pressure you. If budget is the concern, we can look at payment options, but I don't recommend postponing something that affects safety."</p>
+  <span class="br">Version 2 · Preventative maintenance</span>
+  <p><span class="who">Customer:</span> "I'll just wait on the fluid services."</p>
+  <p><span class="who">Advisor:</span> "No worries, they're not urgent today. What we're seeing in those systems is buildup that doesn't show symptoms until damage starts. Doing them now protects the components while everything is accessible. If we skip them today, are you planning to schedule it soon, or wait until something starts acting up?"</p>
+  <p><span class="who">Customer:</span> "Probably the next oil change."</p>
+  <p><span class="who">Advisor:</span> "Understood. Just keep in mind preventative service is always less expensive than corrective repair. If it makes sense to bundle it while it's already here, we can space out the cost as well."</p>
+  </div>
+  <div class="pf"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Script Book v3.7</span></div>
+</div>
+
+<!-- ======================= 17 · BOSS 6 ======================= -->
+<div class="page">
+  <div class="ph"><span class="eyebrow">Script 17 · Objection</span>
+    <h2>Boss Battle 6 — "You're Always Trying to Sell Me"</h2>
+    <div class="use">The Professional Obligation frame: from salesperson to fiduciary.</div>
+  </div>
+  <div class="script">
+  <p><span class="who">Customer:</span> "Every time I come in, you try to sell me something."</p>
+  <p><span class="who">Advisor:</span> "I appreciate you saying that. My goal isn't to sell you. It's to inspect your vehicle thoroughly and give you accurate information. Every car that comes through our shop receives a full digital inspection. That means checking safety components, wear items, and potential issues before they become problems. You're never obligated to approve anything. But it's my Professional Obligation to make sure you know what we see. Would you like me to walk you through today's inspection results so you can decide what makes sense?"</p>
+  </div>
+  <div class="pf"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Script Book v3.7</span></div>
+</div>
+
+<!-- ======================= 18 · BOSS 7 ======================= -->
+<div class="page">
+  <div class="ph"><span class="eyebrow">Script 18 · Objection</span>
+    <h2>Boss Battle 7 — "I Need My Car Today"</h2>
+    <div class="use">Solve transportation first, then return to the repair.</div>
+  </div>
+  <div class="script">
+  <p><span class="who">Customer:</span> "I really need my car today."</p>
+  <p><span class="who">Advisor:</span> "I understand. Let's solve the transportation side first. We have loaner vehicles, Uber rides, and pickup and drop-off options. Would one of those help make this easier for you?"</p>
+  <p><span class="who">Customer:</span> "An Uber ride would help."</p>
+  <p><span class="who">Advisor:</span> "Perfect. I'll get that arranged so we can repair your vehicle properly without rushing anything. Once it's complete, I'll give you a call. Still the best number?"</p>
+  </div>
+  <div class="pf"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Script Book v3.7</span></div>
+</div>
+
+<!-- ======================= 19 · BOSS 8 ======================= -->
+<div class="page">
+  <div class="ph"><span class="eyebrow">Script 19 · Objection</span>
+    <h2>Boss Battle 8 — "Can I Get a Parts and Labor Breakdown?"</h2>
+    <div class="use">You sell a protection program, not parts and minutes. Refuse the commodity frame, warmly.</div>
+  </div>
+  <div class="script">
+  <p><span class="who">Customer:</span> "Can you break down parts and labor?"</p>
+  <p><span class="who">Advisor:</span> "I can absolutely review the estimate with you. Just to clarify, we're not structured as a parts-and-labor shop. We're structured around protection and execution. You're paying for certified technicians, proper procedures, warranty coverage, and post-repair support, and the components come backed by all of it. We also include a 3-year, 36,000-mile nationwide warranty, roadside assistance, a quality-control inspection, and digital documentation. That's why it doesn't break down into a simple commodity model. Does that help clarify where the value is?"</p>
+  </div>
+  <div class="pf"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Script Book v3.7</span></div>
+</div>
+
+<!-- ======================= 20 · BOSS 9 ======================= -->
+<div class="page">
+  <div class="ph"><span class="eyebrow">Script 20 · Objection · Post-Inspection</span>
+    <h2>Boss Battle 9 — "I Want a Second Opinion / I Can Get It Done Cheaper"</h2>
+    <div class="use">Post-inspection only: the evidence exists, so education is allowed. Empathize, disarm with honesty, huddle with the technician, then bring in the Short Stop. The Short Stop never contradicts the advisor: reinforce first, then problem-solve with the customer. The prize is not this repair. The prize is a customer for life.</div>
+  </div>
+  <div class="script">
+  <p><span class="who">Customer:</span> "I appreciate you walking me through everything, but honestly, your price seems high. I think I want to get a second opinion and shop around, see if I can get it done cheaper."</p>
+  <p><span class="who">Advisor:</span> "I completely understand, and that's a fair thing to want. Let me ask you this first: have you ever paid for something twice and not got it done?"</p>
+  <p><span class="who">Customer:</span> "Yeah, actually. That's part of what I'm worried about."</p>
+  <p><span class="who">Advisor:</span> "That's exactly what I want to protect you from. And I'll be straight with you: the reality is we are able to do this cheaper. I don't want you to think that this is set in stone and this has to be done. This is the proper repair. This is the most comprehensive solution to solve the problem and ensure that we don't have problems anymore. We can definitely shop some cheaper parts, and that's going to reduce the price, but it might also reduce the warranty."</p>
+  <p><span class="who">Customer:</span> "Okay. I'd still like to see what it would run somewhere else."</p>
+  <p><span class="who">Advisor:</span> "Before you do that, give me two minutes. Let me grab the technician who had his hands on your vehicle today, we talk to him, and we find out if there's a smarter way to get this done. You'll be getting your second opinion from the person who actually inspected it. Give me one second."</p>
+  <p class="dir">[The huddle happens away from the customer first: advisor and technician. Can it really take that many hours, or can we work smarter to reduce the cost? Then the Short Stop joins the customer with the DVI open. Ideally the Short Stop IS the technician; realistically it is whoever the shop trusts to run this play. One hard rule: the Short Stop NEVER contradicts what the advisor already told the customer. Contradiction reads as the shop making things up, and it destroys the advisor's trustworthiness. Reinforce first. Problem-solve second.]</p>
+  <p><span class="who">Short Stop:</span> "Hi [Customer Name], I'm [Name]. I went through your vehicle today, and I want to start by confirming what [Advisor Name] walked you through, exactly as he presented it. Here's the photo of [the finding]. If it's left as it is, [Risk]. The repair he presented is the proper repair and the right way to solve this. Nobody here is making anything up."</p>
+  <p><span class="who">Customer:</span> "I believe you. It's just more than I can do right now."</p>
+  <p><span class="who">Advisor:</span> "Then let's solve that together. Can we create a repair plan where we take care of a portion of it today and move on?"</p>
+  <p><span class="who">Short Stop:</span> "And while we build that plan, we can look at every option we've got. We have flexible payment options that can spread the investment out, and [Advisor Name] can talk with the owner about the labor time and about taking care of the [accompanying service] that goes with this job. The goal is a number that makes sense for you and still fixes this the right way."</p>
+  <p><span class="who">Customer:</span> "Okay. If we can get to a number that works, I'd rather just have you guys do it."</p>
+  <span class="br">The Customer-for-Life Close</span>
+  <p><span class="who">Advisor:</span> "That's exactly what we want. Thank you for working through this with us instead of driving across town. We'll find the middle ground that makes sense for everyone. And from here on out, whenever this car needs anything, you'll never have to wonder where to take it."</p>
+  <p class="dir">[The prize is not winning this repair. The prize is programming one sentence into the customer's mind: "If I have a problem with my car, it goes to this shop."]</p>
+  </div>
+  <div class="pf"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Script Book v3.7</span></div>
+</div>
+
+<!-- ======================= 21 · BOSS 9 WORKED EXAMPLE ======================= -->
+<div class="page">
+  <div class="ph"><span class="eyebrow">Script 21 · Objection · Post-Inspection · Worked Example</span>
+    <h2>Boss Battle 9 Worked Example — The Full Engine Reseal Repair Plan</h2>
+    <div class="use">The customer expected an upper and lower oil pan reseal and budgeted $1,500 to $2,000 tops. The inspection shows the upper pan, lower pan, timing cover, and both valve covers all leaking. The components all touch, so the proper repair is a full engine reseal: 33 hours of book time, about $7,000. Good-standing customer, and the objection is purely price.</div>
+  </div>
+  <div class="script">
+  <p><span class="who">Customer:</span> "I came in for the oil pan reseal. I budgeted maybe two thousand dollars for this. Now you're telling me seven thousand. I think I'll just take it to another shop."</p>
+  <p><span class="who">Advisor:</span> "I completely understand. You planned for one number and heard a very different one. Let me ask you this first: have you ever paid for something twice and not got it done?"</p>
+  <p><span class="who">Customer:</span> "That's exactly what I'm trying to avoid."</p>
+  <p><span class="who">Advisor:</span> "Me too. So let me be straight with you. The pans you came in for are leaking, and so are the timing cover and both valve covers. All of those seals touch each other. If we only reseal the pans today, we're opening up an engine we know is leaking in three other places, and that's not the proper repair. The proper repair is to reseal the engine as one job. Before you go anywhere, give me two minutes with my technician."</p>
+  <p class="dir">[The huddle, away from the counter: "Does this really take 33 hours, or can we work smarter and bring the cost down?" Then the Short Stop joins the customer with the DVI open. Reinforce first. Problem-solve second.]</p>
+  <p><span class="who">Short Stop:</span> "Hi [Customer Name], I'm [Name]. I went through your engine today, and I want to confirm what [Advisor Name] told you, exactly as he presented it. The upper pan, the lower pan, the timing cover, and both valve covers are all leaking. Here are the photos. They all touch each other, so the proper repair is a full engine reseal. Nobody here is making anything up, and if this could be done properly for two thousand dollars, I would tell you."</p>
+  <p><span class="who">Customer:</span> "I believe you. I just can't do seven thousand dollars right now."</p>
+  <p><span class="who">Advisor:</span> "Then let's not make it seven thousand dollars today. Can we create a repair plan where we take care of a portion of it today and move on?"</p>
+  <p><span class="who">Short Stop:</span> "And we've got real options to work with. We have flexible payment options that can spread this out. [Advisor Name] can talk with the owner about the labor time, and about taking care of the oil service that goes along with this job. Between the plan and those options, we can get this to a number that makes sense."</p>
+  <p><span class="who">Customer:</span> "If you can get it somewhere I can manage, I'd rather keep it here. You guys have always taken care of me."</p>
+  <span class="br">The Customer-for-Life Close</span>
+  <p><span class="who">Advisor:</span> "And we always will. Thank you for working through this with us instead of driving across town. We'll build the plan, I'll make those calls, and I'll have real numbers for you before anything moves forward. From here on out, whenever this car needs anything, you'll never have to wonder where to take it."</p>
+  <p class="dir">[The middle ground has to make sense for everyone: the customer gets a price point that works, and the shop keeps the repair, the relationship, and every visit after it. The teaching behind the numbers lives in the Advisor Book, never in the dialogue.]</p>
+  </div>
+  <div class="pf"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Script Book v3.7</span></div>
+</div>
+
+<!-- ======================= 21 · LAST RECOVERY ======================= -->
+<div class="page">
+  <div class="ph"><span class="eyebrow">Script 22 · Recovery</span>
+    <h2>L.A.S.T. Recovery — The Four Hot Counters</h2>
+    <div class="use">Listen fully before speaking. No "but." No "policy." Specific, time-bound, owned solve. Thank at the end.</div>
+  </div>
+  <div class="script">
+  <span class="br">Hot Counter 1 · No callback for two days</span>
+  <p><span class="who">Customer:</span> "My car's been here for two days and no one called me!"</p>
+  <p><span class="who">Advisor:</span> "Okay, walk me through it. When did you drop it off, and what were you expecting to hear?" <span class="dir">[Listen. No interrupting.]</span></p>
+  <p><span class="who">Advisor:</span> "I completely understand. Not hearing back when you're waiting on your car is one of the most frustrating things, and that's on us to do better. Here's what I'm going to do. I'm pulling your RO right now. I'll get you the current status, a real ETA, and I'll call you back personally within 30 minutes whether the news is good or not. Thank you for letting me know. We'd much rather hear this from you than read about it later."</p>
+  <span class="br">Hot Counter 2 · The bill is higher than the quote</span>
+  <p><span class="who">Customer:</span> "The bill is way more than what you quoted!"</p>
+  <p><span class="who">Advisor:</span> "Tell me what number you were expecting and what number you're seeing." <span class="dir">[Listen fully.]</span></p>
+  <p><span class="who">Advisor:</span> "That's a fair concern. If you were planning on one number and the bill comes in higher, that breaks trust, and I get why you're frustrated. Let me pull the estimate and the final invoice side by side. I'll walk you line by line through what changed, and if any of that wasn't properly authorized, I'll make it right today. I appreciate you raising this instead of just walking away unhappy. Let's figure it out."</p>
+  <span class="br">Hot Counter 3 · The noise came back</span>
+  <p><span class="who">Customer:</span> "I just paid for this last month and the same noise is back!"</p>
+  <p><span class="who">Advisor:</span> "Tell me about the noise. When does it happen, is it exactly the same, did it ever fully go away?" <span class="dir">[Listen fully.]</span></p>
+  <p><span class="who">Advisor:</span> "That's exactly the kind of thing that should not be happening, and I understand why it feels like we let you down. Here's what we're going to do. We carry a 3-year, 36,000-mile warranty on parts and labor, so this is covered. I'm getting you on the schedule today or tomorrow, no charge, and we'll diagnose it personally. Can you bring it in this afternoon, or in the morning? And thank you for bringing it back to us instead of going somewhere else. We're going to make this right."</p>
+  <span class="br">Hot Counter 4 · Grease on the seat</span>
+  <p><span class="who">Customer:</span> "Your tech left grease on my seat."</p>
+  <p><span class="who">Advisor:</span> "Can you show me?" <span class="dir">[Walk to the car. Look. Do not minimize.]</span></p>
+  <p><span class="who">Advisor:</span> "You're right, that's not what should happen. That's on us. Here's what we're going to do. We use seat covers on every job and that wasn't followed today. I'm going to get this professionally detailed at our cost and have your car back to you cleaner than when it came in. I'll arrange a loaner or an Uber so you're not without a ride. When works best? And thank you for telling me directly. This is how we get better, one customer at a time."</p>
+  </div>
+  <div class="pf"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Script Book v3.7</span></div>
+</div>
+
+<!-- ======================= 22 · RE-OPEN CALLS ======================= -->
+<div class="page">
+  <div class="ph"><span class="eyebrow">Script 23 · Follow-Up</span>
+    <h2>The Re-Open Calls — Short Stop &amp; Manager Follow-Up</h2>
+    <div class="use">Fresh voice re-opens a missed safety sale. Concerned tone, never pushy.</div>
+  </div>
+  <div class="script">
+  <span class="br">The Short Stop Re-Open</span>
+  <p class="dir">[Fresh voice, not the original advisor.]</p>
+  <p><span class="who">Advisor:</span> "Hi [Customer Name], this is [Your Name] from [Shop]. I understand you've been working with [first advisor]. Do you have a second for me?"</p>
+  <p><span class="who">Customer:</span> "Sure, what's this about?"</p>
+  <p><span class="who">Advisor:</span> "Great. I'm just calling about [the item that must be handled to keep this car safe and reliable]. I know [first advisor] called to review the concern with you, and he's informed me that you didn't want to proceed with the repair. Is that accurate?"</p>
+  <p><span class="who">Customer:</span> "Yeah, it's just not in the budget right now."</p>
+  <p><span class="who">Advisor:</span> "I see, and that brings me to the reason I'm calling. I wanted to ensure we effectively communicated the severity of the concern. [Simple Problem]. [Simple Risk]. [Minimum viable Solution]. If budget is the main concern, we have flexible payment options that can take care of the safety issue today. Can I get that set up for you?"</p>
+  <span class="br">The Manager Re-Open</span>
+  <p><span class="who">Advisor:</span> "Hi [Mr./Mrs. Customer], this is [Manager Name] with [Shop]. I just wanted to personally thank you for your visit and check in on your vehicle. Did I catch you at a good time?" <span class="dir">[Pause]</span></p>
+  <p><span class="who">Customer:</span> "Sure."</p>
+  <p><span class="who">Advisor:</span> "One reason I'm calling: there was a safety concern discussed during your visit. I reviewed it myself, and I just want to make sure you have a plan to address it, whether that's with us or elsewhere. My goal is simply to make sure you and your family are protected."</p>
+  <p><span class="who">Customer:</span> "We haven't really figured it out yet."</p>
+  <p><span class="who">Advisor:</span> "If there's anything we can do, scheduling, transportation, payment options, we have availability. Would you like us to take care of that for you?"</p>
+  </div>
+  <div class="pf"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Script Book v3.7</span></div>
+</div>
+
+<!-- ======================= 23 · HOME PLATE ======================= -->
+<div class="page">
+  <div class="ph"><span class="eyebrow">Script 24 · In Person · Checkout</span>
+    <h2>Home Plate — Booking the Next Visit</h2>
+    <div class="use">Final invoice review. Reinforce value, direction-facing close, next visit on the books before they leave.</div>
+  </div>
+  <div class="script">
+  <p><span class="who">Advisor:</span> "[Mr./Mrs. Customer], thank you again for trusting us with your vehicle today. Here's what we completed: [services]. Everything is digitally documented in your invoice. Your total investment today is $[XXX]. Which direction would you like your vehicle facing when we bring it up?"</p>
+  <p><span class="who">Customer:</span> "Facing out would be great."</p>
+  <p><span class="who">Advisor:</span> "You got it. Before you head out, a few benefits included with today's service: our 3-year, 36,000-mile nationwide warranty, 365-day roadside assistance, a post-repair inspection, and maintenance reminders. Looking at your maintenance schedule, your next service will be due around [date or mileage]. Let's get that on the books now so it's one less thing to think about. Does a morning or an afternoon usually work better for you?"</p>
+  <p><span class="who">Customer:</span> "Mornings, usually."</p>
+  <p><span class="who">Advisor:</span> "Perfect, I have a 9:15 on [date]. I'll put you down and send you a reminder as it gets closer. We appreciate your business, [Customer Name], and we'll be here whenever you need us!"</p>
+  </div>
+  <div class="pf"><span class="tag">DO WHAT'S RIGHT · DO WHAT'S FAIR · DO YOUR BEST</span><span>HAB Script Book v3.7</span></div>
+</div>
+
+</body>
+</html>

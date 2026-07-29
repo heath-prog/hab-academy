@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Owner sign up · HAB Academy</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body class="auth-wrap">
+<div class="auth-card wide">
+  <div class="brand-stack">
+    <div class="shield">HAB</div>
+    <div class="name">Set Up Your Shop</div>
+    <div class="sub">HAB ACADEMY · OWNER SIGN UP</div>
+  </div>
+
+  <% if (error) { %><div class="alert error"><%= error %></div><% } %>
+
+  <form method="post" action="/signup/owner" class="stack">
+    <h3 style="margin: 4px 0 0;">1. Your account</h3>
+    <div class="row">
+      <div>
+        <label for="su-name">Your Full Name</label>
+        <input type="text" name="name" id="su-name" required value="<%= saved ? saved.name : '' %>" placeholder="e.g., Jordan Wells">
+      </div>
+      <div>
+        <label for="su-email">Email</label>
+        <input type="email" name="email" id="su-email" required value="<%= saved ? saved.email : '' %>" placeholder="you@yourshop.com">
+      </div>
+    </div>
+    <div class="row">
+      <div>
+        <label for="su-pass">Password <span style="font-weight: 400; opacity: 0.7;">(min 8 chars)</span></label>
+        <input type="password" name="password" id="su-pass" required minlength="8" autocomplete="new-password">
+      </div>
+      <div>
+        <label for="su-confirm">Confirm Password</label>
+        <input type="password" name="confirm" id="su-confirm" required minlength="8" autocomplete="new-password">
+      </div>
+    </div>
+
+    <h3 style="margin: 14px 0 0;">2. Your shop</h3>
+    <div class="row">
+      <div>
+        <label for="su-shop">Shop Name</label>
+        <input type="text" name="shopName" id="su-shop" required value="<%= saved ? saved.shopName : '' %>" placeholder="e.g., True Blue Auto Care">
+      </div>
+      <div>
+        <label for="su-brand">Organization / Brand Name <span style="font-weight: 400; opacity: 0.7;">(optional)</span></label>
+        <input type="text" name="brandName" id="su-brand" value="<%= saved ? saved.brandName : '' %>" placeholder="If you run multiple shops under one brand">
+      </div>
+    </div>
+
+    <h3 style="margin: 14px 0 0;">3. Your HAB package</h3>
+    <div class="tier-pick">
+      <label class="tier-option">
+        <input type="radio" name="tier" value="consulting" <%= !saved || saved.tier !== 'portfolio' ? 'checked' : '' %>>
+        <span class="tier-body">
+          <span class="tier-name">HAB Consulting</span>
+          <span class="tier-tag">The default engagement</span>
+          <ul>
+            <li><strong>5% of monthly gross profit dollars</strong></li>
+            <li>Full HAB Academy access for your whole team</li>
+            <li>Curriculum, book library, leaderboards, coaching dashboards</li>
+            <li>You keep 100% of your equity</li>
+          </ul>
+        </span>
+      </label>
+      <label class="tier-option">
+        <input type="radio" name="tier" value="portfolio" <%= saved && saved.tier === 'portfolio' ? 'checked' : '' %>>
+        <span class="tier-body">
+          <span class="tier-name">HAB Portfolio</span>
+          <span class="tier-tag">The private equity deal</span>
+          <ul>
+            <li><strong>10% equity stake to HAB</strong> via a platform-generated SAFE</li>
+            <li><strong>2.5% of gross profit</strong> monthly management fee</li>
+            <li>Quarterly profits split <strong>90/5/5</strong>: 90% to owners, 5% to HAB, 5% into your War Chest</li>
+            <li>War Chest compounds inside the business toward a premium private equity exit, the proven roll-up playbook</li>
+            <li>Everything in HAB Consulting, plus active management</li>
+          </ul>
+        </span>
+      </label>
+    </div>
+
+    <h3 style="margin: 14px 0 0;">4. Agreement term</h3>
+    <div>
+      <label for="su-term">Term Length</label>
+      <select name="term" id="su-term" required>
+        <% terms.forEach(t => { %>
+          <option value="<%= t %>" <%= saved && saved.term === t ? 'selected' : (!saved && t === 12 ? 'selected' : '') %>><%= t %> months</option>
+        <% }) %>
+      </select>
+      <div style="font-size: 12px; color: var(--ink-soft); margin-top: 4px;">
+        Academy access for you and your whole team lasts while your agreement is active. When it ends, access ends.
+      </div>
+    </div>
+
+    <button type="submit" class="primary" style="margin-top: 8px;">Continue to Your Agreement</button>
+  </form>
+
+  <div style="margin-top: 14px; font-size: 13px; text-align: center;">
+    <a href="/signup">Back</a>
+    <span style="opacity: 0.5;">&nbsp;·&nbsp;</span>
+    Already have an account? <a href="/login">Sign in</a>
+  </div>
+
+  <div class="tagline">Do what's Right · Do what's Fair · Do Your Best.</div>
+</div>
+</body>
+</html>

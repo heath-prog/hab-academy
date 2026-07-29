@@ -59,7 +59,14 @@ libraryRouter.get('/library', requireAuth, (req, res) => {
   const books = BOOKS
     .filter(b => coach || !b.coachOnly)
     .map(b => ({ ...b, available: fs.existsSync(path.join(BOOKS_DIR, b.file)) }));
-  res.render('library', { user: req.session, books, coach });
+  res.render('library', {
+    user: req.session,
+    books,
+    coach,
+    // WP-SIGNUP lockdown: printable PDF editions are hab_admin-only. Clients
+    // read in the browser and order printed copies instead.
+    canDownloadPdf: req.session.role === 'hab_admin',
+  });
 });
 
 // ===== Book delivery (styled standalone page, internal CSS preserved) =====
@@ -76,11 +83,14 @@ libraryRouter.get('/library/:slug', requireAuth, (req, res) => {
   res.sendFile(full);
 });
 
-// ===== PDF edition delivery (same access rules as the HTML edition) =====
+// ===== PDF edition delivery — hab_admin ONLY (WP-SIGNUP lockdown) =====
+// Client roles never get the printable book files: in-browser reading stays
+// open while the agreement is active, and printed copies are ordered at
+// /orders. Only Heath can pull the PDFs (for fulfillment/printing).
 libraryRouter.get('/library/:slug/pdf', requireAuth, (req, res) => {
   const book = BOOKS.find(b => b.slug === req.params.slug);
   if (!book || !book.pdf) return res.status(404).render('404');
-  if (book.coachOnly && !canSeeCoachContent(req.session.role)) {
+  if (req.session.role !== 'hab_admin') {
     return res.status(403).render('403', { user: req.session });
   }
   const full = path.join(BOOKS_DIR, path.basename(book.pdf));

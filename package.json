@@ -9,7 +9,8 @@
     "dev": "node --watch server.js",
     "seed": "node db/seed.js",
     "seed:demo": "node db/seed-demo.js",
-    "import:curriculum": "node scripts/import-curriculum.mjs"
+    "import:curriculum": "node scripts/import-curriculum.mjs",
+    "test:signup": "node scripts/test-wp-signup.mjs"
   },
   "engines": {
     "node": ">=18"

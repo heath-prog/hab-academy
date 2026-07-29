@@ -12,6 +12,68 @@
   <% } %>
 </p>
 
+<% if (typeof message !== 'undefined' && message) { %><div class="alert success"><%= message %></div><% } %>
+<% if (typeof error !== 'undefined' && error) { %><div class="alert error"><%= error %></div><% } %>
+
+<% if (typeof ownerPanel !== 'undefined' && ownerPanel) { %>
+<div class="card" style="border-left: 4px solid var(--gold); margin-bottom: 18px;">
+  <h2 style="margin-top: 0;">Your Shop, Your Keys</h2>
+  <div class="owner-panel-grid">
+    <div>
+      <div class="stat-label">Team join code</div>
+      <div class="join-code-chip"><%= ownerPanel.joinCode || 'not set' %></div>
+      <div class="stat-sub">Give this to advisors, technicians and coaches. They sign up at <strong>/signup</strong> and join your shop with it.</div>
+    </div>
+    <div>
+      <div class="stat-label">Agreement</div>
+      <% if (ownerPanel.agreement) { %>
+        <div style="font-size: 15px; font-weight: 700; color: var(--navy); margin: 4px 0;">
+          <%= ownerPanel.tierLabel %> · <%= ownerPanel.agreement.term_months %> months
+        </div>
+        <div class="stat-sub">
+          <% if (ownerPanel.access.state === 'active') { %>
+            Active through <%= ownerPanel.agreement.end_date %> (<%= ownerPanel.access.daysRemaining %> day<%= ownerPanel.access.daysRemaining === 1 ? '' : 's' %> remaining)
+          <% } else if (ownerPanel.access.state === 'demo') { %>
+            Demo shop, enforcement exempt
+          <% } else { %>
+            <span style="color: var(--red); font-weight: 700;">Ended <%= ownerPanel.agreement.end_date %></span>
+          <% } %>
+          · <a href="/agreements/<%= ownerPanel.agreement.id %>" target="_blank" rel="noopener">View signed agreement</a>
+          <% if (ownerPanel.agreement.safe_html) { %>
+            · <a href="/agreements/<%= ownerPanel.agreement.id %>/safe" target="_blank" rel="noopener">View SAFE</a>
+          <% } %>
+        </div>
+      <% } else { %>
+        <div class="stat-sub">No agreement on record. Contact HAB.</div>
+      <% } %>
+    </div>
+  </div>
+
+  <% if (ownerPanel.pendingMembers.length) { %>
+    <h3 style="margin-top: 18px;">Pending team requests</h3>
+    <table class="tbl" style="margin-bottom: 4px;">
+      <thead><tr><th>Name</th><th>Email</th><th>Requested Role</th><th>Requested</th><th></th></tr></thead>
+      <tbody>
+        <% ownerPanel.pendingMembers.forEach(pm => { %>
+          <tr>
+            <td><strong><%= pm.name %></strong></td>
+            <td><%= pm.email %></td>
+            <td><span class="role-pill"><%= pm.role.toUpperCase() %></span></td>
+            <td><span class="muted"><%= pm.created_at.replace('T', ' ').slice(0, 16) %></span></td>
+            <td>
+              <div class="row-actions">
+                <form method="post" action="/team/pending/<%= pm.id %>/approve"><button type="submit" class="btn small">Approve</button></form>
+                <form method="post" action="/team/pending/<%= pm.id %>/deny"><button type="submit" class="danger">Deny</button></form>
+              </div>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  <% } %>
+</div>
+<% } %>
+
 <div class="stat-row">
   <div class="stat-card">
     <div class="stat-label">Training progress</div>

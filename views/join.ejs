@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join your team · HAB Academy</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body class="auth-wrap">
+<div class="auth-card">
+  <div class="brand-stack">
+    <div class="shield">HAB</div>
+    <div class="name">Join Your Team</div>
+    <div class="sub">HAB ACADEMY · TEAM SIGN UP</div>
+  </div>
+
+  <% if (error) { %><div class="alert error"><%= error %></div><% } %>
+
+  <form method="post" action="/join" class="stack">
+    <div>
+      <label for="j-code">Shop Join Code</label>
+      <input type="text" name="code" id="j-code" required value="<%= code %>" placeholder="e.g., K7MPQ2" style="text-transform: uppercase; letter-spacing: 4px; font-weight: 700;" autocomplete="off">
+      <div style="font-size: 12px; color: var(--ink-soft); margin-top: 4px;">Get this from your shop owner. It's on their dashboard.</div>
+    </div>
+    <div>
+      <label for="j-name">Your Full Name</label>
+      <input type="text" name="name" id="j-name" required placeholder="e.g., Jamie Rivera">
+    </div>
+    <div>
+      <label for="j-email">Email</label>
+      <input type="email" name="email" id="j-email" required placeholder="you@example.com">
+    </div>
+    <div class="row">
+      <div>
+        <label for="j-pass">Password <span style="font-weight: 400; opacity: 0.7;">(min 8)</span></label>
+        <input type="password" name="password" id="j-pass" required minlength="8" autocomplete="new-password">
+      </div>
+      <div>
+        <label for="j-confirm">Confirm</label>
+        <input type="password" name="confirm" id="j-confirm" required minlength="8" autocomplete="new-password">
+      </div>
+    </div>
+    <div>
+      <label for="j-role">Your Role</label>
+      <select name="role" id="j-role" required>
+        <option value="advisor">Service Advisor</option>
+        <option value="technician">Technician</option>
+        <option value="coach">Coach / Service Manager (owner approves)</option>
+        <option value="owner">Co-owner (owner approves)</option>
+      </select>
+      <div style="font-size: 12px; color: var(--ink-soft); margin-top: 4px;">Advisors and technicians get in right away. Coach and co-owner accounts wait for your owner's approval.</div>
+    </div>
+    <button type="submit" class="primary">Create My Account</button>
+  </form>
+
+  <div style="margin-top: 14px; font-size: 13px; text-align: center;">
+    <a href="/signup">Back</a>
+    <span style="opacity: 0.5;">&nbsp;·&nbsp;</span>
+    Already have an account? <a href="/login">Sign in</a>
+  </div>
+
+  <div class="tagline">Do what's Right · Do what's Fair · Do Your Best.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign your agreement · HAB Academy</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body class="auth-wrap">
+<div class="auth-card wide">
+  <div class="brand-stack">
+    <div class="shield">HAB</div>
+    <div class="name">Your Agreement</div>
+    <div class="sub">HAB ACADEMY · <%= tier.label.toUpperCase() %> · <%= pending.term %> MONTHS</div>
+  </div>
+
+  <% if (error) { %><div class="alert error"><%= error %></div><% } %>
+
+  <div class="alert info" style="font-size: 13px;">
+    <strong><%= tier.docTitle %></strong> for <strong><%= pending.shopName %></strong> ·
+    <%= startDate %> to <%= endDate %>.
+    Read it in full below<% if (safePreviewHtml) { %>, along with the SAFE that grants HAB its 10% equity stake<% } %>.
+    These are plain-English drafts marked for attorney review; signing records your acceptance on the platform.
+  </div>
+
+  <iframe class="agreement-frame" title="Agreement" srcdoc="<%= previewHtml %>"></iframe>
+
+  <% if (safePreviewHtml) { %>
+    <h3 style="margin: 18px 0 6px;">The SAFE (equity instrument)</h3>
+    <p style="font-size: 13px; color: var(--ink-soft); margin: 0 0 8px;">
+      Generated with your agreement and stored on your record, marked pending HAB countersignature.
+    </p>
+    <iframe class="agreement-frame short" title="SAFE" srcdoc="<%= safePreviewHtml %>"></iframe>
+  <% } %>
+
+  <form method="post" action="/signup/agreement" class="stack" style="margin-top: 18px;">
+    <label style="display: flex; gap: 10px; align-items: flex-start; text-transform: none; font-size: 13px; font-weight: 400; letter-spacing: 0; line-height: 1.5;">
+      <input type="checkbox" name="agree" required style="margin-top: 3px;">
+      <span>I have read the <%= tier.docTitle %><% if (safePreviewHtml) { %> and the SAFE<% } %> in full, and I agree on behalf of <strong><%= pending.shopName %></strong>. I understand my team's Academy access ends when the agreement ends.</span>
+    </label>
+    <div>
+      <label for="sig">Sign With Your Full Legal Name</label>
+      <input type="text" name="signedName" id="sig" required placeholder="Type your full legal name" autocomplete="name" style="font-family: Georgia, serif; font-style: italic; font-size: 18px;">
+    </div>
+    <button type="submit" class="primary">Sign Agreement &amp; Create My Shop</button>
+  </form>
+
+  <div style="margin-top: 14px; font-size: 13px; text-align: center;">
+    <a href="/signup/owner">Back to shop details</a>
+  </div>
+
+  <div class="tagline">Do what's Right · Do what's Fair · Do Your Best.</div>
+</div>
+</body>
+</html>

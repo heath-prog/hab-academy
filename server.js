@@ -10,6 +10,9 @@ import { fileURLToPath } from 'node:url';
 import './lib/db.js'; // initializes DB & schema
 import { ensureAdmin } from './lib/seed-admin.js';
 import { authRouter } from './routes/auth.js';
+import { signupRouter } from './routes/signup.js';
+import { ordersRouter } from './routes/orders.js';
+import { enforceAgreement } from './lib/access.js';
 import { adminRouter } from './routes/admin.js';
 import { contentRouter } from './routes/content.js';
 import { curriculumRouter } from './routes/curriculum.js';
@@ -96,11 +99,18 @@ app.get('/', (req, res) => {
 });
 
 app.use('/', authRouter);
+app.use('/', signupRouter); // WP-SIGNUP: /signup, /join, /agreement-ended, /agreements/:id
+
+// WP-SIGNUP: agreement enforcement — everything below is cut off for a shop
+// whose agreement is expired or missing (hab_admin and demo shops exempt).
+app.use(enforceAgreement);
+
 app.use('/', contentRouter);
 app.use('/', curriculumRouter);
 app.use('/', libraryRouter);
 app.use('/', gamificationRouter);
 app.use('/', teamRouter);
+app.use('/', ordersRouter);
 app.use('/api', apiRouter);
 app.use('/admin', adminRouter);
 

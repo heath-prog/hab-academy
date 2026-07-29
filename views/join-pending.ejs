@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Awaiting approval · HAB Academy</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body class="auth-wrap">
+<div class="auth-card">
+  <div class="brand-stack">
+    <div class="shield">HAB</div>
+    <div class="name">Almost In</div>
+    <div class="sub">HAB ACADEMY · AWAITING APPROVAL</div>
+  </div>
+
+  <div class="alert info">
+    Your <strong><%= roleChoice === 'coach' ? 'coach' : 'co-owner' %></strong> request for
+    <strong><%= shopName %></strong> is in. The shop owner needs to approve it from their dashboard
+    before you can sign in as <strong><%= email %></strong>.
+  </div>
+
+  <p style="font-size: 14px; color: var(--ink-soft);">
+    Give your owner a heads-up, then come back and <a href="/login">sign in</a> once they've approved you.
+    Your password is already set.
+  </p>
+
+  <div class="tagline">Do what's Right · Do what's Fair · Do Your Best.</div>
+</div>
+</body>
+</html>

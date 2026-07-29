@@ -99,15 +99,49 @@
   <p class="muted">No shops yet. Create the first one above.</p>
 <% } else { %>
   <table class="tbl">
-    <thead><tr><th>Name</th><th>Code</th><th>Users</th><th>Created</th><th></th></tr></thead>
+    <thead><tr><th>Name</th><th>Join Code</th><th>Users</th><th>Tier</th><th>Term</th><th>Agreement</th><th>Docs</th><th></th></tr></thead>
     <tbody>
       <% shops.forEach(s => { %>
         <tr>
-          <td><strong><%= s.name %></strong></td>
-          <td><code><%= s.code %></code></td>
+          <td>
+            <strong><%= s.name %></strong>
+            <% if (s.is_demo) { %><span class="role-pill" style="background: var(--cream-deep); color: var(--navy);">DEMO</span><% } %>
+            <div class="muted">code <code><%= s.code %></code> · created <%= s.created_at.replace('T', ' ').slice(0,10) %></div>
+          </td>
+          <td><span class="join-code-chip small"><%= s.join_code || '?' %></span></td>
           <td><%= s.userCount %></td>
-          <td><span class="muted"><%= s.created_at.replace('T', ' ').slice(0,16) %></span></td>
-          <td><a class="btn secondary" href="/admin/users?shopId=<%= s.id %>">Manage Users</a></td>
+          <td><% if (s.tierLabel) { %><%= s.tierLabel %><% } else { %><span class="muted">none</span><% } %></td>
+          <td><%= s.agreement ? s.agreement.term_months + ' mo' : '' %></td>
+          <td>
+            <% if (s.is_demo) { %>
+              <span class="muted">exempt (demo)</span>
+            <% } else if (s.access.state === 'active') { %>
+              <span style="color: var(--green); font-weight: 700;">Active</span>
+              <div class="muted"><%= s.access.daysRemaining %> day<%= s.access.daysRemaining === 1 ? '' : 's' %> left · ends <%= s.agreement.end_date %></div>
+            <% } else if (s.access.state === 'expired') { %>
+              <span style="color: var(--red); font-weight: 700;">Expired</span>
+              <div class="muted">ended <%= s.agreement.end_date %></div>
+            <% } else { %>
+              <span style="color: var(--red); font-weight: 700;">No agreement</span>
+              <div class="muted">users are locked out</div>
+            <% } %>
+          </td>
+          <td>
+            <% if (s.agreement) { %>
+              <a href="/agreements/<%= s.agreement.id %>" target="_blank" rel="noopener">Agreement</a>
+              <% if (s.agreement.safe_html) { %>
+                · <a href="/agreements/<%= s.agreement.id %>/safe" target="_blank" rel="noopener">SAFE<% if (s.agreement.safe_status === 'pending_countersignature') { %> ⏳<% } %></a>
+              <% } %>
+            <% } else { %><span class="muted">n/a</span><% } %>
+          </td>
+          <td>
+            <div class="row-actions">
+              <a class="btn secondary" href="/admin/users?shopId=<%= s.id %>">Users</a>
+              <form method="post" action="/admin/shops/<%= s.id %>/demo">
+                <button type="submit" class="secondary" title="Demo shops skip agreement enforcement"><%= s.is_demo ? 'Make Client' : 'Make Demo' %></button>
+              </form>
+            </div>
+          </td>
         </tr>
       <% }) %>
     </tbody>

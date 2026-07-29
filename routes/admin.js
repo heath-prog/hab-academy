@@ -1,8 +1,10 @@
 // /admin/* — Heath (hab_admin) manages shops; shop owners (manager) manage users at their shop.
 import express from 'express';
-import { Users, Shops, Invites, OrgUnits, assignShopToOrg } from '../lib/db.js';
+import { Users, Shops, Invites, OrgUnits, assignShopToOrg, BookOrders } from '../lib/db.js';
 import { requireAuth, requireRole, hashPassword } from '../lib/auth.js';
-import { newInviteToken, newShopCode, expiresIn } from '../lib/tokens.js';
+import { newInviteToken, newShopCode, newJoinCode, expiresIn } from '../lib/tokens.js';
+import { shopAccess } from '../lib/access.js';
+import { TIERS } from '../lib/agreements.js';
 import { sendInviteEmail, mailerConfigured } from '../lib/mailer.js';
 import { pendingResetLinks } from '../lib/reset-links.js';
 import { portfolioRollup, orgRollup, shopRollup } from '../lib/progress.js';
@@ -42,9 +44,19 @@ adminRouter.get('/org/:orgId/shop/:shopId', requireAuth, requireHabAdmin, (req, 
 // ===== Super-admin: shops =====
 adminRouter.get('/shops', requireAuth, requireRole(), (req, res) => {
   if (req.session.role !== 'hab_admin') return res.status(403).render('403', { user: req.session });
-  const shops = Shops.all().map(s => ({
-    ...s, userCount: Shops.countUsers(s.id),
-  }));
+  // WP-SIGNUP: each shop row carries tier, term, agreement status, days
+  // remaining, join code, and links to the signed agreement/SAFE snapshots.
+  const shops = Shops.all().map(s => {
+    const access = shopAccess(s.id);
+    const ag = access.agreement;
+    return {
+      ...s,
+      userCount: Shops.countUsers(s.id),
+      access,
+      agreement: ag,
+      tierLabel: ag ? (TIERS[ag.tier]?.label || ag.tier) : null,
+    };
+  });
   res.render('admin-shops', {
     user: req.session,
     shops,
@@ -98,7 +110,7 @@ adminRouter.post('/shops', requireAuth, requireRole(), async (req, res) => {
   if (!name || !ownerEmail) return res.redirect('/admin/shops?error=Shop+name+and+owner+email+are+required');
 
   const code = newShopCode();
-  const shopId = Shops.create({ name, code });
+  const shopId = Shops.create({ name, code, join_code: newJoinCode() });
   assignShopToOrg(shopId, name); // WP-ORG v1: every shop lands in an org unit
 
   // Create invite for owner as manager
@@ -126,6 +138,22 @@ adminRouter.post('/shops', requireAuth, requireRole(), async (req, res) => {
     ? `Shop+created.+Email+printed+to+server+console+(SMTP+not+configured).`
     : `Shop+created+and+invite+sent+to+${encodeURIComponent(ownerEmail)}.`;
   res.redirect(`/admin/shops?message=${msg}&inviteUrl=${encodeURIComponent(inviteUrl)}`);
+});
+
+// ===== WP-SIGNUP: toggle a shop's demo flag (demo shops skip agreement enforcement) =====
+adminRouter.post('/shops/:id/demo', requireAuth, requireRole(), (req, res) => {
+  if (req.session.role !== 'hab_admin') return res.status(403).send('Forbidden.');
+  const shop = Shops.byId(parseInt(req.params.id, 10));
+  if (!shop) return res.redirect('/admin/shops?error=Shop+not+found');
+  Shops.setDemo(shop.id, !shop.is_demo);
+  res.redirect(`/admin/shops?message=${encodeURIComponent(`${shop.name} is now ${shop.is_demo ? 'a client shop (agreement enforced)' : 'a demo shop (agreement exempt)'}`)}`);
+});
+
+// ===== WP-SIGNUP: all printed-book orders across every shop =====
+adminRouter.get('/orders', requireAuth, requireRole(), (req, res) => {
+  if (req.session.role !== 'hab_admin') return res.status(403).render('403', { user: req.session });
+  const orders = BookOrders.all().map(o => ({ ...o, items: BookOrders.itemsFor(o.id) }));
+  res.render('admin-orders', { user: req.session, orders });
 });
 
 // ===== Manager: users at their shop =====

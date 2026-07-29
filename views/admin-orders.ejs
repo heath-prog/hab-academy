@@ -1,0 +1,34 @@
+<%- include('partials/header', { title: 'Book Orders' }) %>
+
+<div class="eyebrow">SUPER ADMIN</div>
+<h1>Printed Book Orders</h1>
+<p class="lead">Every order across every shop. Orders are recorded with no payment taken; invoice each one manually until Stripe lands.</p>
+
+<% if (!orders.length) { %>
+  <p class="muted">No orders yet.</p>
+<% } else { %>
+  <table class="tbl">
+    <thead><tr><th>#</th><th>Shop</th><th>Placed By</th><th>Placed</th><th>Items</th><th>Ship To</th><th>Total</th><th>Status</th></tr></thead>
+    <tbody>
+      <% orders.forEach(o => { %>
+        <tr>
+          <td><strong><%= o.id %></strong></td>
+          <td><strong><%= o.shop_name %></strong></td>
+          <td><%= o.user_name || o.user_email || 'unknown' %></td>
+          <td><span class="muted"><%= o.created_at.replace('T', ' ').slice(0, 16) %></span></td>
+          <td>
+            <% o.items.forEach(i => { %>
+              <div><%= i.qty %> × <%= i.book_title %></div>
+            <% }) %>
+          </td>
+          <td style="font-size: 12px; white-space: pre-line;"><%= o.ship_name %>
+<%= o.ship_address %></td>
+          <td><strong>$<%= (o.total_cents / 100).toFixed(2) %></strong></td>
+          <td><span class="role-pill" style="background: var(--cream-deep); color: var(--navy);"><%= o.status.replace('_', ' ').toUpperCase() %></span></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+<% } %>
+
+<%- include('partials/footer') %>

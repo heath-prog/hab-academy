@@ -22,13 +22,25 @@
   <p><%= b.blurb %></p>
   <p>
     <a class="btn <%= b.coachOnly ? 'ghost' : '' %>" href="/library/<%= b.slug %>" target="_blank" rel="noopener">Open the <%= b.title.replace('HAB ', '') %></a>
-    <% if (b.pdf) { %><a class="btn ghost" href="/library/<%= b.slug %>/pdf" target="_blank" rel="noopener">PDF edition</a><% } %>
+    <% if (b.pdf && canDownloadPdf) { %><a class="btn ghost" href="/library/<%= b.slug %>/pdf" target="_blank" rel="noopener">PDF edition</a><% } %>
+    <span class="audio-chip" title="Audio edition in production">🎧 Audio edition coming soon</span>
   </p>
 </div>
 <% } }) %>
 
+<% if (['owner','coach'].includes(user.role)) { %>
+<div class="alert info" style="margin-top: 26px;">
+  Want the books on paper for your counter and your team?
+  <a href="/orders"><strong>Order printed copies</strong></a>, $65 per book. HAB will invoice you.
+</div>
+<% } %>
+
+<% if (!canDownloadPdf) { %>
+<p class="stat-sub" style="margin-top:14px; opacity:.7;">The books read in the browser while your agreement is active. Printable files stay with HAB; printed copies are available to order.</p>
+<% } %>
+
 <% if (!coach) { %>
-<p class="stat-sub" style="margin-top:24px; opacity:.7;">Coaches, owners and HAB admins also see the Coach's Book here.</p>
+<p class="stat-sub" style="margin-top:8px; opacity:.7;">Coaches, owners and HAB admins also see the Coach's Book here.</p>
 <% } %>
 
 <%- include('partials/footer') %>

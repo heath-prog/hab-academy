@@ -1,0 +1,79 @@
+<%- include('partials/header', { title: 'Order Printed Books' }) %>
+
+<div class="eyebrow">THE BOOKS, ON PAPER</div>
+<h1>Order Printed Books</h1>
+<p class="lead">Professionally printed copies of the HAB books for <strong><%= shop.name %></strong>. <%= price %> per copy. No payment is taken online: your order is recorded and HAB will invoice you.</p>
+
+<% if (message) { %><div class="alert success"><%= message %></div><% } %>
+<% if (error) { %><div class="alert error"><%= error %></div><% } %>
+
+<div class="card">
+  <h2 style="margin-top: 0;">New Order</h2>
+  <form method="post" action="/orders" class="stack">
+    <% if (user.role === 'hab_admin') { %><input type="hidden" name="shopId" value="<%= shop.id %>"><% } %>
+    <table class="tbl" style="margin-bottom: 0;">
+      <thead><tr><th>Book</th><th>Edition</th><th style="width: 120px;">Price</th><th style="width: 120px;">Copies</th></tr></thead>
+      <tbody>
+        <% books.forEach(b => { %>
+          <tr>
+            <td><strong><%= b.title %></strong><div class="muted"><%= b.subtitle %></div></td>
+            <td><%= b.version %></td>
+            <td><%= price %></td>
+            <td><input type="number" name="qty_<%= b.slug %>" min="0" max="500" value="0" style="width: 90px; padding: 8px 10px; border: 1px solid var(--cream-deep); border-radius: 4px; font-size: 14px;"></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+    <div class="row">
+      <div>
+        <label for="o-name">Ship To (Name / Attention)</label>
+        <input type="text" name="shipName" id="o-name" required placeholder="e.g., <%= user.name || 'Front desk' %>, <%= shop.name %>">
+      </div>
+    </div>
+    <div class="row">
+      <div>
+        <label for="o-ship">Shipping Address</label>
+        <textarea name="shipAddress" id="o-ship" required rows="3" placeholder="Street, city, state, ZIP" style="width: 100%; padding: 10px 12px; border: 1px solid var(--cream-deep); border-radius: 4px; font-size: 14px; font-family: inherit;"></textarea>
+      </div>
+      <div>
+        <label for="o-bill">Billing Address <span style="font-weight: 400; opacity: 0.7;">(blank = same as shipping)</span></label>
+        <textarea name="billAddress" id="o-bill" rows="3" placeholder="Where HAB should send the invoice" style="width: 100%; padding: 10px 12px; border: 1px solid var(--cream-deep); border-radius: 4px; font-size: 14px; font-family: inherit;"></textarea>
+      </div>
+    </div>
+    <div class="alert info" style="margin: 0;">No card needed. HAB will invoice you for the total after the order is placed.</div>
+    <div><button type="submit" class="primary">Place Order</button></div>
+  </form>
+</div>
+
+<h2>Order History</h2>
+<% if (!orders.length) { %>
+  <p class="muted">No orders yet for <%= shop.name %>.</p>
+<% } else { %>
+  <table class="tbl">
+    <thead><tr><th>#</th><th>Placed</th><th>Items</th><th>Total</th><th>Status</th></tr></thead>
+    <tbody>
+      <% orders.forEach(o => { %>
+        <tr>
+          <td><strong><%= o.id %></strong></td>
+          <td><span class="muted"><%= o.created_at.replace('T', ' ').slice(0, 16) %></span></td>
+          <td>
+            <% o.items.forEach(i => { %>
+              <div><%= i.qty %> × <%= i.book_title %></div>
+            <% }) %>
+          </td>
+          <td><strong><%= o.total %></strong></td>
+          <td>
+            <% if (o.status === 'invoice_pending') { %>
+              <span class="role-pill" style="background: var(--cream-deep); color: var(--navy);">INVOICE PENDING</span>
+              <div class="muted">HAB will invoice you</div>
+            <% } else { %>
+              <span class="role-pill"><%= o.status.toUpperCase() %></span>
+            <% } %>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+<% } %>
+
+<%- include('partials/footer') %>

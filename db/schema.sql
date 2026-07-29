@@ -15,6 +15,8 @@ CREATE TABLE IF NOT EXISTS shops (
   id          INTEGER PRIMARY KEY AUTOINCREMENT,
   name        TEXT NOT NULL,
   code        TEXT UNIQUE NOT NULL,
+  join_code   TEXT UNIQUE,          -- WP-SIGNUP: team self-serve join code (shown to owner + hab_admin)
+  is_demo     INTEGER NOT NULL DEFAULT 0, -- WP-SIGNUP: demo shops are exempt from agreement enforcement
   org_unit_id INTEGER REFERENCES org_units(id) ON DELETE SET NULL,
   created_at  TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
   active      INTEGER NOT NULL DEFAULT 1
@@ -27,6 +29,7 @@ CREATE TABLE IF NOT EXISTS users (
   role          TEXT NOT NULL CHECK(role IN ('hab_admin','owner','coach','advisor')),
   shop_id       INTEGER REFERENCES shops(id) ON DELETE SET NULL,
   name          TEXT,
+  title         TEXT, -- optional job title (e.g. Technician); does not affect access tier
   created_at    TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
   last_login    TEXT,
   active        INTEGER NOT NULL DEFAULT 1
@@ -110,3 +113,70 @@ CREATE TABLE IF NOT EXISTS password_resets (
 );
 CREATE INDEX IF NOT EXISTS idx_resets_token ON password_resets(token_hash);
 CREATE INDEX IF NOT EXISTS idx_resets_user  ON password_resets(user_id);
+
+-- ===== WP-SIGNUP: tiered agreements, self-serve onboarding, book orders =====
+
+-- Click-wrap agreement record. One active row per shop; a full HTML snapshot
+-- of the signed document is stored so the signed record never drifts when the
+-- template changes. Every snapshot carries a DRAFT FOR ATTORNEY REVIEW footer.
+CREATE TABLE IF NOT EXISTS agreements (
+  id             INTEGER PRIMARY KEY AUTOINCREMENT,
+  shop_id        INTEGER NOT NULL REFERENCES shops(id) ON DELETE CASCADE,
+  owner_user_id  INTEGER REFERENCES users(id) ON DELETE SET NULL,
+  tier           TEXT NOT NULL CHECK(tier IN ('consulting','portfolio')),
+  term_months    INTEGER NOT NULL CHECK(term_months IN (6,12,24,36)),
+  start_date     TEXT NOT NULL,  -- YYYY-MM-DD
+  end_date       TEXT NOT NULL,  -- YYYY-MM-DD
+  gp_fee_pct     REAL,           -- consulting: 5 (% of monthly gross profit dollars)
+  mgmt_fee_pct   REAL,           -- portfolio: 2.5 (% of monthly gross profit)
+  equity_pct     REAL,           -- portfolio: 10 (SAFE equity stake)
+  signed_name    TEXT NOT NULL,  -- typed full-name signature
+  signed_at      TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  ip             TEXT,
+  agreement_html TEXT NOT NULL,  -- immutable snapshot of the signed document
+  safe_html      TEXT,           -- portfolio tier: generated SAFE instrument
+  safe_status    TEXT,           -- portfolio tier: 'pending_countersignature' until Heath countersigns
+  status         TEXT NOT NULL DEFAULT 'active' CHECK(status IN ('active','expired','terminated')),
+  created_at     TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+CREATE INDEX IF NOT EXISTS idx_agreements_shop ON agreements(shop_id);
+
+-- Coach/owner self-signups that need owner approval before an account exists.
+CREATE TABLE IF NOT EXISTS pending_members (
+  id            INTEGER PRIMARY KEY AUTOINCREMENT,
+  shop_id       INTEGER NOT NULL REFERENCES shops(id) ON DELETE CASCADE,
+  name          TEXT NOT NULL,
+  email         TEXT NOT NULL COLLATE NOCASE,
+  password_hash TEXT NOT NULL,
+  role          TEXT NOT NULL CHECK(role IN ('coach','owner')),
+  status        TEXT NOT NULL DEFAULT 'pending' CHECK(status IN ('pending','approved','denied')),
+  decided_by    INTEGER REFERENCES users(id) ON DELETE SET NULL,
+  decided_at    TEXT,
+  created_at    TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+CREATE INDEX IF NOT EXISTS idx_pending_members_shop ON pending_members(shop_id);
+
+-- Printed book orders. No card processing yet: orders are recorded with status
+-- 'invoice_pending' and HAB invoices manually. Stripe integration comes later.
+CREATE TABLE IF NOT EXISTS book_orders (
+  id            INTEGER PRIMARY KEY AUTOINCREMENT,
+  shop_id       INTEGER NOT NULL REFERENCES shops(id) ON DELETE CASCADE,
+  user_id       INTEGER REFERENCES users(id) ON DELETE SET NULL,
+  status        TEXT NOT NULL DEFAULT 'invoice_pending' CHECK(status IN ('invoice_pending','invoiced','shipped','cancelled')),
+  ship_name     TEXT NOT NULL,
+  ship_address  TEXT NOT NULL,
+  bill_address  TEXT NOT NULL,
+  total_cents   INTEGER NOT NULL,
+  created_at    TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+CREATE INDEX IF NOT EXISTS idx_book_orders_shop ON book_orders(shop_id);
+
+CREATE TABLE IF NOT EXISTS book_order_items (
+  id               INTEGER PRIMARY KEY AUTOINCREMENT,
+  order_id         INTEGER NOT NULL REFERENCES book_orders(id) ON DELETE CASCADE,
+  book_slug        TEXT NOT NULL,
+  book_title       TEXT NOT NULL,
+  qty              INTEGER NOT NULL CHECK(qty > 0),
+  unit_price_cents INTEGER NOT NULL
+);
+CREATE INDEX IF NOT EXISTS idx_book_order_items_order ON book_order_items(order_id);

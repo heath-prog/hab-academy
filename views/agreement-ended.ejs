@@ -1,0 +1,22 @@
+<%- include('partials/header', { title: 'Agreement Ended' }) %>
+
+<div class="gate-page">
+  <p class="big">Paused</p>
+  <h1>Your shop's HAB agreement has ended.</h1>
+  <p>
+    Academy access for <strong><%= user.shopName || 'your shop' %></strong> is paused: the library,
+    curriculum, audio, and book ordering are all switched off until a new agreement is in place.
+  </p>
+  <p>
+    <% if (user.role === 'owner') { %>
+      You're the owner, so this one's yours to fix. Contact HAB to renew and your whole team is back in minutes.
+    <% } else { %>
+      Talk to your shop owner. Once they renew with HAB, everyone is back in minutes.
+    <% } %>
+  </p>
+  <p style="margin-top: 24px;">
+    <a class="btn" href="mailto:heath@healthyautobusiness.com?subject=Renew%20our%20HAB%20agreement">Contact HAB to Renew</a>
+  </p>
+</div>
+
+<%- include('partials/footer') %>

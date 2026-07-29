@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign up · HAB Academy</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body class="auth-wrap">
+<div class="auth-card">
+  <div class="brand-stack">
+    <div class="shield">HAB</div>
+    <div class="name">Healthy Auto Business Academy</div>
+    <div class="sub">HAB ACADEMY · SIGN UP</div>
+  </div>
+
+  <% if (message) { %><div class="alert success"><%= message %></div><% } %>
+
+  <p style="text-align: center; font-size: 14px; color: var(--ink-soft); margin-top: 0;">Two ways in. Pick yours.</p>
+
+  <a class="choose-card" href="/signup/owner">
+    <div class="choose-title">I own a shop</div>
+    <div class="choose-sub">Set up your shop, pick your HAB package and term, sign your agreement, and get your team's join code.</div>
+  </a>
+
+  <a class="choose-card" href="/join">
+    <div class="choose-title">I'm joining my shop's team</div>
+    <div class="choose-sub">Your shop is already on HAB Academy. Enter the join code from your owner and create your account.</div>
+  </a>
+
+  <div style="margin-top: 16px; font-size: 13px; text-align: center;">
+    Already have an account? <a href="/login">Sign in</a>
+  </div>
+
+  <div class="tagline">Do what's Right · Do what's Fair · Do Your Best.</div>
+</div>
+</body>
+</html>

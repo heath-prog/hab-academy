@@ -25,9 +25,13 @@
     <% if (['coach','owner','hab_admin'].includes(user.role)) { %>
       <a href="/team">Team</a>
     <% } %>
+    <% if (['coach','owner'].includes(user.role)) { %>
+      <a href="/orders">Order Books</a>
+    <% } %>
     <% if (user.role === 'hab_admin') { %>
       <a href="/admin">Portfolio</a>
       <a href="/admin/shops">Shops</a>
+      <a href="/admin/orders">Orders</a>
     <% } %>
     <% if (['coach','owner','hab_admin'].includes(user.role)) { %>
       <a href="/admin/users<%= user.role === 'hab_admin' && user.shopId ? '?shopId=' + user.shopId : '' %>">Users</a>

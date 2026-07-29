@@ -1,9 +1,10 @@
 // /admin/* — Heath (hab_admin) manages shops; shop owners (manager) manage users at their shop.
 import express from 'express';
 import { Users, Shops, Invites } from '../lib/db.js';
-import { requireAuth, requireRole } from '../lib/auth.js';
+import { requireAuth, requireRole, hashPassword } from '../lib/auth.js';
 import { newInviteToken, newShopCode, expiresIn } from '../lib/tokens.js';
-import { sendInviteEmail } from '../lib/mailer.js';
+import { sendInviteEmail, mailerConfigured } from '../lib/mailer.js';
+import { pendingResetLinks } from '../lib/reset-links.js';
 
 export const adminRouter = express.Router();
 
@@ -19,7 +20,44 @@ adminRouter.get('/shops', requireAuth, requireRole(), (req, res) => {
     message: req.query.message || null,
     error: req.query.error || null,
     invitePreview: req.query.inviteUrl || null,
+    pendingResets: pendingResetLinks(),
+    mailerOn: mailerConfigured(),
   });
+});
+
+// ===== Super-admin: create a user directly (with a temp password) =====
+// This is how real clients/advisors get onboarded before invites/email exist:
+// Heath fills the form, then hands the temp password to the user.
+adminRouter.post('/users/create', requireAuth, requireRole(), async (req, res) => {
+  if (req.session.role !== 'hab_admin') return res.status(403).send('Forbidden.');
+  const name     = String(req.body.name || '').trim();
+  const email    = String(req.body.email || '').trim().toLowerCase();
+  const role     = String(req.body.role || '').trim();
+  const shopId   = parseInt(req.body.shopId, 10) || null;
+  const password = String(req.body.password || '');
+
+  if (!name || !email || !['hab_admin', 'owner', 'coach', 'advisor'].includes(role)) {
+    return res.redirect('/admin/shops?error=Name%2C+email+and+a+valid+role+are+required');
+  }
+  if (password.length < 8) {
+    return res.redirect('/admin/shops?error=Temp+password+must+be+at+least+8+characters');
+  }
+  if (role !== 'hab_admin' && !shopId) {
+    return res.redirect('/admin/shops?error=Pick+a+shop+for+owner%2Fcoach%2Fadvisor+users');
+  }
+  if (Users.byEmail(email)) {
+    return res.redirect('/admin/shops?error=A+user+with+that+email+already+exists');
+  }
+
+  const hash = await hashPassword(password);
+  Users.create({
+    email,
+    password_hash: hash,
+    role,
+    shop_id: role === 'hab_admin' ? null : shopId,
+    name,
+  });
+  res.redirect(`/admin/shops?message=User+${encodeURIComponent(email)}+created.+Share+the+temp+password+with+them+and+have+them+change+it+via+Forgot+password.`);
 });
 
 adminRouter.post('/shops', requireAuth, requireRole(), async (req, res) => {

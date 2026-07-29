@@ -10,6 +10,28 @@
   <div class="alert info">Invite URL (for testing): <span class="code-block"><%= invitePreview %></span></div>
 <% } %>
 
+<% if (typeof pendingResets !== 'undefined' && pendingResets.length) { %>
+  <div class="card" style="border-left: 4px solid #C8A75C;">
+    <h2 style="margin-top: 0;">Pending Password Reset Links</h2>
+    <p class="muted" style="margin-top: -6px;">
+      Email isn't configured, so reset links aren't sent automatically. Copy the link and send it to the user yourself.
+      Each link works once and expires 1 hour after it was requested. (Links clear on server restart.)
+    </p>
+    <table class="tbl">
+      <thead><tr><th>User</th><th>Reset Link</th><th>Expires</th></tr></thead>
+      <tbody>
+        <% pendingResets.forEach(r => { %>
+          <tr>
+            <td><strong><%= r.email %></strong></td>
+            <td><span class="code-block" style="word-break: break-all;"><%= r.url %></span></td>
+            <td><span class="muted"><%= r.expiresAt.replace('T', ' ').slice(0, 16) %> UTC</span></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+<% } %>
+
 <div class="card">
   <h2 style="margin-top: 0;">Create a Shop</h2>
   <form method="post" action="/admin/shops" class="stack">
@@ -24,6 +46,51 @@
       </div>
     </div>
     <div><button type="submit" class="primary">Create Shop &amp; Invite Owner</button></div>
+  </form>
+</div>
+
+<div class="card">
+  <h2 style="margin-top: 0;">Add a User Directly</h2>
+  <p class="muted" style="margin-top: -6px;">
+    Creates the account immediately with a temporary password — no email needed.
+    Give the user their email + temp password; they can change it later via <a href="/forgot-password">Forgot password</a>.
+  </p>
+  <form method="post" action="/admin/users/create" class="stack">
+    <div class="row">
+      <div>
+        <label for="nu-name">Name</label>
+        <input type="text" name="name" id="nu-name" required placeholder="e.g., Jamie Rivera">
+      </div>
+      <div>
+        <label for="nu-email">Email</label>
+        <input type="email" name="email" id="nu-email" required placeholder="advisor@theirshop.com">
+      </div>
+    </div>
+    <div class="row">
+      <div>
+        <label for="nu-role">Role</label>
+        <select name="role" id="nu-role" required>
+          <option value="advisor">Advisor</option>
+          <option value="coach">Coach</option>
+          <option value="owner">Owner</option>
+          <option value="hab_admin">HAB Admin</option>
+        </select>
+      </div>
+      <div>
+        <label for="nu-shop">Shop <span style="font-weight: 400; opacity: 0.7;">(not needed for HAB Admin)</span></label>
+        <select name="shopId" id="nu-shop">
+          <option value="">— select shop —</option>
+          <% shops.forEach(s => { %>
+            <option value="<%= s.id %>"><%= s.name %></option>
+          <% }) %>
+        </select>
+      </div>
+      <div>
+        <label for="nu-pass">Temp Password <span style="font-weight: 400; opacity: 0.7;">(min 8 chars)</span></label>
+        <input type="text" name="password" id="nu-pass" required minlength="8" placeholder="e.g., Welcome2026!" autocomplete="off">
+      </div>
+    </div>
+    <div><button type="submit" class="primary">Create User</button></div>
   </form>
 </div>
 

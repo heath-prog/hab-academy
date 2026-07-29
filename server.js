@@ -8,7 +8,7 @@ import path from 'node:path';
 import fs from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import './lib/db.js'; // initializes DB & schema
-import { Users } from './lib/db.js';
+import { ensureAdmin } from './lib/seed-admin.js';
 import { authRouter } from './routes/auth.js';
 import { adminRouter } from './routes/admin.js';
 import { contentRouter } from './routes/content.js';
@@ -20,15 +20,10 @@ import { apiRouter } from './routes/api.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-// Seed super_admin on boot
-{
-  const ADMIN_EMAIL = (process.env.ADMIN_EMAIL || 'heath@revenuenowinc.com').toLowerCase();
-  const ADMIN_NAME  = process.env.ADMIN_NAME  || 'Heath Blake';
-  if (!Users.byEmail(ADMIN_EMAIL)) {
-    Users.create({ email: ADMIN_EMAIL, password_hash: null, role: 'hab_admin', shop_id: null, name: ADMIN_NAME });
-    console.log(`[seed] hab_admin created: ${ADMIN_EMAIL}. Visit /bootstrap to set the password.`);
-  }
-}
+// Auto-seed hab_admin on boot (idempotent; see lib/seed-admin.js).
+// Fresh DB -> admin created with ADMIN_INITIAL_PASSWORD (default HabAdmin2026!).
+// Never seeds demo users — that stays in `npm run seed:demo`.
+await ensureAdmin();
 
 const app = express();
 app.set('trust proxy', 1); // Replit sits behind an HTTPS proxy
@@ -121,8 +116,9 @@ app.use((err, req, res, _next) => {
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`\n  HAB Academy listening on http://localhost:${PORT}\n`);
-  if (!process.env.SMTP_USER) {
-    console.log('  ⚠  SMTP not configured — invite emails will print to console only.');
+  if (!(process.env.GMAIL_USER || process.env.SMTP_USER)) {
+    console.log('  ⚠  Email not configured — invite/reset emails print to console only');
+    console.log('     (set GMAIL_USER and GMAIL_APP_PASSWORD to enable sending).');
   }
-  console.log('  Bootstrap hab_admin password at /bootstrap (first run only).\n');
+  console.log('  Forgot password: /forgot-password · First-run admin claim: /bootstrap\n');
 });

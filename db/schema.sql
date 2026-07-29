@@ -86,3 +86,16 @@ CREATE INDEX IF NOT EXISTS idx_points_user     ON points_ledger(user_id);
 CREATE INDEX IF NOT EXISTS idx_points_shop     ON points_ledger(shop_id);
 CREATE INDEX IF NOT EXISTS idx_checkins_user   ON checkins(user_id);
 CREATE INDEX IF NOT EXISTS idx_mastery_user    ON mastery_awards(user_id);
+
+-- Single-use password reset tokens. Only the sha256 hash of the token is
+-- stored; the raw token lives in the emailed/logged link. 1-hour expiry.
+CREATE TABLE IF NOT EXISTS password_resets (
+  id         INTEGER PRIMARY KEY AUTOINCREMENT,
+  user_id    INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  token_hash TEXT UNIQUE NOT NULL,
+  expires_at TEXT NOT NULL,
+  used_at    TEXT,
+  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+CREATE INDEX IF NOT EXISTS idx_resets_token ON password_resets(token_hash);
+CREATE INDEX IF NOT EXISTS idx_resets_user  ON password_resets(user_id);

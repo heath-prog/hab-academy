@@ -124,7 +124,14 @@ authRouter.post('/invite/:token', async (req, res) => {
 // Only meaningful while the admin account has no password. Once the admin
 // has a password (the normal case — boot auto-seeds one), send people to
 // /forgot-password instead.
+// PRODUCTION RULE: /bootstrap must not exist in production once the admin is
+// set up. It 404s unless the admin account is genuinely unclaimed.
+function bootstrapDisabled() {
+  const u = Users.byEmail(ADMIN_EMAIL);
+  return process.env.NODE_ENV === 'production' && u && u.password_hash;
+}
 authRouter.get('/bootstrap', (req, res) => {
+  if (bootstrapDisabled()) return res.status(404).render('404', {}, (err, html) => err ? res.type('text').send('Not found') : res.send(html));
   const u = Users.byEmail(ADMIN_EMAIL);
   if (!u) {
     return res.redirect('/forgot-password?error=No+admin+account+found+yet+—+restart+the+server+to+seed+it.');
@@ -143,6 +150,7 @@ authRouter.get('/bootstrap', (req, res) => {
 });
 
 authRouter.post('/bootstrap', async (req, res) => {
+  if (bootstrapDisabled()) return res.status(404).type('text').send('Not found');
   const u = Users.byEmail(ADMIN_EMAIL);
   if (!u) return res.redirect('/forgot-password?error=No+admin+account+found+yet+—+restart+the+server+to+seed+it.');
   if (u.password_hash) {

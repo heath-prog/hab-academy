@@ -12,7 +12,7 @@ export const authRouter = express.Router();
 
 // ===== LOGIN =====
 authRouter.get('/login', (req, res) => {
-  if (req.session?.userId) return res.redirect('/dashboard');
+  if (req.session?.userId) return res.redirect(req.session.role === 'hab_admin' ? '/admin' : '/dashboard');
   res.render('login', {
     error: req.query.error || null,
     message: req.query.message || null,
@@ -51,7 +51,9 @@ authRouter.post('/login', async (req, res) => {
         console.error('[login] session save error:', err);
         return res.redirect('/login?error=Session+error.+Please+try+again.');
       }
-      res.redirect(typeof next === 'string' && next.startsWith('/') ? next : '/dashboard');
+      // hab_admin lands on the oversight portfolio; everyone else keeps /dashboard.
+      const fallback = u.role === 'hab_admin' ? '/admin' : '/dashboard';
+      res.redirect(typeof next === 'string' && next.startsWith('/') && next !== '/dashboard' ? next : fallback);
     });
   });
 });

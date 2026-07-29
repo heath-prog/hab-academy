@@ -1,0 +1,71 @@
+<%- include('partials/header', { title: org.name }) %>
+
+<div class="crumb admin-crumb"><a href="/admin">Portfolio</a> &rsaquo; <span><%= org.name %></span></div>
+
+<div class="eyebrow">ORGANIZATIONAL UNIT</div>
+<h1><%= org.name %></h1>
+<p class="lead">Rollup across <%= org.shopCount %> shop<%= org.shopCount === 1 ? '' : 's' %> and <%= org.userCount %> user<%= org.userCount === 1 ? '' : 's' %>. Organization completion is the average of its shops' completion.</p>
+
+<div class="stat-row">
+  <div class="stat-card">
+    <div class="stat-label">Org Completion</div>
+    <div class="stat-big"><%= org.pctComplete %><span class="stat-unit">%</span></div>
+    <div class="pbar"><div class="pbar-fill" style="width:<%= org.pctComplete %>%"></div></div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">Shops</div>
+    <div class="stat-big"><%= org.shopCount %></div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">Users</div>
+    <div class="stat-big"><%= org.userCount %></div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">Take-Five Today</div>
+    <div class="stat-big"><%= org.checkedInToday %><span class="stat-unit">/<%= org.userCount %></span></div>
+    <div class="stat-sub"><% if (org.bestStreak > 0) { %>Best streak: <%= org.bestStreak %> day<%= org.bestStreak === 1 ? '' : 's' %><% } else { %>No active streaks yet<% } %></div>
+  </div>
+</div>
+
+<div class="stub-tabs">
+  <span class="stub-tab is-active">Training</span>
+  <span class="stub-tab" title="Coming Soon">Reports: Customer <span class="soon">Coming Soon</span></span>
+  <span class="stub-tab" title="Coming Soon">Reports: Employee <span class="soon">Coming Soon</span></span>
+  <span class="stub-tab" title="Coming Soon">Reports: Financial (AP/AR, End of Day) <span class="soon">Coming Soon</span></span>
+  <span class="stub-tab" title="Coming Soon">Jobs &amp; Inspections <span class="soon">Coming Soon</span></span>
+  <span class="stub-tab" title="Coming Soon">Acquisition Readiness <span class="soon">Coming Soon</span></span>
+</div>
+
+<h2 class="lib-h2">Shops</h2>
+<% if (!org.shops.length) { %>
+  <p class="muted">No shops in this organization yet. Create one under <a href="/admin/shops">Shops</a>.</p>
+<% } else { %>
+  <table class="board">
+    <thead>
+      <tr>
+        <th>Shop</th><th class="num">Users</th><th style="width: 40%;">Progress</th>
+        <th class="num">Take-Five Today</th><th class="num">Points</th><th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% org.shops.forEach(s => { %>
+        <tr>
+          <td><a href="/admin/org/<%= org.id %>/shop/<%= s.id %>"><strong><%= s.name %></strong></a> <span class="muted"><%= s.code %></span></td>
+          <td class="num"><%= s.userCount %></td>
+          <td>
+            <div class="pbar"><div class="pbar-fill" style="width:<%= s.pctComplete %>%"></div></div>
+            <span class="muted"><strong><%= s.pctComplete %>%</strong> complete</span>
+          </td>
+          <td class="num"><%= s.checkedInToday %>/<%= s.userCount %></td>
+          <td class="num gold-text"><%= s.totalPoints %></td>
+          <td class="num">
+            <a class="btn small ghost" href="/admin/org/<%= org.id %>/shop/<%= s.id %>">People</a>
+            <a class="btn small ghost" href="/admin/users?shopId=<%= s.id %>">Manage</a>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+<% } %>
+
+<%- include('partials/footer') %>

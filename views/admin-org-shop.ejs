@@ -1,0 +1,64 @@
+<%- include('partials/header', { title: shop.name }) %>
+
+<div class="crumb admin-crumb"><a href="/admin">Portfolio</a> &rsaquo; <a href="/admin/org/<%= org.id %>"><%= org.name %></a> &rsaquo; <span><%= shop.name %></span></div>
+
+<div class="eyebrow"><%= org.name.toUpperCase() %></div>
+<h1><%= shop.name %></h1>
+<p class="lead">Shop completion is the average of every active user's completion. The contribution column shows the percentage points each person adds to the shop average.</p>
+
+<div class="stat-row">
+  <div class="stat-card">
+    <div class="stat-label">Shop Completion</div>
+    <div class="stat-big"><%= shop.pctComplete %><span class="stat-unit">%</span></div>
+    <div class="pbar"><div class="pbar-fill" style="width:<%= shop.pctComplete %>%"></div></div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">Users</div>
+    <div class="stat-big"><%= shop.userCount %></div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">Take-Five Today</div>
+    <div class="stat-big"><%= shop.checkedInToday %><span class="stat-unit">/<%= shop.userCount %></span></div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">Shop Points</div>
+    <div class="stat-big gold"><%= shop.totalPoints %></div>
+  </div>
+</div>
+
+<div class="cta-row">
+  <a class="btn small ghost" href="/team?shopId=<%= shop.id %>">Team Matrix</a>
+  <a class="btn small ghost" href="/admin/users?shopId=<%= shop.id %>">Manage Users</a>
+</div>
+
+<h2 class="lib-h2">People</h2>
+<% if (!shop.members.length) { %>
+  <p class="muted">Nobody at this shop yet. Invite people under <a href="/admin/users?shopId=<%= shop.id %>">Users</a>.</p>
+<% } else { %>
+  <table class="board">
+    <thead>
+      <tr>
+        <th>Name</th><th>Role</th><th style="width: 30%;">Completion</th>
+        <th class="num">Contribution</th><th class="num">Points</th><th class="num">Streak</th><th>Mastery</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% shop.members.forEach(m => { %>
+        <tr>
+          <td><strong><%= m.name || m.email %></strong><br><span class="muted"><%= m.email %></span></td>
+          <td><span class="role-pill <%= m.role %>"><%= m.role %></span></td>
+          <td>
+            <div class="pbar"><div class="pbar-fill" style="width:<%= m.pctComplete %>%"></div></div>
+            <span class="muted"><strong><%= m.pctComplete %>%</strong> (<%= m.sectionsCompleted %>/<%= m.sectionsTotal %> sections)</span>
+          </td>
+          <td class="num">+<%= m.contribution %> pts of <%= shop.pctComplete %>%</td>
+          <td class="num gold-text"><%= m.points %></td>
+          <td class="num"><%= m.streak %><%= m.checkedInToday ? ' ✓' : '' %></td>
+          <td><span class="mastery-badge lvl-<%= m.masteryLevel %>"><%= m.masteryName %></span></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+<% } %>
+
+<%- include('partials/footer') %>

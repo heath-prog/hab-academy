@@ -2,10 +2,20 @@
 -- Roles: hab_admin (Heath) > owner / coach (shop leadership) > advisor.
 -- Legacy roles super_admin/manager are migrated in lib/db.js on boot.
 
+-- Organizational Units (MSO layer): a brand/enterprise that owns one or more shops.
+-- Seeded idempotently on boot in lib/db.js (name-heuristic linking of legacy shops).
+CREATE TABLE IF NOT EXISTS org_units (
+  id          INTEGER PRIMARY KEY AUTOINCREMENT,
+  name        TEXT NOT NULL,
+  slug        TEXT UNIQUE NOT NULL,
+  created_at  TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
 CREATE TABLE IF NOT EXISTS shops (
   id          INTEGER PRIMARY KEY AUTOINCREMENT,
   name        TEXT NOT NULL,
   code        TEXT UNIQUE NOT NULL,
+  org_unit_id INTEGER REFERENCES org_units(id) ON DELETE SET NULL,
   created_at  TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
   active      INTEGER NOT NULL DEFAULT 1
 );
@@ -81,6 +91,7 @@ CREATE TABLE IF NOT EXISTS mastery_awards (
 CREATE INDEX IF NOT EXISTS idx_invites_token   ON invites(token);
 CREATE INDEX IF NOT EXISTS idx_users_email     ON users(email);
 CREATE INDEX IF NOT EXISTS idx_users_shop      ON users(shop_id);
+CREATE INDEX IF NOT EXISTS idx_shops_org       ON shops(org_unit_id);
 CREATE INDEX IF NOT EXISTS idx_progress_user   ON section_progress(user_id);
 CREATE INDEX IF NOT EXISTS idx_points_user     ON points_ledger(user_id);
 CREATE INDEX IF NOT EXISTS idx_points_shop     ON points_ledger(shop_id);

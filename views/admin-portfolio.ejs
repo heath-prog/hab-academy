@@ -1,0 +1,35 @@
+<%- include('partials/header', { title: 'Portfolio' }) %>
+
+<div class="eyebrow">HAB ADMIN · OVERSIGHT</div>
+<h1>Portfolio</h1>
+<p class="lead">Every organizational unit you serve, rolled up. Click an organization to drill into its shops, then into each person's training.</p>
+
+<div class="cta-row">
+  <a class="btn small" href="/admin/shops">Shops Management</a>
+  <a class="btn small ghost" href="/admin/shops#add-user">Add a User Directly</a>
+  <a class="btn small ghost" href="/admin/shops#pending-resets">Pending Reset Links<% if (pendingResetCount) { %> (<%= pendingResetCount %>)<% } %></a>
+</div>
+
+<% if (!orgs.length) { %>
+  <p class="muted">No organizations yet. Create a shop under <a href="/admin/shops">Shops</a> and it will be placed in an organizational unit automatically.</p>
+<% } else { %>
+  <div class="org-grid">
+    <% orgs.forEach(o => { %>
+      <a class="org-card" href="/admin/org/<%= o.id %>">
+        <div class="org-name"><%= o.name %></div>
+        <div class="org-meta">
+          <%= o.shopCount %> shop<%= o.shopCount === 1 ? '' : 's' %> ·
+          <%= o.userCount %> user<%= o.userCount === 1 ? '' : 's' %>
+        </div>
+        <div class="pbar big"><div class="pbar-fill" style="width:<%= o.pctComplete %>%"></div></div>
+        <div class="org-pct"><strong><%= o.pctComplete %>%</strong> <span class="muted">curriculum complete</span></div>
+        <div class="org-takefive">
+          Take-Five today: <strong><%= o.checkedInToday %></strong>/<%= o.userCount %>
+          <% if (o.bestStreak > 0) { %> · best streak <strong><%= o.bestStreak %></strong> day<%= o.bestStreak === 1 ? '' : 's' %><% } %>
+        </div>
+      </a>
+    <% }) %>
+  </div>
+<% } %>
+
+<%- include('partials/footer') %>

@@ -1,12 +1,43 @@
 // /admin/* — Heath (hab_admin) manages shops; shop owners (manager) manage users at their shop.
 import express from 'express';
-import { Users, Shops, Invites } from '../lib/db.js';
+import { Users, Shops, Invites, OrgUnits, assignShopToOrg } from '../lib/db.js';
 import { requireAuth, requireRole, hashPassword } from '../lib/auth.js';
 import { newInviteToken, newShopCode, expiresIn } from '../lib/tokens.js';
 import { sendInviteEmail, mailerConfigured } from '../lib/mailer.js';
 import { pendingResetLinks } from '../lib/reset-links.js';
+import { portfolioRollup, orgRollup, shopRollup } from '../lib/progress.js';
 
 export const adminRouter = express.Router();
+
+const requireHabAdmin = (req, res, next) => {
+  if (req.session.role !== 'hab_admin') return res.status(403).render('403', { user: req.session });
+  next();
+};
+
+// ===== HAB admin: portfolio oversight (WP-ORG v1) =====
+// /admin — landing page for hab_admin: every Organizational Unit rolled up.
+adminRouter.get('/', requireAuth, requireHabAdmin, (req, res) => {
+  res.render('admin-portfolio', {
+    user: req.session,
+    orgs: portfolioRollup(),
+    pendingResetCount: pendingResetLinks().length,
+  });
+});
+
+// /admin/org/:id — one org unit: its shops with progress bars.
+adminRouter.get('/org/:id', requireAuth, requireHabAdmin, (req, res) => {
+  const org = orgRollup(parseInt(req.params.id, 10));
+  if (!org) return res.status(404).render('404');
+  res.render('admin-org', { user: req.session, org });
+});
+
+// /admin/org/:orgId/shop/:shopId — one shop: per-user completion breakdown.
+adminRouter.get('/org/:orgId/shop/:shopId', requireAuth, requireHabAdmin, (req, res) => {
+  const org = OrgUnits.byId(parseInt(req.params.orgId, 10));
+  const shop = shopRollup(parseInt(req.params.shopId, 10));
+  if (!org || !shop || shop.orgUnitId !== org.id) return res.status(404).render('404');
+  res.render('admin-org-shop', { user: req.session, org, shop });
+});
 
 // ===== Super-admin: shops =====
 adminRouter.get('/shops', requireAuth, requireRole(), (req, res) => {
@@ -68,6 +99,7 @@ adminRouter.post('/shops', requireAuth, requireRole(), async (req, res) => {
 
   const code = newShopCode();
   const shopId = Shops.create({ name, code });
+  assignShopToOrg(shopId, name); // WP-ORG v1: every shop lands in an org unit
 
   // Create invite for owner as manager
   const token = newInviteToken();

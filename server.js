@@ -91,7 +91,7 @@ app.use((req, res, next) => {
 
 // Routes
 app.get('/', (req, res) => {
-  if (req.session?.userId) return res.redirect('/dashboard');
+  if (req.session?.userId) return res.redirect(req.session.role === 'hab_admin' ? '/admin' : '/dashboard');
   res.redirect('/login');
 });
 

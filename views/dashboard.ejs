@@ -15,6 +15,24 @@
 <% if (typeof message !== 'undefined' && message) { %><div class="alert success"><%= message %></div><% } %>
 <% if (typeof error !== 'undefined' && error) { %><div class="alert error"><%= error %></div><% } %>
 
+<%# WP-ACADEMY-2: weekday nudge when the previous business day's numbers are missing. %>
+<% if (typeof scorecard !== 'undefined' && scorecard) { %>
+  <% if (user.role === 'advisor' && scorecard.myMissing) { %>
+    <div class="alert info">
+      <strong>Your scorecard for <%= scorecard.myMissing %> is missing.</strong>
+      Owning your numbers daily is a coaching tactic; champions log the scoreboard before the first call.
+      <a href="/scorecard"><strong>Log it now</strong></a>.
+    </div>
+  <% } %>
+  <% if (['coach','owner'].includes(user.role) && scorecard.shopMissing) { %>
+    <div class="alert info">
+      <strong>The shop scorecard for <%= scorecard.shopMissing %> is missing.</strong>
+      Owning your numbers daily is a coaching tactic; the day is not closed until the numbers are down.
+      <a href="/scorecard"><strong>Log it now</strong></a>.
+    </div>
+  <% } %>
+<% } %>
+
 <% if (typeof ownerPanel !== 'undefined' && ownerPanel) { %>
 <div class="card" style="border-left: 4px solid var(--gold); margin-bottom: 18px;">
   <h2 style="margin-top: 0;">Your Shop, Your Keys</h2>
@@ -104,6 +122,31 @@
     <div class="stat-sub">Level <%= me.masteryLevel %> of 5 — awarded by your coach</div>
   </div>
 </div>
+
+<%# WP-ACADEMY-2: 7/30-day scorecard trends on the dashboard. %>
+<% if (typeof scorecard !== 'undefined' && scorecard) { %>
+<div class="stat-row">
+  <% if (scorecard.my.count || user.role === 'advisor') { %>
+  <div class="stat-card">
+    <div class="stat-label">My 7-Day ARO</div>
+    <div class="stat-big"><%= scorecard.my.trends[7].aro == null ? 'n/a' : '$' + scorecard.my.trends[7].aro.toLocaleString('en-US', {minimumFractionDigits: 2}) %></div>
+    <div class="stat-sub">30-day: <%= scorecard.my.trends[30].aro == null ? 'n/a' : '$' + scorecard.my.trends[30].aro.toLocaleString('en-US', {minimumFractionDigits: 2}) %> · <a href="/scorecard">Scorecard</a></div>
+  </div>
+  <% } %>
+  <% if (scorecard.shop) { %>
+  <div class="stat-card">
+    <div class="stat-label">Shop 7-Day ARO</div>
+    <div class="stat-big"><%= scorecard.shop.trends[7].aro == null ? 'n/a' : '$' + scorecard.shop.trends[7].aro.toLocaleString('en-US', {minimumFractionDigits: 2}) %></div>
+    <div class="stat-sub">30-day: <%= scorecard.shop.trends[30].aro == null ? 'n/a' : '$' + scorecard.shop.trends[30].aro.toLocaleString('en-US', {minimumFractionDigits: 2}) %></div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">Shop 7-Day GP%</div>
+    <div class="stat-big gold"><%= scorecard.shop.trends[7].gpPct == null ? 'n/a' : scorecard.shop.trends[7].gpPct.toFixed(1) + '%' %></div>
+    <div class="stat-sub">30-day: <%= scorecard.shop.trends[30].gpPct == null ? 'n/a' : scorecard.shop.trends[30].gpPct.toFixed(1) + '%' %> · <a href="/scorecard">Shop scorecard</a></div>
+  </div>
+  <% } %>
+</div>
+<% } %>
 
 <div class="cta-row">
   <a class="btn" href="/curriculum">Open the Curriculum</a>

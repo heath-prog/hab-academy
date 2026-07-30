@@ -10,7 +10,8 @@
     "seed": "node db/seed.js",
     "seed:demo": "node db/seed-demo.js",
     "import:curriculum": "node scripts/import-curriculum.mjs",
-    "test:signup": "node scripts/test-wp-signup.mjs"
+    "test:signup": "node scripts/test-wp-signup.mjs",
+    "test:academy2": "node scripts/test-wp-academy2.mjs"
   },
   "engines": {
     "node": ">=18"

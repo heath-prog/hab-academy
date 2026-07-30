@@ -1,0 +1,71 @@
+<%- include('partials/header', { title: 'Reading Insights' }) %>
+
+<%
+  const fmtLast = (ts) => ts ? ts.replace('T', ' ').slice(0, 16) : 'never';
+  const fmtMin = (m) => m >= 60 ? Math.floor(m / 60) + 'h ' + (m % 60) + 'm' : m + 'm';
+%>
+
+<div class="eyebrow">OWNER VIEW · READING ENGAGEMENT</div>
+<h1>Is the Team Actually Reading?</h1>
+<p class="lead">
+  These analytics show whether the team is actually reading, not just clicking complete.
+  Time is counted only while a curriculum or book page is open and visible on screen.
+  This view is for you<% if (user.role === 'hab_admin') { %> and HAB<% } %> only; it does not appear anywhere in the team's Academy.
+</p>
+
+<% if (shopsOverview) { %>
+  <h2>All Shops</h2>
+  <table class="tbl">
+    <thead><tr><th>Shop</th><th>Readers</th><th>Total Reading Time</th><th>Last Active</th><th></th></tr></thead>
+    <tbody>
+      <% shopsOverview.forEach(s => { %>
+        <tr>
+          <td><strong><%= s.shopName %></strong></td>
+          <td><%= s.readers %></td>
+          <td><strong><%= fmtMin(s.totalMinutes) %></strong></td>
+          <td><span class="muted"><%= fmtLast(s.lastActive) %></span></td>
+          <td><a class="btn small ghost" href="/insights?shopId=<%= s.shopId %>">Open</a></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+<% } %>
+
+<% if (people) { %>
+  <h2><%= shop ? shop.name : 'Your Shop' %></h2>
+  <% if (!people.length) { %>
+    <p class="muted">Nobody at this shop yet.</p>
+  <% } %>
+  <% people.forEach(p => { %>
+    <div class="card" style="margin-bottom: 14px;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px;">
+        <div>
+          <strong style="font-size: 16px;"><%= p.name || p.email %></strong>
+          <span class="role-pill" style="margin-left: 8px;"><%= p.role.toUpperCase() %></span>
+        </div>
+        <div class="stat-sub">
+          Total reading time: <strong><%= fmtMin(p.totalMinutes) %></strong>
+          · Last active: <strong><%= fmtLast(p.lastActive) %></strong>
+        </div>
+      </div>
+      <% if (!p.byContent.length) { %>
+        <p class="muted" style="margin: 8px 0 0;">No reading time recorded yet. If their progress says complete but this says zero, that is a coaching conversation.</p>
+      <% } else { %>
+        <table class="tbl" style="margin: 10px 0 0;">
+          <thead><tr><th>Material</th><th>Time</th><th>Last Read</th></tr></thead>
+          <tbody>
+            <% p.byContent.forEach(c => { %>
+              <tr>
+                <td><%= c.title %></td>
+                <td><strong><%= fmtMin(c.minutes) %></strong></td>
+                <td><span class="muted"><%= fmtLast(c.lastAt) %></span></td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      <% } %>
+    </div>
+  <% }) %>
+<% } %>
+
+<%- include('partials/footer') %>

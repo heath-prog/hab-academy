@@ -2,6 +2,7 @@
 // /forgot-password, /reset-password/:token
 import express from 'express';
 import { Users, Invites, Shops, PasswordResets } from '../lib/db.js';
+import { emitMemberJoined } from '../lib/sync.js';
 import { hashPassword, verifyPassword } from '../lib/auth.js';
 import { newResetToken, sha256, expiresInHours } from '../lib/tokens.js';
 import { sendPasswordResetEmail } from '../lib/mailer.js';
@@ -113,6 +114,13 @@ authRouter.post('/invite/:token', async (req, res) => {
   Invites.consume(inv.token);
 
   const u = Users.byId(userId);
+  // WP-ACADEMY-2: platform sync for newly created members (queued, non-blocking).
+  if (!existing) {
+    emitMemberJoined({
+      shop_name: Shops.byId(inv.shop_id)?.name || 'Unknown shop',
+      name: u.name, email: u.email, role: u.role,
+    });
+  }
   req.session.userId = u.id;
   req.session.email  = u.email;
   req.session.role   = u.role;

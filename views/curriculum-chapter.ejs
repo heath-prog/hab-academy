@@ -5,6 +5,27 @@
   <% if (ch.moduleKey) { %><span class="module-key inline"><%= ch.moduleKey %></span><% } %>
 </div>
 
+<% if (typeof notice !== 'undefined' && notice === 'check') { %>
+<div class="alert info">
+  Section recorded. Complete the comprehension check to earn your points.
+  <a href="/curriculum/<%= ch.slug %>/check"><strong>Take the check now</strong></a>.
+</div>
+<% } %>
+
+<% if (typeof check !== 'undefined' && check && !check.exempt) { %>
+<div class="card" style="border-left: 4px solid var(--gold); padding: 12px 16px; margin-bottom: 14px;">
+  <% if (check.passed) { %>
+    <strong>Comprehension check passed.</strong>
+    <span class="muted">This module's points are unlocked (10 per section).</span>
+    <a href="/curriculum/<%= ch.slug %>/check" style="margin-left: 6px;">Retake for practice</a>
+  <% } else { %>
+    <strong>Comprehension check: not passed yet.</strong>
+    <span class="muted">Sections you mark complete are recorded, but the points wait until you pass the check (<%= check.passPct %>% or better). Retakes allowed.</span>
+    <a class="btn small" href="/curriculum/<%= ch.slug %>/check" style="margin-left: 8px;">Take the Check</a>
+  <% } %>
+</div>
+<% } %>
+
 <% if (ch.moduleKey && ch.sections.length) { %>
 <div class="section-nav">
   <div class="section-nav-title">In this module — mark each section complete as you master it:</div>
@@ -34,11 +55,19 @@
     <% if (ch.moduleKey) { %>
       <form method="post" action="/curriculum/<%= ch.slug %>/sections/<%= s.slug %>/toggle" class="complete-bar <%= doneSlugs.has(s.slug) ? 'is-done' : '' %>">
         <% if (doneSlugs.has(s.slug)) { %>
-          <span class="complete-msg">✓ Section complete — +10 pts</span>
+          <% if (typeof check !== 'undefined' && check && !check.exempt && !check.passed) { %>
+            <span class="complete-msg">✓ Section complete · pass the check to earn the points</span>
+          <% } else { %>
+            <span class="complete-msg">✓ Section complete — +10 pts</span>
+          <% } %>
           <button type="submit" class="btn ghost small">Undo</button>
         <% } else { %>
           <span class="complete-msg">Finished this section?</span>
-          <button type="submit" class="btn small">Mark complete (+10 pts)</button>
+          <% if (typeof check !== 'undefined' && check && !check.exempt && !check.passed) { %>
+            <button type="submit" class="btn small">Mark complete</button>
+          <% } else { %>
+            <button type="submit" class="btn small">Mark complete (+10 pts)</button>
+          <% } %>
         <% } %>
       </form>
     <% } %>
@@ -50,5 +79,7 @@
   <% if (prev) { %><a class="btn ghost" href="/curriculum/<%= prev.slug %>">← <%= prev.title %></a><% } else { %><span></span><% } %>
   <% if (next) { %><a class="btn" href="/curriculum/<%= next.slug %>"><%= next.title %> →</a><% } %>
 </div>
+
+<% if (user.role !== 'hab_admin') { %><script src="/hb.js" data-k="<%= ch.slug %>" defer></script><% } %>
 
 <%- include('partials/footer') %>

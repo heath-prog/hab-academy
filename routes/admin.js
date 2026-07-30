@@ -8,6 +8,7 @@ import { TIERS } from '../lib/agreements.js';
 import { sendInviteEmail, mailerConfigured } from '../lib/mailer.js';
 import { pendingResetLinks } from '../lib/reset-links.js';
 import { portfolioRollup, orgRollup, shopRollup } from '../lib/progress.js';
+import { shopTrend } from '../lib/scorecards.js';
 
 export const adminRouter = express.Router();
 
@@ -24,6 +25,20 @@ adminRouter.get('/', requireAuth, requireHabAdmin, (req, res) => {
     orgs: portfolioRollup(),
     pendingResetCount: pendingResetLinks().length,
   });
+});
+
+// ===== WP-ACADEMY-2: org-level KPI scorecard rollup (hab_admin) =====
+// Every org unit, every shop, 7/30-day shop-scorecard picture plus the raw
+// recent entries. The client-facing edit lock does not apply here.
+adminRouter.get('/scorecards', requireAuth, requireHabAdmin, (req, res) => {
+  const orgs = OrgUnits.all().map(o => {
+    const shops = OrgUnits.shopsFor(o.id).map(sh => {
+      const t = shopTrend(sh.id);
+      return { id: sh.id, name: sh.name, trends: t.trends, entryCount: t.rows.length, latest: t.rows[0] || null };
+    });
+    return { id: o.id, name: o.name, shops };
+  });
+  res.render('admin-scorecards', { user: req.session, orgs });
 });
 
 // /admin/org/:id — one org unit: its shops with progress bars.

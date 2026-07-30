@@ -50,6 +50,23 @@
         <input type="text" name="brandName" id="su-brand" value="<%= saved ? saved.brandName : '' %>" placeholder="If you run multiple shops under one brand">
       </div>
     </div>
+    <%# WP-ACADEMY-2: optional shop contact info, synced to the HAB platform.
+        TODO: wire Google Places autocomplete onto the address field so shop
+        name + address + phone + website autofill from the business listing. %>
+    <div class="row">
+      <div>
+        <label for="su-address">Shop Address <span style="font-weight: 400; opacity: 0.7;">(optional)</span></label>
+        <input type="text" name="address" id="su-address" value="<%= saved && saved.address ? saved.address : '' %>" placeholder="Street, city, state, ZIP">
+      </div>
+      <div>
+        <label for="su-phone">Shop Phone <span style="font-weight: 400; opacity: 0.7;">(optional)</span></label>
+        <input type="text" name="phone" id="su-phone" value="<%= saved && saved.phone ? saved.phone : '' %>" placeholder="(555) 555-0100">
+      </div>
+      <div>
+        <label for="su-website">Website <span style="font-weight: 400; opacity: 0.7;">(optional)</span></label>
+        <input type="text" name="website" id="su-website" value="<%= saved && saved.website ? saved.website : '' %>" placeholder="https://yourshop.com">
+      </div>
+    </div>
 
     <h3 style="margin: 14px 0 0;">3. Your HAB package</h3>
     <div class="tier-pick">

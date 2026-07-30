@@ -1,0 +1,64 @@
+<%- include('partials/header', { title: ch.title + ' · Comprehension Check' }) %>
+
+<div class="chapter-top">
+  <a class="crumb" href="/curriculum/<%= ch.slug %>">&larr; Back to <%= ch.moduleKey %> · <%= ch.title %></a>
+  <span class="module-key inline"><%= ch.moduleKey %></span>
+</div>
+
+<div class="eyebrow">COMPREHENSION CHECK</div>
+<h1><%= ch.moduleKey %> · <%= ch.title %></h1>
+<p class="lead">
+  Prove you own the material. Score <%= check.passPct %>% or better to unlock this module's points
+  (10 per section). Retakes are allowed; a pass is permanent.
+</p>
+
+<% if (result) { %>
+  <% if (result.passed) { %>
+    <div class="alert success">
+      <strong>Passed: <%= result.correct %>/<%= result.total %> (<%= result.scorePct %>%).</strong>
+      Module points are unlocked.
+      <% if (result.granted > 0) { %>
+        <%= result.granted %> section<%= result.granted === 1 ? '' : 's' %> you already completed just earned <%= result.granted * 10 %> points.
+      <% } %>
+      <a href="/curriculum/<%= ch.slug %>">Back to the module</a>.
+    </div>
+  <% } else { %>
+    <div class="alert error">
+      <strong>Not yet: <%= result.correct %>/<%= result.total %> (<%= result.scorePct %>%).</strong>
+      You need <%= check.passPct %>% to earn your points. Reread the module and take the check again; the reps are the point.
+    </div>
+  <% } %>
+<% } else if (check.passed) { %>
+  <div class="alert success">You have already passed this check. You can retake it for practice; your pass is permanent.</div>
+<% } else if (check.lastAttempt) { %>
+  <div class="alert info">Last attempt: <%= check.lastAttempt.correct %>/<%= check.lastAttempt.total %> (<%= check.lastAttempt.score_pct %>%). Take it again when you are ready.</div>
+<% } %>
+
+<% if (!result || !result.passed) { %>
+<div class="card">
+  <form method="post" action="/curriculum/<%= ch.slug %>/check" class="stack">
+    <% questions.forEach((q, i) => { %>
+      <fieldset style="border: 1px solid var(--cream-deep); border-radius: 6px; padding: 14px 16px; margin: 0;">
+        <legend style="font-weight: 700; padding: 0 6px;">Question <%= i + 1 %> of <%= questions.length %></legend>
+        <div style="margin-bottom: 10px; font-size: 15px;"><%= q.q %></div>
+        <% q.options.forEach((opt, j) => { %>
+          <label style="display: flex; gap: 8px; align-items: flex-start; margin: 6px 0; font-weight: 400; cursor: pointer;">
+            <input type="radio" name="q<%= i %>" value="<%= j %>" required style="margin-top: 3px;">
+            <span><%= opt %></span>
+          </label>
+        <% }) %>
+      </fieldset>
+    <% }) %>
+    <div><button type="submit" class="primary">Submit Answers</button></div>
+  </form>
+</div>
+<% } else { %>
+  <div class="cta-row">
+    <a class="btn" href="/curriculum/<%= ch.slug %>">Back to <%= ch.moduleKey %></a>
+    <a class="btn ghost" href="/curriculum">Curriculum Library</a>
+  </div>
+<% } %>
+
+<% if (user.role !== 'hab_admin') { %><script src="/hb.js" data-k="<%= ch.slug %>" defer></script><% } %>
+
+<%- include('partials/footer') %>

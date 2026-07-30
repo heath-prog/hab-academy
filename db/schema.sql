@@ -18,6 +18,9 @@ CREATE TABLE IF NOT EXISTS shops (
   join_code   TEXT UNIQUE,          -- WP-SIGNUP: team self-serve join code (shown to owner + hab_admin)
   is_demo     INTEGER NOT NULL DEFAULT 0, -- WP-SIGNUP: demo shops are exempt from agreement enforcement
   org_unit_id INTEGER REFERENCES org_units(id) ON DELETE SET NULL,
+  address     TEXT,                  -- WP-ACADEMY-2: optional, from owner signup
+  phone       TEXT,                  -- WP-ACADEMY-2: optional, from owner signup
+  website     TEXT,                  -- WP-ACADEMY-2: optional, from owner signup
   created_at  TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
   active      INTEGER NOT NULL DEFAULT 1
 );
@@ -180,3 +183,84 @@ CREATE TABLE IF NOT EXISTS book_order_items (
   unit_price_cents INTEGER NOT NULL
 );
 CREATE INDEX IF NOT EXISTS idx_book_order_items_order ON book_order_items(order_id);
+
+-- ===== WP-ACADEMY-2: KPI scorecards, comprehension checks, engagement, sync, posters =====
+
+-- Advisor daily scorecard: one row per advisor per date. Real shop numbers,
+-- entered by hand (no SMS integration). ARO is derived, never stored.
+CREATE TABLE IF NOT EXISTS advisor_scorecards (
+  id            INTEGER PRIMARY KEY AUTOINCREMENT,
+  user_id       INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  shop_id       INTEGER REFERENCES shops(id) ON DELETE SET NULL,
+  entry_date    TEXT NOT NULL,             -- YYYY-MM-DD
+  revenue       REAL NOT NULL,             -- personal sales revenue ($)
+  gross_profit  REAL NOT NULL,             -- personal gross profit ($)
+  car_count     INTEGER NOT NULL,
+  created_at    TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at    TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  UNIQUE(user_id, entry_date)
+);
+CREATE INDEX IF NOT EXISTS idx_adv_scorecards_user ON advisor_scorecards(user_id, entry_date);
+CREATE INDEX IF NOT EXISTS idx_adv_scorecards_shop ON advisor_scorecards(shop_id, entry_date);
+
+-- Manager/owner daily SHOP scorecard: one row per shop per date.
+-- ARO and GP% are derived, never stored. tax / cost_of_goods optional.
+CREATE TABLE IF NOT EXISTS shop_scorecards (
+  id             INTEGER PRIMARY KEY AUTOINCREMENT,
+  shop_id        INTEGER NOT NULL REFERENCES shops(id) ON DELETE CASCADE,
+  entered_by     INTEGER REFERENCES users(id) ON DELETE SET NULL,
+  entry_date     TEXT NOT NULL,            -- YYYY-MM-DD
+  total_revenue  REAL NOT NULL,
+  gross_profit   REAL NOT NULL,
+  tax            REAL,
+  cost_of_goods  REAL,
+  car_count      INTEGER NOT NULL,
+  created_at     TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at     TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  UNIQUE(shop_id, entry_date)
+);
+CREATE INDEX IF NOT EXISTS idx_shop_scorecards_shop ON shop_scorecards(shop_id, entry_date);
+
+-- Comprehension check attempts. Questions live in content/curriculum/checks.json;
+-- grading is server-side only. Retakes allowed; a pass is permanent.
+CREATE TABLE IF NOT EXISTS check_attempts (
+  id          INTEGER PRIMARY KEY AUTOINCREMENT,
+  user_id     INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  module_key  TEXT NOT NULL,
+  correct     INTEGER NOT NULL,
+  total       INTEGER NOT NULL,
+  score_pct   INTEGER NOT NULL,
+  passed      INTEGER NOT NULL DEFAULT 0,
+  created_at  TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+CREATE INDEX IF NOT EXISTS idx_check_attempts_user ON check_attempts(user_id, module_key);
+
+-- Time-on-page accumulator: 30s heartbeats while a curriculum/book page is
+-- visible, rolled up per user per content key per day. Surfaced ONLY to
+-- owners (own shop) and hab_admin (all shops).
+CREATE TABLE IF NOT EXISTS content_time (
+  id           INTEGER PRIMARY KEY AUTOINCREMENT,
+  user_id      INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  shop_id      INTEGER REFERENCES shops(id) ON DELETE SET NULL,
+  day          TEXT NOT NULL,              -- YYYY-MM-DD
+  content_key  TEXT NOT NULL,              -- curriculum slug or book:<slug>
+  seconds      INTEGER NOT NULL DEFAULT 0,
+  last_at      TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  UNIQUE(user_id, day, content_key)
+);
+CREATE INDEX IF NOT EXISTS idx_content_time_user ON content_time(user_id);
+CREATE INDEX IF NOT EXISTS idx_content_time_shop ON content_time(shop_id);
+
+-- Platform sync bridge outbox. Every event is queued first, then delivered to
+-- PLATFORM_SYNC_URL; failed/unconfigured deliveries retry on boot + hourly.
+CREATE TABLE IF NOT EXISTS sync_queue (
+  id           INTEGER PRIMARY KEY AUTOINCREMENT,
+  event_type   TEXT NOT NULL,              -- shop_created | member_joined
+  payload_json TEXT NOT NULL,
+  status       TEXT NOT NULL DEFAULT 'pending' CHECK(status IN ('pending','sent')),
+  attempts     INTEGER NOT NULL DEFAULT 0,
+  last_error   TEXT,
+  sent_at      TEXT,
+  created_at   TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+CREATE INDEX IF NOT EXISTS idx_sync_queue_status ON sync_queue(status);

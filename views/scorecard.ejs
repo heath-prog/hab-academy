@@ -1,0 +1,194 @@
+<%- include('partials/header', { title: 'Scorecard' }) %>
+
+<%
+  const money = (n) => n == null ? 'n/a' : '$' + Number(n).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  const pctf = (n) => n == null ? 'n/a' : n.toFixed(1) + '%';
+%>
+
+<div class="eyebrow">OWN YOUR NUMBERS</div>
+<h1>Daily Scorecard</h1>
+<p class="lead">Champions know their numbers before their coach asks. Logging your scoreboard every day is a coaching tactic: it keeps the conversation about facts, not feelings. ARO<% if (shopCard) { %> and GP%<% } %> are calculated for you.</p>
+
+<% if (message) { %><div class="alert success"><%= message %></div><% } %>
+<% if (error) { %><div class="alert error"><%= error %></div><% } %>
+
+<div class="card" style="border-left: 4px solid var(--gold);">
+  <h2 style="margin-top: 0;">My Numbers · Today</h2>
+  <form method="post" action="/scorecard/advisor" class="stack">
+    <div class="row">
+      <div>
+        <label for="sc-date">Date</label>
+        <input type="date" name="entryDate" id="sc-date" value="<%= today %>" max="<%= today %>" required>
+      </div>
+      <div>
+        <label for="sc-rev">Personal Sales Revenue ($)</label>
+        <input type="number" name="revenue" id="sc-rev" min="0" step="0.01" required value="<%= my.today ? my.today.revenue : '' %>" placeholder="e.g., 4250.00">
+      </div>
+      <div>
+        <label for="sc-gp">Gross Profit ($)</label>
+        <input type="number" name="grossProfit" id="sc-gp" min="0" step="0.01" required value="<%= my.today ? my.today.gross_profit : '' %>" placeholder="e.g., 2400.00">
+      </div>
+      <div>
+        <label for="sc-cars">Car Count</label>
+        <input type="number" name="carCount" id="sc-cars" min="0" step="1" required value="<%= my.today ? my.today.car_count : '' %>" placeholder="e.g., 6">
+      </div>
+    </div>
+    <div style="font-size: 12px; color: var(--ink-soft);">
+      ARO is calculated automatically (revenue divided by car count). Entries stay editable for <%= editWindowDays %> days, then lock.
+    </div>
+    <div><button type="submit" class="primary"><%= my.today ? 'Update Today' : 'Save Today' %></button></div>
+  </form>
+</div>
+
+<div class="stat-row">
+  <div class="stat-card">
+    <div class="stat-label">7-Day ARO</div>
+    <div class="stat-big"><%= my.trends[7].aro == null ? 'n/a' : money(my.trends[7].aro) %></div>
+    <div class="stat-sub"><%= my.trends[7].entries %> entr<%= my.trends[7].entries === 1 ? 'y' : 'ies' %> · <%= money(my.trends[7].revenue) %> revenue</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">30-Day ARO</div>
+    <div class="stat-big"><%= my.trends[30].aro == null ? 'n/a' : money(my.trends[30].aro) %></div>
+    <div class="stat-sub"><%= my.trends[30].entries %> entr<%= my.trends[30].entries === 1 ? 'y' : 'ies' %> · <%= money(my.trends[30].revenue) %> revenue</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">7-Day Gross Profit</div>
+    <div class="stat-big gold"><%= money(my.trends[7].grossProfit) %></div>
+    <div class="stat-sub">30-day: <%= money(my.trends[30].grossProfit) %></div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">7-Day Car Count</div>
+    <div class="stat-big"><%= my.trends[7].carCount %></div>
+    <div class="stat-sub">30-day: <%= my.trends[30].carCount %></div>
+  </div>
+</div>
+
+<h2>My History</h2>
+<% if (!my.rows.length) { %>
+  <p class="muted">No entries yet. Log today's numbers above; the trend lines start with your first entry.</p>
+<% } else { %>
+  <table class="tbl">
+    <thead><tr><th>Date</th><th>Revenue</th><th>Gross Profit</th><th>Cars</th><th>ARO</th><th></th></tr></thead>
+    <tbody>
+      <% my.rows.forEach(r => { %>
+        <tr>
+          <td><strong><%= r.entry_date %></strong></td>
+          <td><%= money(r.revenue) %></td>
+          <td><%= money(r.gross_profit) %></td>
+          <td><%= r.car_count %></td>
+          <td><strong><%= money(r.aro) %></strong></td>
+          <td><span class="muted"><%= isEditable(r.entry_date) ? 'editable' : 'locked' %></span></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+<% } %>
+
+<% if (shopCard) { %>
+<div class="card" style="border-left: 4px solid var(--navy); margin-top: 26px;">
+  <h2 style="margin-top: 0;">Shop Numbers · <%= shopCard.shop.name %></h2>
+  <p class="stat-sub" style="margin-top: -6px;">The whole shop's day on one line. ARO and GP% are calculated automatically.</p>
+  <form method="post" action="/scorecard/shop" class="stack">
+    <% if (user.role === 'hab_admin') { %><input type="hidden" name="shopId" value="<%= shopCard.shop.id %>"><% } %>
+    <div class="row">
+      <div>
+        <label for="ss-date">Date</label>
+        <input type="date" name="entryDate" id="ss-date" value="<%= today %>" max="<%= today %>" required>
+      </div>
+      <div>
+        <label for="ss-rev">Total Revenue ($)</label>
+        <input type="number" name="totalRevenue" id="ss-rev" min="0" step="0.01" required value="<%= shopCard.today ? shopCard.today.total_revenue : '' %>">
+      </div>
+      <div>
+        <label for="ss-gp">Gross Profit ($)</label>
+        <input type="number" name="grossProfit" id="ss-gp" min="0" step="0.01" required value="<%= shopCard.today ? shopCard.today.gross_profit : '' %>">
+      </div>
+    </div>
+    <div class="row">
+      <div>
+        <label for="ss-tax">Tax ($) <span style="font-weight: 400; opacity: 0.7;">(optional)</span></label>
+        <input type="number" name="tax" id="ss-tax" min="0" step="0.01" value="<%= shopCard.today && shopCard.today.tax != null ? shopCard.today.tax : '' %>">
+      </div>
+      <div>
+        <label for="ss-cogs">Cost of Goods ($) <span style="font-weight: 400; opacity: 0.7;">(optional)</span></label>
+        <input type="number" name="costOfGoods" id="ss-cogs" min="0" step="0.01" value="<%= shopCard.today && shopCard.today.cost_of_goods != null ? shopCard.today.cost_of_goods : '' %>">
+      </div>
+      <div>
+        <label for="ss-cars">Car Count</label>
+        <input type="number" name="carCount" id="ss-cars" min="0" step="1" required value="<%= shopCard.today ? shopCard.today.car_count : '' %>">
+      </div>
+    </div>
+    <div><button type="submit" class="primary"><%= shopCard.today ? 'Update Shop Day' : 'Save Shop Day' %></button></div>
+  </form>
+
+  <div class="stat-row" style="margin-top: 16px;">
+    <div class="stat-card">
+      <div class="stat-label">Shop 7-Day ARO</div>
+      <div class="stat-big"><%= shopCard.trends[7].aro == null ? 'n/a' : money(shopCard.trends[7].aro) %></div>
+      <div class="stat-sub">30-day: <%= shopCard.trends[30].aro == null ? 'n/a' : money(shopCard.trends[30].aro) %></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Shop 7-Day GP%</div>
+      <div class="stat-big gold"><%= pctf(shopCard.trends[7].gpPct) %></div>
+      <div class="stat-sub">30-day: <%= pctf(shopCard.trends[30].gpPct) %></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Shop 7-Day Revenue</div>
+      <div class="stat-big"><%= money(shopCard.trends[7].revenue) %></div>
+      <div class="stat-sub">30-day: <%= money(shopCard.trends[30].revenue) %></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Shop 7-Day Cars</div>
+      <div class="stat-big"><%= shopCard.trends[7].carCount %></div>
+      <div class="stat-sub">30-day: <%= shopCard.trends[30].carCount %></div>
+    </div>
+  </div>
+
+  <h3>Shop History</h3>
+  <% if (!shopCard.rows.length) { %>
+    <p class="muted">No shop entries yet.</p>
+  <% } else { %>
+    <table class="tbl">
+      <thead><tr><th>Date</th><th>Revenue</th><th>Gross Profit</th><th>Tax</th><th>COGS</th><th>Cars</th><th>ARO</th><th>GP%</th><th></th></tr></thead>
+      <tbody>
+        <% shopCard.rows.forEach(r => { %>
+          <tr>
+            <td><strong><%= r.entry_date %></strong></td>
+            <td><%= money(r.total_revenue) %></td>
+            <td><%= money(r.gross_profit) %></td>
+            <td><%= r.tax == null ? 'n/a' : money(r.tax) %></td>
+            <td><%= r.cost_of_goods == null ? 'n/a' : money(r.cost_of_goods) %></td>
+            <td><%= r.car_count %></td>
+            <td><strong><%= money(r.aro) %></strong></td>
+            <td><strong><%= pctf(r.gp_pct) %></strong></td>
+            <td><span class="muted"><%= isEditable(r.entry_date) ? 'editable' : 'locked' %></span></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  <% } %>
+
+  <h3>Advisor Entries · Last 30 Days</h3>
+  <% if (!shopCard.advisorRows.length) { %>
+    <p class="muted">No advisor entries yet. Advisors log their personal numbers on this page under their own login.</p>
+  <% } else { %>
+    <table class="tbl">
+      <thead><tr><th>Date</th><th>Advisor</th><th>Revenue</th><th>Gross Profit</th><th>Cars</th><th>ARO</th></tr></thead>
+      <tbody>
+        <% shopCard.advisorRows.forEach(r => { %>
+          <tr>
+            <td><%= r.entry_date %></td>
+            <td><strong><%= r.user_name || r.user_email %></strong></td>
+            <td><%= money(r.revenue) %></td>
+            <td><%= money(r.gross_profit) %></td>
+            <td><%= r.car_count %></td>
+            <td><strong><%= money(r.aro) %></strong></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  <% } %>
+</div>
+<% } %>
+
+<%- include('partials/footer') %>

@@ -6,6 +6,7 @@ import { Users, Shops, Mastery, MASTERY_LEVELS, PendingMembers } from '../lib/db
 import { Curriculum } from '../lib/curriculum.js';
 import { shopSummary } from '../lib/training.js';
 import { sendPromotionEmail, sendWelcomeEmail } from '../lib/mailer.js';
+import { emitMemberJoined } from '../lib/sync.js';
 
 export const teamRouter = express.Router();
 
@@ -103,6 +104,8 @@ teamRouter.post('/team/pending/:id/approve', requireAuth, requireRole('owner'), 
   });
   PendingMembers.decide(pm.id, 'approved', req.session.userId);
   const shop = Shops.byId(pm.shop_id);
+  // WP-ACADEMY-2: platform sync (queued, non-blocking).
+  emitMemberJoined({ shop_name: shop?.name || 'Unknown shop', name: pm.name, email: pm.email, role: pm.role });
   try {
     const base = (process.env.BASE_URL || `${req.protocol}://${req.get('host')}`).replace(/\/$/, '');
     await sendWelcomeEmail({

@@ -19,6 +19,7 @@ import {
   renderAgreementHtml, renderSafe,
 } from '../lib/agreements.js';
 import { sendWelcomeEmail } from '../lib/mailer.js';
+import { emitShopCreated, emitMemberJoined } from '../lib/sync.js';
 
 export const signupRouter = express.Router();
 
@@ -62,6 +63,10 @@ signupRouter.post('/signup/owner', async (req, res) => {
   const confirm   = String(req.body.confirm || '');
   const shopName  = String(req.body.shopName || '').trim();
   const brandName = String(req.body.brandName || '').trim();
+  // WP-ACADEMY-2: optional shop contact fields (synced to the HAB platform).
+  const address   = String(req.body.address || '').trim();
+  const phone     = String(req.body.phone || '').trim();
+  const website   = String(req.body.website || '').trim();
   const tier      = String(req.body.tier || '');
   const term      = parseInt(req.body.term, 10);
 
@@ -78,7 +83,7 @@ signupRouter.post('/signup/owner', async (req, res) => {
   req.session.pendingSignup = {
     name, email,
     password_hash: await hashPassword(password),
-    shopName, brandName, tier, term,
+    shopName, brandName, address, phone, website, tier, term,
   };
   req.session.save(() => res.redirect('/signup/agreement'));
 });
@@ -126,7 +131,11 @@ signupRouter.post('/signup/agreement', async (req, res) => {
 
   // Shop + org unit. An explicit brand name creates/reuses that org; otherwise
   // the existing assignShopToOrg name heuristics apply.
-  const shopId = Shops.create({ name: p.shopName, code: newShopCode(), join_code: newJoinCode() });
+  const joinCode = newJoinCode();
+  const shopId = Shops.create({
+    name: p.shopName, code: newShopCode(), join_code: joinCode,
+    address: p.address || null, phone: p.phone || null, website: p.website || null,
+  });
   const org = p.brandName
     ? assignShopToNamedOrg(shopId, p.brandName)
     : assignShopToOrg(shopId, p.shopName);
@@ -156,6 +165,15 @@ signupRouter.post('/signup/agreement', async (req, res) => {
     agreement_html: agreementHtml,
     safe_html: safeHtml,
     safe_status: safeHtml ? 'pending_countersignature' : null,
+  });
+
+  // WP-ACADEMY-2: tell the HAB platform (outbox + async delivery; a sync
+  // outage can never block or fail a signup).
+  emitShopCreated({
+    name: p.shopName, org: org?.name || null,
+    owner_name: p.name, owner_email: p.email,
+    address: p.address || null, phone: p.phone || null,
+    tier: p.tier, term_months: p.term, join_code: joinCode,
   });
 
   try {
@@ -209,6 +227,8 @@ signupRouter.post('/join', async (req, res) => {
       email, password_hash, role: 'advisor', shop_id: shop.id, name,
       title: roleChoice === 'technician' ? 'Technician' : null,
     });
+    // WP-ACADEMY-2: platform sync (queued, non-blocking).
+    emitMemberJoined({ shop_name: shop.name, name, email, role: 'advisor' });
     try {
       await sendWelcomeEmail({
         to: email, name, shopName: shop.name,

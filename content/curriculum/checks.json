@@ -1,0 +1,496 @@
+{
+  "_note": "WP-ACADEMY-2 comprehension checks. One check per trackable module (M1-M9). Written from the HAB Sales OS Master Curriculum chapters in this directory. 'answer' is the zero-based index of the correct option and is NEVER sent to the browser; grading happens server-side in lib/checks.js.",
+  "passPct": 80,
+  "modules": {
+    "M1": {
+      "title": "Establish Rapport",
+      "questions": [
+        {
+          "q": "What is the mission of the first 90 seconds of a call or visit?",
+          "options": [
+            "Quote an accurate price as fast as possible",
+            "Make a friend, so the customer's nervous system relaxes enough to receive information",
+            "Collect the vehicle's year, make and model",
+            "Explain every service the shop offers"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "A customer asks, \"Do you work on brakes?\" What is the HAB relief line?",
+          "options": [
+            "\"Sure, we can do that.\"",
+            "\"Brakes usually run between $300 and $600.\"",
+            "\"You called the right place!\"",
+            "\"Let me transfer you to a technician.\""
+          ],
+          "answer": 2
+        },
+        {
+          "q": "Which of these is one of the 5 common mistakes that kill rapport?",
+          "options": [
+            "Answering the price question in the first 30 seconds",
+            "Using the customer's name during the greeting",
+            "Standing up when the front bell rings",
+            "Pausing after the opening line"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "How many times should you use the customer's first name in the first two minutes?",
+          "options": [
+            "Never, it sounds forced",
+            "Exactly three times",
+            "At least six times",
+            "Only once, at the end of the call"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "What is the phone answering standard in the HAB system?",
+          "options": [
+            "Answer whenever the counter is clear",
+            "Let it ring so you never sound desperate",
+            "Answer before the third ring, with a smile you can hear",
+            "Send every first call to voicemail and call back"
+          ],
+          "answer": 2
+        }
+      ]
+    },
+    "M2": {
+      "title": "Establish Credibility",
+      "questions": [
+        {
+          "q": "In the HAB system, where does credibility come from?",
+          "options": [
+            "Confident claims like \"we're the best shop in town\"",
+            "What the customer concludes after seeing the evidence: the tour, the techs, the warranty",
+            "Offering the lowest price in the area",
+            "A long list of services on the website"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "What are the three legs of the Trust Triangle?",
+          "options": [
+            "Speed, price, convenience",
+            "Competence, transparency, trustworthiness",
+            "Rapport, custody, closing",
+            "Warranty, financing, reviews"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "How long should the shop tour take?",
+          "options": [
+            "As long as the customer wants, up to 30 minutes",
+            "Under 30 seconds so you do not waste their time",
+            "75 to 90 seconds at a walking pace with eye contact",
+            "Five minutes minimum to cover everything"
+          ],
+          "answer": 2
+        },
+        {
+          "q": "How does the shop tour end, and why?",
+          "options": [
+            "With a price sheet, to set expectations",
+            "With a drink offer, the final reciprocity trigger that makes the customer a guest",
+            "With a hard ask for the repair authorization",
+            "With a request for a 5-star review"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "What is one of the three hidden sales inside the tour?",
+          "options": [
+            "By the end of the tour the customer has already mentally agreed to the digital inspection",
+            "The customer commits to a maintenance package",
+            "The customer agrees to pay a diagnostic fee",
+            "The customer signs up for the shop newsletter"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "M3": {
+      "title": "Collect Data and Get Custody",
+      "questions": [
+        {
+          "q": "Why is custody the gateway objective of the whole system?",
+          "options": [
+            "Because the shop gets paid a drop-off fee",
+            "Because we cannot inspect, educate on, or sell repairs for a car we do not have in our bay",
+            "Because it keeps the parking lot full",
+            "Because it lets the techs start work without an estimate"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "On an inbound phone inquiry, what comes FIRST, before any education or pricing?",
+          "options": [
+            "A detailed explanation of what the repair involves",
+            "A ballpark price range so the customer can budget",
+            "The Quick Close on the appointment: \"Is now a good time?\" then the East-West time choice",
+            "Emailing the customer a brochure"
+          ],
+          "answer": 2
+        },
+        {
+          "q": "A customer says \"I need new brakes.\" What is the HAB move?",
+          "options": [
+            "Take the self-diagnosis at face value and quote a brake job",
+            "Treat it as a symptom statement and convert it to a documented concern that a certified tech inspects",
+            "Tell them they are wrong about their own car",
+            "Refer them to a brake specialty shop"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "What is the East-West close?",
+          "options": [
+            "Asking the customer which side of town they live on",
+            "Offering two specific appointment times, like \"9:15 or 10:45?\", so scheduling collapses to a binary choice",
+            "Booking the appointment for whenever the customer feels like it",
+            "A discount for morning drop-offs"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "What is the boom board rule?",
+          "options": [
+            "No boom board, no bay: no vehicle enters the bay without the concern documented",
+            "The boom board is optional for repeat customers",
+            "Techs fill out the boom board after the work is done",
+            "Boom boards are only for walk-ins"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "M4": {
+      "title": "Inspect and Analyze the Data",
+      "questions": [
+        {
+          "q": "Who is the digital vehicle inspection (DVI) really for?",
+          "options": [
+            "The technician, so they know what is wrong",
+            "The service manager, for payroll tracking",
+            "The customer: it is the X-ray evidence we hand them so recommendations land as fact, not opinion",
+            "The insurance company"
+          ],
+          "answer": 2
+        },
+        {
+          "q": "What single question drives the Green / Yellow / Red classification?",
+          "options": [
+            "\"How much will this cost to fix?\"",
+            "\"Does it operate within manufacturer specifications?\"",
+            "\"Will the customer pay for this today?\"",
+            "\"How old is the part?\""
+          ],
+          "answer": 1
+        },
+        {
+          "q": "How are the healthy (Green) findings used in the presentation?",
+          "options": [
+            "They are skipped, only problems are worth talking about",
+            "The customer is told what is healthy first, which primes the Good-Good-Bad framing",
+            "They are saved for the invoice",
+            "They are upsold as preventative replacements"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "What is the correct handling of a Yellow finding?",
+          "options": [
+            "Sell it today while the car is on the lift",
+            "Ignore it, only Red matters",
+            "Document it as a watch item for the next visit or a scheduled-maintenance conversation",
+            "Mark it Red so the customer takes it seriously"
+          ],
+          "answer": 2
+        },
+        {
+          "q": "What is the walk-the-bay standard after a DVI is completed?",
+          "options": [
+            "The advisor meets the tech at the vehicle within 15 minutes, listens first, translates, and both confirm the PRS",
+            "The tech texts the advisor a one-line summary",
+            "The advisor reads the DVI alone and calls the customer",
+            "The tech calls the customer directly"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "M5": {
+      "title": "Build and Strategize: Run the Bases",
+      "questions": [
+        {
+          "q": "What is the most common real reason a customer says \"let me think about it\"?",
+          "options": [
+            "The price is genuinely too high",
+            "Overwhelm: too many findings presented at once froze their brain",
+            "They found a coupon elsewhere",
+            "They never intended to fix the car"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "What belongs on 1st base?",
+          "options": [
+            "The most profitable finding on the DVI",
+            "Scheduled maintenance items",
+            "The customer's original concern, or an immediate safety threat if they came in with no concern",
+            "The cheapest item, to build momentum"
+          ],
+          "answer": 2
+        },
+        {
+          "q": "What is kitchen-sinking, and what is the rule about it?",
+          "options": [
+            "Bundling repairs for a discount; it is encouraged",
+            "Dumping every finding into one call; never do it, each base is its own call with its own authorization",
+            "Presenting only the safety items; it is required",
+            "Letting the tech present findings; it is optional"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "What does PRS stand for, and which step do advisors most often skip?",
+          "options": [
+            "Price, Rebate, Savings; advisors skip Rebate",
+            "Problem, Risk, Solution; advisors most often skip Risk, the step that creates urgency",
+            "Prepare, Review, Sell; advisors skip Review",
+            "Photo, Receipt, Signature; advisors skip Photo"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "What is the Short Stop position on the diamond for?",
+          "options": [
+            "Covering the front counter at lunch",
+            "Re-opening a missed safety sale with a fresh voice",
+            "Handling parts ordering",
+            "Calling customers who left five-star reviews"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    "M6": {
+      "title": "Present: Educate Into Certainty",
+      "questions": [
+        {
+          "q": "How often should you re-engage the customer during a presentation call?",
+          "options": [
+            "Every 60 to 90 seconds, with a micro-question like \"Does that make sense so far?\"",
+            "Only at the very end, to avoid interruptions",
+            "Every five minutes",
+            "Never: a polished monologue is more professional"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "What must immediately follow the Total Investment number?",
+          "options": [
+            "A long silent pause so the price sinks in",
+            "The Coverage (warranty), with no pause in between",
+            "A discount offer",
+            "The parts and labor breakdown"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "In Good-Good-Bad framing, what comes before the finding?",
+          "options": [
+            "The price, so there are no surprises",
+            "A warning about how serious it is",
+            "Two pieces of good news that prime the brain into a receptive state",
+            "The customer's trade-in value"
+          ],
+          "answer": 2
+        },
+        {
+          "q": "What do you confirm before presenting the findings?",
+          "options": [
+            "That the customer has their credit card ready",
+            "That now is a good time to talk and that they were able to view the photos, video or DVI report",
+            "That the customer read the shop's Yelp reviews",
+            "That the tech has left for the day"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "Why do micro-questions multiply the close rate?",
+          "options": [
+            "They make the call longer, which builds trust",
+            "Each small \"yes\" compounds, so the final authorization is one more small step instead of a big leap",
+            "They distract the customer from the price",
+            "They give the advisor time to think"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    "M7": {
+      "title": "Overcome Objections: The Boss Battles",
+      "questions": [
+        {
+          "q": "How many Boss Battles exist in the HAB system?",
+          "options": ["Five", "Seven", "Eight", "Nine"],
+          "answer": 3
+        },
+        {
+          "q": "When a customer says \"the price is too high,\" what do they actually mean?",
+          "options": [
+            "\"I found it cheaper somewhere else\"",
+            "\"I'm not sure this is real value\"",
+            "\"I want a payment plan\"",
+            "\"I am not fixing this car\""
+          ],
+          "answer": 1
+        },
+        {
+          "q": "What is the first universal rule of objection handling?",
+          "options": [
+            "Never argue: acknowledge first, always",
+            "Offer a discount immediately",
+            "Repeat the price more slowly",
+            "Transfer the call to the manager"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "Why do we never pivot to a discount in response to an objection?",
+          "options": [
+            "Because discounts are illegal in most states",
+            "Because it trains the customer to objection-shop you forever; pivot to value or risk instead",
+            "Because the software cannot process discounts",
+            "Because the warranty becomes void"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "In Boss 9 (the second opinion), what is the hard rule for the Short Stop who joins the conversation?",
+          "options": [
+            "Undercut the advisor's price to save the sale",
+            "Never contradict what the advisor already told the customer: reinforce first, then problem-solve together",
+            "Tell the customer the advisor was too aggressive",
+            "Refuse to discuss any cheaper option"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    "M8": {
+      "title": "Execute: The Close",
+      "questions": [
+        {
+          "q": "When does the close actually happen?",
+          "options": [
+            "In the last 30 seconds of the call, with the right one-liner",
+            "It starts at hello: the close is the cumulative result of the seven prior steps done right",
+            "Only after a discount is offered",
+            "When the customer asks for the total"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "Which of these is an assumptive close?",
+          "options": [
+            "\"Do you want to think it over?\"",
+            "\"I'll go ahead and get the parts ordered.\"",
+            "\"Should I email you the estimate?\"",
+            "\"Is the price okay with you?\""
+          ],
+          "answer": 1
+        },
+        {
+          "q": "\"Which direction would you like your vehicle facing when we bring it up?\" is which family of close?",
+          "options": [
+            "The choice (binary) close",
+            "The urgency close",
+            "The logistical close: the brain engages with parking, and the price is silently accepted",
+            "The takeaway close"
+          ],
+          "answer": 2
+        },
+        {
+          "q": "How is Authorization Rate calculated, and what is the target?",
+          "options": [
+            "Cars fixed divided by cars inspected, target 50%",
+            "Authorized dollars divided by presented dollars across all bases, target at least 75%",
+            "Calls answered divided by calls received, target 100%",
+            "Reviews received divided by reviews asked, target 80%"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "What is Home Plate?",
+          "options": [
+            "The final invoice review that reinforces value and sets up the next visit",
+            "The cash register",
+            "The tech's final quality-control lap",
+            "The moment the customer pays their deposit"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "M9": {
+      "title": "L.A.S.T. Recovery",
+      "questions": [
+        {
+          "q": "What do the four beats of L.A.S.T. stand for, in order?",
+          "options": [
+            "Listen, Apologize, Substitute, Terminate",
+            "Listen, Acknowledge, Solve, Thank",
+            "Lead, Ask, Sell, Track",
+            "Learn, Adjust, Serve, Train"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "What is the most common recovery failure?",
+          "options": [
+            "Thanking the customer too early",
+            "Racing to Solve before doing Listen and Acknowledge, which leaves the customer feeling unheard",
+            "Listening for too long",
+            "Offering too many solutions"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "Why is \"I understand, BUT...\" a recovery killer?",
+          "options": [
+            "It takes too long to say",
+            "The word \"but\" deletes everything said before it, breaking the Acknowledge beat",
+            "Customers prefer the word \"however\"",
+            "It admits fault and creates liability"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "What does the 24-hour recovery window teach?",
+          "options": [
+            "Wait a day so the customer cools off before you respond",
+            "Recovery decays fast: the first hour is worth ten of the next day, and after 24 hours a public review is likely",
+            "Complaints expire after 24 hours and can be ignored",
+            "Refunds must be issued within 24 hours"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "What is the Service Recovery Paradox?",
+          "options": [
+            "Fixing complaints costs more than it earns",
+            "A customer whose problem is handled well often becomes MORE loyal than one who never had a problem",
+            "Upset customers always leave no matter what you do",
+            "Shops should create small problems on purpose to fix them"
+          ],
+          "answer": 1
+        }
+      ]
+    }
+  }
+}

@@ -31,6 +31,12 @@
     <a href="/curriculum">Curriculum</a>
     <a href="/library">Library</a>
     <a href="/leaderboard">Leaderboard</a>
+    <% if (['advisor','coach','owner'].includes(user.role)) { %>
+      <a href="/scorecard">Scorecard</a>
+    <% } %>
+    <% if (user.role === 'owner') { %>
+      <a href="/insights">Team Reading</a>
+    <% } %>
     <% if (['coach','owner','hab_admin'].includes(user.role)) { %>
       <a href="/team">Team</a>
     <% } %>
@@ -40,6 +46,8 @@
     <% if (user.role === 'hab_admin') { %>
       <a href="/admin">Portfolio</a>
       <a href="/admin/shops">Shops</a>
+      <a href="/admin/scorecards">Scorecards</a>
+      <a href="/insights">Reading</a>
       <a href="/admin/orders">Orders</a>
     <% } %>
     <% if (['coach','owner','hab_admin'].includes(user.role)) { %>

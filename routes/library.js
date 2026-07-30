@@ -90,7 +90,11 @@ libraryRouter.get('/library/:slug', requireAuth, (req, res) => {
   // Screenshots cannot be blocked in a browser; the watermark is the deterrent.
   if (req.session.role !== 'hab_admin') {
     const html = fs.readFileSync(full, 'utf8');
-    return res.send(injectProtection(html, req));
+    let out = injectProtection(html, req);
+    // WP-ACADEMY-2: reading beat (30s visible-page ping, see public/hb.js).
+    const hbTag = `<script src="/hb.js" data-k="book:${book.slug}" defer></script>`;
+    out = /<\/body>/i.test(out) ? out.replace(/<\/body>/i, `${hbTag}\n</body>`) : out + hbTag;
+    return res.send(out);
   }
   res.sendFile(full);
 });

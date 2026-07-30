@@ -20,6 +20,8 @@ import { libraryRouter } from './routes/library.js';
 import { gamificationRouter } from './routes/gamification.js';
 import { teamRouter } from './routes/team.js';
 import { apiRouter } from './routes/api.js';
+import { scorecardsRouter } from './routes/scorecards.js';
+import { startSyncScheduler } from './lib/sync.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -111,6 +113,7 @@ app.use('/', libraryRouter);
 app.use('/', gamificationRouter);
 app.use('/', teamRouter);
 app.use('/', ordersRouter);
+app.use('/', scorecardsRouter); // WP-ACADEMY-2: /scorecard + /insights
 app.use('/api', apiRouter);
 app.use('/admin', adminRouter);
 
@@ -122,6 +125,9 @@ app.use((err, req, res, _next) => {
   console.error(err);
   res.status(500).send(`Server error: ${err.message}`);
 });
+
+// WP-ACADEMY-2: platform sync bridge — retry queued events on boot + hourly.
+startSyncScheduler();
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, '0.0.0.0', () => {

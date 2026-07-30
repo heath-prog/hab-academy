@@ -1,0 +1,48 @@
+<%- include('partials/header', { title: 'KPI Scorecards' }) %>
+
+<%
+  const money = (n) => n == null ? 'n/a' : '$' + Number(n).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  const pctf = (n) => n == null ? 'n/a' : n.toFixed(1) + '%';
+%>
+
+<div class="eyebrow">HAB ADMIN · KPI SCORECARDS</div>
+<h1>Scorecard Rollup</h1>
+<p class="lead">Every organization's daily shop numbers, rolled up over the trailing 7 and 30 days. ARO and GP% are blended over the window (total revenue over total cars, total GP over total revenue).</p>
+
+<% orgs.forEach(o => { %>
+  <h2 class="lib-h2"><%= o.name %></h2>
+  <% if (!o.shops.length) { %>
+    <p class="muted">No shops in this organization.</p>
+  <% } else { %>
+    <table class="tbl">
+      <thead>
+        <tr>
+          <th>Shop</th><th>Entries (60d)</th><th>Last Entry</th>
+          <th>7d Revenue</th><th>7d ARO</th><th>7d GP%</th>
+          <th>30d Revenue</th><th>30d ARO</th><th>30d GP%</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% o.shops.forEach(sh => { %>
+          <tr>
+            <td><strong><%= sh.name %></strong></td>
+            <td><%= sh.entryCount %></td>
+            <td><span class="muted"><%= sh.latest ? sh.latest.entry_date : 'none yet' %></span></td>
+            <td><%= money(sh.trends[7].revenue) %></td>
+            <td><strong><%= money(sh.trends[7].aro) %></strong></td>
+            <td><strong><%= pctf(sh.trends[7].gpPct) %></strong></td>
+            <td><%= money(sh.trends[30].revenue) %></td>
+            <td><%= money(sh.trends[30].aro) %></td>
+            <td><%= pctf(sh.trends[30].gpPct) %></td>
+            <td><a class="btn small ghost" href="/scorecard?shopId=<%= sh.id %>">Open</a></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  <% } %>
+<% }) %>
+
+<% if (!orgs.length) { %><p class="muted">No organizations yet.</p><% } %>
+
+<%- include('partials/footer') %>

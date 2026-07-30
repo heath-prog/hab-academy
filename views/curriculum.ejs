@@ -18,7 +18,7 @@
       <% if (m.objective) { %><div class="module-obj"><%= m.objective %></div><% } %>
       <% if (m.primaryKpi) { %><div class="module-kpi">KPI: <%= m.primaryKpi %></div><% } %>
       <div class="pbar"><div class="pbar-fill" style="width:<%= m.pct %>%"></div></div>
-      <div class="module-progress"><%= m.done %>/<%= m.sectionCount %> sections<%= m.pct === 100 ? ' · ✓ complete' : '' %></div>
+      <div class="module-progress"><%= m.done %>/<%= m.sectionCount %> sections<%= m.pct === 100 ? ' · ✓ complete' : '' %><% if (m.checkPassed === true) { %> · ✓ check passed<% } else if (m.checkPassed === false) { %> · check pending<% } %></div>
     </a>
   <% }) %>
 </div>

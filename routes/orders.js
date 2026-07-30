@@ -13,10 +13,23 @@ import { BOOKS } from './library.js';
 
 export const ordersRouter = express.Router();
 
+// WP-ACADEMY-2: shop-floor posters. No fixed price — poster runs are custom
+// (size, material, quantity), so the price is quoted on the invoice HAB sends.
+// Same invoice-pending flow as the books; poster line items carry a
+// unit_price_cents of 0 and are excluded from the online order total.
+export const POSTERS = [
+  { slug: 'poster-66-step',  title: '66-Step Process Poster' },
+  { slug: 'poster-wall-set', title: 'HAB Wall Poster Set' },
+];
+const isPosterSlug = (slug) => slug.startsWith('poster-');
+
 const money = (cents) => `$${(cents / 100).toFixed(2)}`;
 
 function ordersWithItems(rows) {
-  return rows.map(o => ({ ...o, items: BookOrders.itemsFor(o.id), total: money(o.total_cents) }));
+  return rows.map(o => {
+    const items = BookOrders.itemsFor(o.id).map(i => ({ ...i, quoted: isPosterSlug(i.book_slug) }));
+    return { ...o, items, hasQuoted: items.some(i => i.quoted), total: money(o.total_cents) };
+  });
 }
 
 // ===== Order form + shop order history (owner/coach) =====
@@ -31,6 +44,7 @@ ordersRouter.get('/orders', requireAuth, requireRole('owner', 'coach'), (req, re
     user: req.session,
     shop,
     books: BOOKS.map(b => ({ slug: b.slug, title: b.title, subtitle: b.subtitle, version: b.version })),
+    posters: POSTERS,
     priceCents: BOOK_PRICE_CENTS,
     price: money(BOOK_PRICE_CENTS),
     orders: ordersWithItems(BookOrders.forShop(shopId)),
@@ -54,9 +68,15 @@ ordersRouter.post('/orders', requireAuth, requireRole('owner', 'coach'), (req, r
     const qty = parseInt(req.body[`qty_${b.slug}`], 10) || 0;
     if (qty > 0) items.push({ book_slug: b.slug, book_title: `${b.title} ${b.version}`, qty: Math.min(qty, 500), unit_price_cents: BOOK_PRICE_CENTS });
   }
+  // WP-ACADEMY-2: posters ride the same order with a 0-cent line item; the
+  // real price is quoted on the invoice.
+  for (const pItem of POSTERS) {
+    const qty = parseInt(req.body[`qty_${pItem.slug}`], 10) || 0;
+    if (qty > 0) items.push({ book_slug: pItem.slug, book_title: `${pItem.title} (price quoted on order)`, qty: Math.min(qty, 500), unit_price_cents: 0 });
+  }
 
   const back = req.session.role === 'hab_admin' ? `/orders?shopId=${shopId}&` : '/orders?';
-  if (!items.length)               return res.redirect(`${back}error=${encodeURIComponent('Add at least one copy to your order')}`);
+  if (!items.length)               return res.redirect(`${back}error=${encodeURIComponent('Add at least one item to your order')}`);
   if (!shipName || !shipAddress)   return res.redirect(`${back}error=${encodeURIComponent('Shipping name and address are required')}`);
 
   // NOTE: no card processing yet — the order is recorded and HAB invoices the

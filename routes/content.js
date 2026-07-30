@@ -9,6 +9,7 @@ import { Shops, Agreements, PendingMembers } from '../lib/db.js';
 import { shopAccess } from '../lib/access.js';
 import { TIERS } from '../lib/agreements.js';
 import { injectProtection } from '../lib/protect.js';
+import { AdvisorScorecards, ShopScorecards, trends, missingYesterday } from '../lib/scorecards.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const CONTENT_ROOT = path.join(__dirname, '..', 'content');
@@ -75,12 +76,32 @@ contentRouter.get('/dashboard', requireAuth, (req, res) => {
     };
   }
 
+  // WP-ACADEMY-2: scorecard summary + weekday nudge when the previous business
+  // day's entry is missing. Owning your numbers daily is a coaching tactic.
+  let scorecard = null;
+  const role = req.session.role;
+  if (['advisor', 'coach', 'owner'].includes(role)) {
+    const myRows = AdvisorScorecards.historyForUser(req.session.userId, 30);
+    scorecard = {
+      my: { trends: trends(myRows, 'revenue', 'gross_profit'), count: myRows.length },
+      myMissing: missingYesterday((d) => !!AdvisorScorecards.byUserDate(req.session.userId, d)),
+      shop: null,
+      shopMissing: null,
+    };
+    if (['coach', 'owner'].includes(role) && req.session.shopId) {
+      const shopRows = ShopScorecards.historyForShop(req.session.shopId, 30);
+      scorecard.shop = { trends: trends(shopRows, 'total_revenue', 'gross_profit'), count: shopRows.length };
+      scorecard.shopMissing = missingYesterday((d) => !!ShopScorecards.byShopDate(req.session.shopId, d));
+    }
+  }
+
   res.render('dashboard', {
     user: req.session,
     me: userSummary(req.session.userId),
     advisorFiles,
     managerFiles,
     ownerPanel,
+    scorecard,
     message: req.query.message || null,
     error: req.query.error || null,
   });

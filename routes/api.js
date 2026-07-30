@@ -4,6 +4,7 @@
 //   owner/coach → their own shop only
 import express from 'express';
 import { shopSummary } from '../lib/training.js';
+import { recordBeat } from '../lib/engagement.js';
 
 export const apiRouter = express.Router();
 
@@ -42,4 +43,19 @@ apiRouter.get('/shops/:id/training-summary', requireApiAuth, (req, res) => {
       perModule: m.perModule,
     })),
   });
+});
+
+// WP-ACADEMY-2: 30-second reading beat from curriculum/book pages (public/hb.js).
+// Session-authenticated; hab_admin traffic is not recorded. Responds 204 always
+// so nothing about the pipeline is observable from the client beyond receipt.
+apiRouter.post('/hb', (req, res) => {
+  res.status(204).end();
+  if (!req.session?.userId || req.session.role === 'hab_admin') return;
+  const k = String(req.body?.k || '').trim();
+  if (!k || k.length > 80 || !/^[a-z0-9:_-]+$/i.test(k)) return;
+  try {
+    recordBeat({ userId: req.session.userId, shopId: req.session.shopId, contentKey: k });
+  } catch (e) {
+    console.error('[api] hb record failed:', e.message);
+  }
 });

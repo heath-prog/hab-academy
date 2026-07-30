@@ -26,6 +26,13 @@ if (!shop) {
   shop = Shops.byId(id);
   console.log('created shop:', shop.name);
 }
+// Demo shops are exempt from WP-SIGNUP agreement enforcement (lib/access.js)
+// — without this flag every demo login bounces to /agreement-ended.
+if (!shop.is_demo) {
+  Shops.setDemo(shop.id, true);
+  shop = Shops.byId(shop.id);
+  console.log('flagged demo shop is_demo=1 (agreement enforcement exempt)');
+}
 
 function ensureUser(email, role, name, shopId) {
   let u = Users.byEmail(email);

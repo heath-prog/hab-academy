@@ -4,6 +4,7 @@ import { requireAuth, canSeeCoachContent } from '../lib/auth.js';
 import { Curriculum } from '../lib/curriculum.js';
 import { Progress, Points } from '../lib/db.js';
 import { POINTS, userSummary } from '../lib/training.js';
+import { protectionLocals } from '../lib/protect.js';
 
 export const curriculumRouter = express.Router();
 
@@ -16,7 +17,8 @@ curriculumRouter.get('/curriculum', requireAuth, (req, res) => {
     return { ...m, done, pct: m.sectionCount ? Math.round((done / m.sectionCount) * 100) : 0 };
   });
   const refs = Curriculum.refs().filter(r => coach || !r.coachOnly);
-  res.render('curriculum', { user: req.session, modules, refs, me });
+  // WP-IP-LOCKDOWN: watermark + print/copy deterrence for client roles.
+  res.render('curriculum', { user: req.session, modules, refs, me, ...protectionLocals(req) });
 });
 
 // ===== Chapter view =====
@@ -40,6 +42,8 @@ curriculumRouter.get('/curriculum/:slug', requireAuth, (req, res) => {
     doneSlugs,
     prev: i > 0 ? list[i - 1] : null,
     next: i >= 0 && i < list.length - 1 ? list[i + 1] : null,
+    // WP-IP-LOCKDOWN: server-rendered watermark + license line for client roles.
+    ...protectionLocals(req),
   });
 });
 

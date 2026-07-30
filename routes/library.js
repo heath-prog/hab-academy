@@ -8,6 +8,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { requireAuth, canSeeCoachContent } from '../lib/auth.js';
+import { protectionLocals, injectProtection } from '../lib/protect.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const BOOKS_DIR = path.join(__dirname, '..', 'content', 'books');
@@ -66,6 +67,9 @@ libraryRouter.get('/library', requireAuth, (req, res) => {
     // WP-SIGNUP lockdown: printable PDF editions are hab_admin-only. Clients
     // read in the browser and order printed copies instead.
     canDownloadPdf: req.session.role === 'hab_admin',
+    // WP-IP-LOCKDOWN: print/copy deterrence on the index (no watermark here;
+    // the readers themselves carry it).
+    ...protectionLocals(req, { watermark: false }),
   });
 });
 
@@ -80,6 +84,14 @@ libraryRouter.get('/library/:slug', requireAuth, (req, res) => {
   if (!fs.existsSync(full)) return res.status(404).send('Book file not found.');
   res.setHeader('Content-Type', 'text/html; charset=utf-8');
   res.setHeader('Content-Disposition', `inline; filename="${book.file}"`);
+  // WP-IP-LOCKDOWN: for client roles the book ships with the protection layer
+  // injected server-side — dynamic watermark (name + email), print-blocking
+  // CSS, copy deterrence, license line. hab_admin gets the clean file.
+  // Screenshots cannot be blocked in a browser; the watermark is the deterrent.
+  if (req.session.role !== 'hab_admin') {
+    const html = fs.readFileSync(full, 'utf8');
+    return res.send(injectProtection(html, req));
+  }
   res.sendFile(full);
 });
 

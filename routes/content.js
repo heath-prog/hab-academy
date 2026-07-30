@@ -8,6 +8,7 @@ import { userSummary } from '../lib/training.js';
 import { Shops, Agreements, PendingMembers } from '../lib/db.js';
 import { shopAccess } from '../lib/access.js';
 import { TIERS } from '../lib/agreements.js';
+import { injectProtection } from '../lib/protect.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const CONTENT_ROOT = path.join(__dirname, '..', 'content');
@@ -108,6 +109,14 @@ contentRouter.get('/content/:tier/:filename', requireAuth, (req, res) => {
     res.setHeader('Content-Disposition', `inline; filename="${safeName}"`);
   } else {
     res.setHeader('Content-Disposition', `attachment; filename="${safeName}"`);
+  }
+  // WP-IP-LOCKDOWN: HTML handouts (pocket cards etc.) get the protection layer
+  // injected server-side for client roles — watermark, print block, copy
+  // deterrence. hab_admin gets the clean file for fulfillment/printing.
+  if (['.html', '.htm'].includes(ext) && req.session.role !== 'hab_admin') {
+    const html = fs.readFileSync(full, 'utf8');
+    res.setHeader('Content-Type', 'text/html; charset=utf-8');
+    return res.send(injectProtection(html, req));
   }
   res.sendFile(full);
 });

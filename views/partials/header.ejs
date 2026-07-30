@@ -6,8 +6,17 @@
 <title><%= typeof title !== 'undefined' ? title + ' · ' : '' %>HAB Academy</title>
 <link rel="stylesheet" href="/style.css">
 <link rel="stylesheet" href="/curriculum.css">
+<%# WP-IP-LOCKDOWN: content views pass `protect` (via lib/protect.js
+    protectionLocals) for client roles only — hab_admin never gets this. %>
+<% const habProtect = typeof protect !== 'undefined' && protect; %>
+<% if (habProtect) { %><link rel="stylesheet" href="/protect.css"><% } %>
 </head>
-<body>
+<body<%- habProtect ? ' class="hab-protected"' : '' %>>
+<% if (habProtect) { %>
+<%- typeof protectWatermarkHtml !== 'undefined' ? protectWatermarkHtml : '' %>
+<%- typeof protectNoticeHtml !== 'undefined' ? protectNoticeHtml : '' %>
+<script src="/protect.js" defer></script>
+<% } %>
 <% if (typeof user !== 'undefined' && user) { %>
 <header class="topbar">
   <div class="brand">

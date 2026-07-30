@@ -1,0 +1,161 @@
+/* WP-IP-LOCKDOWN — content protection layer (loaded on protected views only,
+   client roles only; hab_admin never gets body.hab-protected).
+   Honest limit: OS-level screenshots cannot be prevented from a browser.
+   The visible dynamic watermark (licensee name + email) is the deterrent. */
+
+/* ===== 1. Print blocking ===== */
+@media print {
+  body.hab-protected * { display: none !important; }
+  body.hab-protected::after {
+    content: "Printing is disabled. HAB Academy content is licensed for on-screen personal use only.";
+    display: block !important;
+    font: 700 18px/1.6 Georgia, serif;
+    color: #112341;
+    padding: 80px 60px;
+    text-align: center;
+  }
+}
+
+/* ===== 2. Copy / save deterrence on reading surfaces only.
+   Inputs, textareas and selects stay selectable so forms keep working. ===== */
+body.hab-protected .hab-nocopy,
+body.hab-protected .hab-nocopy * {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+body.hab-protected input,
+body.hab-protected textarea,
+body.hab-protected select,
+body.hab-protected [contenteditable="true"] {
+  -webkit-user-select: text !important;
+  -moz-user-select: text !important;
+  user-select: text !important;
+}
+body.hab-protected .hab-nocopy img {
+  -webkit-user-drag: none;
+  user-drag: none;
+}
+
+/* ===== 3. Dynamic watermark (server-rendered; see lib/protect.js) ===== */
+.hab-watermark {
+  position: fixed;
+  inset: 0;
+  z-index: 9990;
+  pointer-events: none;
+  overflow: hidden;
+}
+.hab-watermark-inner {
+  position: absolute;
+  top: -60%; left: -60%;
+  width: 220%; height: 220%;
+  transform: rotate(-30deg);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 110px 80px;
+  align-content: space-between;
+  justify-content: space-between;
+}
+.hab-watermark span {
+  white-space: nowrap;
+  font: 600 14px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: 1px;
+  color: rgba(27, 51, 88, 0.085);
+}
+
+/* Subtle per-section license footer */
+.hab-license-line {
+  margin: 12px 0 26px;
+  padding-top: 6px;
+  border-top: 1px solid #DDD3B8;
+  font: 600 10px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(27, 51, 88, 0.45);
+}
+
+/* ===== 5. Content License notice (once per session, dismissible) ===== */
+.hab-license-notice {
+  position: fixed;
+  left: 50%; bottom: 26px;
+  transform: translateX(-50%);
+  z-index: 9995;
+  max-width: 580px;
+  width: calc(100% - 40px);
+  background: #112341;
+  color: #FAF4E4;
+  border: 1px solid #C8A75C;
+  border-left: 6px solid #C8A75C;
+  border-radius: 6px;
+  padding: 16px 20px;
+  box-shadow: 0 14px 34px rgba(17, 35, 65, 0.4);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.55;
+}
+.hab-license-notice h3 {
+  margin: 0 0 6px;
+  font: 800 11px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #C8A75C;
+}
+.hab-license-notice p { margin: 0 0 12px; }
+.hab-notice-btn {
+  background: #C8A75C;
+  color: #112341;
+  border: 0;
+  border-radius: 3px;
+  padding: 7px 18px;
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+.hab-notice-btn:hover { background: #A78743; }
+
+/* ===== Branded modal shown instead of the print dialog ===== */
+.hab-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(17, 35, 65, 0.62);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.hab-modal {
+  background: #FFFFFF;
+  border-top: 6px solid #C8A75C;
+  border-radius: 6px;
+  max-width: 480px;
+  width: 100%;
+  padding: 26px 30px;
+  box-shadow: 0 18px 44px rgba(17, 35, 65, 0.45);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: center;
+}
+.hab-modal .hab-modal-shield {
+  width: 44px; height: 44px;
+  margin: 0 auto 12px;
+  background: #C8A75C;
+  color: #112341;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-size: 15px;
+  border-radius: 4px;
+}
+.hab-modal h2 {
+  margin: 0 0 8px;
+  font-family: Georgia, serif;
+  font-size: 20px;
+  color: #112341;
+}
+.hab-modal p {
+  margin: 0 0 16px;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: #333;
+}

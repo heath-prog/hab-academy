@@ -18,13 +18,17 @@
 </div>
 <% } %>
 
-<article class="curric">
+<%# WP-IP-LOCKDOWN: hab-nocopy marks reading surfaces (user-select off,
+    context menu suppressed, copy returns the license notice). Forms and
+    buttons outside these articles behave normally. %>
+<article class="curric hab-nocopy">
   <%- ch.intro %>
 </article>
+<% if (protect) { %><div class="hab-license-line"><%= licenseLine %></div><% } %>
 
 <% ch.sections.forEach(s => { %>
   <div class="curric-section" id="s-<%= s.slug %>">
-    <article class="curric">
+    <article class="curric hab-nocopy">
       <%- s.html %>
     </article>
     <% if (ch.moduleKey) { %>
@@ -38,6 +42,7 @@
         <% } %>
       </form>
     <% } %>
+    <% if (protect) { %><div class="hab-license-line"><%= licenseLine %></div><% } %>
   </div>
 <% }) %>
 
